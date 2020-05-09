@@ -1,8 +1,11 @@
 import React from 'react'
 import $ from 'jquery'
+import axios from 'axios'
 // import Recaptcha from 'react-recaptcha''
 
 import Layout from '../components/layout'
+
+const API_PATH = 'http://localhost:3000/contact.php'
 
 class Contact extends React.Component {
   state = {
@@ -66,33 +69,58 @@ class Contact extends React.Component {
       })
 
       setTimeout(() => {
-        $.ajax({
+        axios({
           data: this.state,
-          type: 'POST',
-          // url: require('/contact.php'),
-          success: function(data) {
-            console.info(data)
-          },
-          error: function(xhr, status, err) {
-            console.error(status, err.toString())
-          }
+          headers: { 'content-type': 'application/json' },
+          method: API_PATH,
+          url: '/contact.php'
         })
+          .then((res) => {
+            console.info(res)
+
+            this.setState({
+              formEmail: '',
+              formMessage: '',
+              formName: '',
+              formNewsletter: false,
+              isCaptchaValid: false,
+              isErrorShown: false,
+              isErrorSpamBotShown: false,
+              isFormSubmitted: true,
+              isFormValid: false
+            })
+          })
+          .catch((err) => {
+            console.warn('An error occurred: ', err)
+          })
+
+        // $.ajax({
+        //   data: this.state,
+        //   type: 'POST',
+        //   // url: require('/contact.php'),
+        //   success: function(data) {
+        //     console.info(data)
+        //   },
+        //   error: function(xhr, status, err) {
+        //     console.error(status, err.toString())
+        //   }
+        // })
 
         // Send event to Google Analytics
-        typeof window !== 'undefined' && window.gtag('event', 'contact')
+        // typeof window !== 'undefined' && window.gtag('event', 'contact')
 
         // Reset state after sending the form
-        this.setState({
-          formEmail: '',
-          formMessage: '',
-          formName: '',
-          formNewsletter: false,
-          isCaptchaValid: false,
-          isErrorShown: false,
-          isErrorSpamBotShown: false,
-          isFormSubmitted: true,
-          isFormValid: false
-        })
+        // this.setState({
+        //   formEmail: '',
+        //   formMessage: '',
+        //   formName: '',
+        //   formNewsletter: false,
+        //   isCaptchaValid: false,
+        //   isErrorShown: false,
+        //   isErrorSpamBotShown: false,
+        //   isFormSubmitted: true,
+        //   isFormValid: false
+        // })
       }, 1000)
     } else if (this.state.formUsername.length > 0) {
       this.setState({
