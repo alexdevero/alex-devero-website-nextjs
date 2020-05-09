@@ -1,0 +1,100 @@
+/* Forms */
+form {
+  margin-top: 32px;
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+fieldset + fieldset,
+.row + fieldset {
+  margin-top: 21px;
+}
+
+input,
+textarea {
+  padding: 8px;
+  width: 100%;
+  border: 2px solid var(--color-black);
+  transition: var(--tr-full);
+}
+
+input:focus,
+input:hover,
+textarea:focus,
+textarea:hover {
+  outline: none;
+  border-color: var(--color-brand);
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type='checkbox'] + span {
+  margin-left: 24px;
+}
+
+/* Custom checkbox */
+.styled-checkbox {
+  display: none;
+}
+
+.styled-checkbox + span {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+
+.styled-checkbox + span::before {
+  position: absolute;
+  top: -1px;
+  left: -23px;
+  content: '';
+  display: inline-block;
+  vertical-align: text-top;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-black);
+  transition: var(--tr-full);
+}
+
+.styled-checkbox:hover + span::before {
+  border-color: var(--color-brand);
+}
+
+.styled-checkbox:focus + span::before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+.styled-checkbox:checked + span::before {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+.styled-checkbox:checked + span::after {
+  position: absolute;
+  top: 7px;
+  left: -19px;
+  content: '';
+  background: #fff;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 #fff, 4px 0 0 #fff, 4px -2px 0 #fff, 4px -4px 0 #fff, 4px -6px 0 #fff, 4px -8px 0 #fff;
+  transform: rotate(45deg);
+}
+
+/* Form validation */
+.input--username {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
