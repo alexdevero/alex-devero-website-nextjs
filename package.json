@@ -29,8 +29,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
+    "launch": "next start",
     "start": "npm run dev",
-    "launch": "next start"
+    "ship": "npm run build && npm run export"
   },
   "dependencies": {
     "axios": "0.19.2",
