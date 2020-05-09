@@ -1,0 +1,26 @@
+/* Footer */
+.footer {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.footer ul {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer li + li {
+  margin-left: 21px;
+}
+
+.footer a {
+  font-size: 24px;
+}
+
+.footer small {
+  display: block;
+  margin-top: 16px;
+  color: rgba(119, 133, 149, .75);
+}
