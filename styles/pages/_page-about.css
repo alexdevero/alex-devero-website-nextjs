@@ -1,0 +1,10 @@
+/* Page - About */
+.about__books-list {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 21px;
+}
+
+.about__books-list li {
+  width: 50%;
+}
