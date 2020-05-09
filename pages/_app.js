@@ -25,6 +25,8 @@ import './../styles/pages/_page-about.css'
 import './../styles/pages/_page-home.css'
 import './../styles/pages/_page-projects.css'
 
+import 'react-medium-image-zoom/dist/styles.css'
+
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
