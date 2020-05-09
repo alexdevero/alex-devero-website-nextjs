@@ -1,7 +1,7 @@
 {
   "name": "alex-devero-website-nextjs",
   "description": "Repository for my personal website built with Next.js framework.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "repository": {
