@@ -1,7 +1,31 @@
 {
   "name": "alex-devero-website-nextjs",
+  "description": "Repository for my personal website built with Next.js framework.",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexdevero/alex-devero-website-nextjs.git"
+  },
+  "homepage": "",
+  "bugs": {
+    "url": "https://github.com/alexdevero/alex-devero-website-nextjs/issues"
+  },
+  "author": {
+    "name": "Alex Devero",
+    "email": "deveroalex@gmail.com",
+    "url": "https://github.com/alexdevero"
+  },
+  "engines": {
+    "node": ">=11.0.0",
+    "npm": ">=6.0.0",
+    "yarn": ">=1.2.0"
+  },
+  "browserslist": [
+    "last 7 versions",
+    "ie >= 10"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
