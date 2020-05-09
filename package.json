@@ -5,11 +5,22 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "npm run dev",
+    "launch": "next start"
   },
   "dependencies": {
+    "axios": "0.19.2",
+    "github-api": "3.3.0",
+    "jquery": "3.5.1",
     "next": "9.3.6",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-medium-image-zoom": "4.3.0",
+    "xml-js": "1.6.11"
+  },
+  "devDependencies": {
+    "@types/react": "16.9.34",
+    "@types/react-dom": "16.9.7",
+    "@types/react-medium-image-zoom": "3.0.0"
   }
 }
