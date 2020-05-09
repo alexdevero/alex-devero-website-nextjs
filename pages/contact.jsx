@@ -149,10 +149,13 @@ class Contact extends React.Component {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-md-10 col-lg-7 col-xl-6">
-                <p>Do you have some project you want to realize? Please, contact me via the form below. I will reply in 3 days. {/*You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information.*/}</p></div>
+                <p>Do you have some project you want to realize? Please, contact me via <a href="mailto:deveroalex@gmail.com">email</a>. I will reply in 3 days. {/*You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information.*/}</p>
+
+                <p style={{ display: 'none' }}>Do you have some project you want to realize? Please, contact me via the form below. I will reply in 3 days. {/*You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information.*/}</p>
+                </div>
             </div>
 
-            <div className="row justify-content-center">
+            {/* <div className="row justify-content-center">
               <div className="col-lg-8">
                 <form action="">
                   <div className="row">
@@ -200,7 +203,7 @@ class Contact extends React.Component {
                       render="explicit"
                       verifyCallback={this.onCaptchaVerify}
                     />
-                  </fieldset> */}
+                  </fieldset> * /}
 
                   {this.state.isFormSubmitted && (
                     <fieldset>
@@ -227,7 +230,7 @@ class Contact extends React.Component {
                   </fieldset>
                 </form>
               </div>
-            </div>
+            </div> */}
           </div>
         </Layout>
       </>
