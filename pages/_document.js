@@ -8,10 +8,8 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
-          <html lang="en" />
-
           {/*<!-- Typeface Raleway -->*/}
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&amp;subset=latin-ext" />
 
