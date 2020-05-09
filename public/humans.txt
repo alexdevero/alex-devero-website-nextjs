@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+Your title: Alex Devero
+Site: www.alexdevero.com
+Twitter: @alexdevero
+Location: Prague, Czech Republic
+
+# SITE
+Last update: 2018/11/30
+Standards: HTML5, CSS3, JavaScript (ES7)
+Components: Bootstrap, Normalize, React
+Software: Apache Server Configs, VS Studio Code, Babel, Webpack
