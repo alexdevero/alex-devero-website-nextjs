@@ -1,0 +1,9 @@
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 32px;
+  min-height: 320px;
+}
