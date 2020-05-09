@@ -1,0 +1,126 @@
+/* Header */
+.header {
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
+
+.header ul {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .header ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 48em) {
+  .header li + li {
+    margin-left: 21px;
+  }
+}
+
+.header a {
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 47.999375em) {
+  .nav-main {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 21px;
+    padding-right: 21px;
+  }
+}
+
+@media (max-width: 47.999375em) {
+  .nav-main--hidden {
+    display: none !important;
+    opacity: 0;
+  }
+
+  .nav-main--visible {
+    display: flex !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 999;
+    transition: opacity var(--tr-part);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 47.999375em) {
+  .nav__toggler {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    height: 22px;
+    background: transparent;
+    border: 0;
+
+    .nav__toggler:focus {
+      outline: 0;
+    }
+
+    .nav__toggler:hover {
+      cursor: pointer;
+    }
+
+    .nav__toggler span {
+      display: block;
+      width: 28px;
+      height: 2px;
+      background-color: var(--color-black);
+      transition: background-color var(--tr-part);
+    }
+
+    .nav__toggler:hover > span {
+      background-color: var(--color-brand);
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  .nav__toggler {
+    display: none;
+  }
+}
+
+.nav__toggler--close {
+  position: relative;
+  margin-bottom: 4px;
+  transform: scale(.75);
+  transition: transform var(--tr-part);
+}
+
+.nav__toggler--close:hover {
+  transform: rotate(45deg) scale(.55);
+}
+
+.nav__toggler--close span {
+  position: relative;
+}
+
+.nav__toggler--close span:first-of-type {
+  top: 10px;
+  transform: rotate(45deg);
+}
+
+.nav__toggler--close span:last-of-type {
+  top: -10px;
+  transform: rotate(-45deg);
+}
