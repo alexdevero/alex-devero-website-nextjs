@@ -35,7 +35,7 @@
     "ship": "npm run build && npm run export"
   },
   "dependencies": {
-    "axios": "0.21.1",
+    "axios": "0.21.2",
     "github-api": "3.3.0",
     "jquery": "3.5.1",
     "next": "11.1.3",
