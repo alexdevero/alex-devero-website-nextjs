@@ -1,8 +1,8 @@
-import React from 'react'
+import { memo } from 'react'
 
 import Layout from '../components/layout'
 
-const Thanks = () => (
+const Thanks = memo(() => (
   <Layout page="thanks" title="Thanks | Alex Devero">
     <div className="hero">
       <h1>Thank you</h1>
@@ -42,6 +42,8 @@ const Thanks = () => (
       </div>
     </div>
   </Layout>
-)
+))
+
+Thanks.displayName = 'Thanks'
 
 export default Thanks

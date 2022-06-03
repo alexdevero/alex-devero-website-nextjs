@@ -1,6 +1,8 @@
+import { memo } from 'react'
+
 import { Layout } from '../components/layout'
 
-export default function Home() {
+const Home = memo(() => {
   return (
     <Layout page="home" title="Home | Alex Devero">
       <div className="container">
@@ -16,4 +18,8 @@ export default function Home() {
       </div>
     </Layout>
   )
-}
+})
+
+Home.displayName = 'Home'
+
+export default Home

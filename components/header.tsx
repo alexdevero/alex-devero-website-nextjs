@@ -1,8 +1,8 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import Link from 'next/link'
 
 const Header = memo(() => {
-  const [isMobileMenuVisible, toggleMobileMenu] = React.useState(false)
+  const [isMobileMenuVisible, toggleMobileMenu] = useState(false)
 
   const generateNavClass = () => {
     const windowGlobal = typeof window !== 'undefined' && window
@@ -12,7 +12,7 @@ const Header = memo(() => {
     } else if (windowGlobal.innerWidth <= 767.99 && !isMobileMenuVisible) {
       return 'nav-main--hidden'
     } else {
-      return null
+      return ''
     }
   }
 
