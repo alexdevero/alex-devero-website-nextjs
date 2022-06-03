@@ -66,6 +66,7 @@ const alexData = gh.getUser('alexdevero')
 
 const Projects = memo(() => {
   const [areGithubDataReady, setAreGithubDataReady] = useState(false)
+  const [displayProjects] = useState(false)
   const [githubData, setGithubData] = useState<Repository[]>([])
 
   const fetchGithubRepository = useCallback(() => {
@@ -113,51 +114,53 @@ const Projects = memo(() => {
         <h1>Projects</h1>
       </div>
 
-      <div className="projects__dashboard container">
-        <div className="row justify-content-center">
-          <div className="col-md-10 col-lg-7 col-xl-6">
-            <p className="mb-3 text--center">Featured examples of my design & development work:</p>
+      {displayProjects ? (
+        <div className="projects__dashboard container">
+          <div className="row justify-content-center">
+            <div className="col-md-10 col-lg-7 col-xl-6">
+              <p className="mb-3 text--center">Featured examples of my design & development work:</p>
+            </div>
           </div>
-        </div>
 
-        <div className="row">
-          {projects.map(project => (
-            <div key={project.title} className="col-md-6 col-lg-4">
-              <div className="project__container">
-                <div className="project__header">
-                  <Zoom>
-                    <Image
-                      height="500"
-                      alt={project.alt}
-                      src={project.src}
-                      width="500"
-                      className="project__thumbnail"
-                    />
-                  </Zoom>
-                </div>
+          <div className="row">
+            {(projects).map(project => (
+              <div key={project.title} className="col-md-6 col-lg-4">
+                <div className="project__container">
+                  <div className="project__header">
+                    <Zoom>
+                      <Image
+                        height="500"
+                        alt={project.alt}
+                        src={project.src}
+                        width="500"
+                        className="project__thumbnail"
+                      />
+                    </Zoom>
+                  </div>
 
-                <div className="project__body">
-                  <div className="project__link">
-                    <span className="project__number">
-                      No.<span>{project.no}</span>
-                    </span>
+                  <div className="project__body">
+                    <div className="project__link">
+                      <span className="project__number">
+                        No.<span>{project.no}</span>
+                      </span>
 
-                    <h5 className="project__heading h5">{project.title}</h5>
+                      <h5 className="project__heading h5">{project.title}</h5>
 
-                    <a href={project.href} className="project__link" target="_blank" rel="noopener noreferrer"><span className="fas fa-external-link-alt" style={{ marginLeft: 6, fontSize: 16 }} /></a>
+                      <a href={project.href} className="project__link" target="_blank" rel="noopener noreferrer"><span className="fas fa-external-link-alt" style={{ marginLeft: 6, fontSize: 16 }} /></a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      ) : <span />}
 
       <div className="projects__header container">
         <div className="mt-2 mb-2 text--center">
           {/* <p>Welcome to my personal laboratory.</p> */}
 
-          <p>My latest experiments you can find on my <a href="https://github.com/alexdevero">GitHub</a>:</p>
+          <p>Here are some projects I worked and that are on my <a href="https://github.com/alexdevero">GitHub</a>:</p>
         </div>
 
         {!areGithubDataReady && (
