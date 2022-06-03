@@ -1,10 +1,10 @@
-import React from 'react'
+import { memo, ReactChildren } from 'react'
 import Head from 'next/head'
 
 import Footer from './footer'
 import Header from './header'
 
-export const Layout = ({ children, page, title }) => (
+export const Layout = memo(({ children, page, title }: { children: ReactChildren, page: string, title: string}) => (
   <>
     {title && <Head>
       <title>{title}</title>
@@ -18,6 +18,8 @@ export const Layout = ({ children, page, title }) => (
       <Footer />
     </div>
   </>
-)
+))
+
+Layout.displayName = 'Layout'
 
 export default Layout

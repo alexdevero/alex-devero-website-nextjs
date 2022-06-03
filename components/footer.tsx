@@ -1,6 +1,6 @@
-import React from 'react'
+import { memo } from 'react'
 
-const Footer = () => (
+const Footer = memo(() => (
   <footer className="footer">
     <nav>
       <ul className="footer__media">
@@ -64,6 +64,8 @@ const Footer = () => (
       {/* Copyright &copy; <time dateTime={new Date()}>{new Date().getFullYear()}</time> Alex Devero */}
     </small>
   </footer>
-)
+))
+
+Footer.displayName = 'Footer'
 
 export default Footer

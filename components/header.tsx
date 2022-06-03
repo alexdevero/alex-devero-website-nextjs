@@ -1,7 +1,7 @@
-import React from 'react'
+import { memo } from 'react'
 import Link from 'next/link'
 
-const Header = () => {
+const Header = memo(() => {
   const [isMobileMenuVisible, toggleMobileMenu] = React.useState(false)
 
   const generateNavClass = () => {
@@ -66,6 +66,8 @@ const Header = () => {
       </button>
     </nav>
   </header>
-}
+})
+
+Header.displayName = 'Header'
 
 export default Header
