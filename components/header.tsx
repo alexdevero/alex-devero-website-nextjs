@@ -13,7 +13,7 @@ const Header = memo(() => {
       } else if (window.innerWidth <= 767.99 && !isMobileMenuVisible) {
         return 'nav-main--hidden'
       } else {
-        return ''
+        return 'null'
       }
     }
   }, [isMobileMenuVisible])

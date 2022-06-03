@@ -3,7 +3,7 @@ import Image from 'next/image'
 import GitHub from 'github-api'
 import Zoom from 'react-medium-image-zoom'
 
-import { githubCredentials } from '../_credentials/credentials.github.js'
+import { githubCredentials } from '../credentials/credentials-github'
 
 import Layout from '../components/layout'
 

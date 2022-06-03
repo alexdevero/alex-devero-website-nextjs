@@ -2,7 +2,7 @@ import axios from 'axios'
 import { memo, useCallback, useEffect, useState } from 'react'
 import { xml2js } from 'xml-js'
 
-import { goodreadsCredentials } from '../_credentials/credentials.goodreads'
+import { goodreadsCredentials } from '../credentials/credentials-goodreads'
 
 import Layout from '../components/layout'
 
