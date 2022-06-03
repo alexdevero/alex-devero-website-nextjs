@@ -13,8 +13,6 @@ const Home = memo(() => {
             <p>Entrepreneur, designer and developer from Czech Republic.</p>
           </div>
         </div>
-
-        <style jsx>{``}</style>
       </div>
     </Layout>
   )

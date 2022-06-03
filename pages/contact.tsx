@@ -1,46 +1,46 @@
-import { memo, useCallback, useState } from 'react'
-import axios from 'axios'
+import { memo } from 'react'
+// import axios from 'axios'
 // import Recaptcha from 'react-recaptcha''
 
 import Layout from '../components/layout'
 
 const Contact = memo(() => {
-  const [formEmail, setFormEmail] = useState('')
-  const [formMessage, setFormMessage] = useState('')
-  const [formName, setFormName] = useState('')
-  const [formNewsletter, setFormNewsletter] = useState(false)
-  const [formUsername, setFormUsername] = useState('')
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false)
-  const [isErrorShown, setIsErrorShown] = useState(false)
-  const [isErrorSpamBotShown, setIsErrorSpamBotShown] = useState(false)
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
-  const [isFormValid, setIsFormValid] = useState(false)
+  // const [formEmail, setFormEmail] = useState('')
+  // const [formMessage, setFormMessage] = useState('')
+  // const [formName, setFormName] = useState('')
+  // const [formNewsletter, setFormNewsletter] = useState(false)
+  // const [formUsername, setFormUsername] = useState('')
+  // const [isCaptchaValid, setIsCaptchaValid] = useState(false)
+  // const [isErrorShown, setIsErrorShown] = useState(false)
+  // const [isErrorSpamBotShown, setIsErrorSpamBotShown] = useState(false)
+  // const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+  // const [isFormValid, setIsFormValid] = useState(false)
 
-  const handleInputChange = useCallback((event) => {
-    if (event.target.value.length > 0 && event.target.name !== 'formEmail') {
-      if (event.target.name === 'formName') {
-        setFormName(event.target.value)
-      } else if (event.target.name === 'formUsername') {
-        setFormUsername(event.target.value)
-      } else if (event.target.name === 'formMessage') {
-        setFormMessage(event.target.value)
-      }
-    }
+  // const handleInputChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+  //   if (event.target.value.length > 0 && event.target.name !== 'formEmail') {
+  //     if (event.target.name === 'formName') {
+  //       setFormName(event.target.value)
+  //     } else if (event.target.name === 'formUsername') {
+  //       setFormUsername(event.target.value)
+  //     } else if (event.target.name === 'formMessage') {
+  //       setFormMessage(event.target.value)
+  //     }
+  //   }
 
-    if (event.target.name === 'formEmail') {
-      /* eslint-disable */
-      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      /* eslint-enable */
+  //   if (event.target.name === 'formEmail') {
+  //     /* eslint-disable */
+  //     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  //     /* eslint-enable */
 
-      if (re.test(String(event.target.value).toLowerCase())) {
-        setFormEmail(event.target.value)
-      }
-    }
-  }, [])
+  //     if (re.test(String(event.target.value).toLowerCase())) {
+  //       setFormEmail(event.target.value)
+  //     }
+  //   }
+  // }, [])
 
-  const handleCheckboxClick = useCallback((event) => {
-    setFormNewsletter(event.target.checked)
-  }, [])
+  // const handleCheckboxClick = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+  //   setFormNewsletter(event.target.checked)
+  // }, [])
 
   // Show message in console when reCaptcha plugin is loaded
   // onCaptchaLoad = () => {
@@ -54,54 +54,54 @@ const Contact = memo(() => {
   //   })
   // }
 
-  const handleFormSubmit = useCallback((event: SubmitEvent) => {
-    event.preventDefault()
+  // const handleFormSubmit = useCallback((event: SubmitEvent) => {
+  //   event.preventDefault()
 
-    if (formEmail.length > 0 && formName.length > 0 && formMessage.length > 0 && formUsername.length === 0 /* isCaptchaValid */) {
-      setIsErrorShown(false)
-      setIsFormValid(false)
+  //   if (formEmail.length > 0 && formName.length > 0 && formMessage.length > 0 && formUsername.length === 0 /* isCaptchaValid */) {
+  //     setIsErrorShown(false)
+  //     setIsFormValid(false)
 
-      setTimeout(() => {
-        axios({
-          data: {
-            formEmail,
-            formMessage,
-            formName,
-            formNewsletter,
-            formUsername,
-            isCaptchaValid,
-            isErrorShown,
-            isErrorSpamBotShown,
-            isFormSubmitted,
-            isFormValid,
-          },
-          headers: { 'content-type': 'application/json' },
-          method: 'POST',
-          url: '/contact.php'
-        })
-          .then((res) => {
-            console.info(res)
+  //     setTimeout(() => {
+  //       axios({
+  //         data: {
+  //           formEmail,
+  //           formMessage,
+  //           formName,
+  //           formNewsletter,
+  //           formUsername,
+  //           isCaptchaValid,
+  //           isErrorShown,
+  //           isErrorSpamBotShown,
+  //           isFormSubmitted,
+  //           isFormValid,
+  //         },
+  //         headers: { 'content-type': 'application/json' },
+  //         method: 'POST',
+  //         url: '/contact.php'
+  //       })
+  //         .then((res) => {
+  //           console.info(res)
 
-            setFormEmail('')
-            setFormMessage('')
-            setFormName('')
-            setFormNewsletter(false)
-            setIsCaptchaValid(false)
-            setIsErrorShown(false)
-            setIsErrorSpamBotShown(false)
-            setIsFormSubmitted(true)
-            setIsFormValid(false)
-          })
-          .catch((err) => {
-            console.warn('An error occurred: ', err)
-          })
-      }, 1000)
-    } else if (formUsername.length > 0) {
-      setIsErrorSpamBotShown(true)
-    } else {
-      setIsErrorShown(true)
-    }
-  }, [formEmail, formMessage, formName, formNewsletter, formUsername, isCaptchaValid, isErrorShown, isErrorSpamBotShown, isFormSubmitted, isFormValid])
+  //           setFormEmail('')
+  //           setFormMessage('')
+  //           setFormName('')
+  //           setFormNewsletter(false)
+  //           setIsCaptchaValid(false)
+  //           setIsErrorShown(false)
+  //           setIsErrorSpamBotShown(false)
+  //           setIsFormSubmitted(true)
+  //           setIsFormValid(false)
+  //         })
+  //         .catch((err) => {
+  //           console.warn('An error occurred: ', err)
+  //         })
+  //     }, 1000)
+  //   } else if (formUsername.length > 0) {
+  //     setIsErrorSpamBotShown(true)
+  //   } else {
+  //     setIsErrorShown(true)
+  //   }
+  // }, [formEmail, formMessage, formName, formNewsletter, formUsername, isCaptchaValid, isErrorShown, isErrorSpamBotShown, isFormSubmitted, isFormValid])
 
   return (
     <>
