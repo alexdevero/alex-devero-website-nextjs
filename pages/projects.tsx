@@ -24,6 +24,44 @@ const gh = new GitHub({
   token: githubCredentials.token
 })
 
+const projects = [{
+  alt: 'Supernova',
+  src: '/images/thumbnails/thumbnail-supernova@2x.jpg',
+  href: 'https://www.supernova.io',
+  title: 'Supernova',
+  no: '1',
+}, {
+  alt: 'Fresh & Tasty',
+  src: '/images/thumbnails/thumbnail-fresh-tasty@2x.jpg',
+  href: 'https://www.freshandtasty.cz',
+  title: 'Fresh & Tasty',
+  no: '2',
+}, {
+  alt: 'Slavnosti růžového vína',
+  src: '/images/thumbnails/thumbnail-slavnosti-ruzoveho-vina@2x.jpg',
+  href: 'https://www.slavnostiruzovehovina.cz',
+  title: 'Slavnosti růžového vína',
+  no: '3',
+}, {
+  alt: 'Česká Whisky',
+  src: '/images/thumbnails/thumbnail-ceska-whisky@2x.jpg',
+  href: 'https://www.ceskawhisky.cz',
+  title: 'Česká Whisky',
+  no: '4',
+}, {
+  alt: 'Tesla Motors',
+  src: '/images/thumbnails/thumbnail-tesla@2x.jpg',
+  href: '',
+  title: 'Tesla Motors',
+  no: '5',
+}, {
+  alt: 'Harley-Davidson',
+  src: '/images/thumbnails/thumbnail-harley-davidson@2x.jpg',
+  href: '',
+  title: 'Harley-Davidson',
+  no: '6',
+}]
+
 const alexData = gh.getUser('alexdevero')
 
 const Projects = memo(() => {
@@ -83,169 +121,35 @@ const Projects = memo(() => {
         </div>
 
         <div className="row">
-          <div className="col-md-6 col-lg-4">
-            <div className="project__container">
-              <div className="project__header">
-                <Zoom>
-                  <Image
-                    height="500"
-                    alt="Supernova"
-                    src="/images/thumbnails/thumbnail-supernova@2x.jpg"
-                    width="500"
-                    className="project__thumbnail"
-                  />
-                </Zoom>
-              </div>
+          {projects.map(project => (
+            <div key={project.title} className="col-md-6 col-lg-4">
+              <div className="project__container">
+                <div className="project__header">
+                  <Zoom>
+                    <Image
+                      height="500"
+                      alt={project.alt}
+                      src={project.src}
+                      width="500"
+                      className="project__thumbnail"
+                    />
+                  </Zoom>
+                </div>
 
-              <div className="project__body">
-                <div className="project__link">
-                  <span className="project__number">
-                    No.<span>1</span>
-                  </span>
+                <div className="project__body">
+                  <div className="project__link">
+                    <span className="project__number">
+                      No.<span>{project.no}</span>
+                    </span>
 
-                  <h5 className="project__heading h5">Supernova</h5>
+                    <h5 className="project__heading h5">{project.title}</h5>
 
-                  <a href="https://www.supernova.io" className="project__link" target="_blank" rel="noopener noreferrer"><span className="fas fa-external-link-alt" style={{ marginLeft: 6, fontSize: 16 }} /></a>
+                    <a href={project.href} className="project__link" target="_blank" rel="noopener noreferrer"><span className="fas fa-external-link-alt" style={{ marginLeft: 6, fontSize: 16 }} /></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="col-md-6 col-lg-4">
-            <div className="project__container">
-              <div className="project__header">
-                <Zoom>
-                  <Image
-                    height="500"
-                    alt="Fresh & Tasty"
-                    src="/images/thumbnails/thumbnail-fresh-tasty@2x.jpg"
-                    width="500"
-                    className="project__thumbnail"
-                  />
-                </Zoom>
-              </div>
-
-              <div className="project__body">
-                <div className="project__link">
-                  <span className="project__number">
-                    No.<span>2</span>
-                  </span>
-
-                  <h5 className="project__heading h5">Fresh & Tasty</h5>
-
-                  <a href="https://www.freshandtasty.cz" className="project__link" target="_blank" rel="noopener noreferrer"><span className="fas fa-external-link-alt" style={{ marginLeft: 6, fontSize: 16 }} /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-6 col-lg-4">
-            <div className="project__container">
-              <div className="project__header">
-                <Zoom>
-                  <Image
-                    height="500"
-                    alt="Slavnosti růžového vína"
-                    src="/images/thumbnails/thumbnail-slavnosti-ruzoveho-vina@2x.jpg"
-                    width="500"
-                    className="project__thumbnail"
-                  />
-                </Zoom>
-              </div>
-
-              <div className="project__body">
-                <div className="project__link">
-                  <span className="project__number">
-                    No.<span>3</span>
-                  </span>
-
-                  <h5 className="project__heading h5">Slavnosti růžového vína</h5>
-
-                  <a href="https://www.slavnostiruzovehovina.cz" className="project__link" target="_blank" rel="noopener noreferrer"><span className="fas fa-external-link-alt" style={{ marginLeft: 6, fontSize: 16 }} /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-6 col-lg-4">
-            <div className="project__container">
-              <div className="project__header">
-                <Zoom>
-                  <Image
-                    height="500"
-                    alt="Česká Whisky"
-                    src="/images/thumbnails/thumbnail-ceska-whisky@2x.jpg"
-                    width="500"
-                    className="project__thumbnail"
-                  />
-                </Zoom>
-              </div>
-
-              <div className="project__body">
-                <div className="project__link">
-                  <span className="project__number">
-                    No.<span>6</span>
-                  </span>
-
-                  <h5 className="project__heading h5">Česká Whisky</h5>
-
-                  <a href="https://www.ceskawhisky.cz" className="project__link" target="_blank" rel="noopener noreferrer"><span className="fas fa-external-link-alt" style={{ marginLeft: 6, fontSize: 16 }} /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-6 col-lg-4">
-            <div className="project__container">
-              <div className="project__header">
-                <Zoom>
-                  <Image
-                    height="500"
-                    alt="Tesla Motors"
-                    src="/images/thumbnails/thumbnail-tesla@2x.jpg"
-                    width="500"
-                    className="project__thumbnail"
-                  />
-                </Zoom>
-              </div>
-
-              <div className="project__body">
-                <div className="project__link">
-                  <span className="project__number">
-                    No.<span>4</span>
-                  </span>
-
-                  <h5 className="project__heading h5">Tesla Motors</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-6 col-lg-4">
-            <div className="project__container">
-              <div className="project__header">
-                <Zoom>
-                  <Image
-                    height="500"
-                    alt="Harley-Davidson"
-                    src="/images/thumbnails/thumbnail-harley-davidson@2x.jpg"
-                    width="500"
-                    className="project__thumbnail"
-                  />
-                </Zoom>
-              </div>
-
-              <div className="project__body">
-                <div className="project__link">
-                  <span className="project__number">
-                    No.<span>5</span>
-                  </span>
-
-                  <h5 className="project__heading h5">Harley-Davidson</h5>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
