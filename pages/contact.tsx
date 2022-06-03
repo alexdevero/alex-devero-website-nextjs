@@ -1,5 +1,4 @@
 import React from 'react'
-import $ from 'jquery'
 import axios from 'axios'
 // import Recaptcha from 'react-recaptcha''
 
@@ -93,34 +92,6 @@ class Contact extends React.Component {
           .catch((err) => {
             console.warn('An error occurred: ', err)
           })
-
-        // $.ajax({
-        //   data: this.state,
-        //   type: 'POST',
-        //   // url: require('/contact.php'),
-        //   success: function(data) {
-        //     console.info(data)
-        //   },
-        //   error: function(xhr, status, err) {
-        //     console.error(status, err.toString())
-        //   }
-        // })
-
-        // Send event to Google Analytics
-        // typeof window !== 'undefined' && window.gtag('event', 'contact')
-
-        // Reset state after sending the form
-        // this.setState({
-        //   formEmail: '',
-        //   formMessage: '',
-        //   formName: '',
-        //   formNewsletter: false,
-        //   isCaptchaValid: false,
-        //   isErrorShown: false,
-        //   isErrorSpamBotShown: false,
-        //   isFormSubmitted: true,
-        //   isFormValid: false
-        // })
       }, 1000)
     } else if (this.state.formUsername.length > 0) {
       this.setState({
