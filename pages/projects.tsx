@@ -88,6 +88,7 @@ const Projects = memo(() => {
               <div className="project__header">
                 <Zoom>
                   <Image
+                    height="500"
                     alt="Supernova"
                     src="/images/thumbnails/thumbnail-supernova@2x.jpg"
                     width="500"
@@ -115,6 +116,7 @@ const Projects = memo(() => {
               <div className="project__header">
                 <Zoom>
                   <Image
+                    height="500"
                     alt="Fresh & Tasty"
                     src="/images/thumbnails/thumbnail-fresh-tasty@2x.jpg"
                     width="500"
@@ -142,6 +144,7 @@ const Projects = memo(() => {
               <div className="project__header">
                 <Zoom>
                   <Image
+                    height="500"
                     alt="Slavnosti růžového vína"
                     src="/images/thumbnails/thumbnail-slavnosti-ruzoveho-vina@2x.jpg"
                     width="500"
@@ -169,6 +172,7 @@ const Projects = memo(() => {
               <div className="project__header">
                 <Zoom>
                   <Image
+                    height="500"
                     alt="Česká Whisky"
                     src="/images/thumbnails/thumbnail-ceska-whisky@2x.jpg"
                     width="500"
@@ -196,6 +200,7 @@ const Projects = memo(() => {
               <div className="project__header">
                 <Zoom>
                   <Image
+                    height="500"
                     alt="Tesla Motors"
                     src="/images/thumbnails/thumbnail-tesla@2x.jpg"
                     width="500"
@@ -221,6 +226,7 @@ const Projects = memo(() => {
               <div className="project__header">
                 <Zoom>
                   <Image
+                    height="500"
                     alt="Harley-Davidson"
                     src="/images/thumbnails/thumbnail-harley-davidson@2x.jpg"
                     width="500"
