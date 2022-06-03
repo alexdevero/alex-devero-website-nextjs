@@ -46,11 +46,11 @@ const Footer = memo(() => (
           </a>
         </li>
 
-        {/*<li>
+        {/* <li>
           <a href="https://angel.co/alexdevero" rel="noopener noreferrer" target="_blank">
             <span className="fab fa-angellist" />
           </a>
-        </li>*/}
+        </li> */}
 
         {/* <li>
           <a href="https://stackoverflow.com/story/alexdevero" rel="noopener noreferrer" target="_blank">

@@ -1,4 +1,5 @@
 import { memo, useCallback, useEffect, useState } from 'react'
+import Image from 'next/image'
 import GitHub from 'github-api'
 import Zoom from 'react-medium-image-zoom'
 
@@ -30,7 +31,7 @@ const Projects = memo(() => {
   const [githubData, setGithubData] = useState<Repository[]>([])
 
   const fetchGithubRepository = useCallback(() => {
-    alexData.listRepos({sort: 'pushed', since: ''}, async (err: unknown, repositories: Repository[]) => {
+    alexData.listRepos({ sort: 'pushed', since: '' }, async (error: unknown, repositories: Repository[]) => {
       // List all repositories
       // docs: http://github-tools.github.io/github/
       await Promise.all(repositories.map(async (repository) => {
@@ -52,15 +53,23 @@ const Projects = memo(() => {
       })).then((data) => {
         setAreGithubDataReady(true)
         setGithubData(data.filter(project => project.isFork === false ? 1 : 0) as Repository[])
+      }).catch(e => {
+        // eslint-disable-next-line no-console
+        console.log(e)
       })
+
+      if (error) {
+        // eslint-disable-next-line no-console
+        console.log(error)
+      }
     })
   }, [])
 
   useEffect(() => {
     fetchGithubRepository()
-  }, [])
+  }, [fetchGithubRepository])
 
-  return(
+  return (
     <Layout page="projects" title="Projects | Alex Devero">
       <div className="hero">
         <h1>Projects</h1>
@@ -75,10 +84,10 @@ const Projects = memo(() => {
 
         <div className="row">
           <div className="col-md-6 col-lg-4">
-            <div className="project__container" to="#">
+            <div className="project__container">
               <div className="project__header">
                 <Zoom>
-                  <img
+                  <Image
                     alt="Supernova"
                     src="/images/thumbnails/thumbnail-supernova@2x.jpg"
                     width="500"
@@ -102,10 +111,10 @@ const Projects = memo(() => {
           </div>
 
           <div className="col-md-6 col-lg-4">
-            <div className="project__container" to="#">
+            <div className="project__container">
               <div className="project__header">
                 <Zoom>
-                  <img
+                  <Image
                     alt="Fresh & Tasty"
                     src="/images/thumbnails/thumbnail-fresh-tasty@2x.jpg"
                     width="500"
@@ -129,10 +138,10 @@ const Projects = memo(() => {
           </div>
 
           <div className="col-md-6 col-lg-4">
-            <div className="project__container" to="#">
+            <div className="project__container">
               <div className="project__header">
                 <Zoom>
-                  <img
+                  <Image
                     alt="Slavnosti růžového vína"
                     src="/images/thumbnails/thumbnail-slavnosti-ruzoveho-vina@2x.jpg"
                     width="500"
@@ -156,10 +165,10 @@ const Projects = memo(() => {
           </div>
 
           <div className="col-md-6 col-lg-4">
-            <div className="project__container" to="#">
+            <div className="project__container">
               <div className="project__header">
                 <Zoom>
-                  <img
+                  <Image
                     alt="Česká Whisky"
                     src="/images/thumbnails/thumbnail-ceska-whisky@2x.jpg"
                     width="500"
@@ -183,10 +192,10 @@ const Projects = memo(() => {
           </div>
 
           <div className="col-md-6 col-lg-4">
-            <div className="project__container" to="#">
+            <div className="project__container">
               <div className="project__header">
                 <Zoom>
-                  <img
+                  <Image
                     alt="Tesla Motors"
                     src="/images/thumbnails/thumbnail-tesla@2x.jpg"
                     width="500"
@@ -208,10 +217,10 @@ const Projects = memo(() => {
           </div>
 
           <div className="col-md-6 col-lg-4">
-            <div className="project__container" to="#">
+            <div className="project__container">
               <div className="project__header">
                 <Zoom>
-                  <img
+                  <Image
                     alt="Harley-Davidson"
                     src="/images/thumbnails/thumbnail-harley-davidson@2x.jpg"
                     width="500"
@@ -241,23 +250,27 @@ const Projects = memo(() => {
           <p>My latest experiments you can find on my <a href="https://github.com/alexdevero">GitHub</a>:</p>
         </div>
 
-        {!areGithubDataReady && <ul className="loader">
-          <li className="loader__center"></li>
-          <li className="loader__item loader__item-1"></li>
-          <li className="loader__item loader__item-2"></li>
-          <li className="loader__item loader__item-3"></li>
-          <li className="loader__item loader__item-4"></li>
-          <li className="loader__item loader__item-5"></li>
-          <li className="loader__item loader__item-6"></li>
-          <li className="loader__item loader__item-7"></li>
-          <li className="loader__item loader__item-8"></li>
-        </ul>}
+        {!areGithubDataReady && (
+          <ul className="loader">
+            <li className="loader__center" />
+            <li className="loader__item loader__item-1" />
+            <li className="loader__item loader__item-2" />
+            <li className="loader__item loader__item-3" />
+            <li className="loader__item loader__item-4" />
+            <li className="loader__item loader__item-5" />
+            <li className="loader__item loader__item-6" />
+            <li className="loader__item loader__item-7" />
+            <li className="loader__item loader__item-8" />
+          </ul>
+        )}
 
-        {areGithubDataReady && <ul className="projects__github-list list--unstyled mt-1">
-          {githubData.length > 0 && githubData.map((repository, index) => {
-            return <li key={repository.id}>No.{index < 10 ? `0${index}` : index}: <a className="link--red" href={repository.url} rel="noopener noreferrer" target="_blank">{repository.name} {repository.language !== null && `(${repository.language})`}</a></li>
-          })}
-        </ul>}
+        {areGithubDataReady && (
+          <ul className="projects__github-list list--unstyled mt-1">
+            {githubData.length > 0 && githubData.map((repository, index) => {
+              return <li key={repository.id}>No.{index < 10 ? `0${index}` : index}: <a className="link--red" href={repository.url} rel="noopener noreferrer" target="_blank">{repository.name} {repository.language !== null && `(${repository.language})`}</a></li>
+            })}
+          </ul>
+        )}
       </div>
     </Layout>
   )

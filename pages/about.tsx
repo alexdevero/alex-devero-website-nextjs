@@ -6,6 +6,28 @@ import { goodreadsCredentials } from '../_credentials/credentials.goodreads'
 
 import Layout from '../components/layout'
 
+type UserShelf = {
+  name: {
+    _text: string;
+  };
+  id: {
+    _text: string;
+  };
+  book_count: {
+    _text: string;
+  };
+}
+
+type GoodReadsResponse = {
+  GoodreadsResponse: {
+    user: {
+      user_shelves: {
+        user_shelf: UserShelf[];
+      };
+    };
+  };
+}
+
 type Shelf = {
   shelfName: string;
   shelfId: string;
@@ -18,8 +40,8 @@ const About = memo(() => {
 
   const goodreadsDataFetcher = useCallback(async () => {
     const response = await axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://www.goodreads.com/user/show/17435617.xml?key=${goodreadsCredentials.key}`).then(data => data.data)
-    const responseConverted = await xml2js(response, { compact: true, spaces: 2 })
-    const userShelvesArray = await responseConverted.GoodreadsResponse.user.user_shelves.user_shelf
+    const responseConverted = await xml2js(response, { compact: true })
+    const userShelvesArray = await (responseConverted as GoodReadsResponse).GoodreadsResponse.user.user_shelves.user_shelf
 
     await Promise.all(userShelvesArray.map((shelf) => {
       return {
@@ -35,7 +57,7 @@ const About = memo(() => {
 
   useEffect(() => {
     goodreadsDataFetcher()
-  }, [])
+  }, [goodreadsDataFetcher])
 
   return (
     <Layout page="about" title="About | Alex Devero">
@@ -56,23 +78,31 @@ const About = memo(() => {
 
             <p>I am an avid reader. Here are bookshelves with some of the books I've read so far (source: <a className="link--red link--underline" href="https://www.goodreads.com/user/show/17435617-alex-devero" target="_blank" rel="noopener noreferrer">Goodreads</a>):</p>
 
-            {isBookListReady && <ul className="about__books-list list--unstyled mt-1">
-              {goodreadsData.length > 0 && goodreadsData.map((shelf) => {
-                return <li key={shelf.shelfId}>Bookshelf: <a className="link--red" href={`https://www.goodreads.com/review/list/17435617?shelf=${shelf.shelfName.toLowerCase()}`} rel="noopener noreferrer" target="_blank">{shelf.shelfName} ({shelf.shelfBookCount})</a></li>
-              })}
-            </ul>}
+            {isBookListReady && (
+              <ul className="about__books-list list--unstyled mt-1">
+                {goodreadsData.length > 0 && goodreadsData.map((shelf) => {
+                  return (
+                    <li key={shelf.shelfId}>
+                      Bookshelf: <a className="link--red" href={`https://www.goodreads.com/review/list/17435617?shelf=${shelf.shelfName.toLowerCase()}`} rel="noopener noreferrer" target="_blank">{shelf.shelfName} ({shelf.shelfBookCount})</a>
+                    </li>
+                  )
+                })}
+              </ul>
+            )}
 
-            {!isBookListReady && <ul className="loader">
-              <li className="loader__center"></li>
-              <li className="loader__item loader__item-1"></li>
-              <li className="loader__item loader__item-2"></li>
-              <li className="loader__item loader__item-3"></li>
-              <li className="loader__item loader__item-4"></li>
-              <li className="loader__item loader__item-5"></li>
-              <li className="loader__item loader__item-6"></li>
-              <li className="loader__item loader__item-7"></li>
-              <li className="loader__item loader__item-8"></li>
-            </ul>}
+            {!isBookListReady && (
+              <ul className="loader">
+                <li className="loader__center" />
+                <li className="loader__item loader__item-1" />
+                <li className="loader__item loader__item-2" />
+                <li className="loader__item loader__item-3" />
+                <li className="loader__item loader__item-4" />
+                <li className="loader__item loader__item-5" />
+                <li className="loader__item loader__item-6" />
+                <li className="loader__item loader__item-7" />
+                <li className="loader__item loader__item-8" />
+              </ul>
+            )}
 
             {/*
               // * Inspiration:

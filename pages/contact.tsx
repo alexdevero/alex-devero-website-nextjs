@@ -4,8 +4,6 @@ import axios from 'axios'
 
 import Layout from '../components/layout'
 
-const API_PATH = 'http://localhost:3000/contact.php'
-
 const Contact = memo(() => {
   const [formEmail, setFormEmail] = useState('')
   const [formMessage, setFormMessage] = useState('')
@@ -103,7 +101,7 @@ const Contact = memo(() => {
     } else {
       setIsErrorShown(true)
     }
-  }, [])
+  }, [formEmail, formMessage, formName, formNewsletter, formUsername, isCaptchaValid, isErrorShown, isErrorSpamBotShown, isFormSubmitted, isFormValid])
 
   return (
     <>
@@ -120,10 +118,10 @@ const Contact = memo(() => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-10 col-lg-7 col-xl-6">
-              <p>Do you have some project you want to realize? Please, contact me via <a href="mailto:deveroalex@gmail.com">email</a>. I will reply in 3 days. {/*You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information.*/}</p>
+              <p>Do you have some project you want to realize? Please, contact me via <a href="mailto:deveroalex@gmail.com">email</a>. I will reply in 3 days. {/* You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information. */}</p>
 
-              <p style={{ display: 'none' }}>Do you have some project you want to realize? Please, contact me via the form below. I will reply in 3 days. {/*You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information.*/}</p>
-              </div>
+              <p style={{ display: 'none' }}>Do you have some project you want to realize? Please, contact me via the form below. I will reply in 3 days. {/* You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information. */}</p>
+            </div>
           </div>
 
           {/* <div className="row justify-content-center">
