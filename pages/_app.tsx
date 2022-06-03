@@ -1,3 +1,5 @@
+import { NextComponentType, GetStaticProps } from 'next'
+
 // Import main stylesheet
 // import '../style.css'
 
@@ -27,7 +29,7 @@ import './../styles/pages/_page-projects.css'
 
 import 'react-medium-image-zoom/dist/styles.css'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: { Component: NextComponentType; pageProps: GetStaticProps }) {
   return <Component {...pageProps} />
 }
 
