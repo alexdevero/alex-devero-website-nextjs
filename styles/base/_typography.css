@@ -99,6 +99,15 @@ p a:hover {
   transition: var(--tr-all);
 }
 
+pre,
+code {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.618;
+  color: var(--color-black);
+  white-space: pre-wrap;
+}
+
 .link--red:hover {
   color: #111;
   text-decoration-color: #111;
