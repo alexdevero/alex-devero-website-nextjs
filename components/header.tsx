@@ -23,30 +23,53 @@ const Header = memo(() => {
       <nav className="nav-main">
         <ul className={generateNavClass()}>
           <li>
-            <button className="nav__toggler nav__toggler--close" onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
+            <button
+              className="nav__toggler nav__toggler--close"
+              onClick={() => toggleMobileMenu(!isMobileMenuVisible)}
+            >
               <span />
               <span />
             </button>
           </li>
 
           <li>
-            <span onClick={() => toggleMobileMenu(!isMobileMenuVisible)}><Link href="/"><a>Home</a></Link></span>
+            <span onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
+              <Link href="/">Home</Link>
+            </span>
           </li>
 
           <li>
-            <span onClick={() => toggleMobileMenu(!isMobileMenuVisible)}><Link href="/projects"><a>Projects</a></Link></span>
+            <span onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
+              <Link href="/projects">Projects</Link>
+            </span>
           </li>
 
           <li>
-            <span onClick={() => toggleMobileMenu(!isMobileMenuVisible)}><Link href="/about"><a>About</a></Link></span>
+            <span onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
+              <Link href="/about">About</Link>
+            </span>
           </li>
 
           <li>
-            <a href="https://blog.alexdevero.com/" rel="noopener noreferrer" target="_blank" onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>Blog</a>
+            <a
+              href="https://blog.alexdevero.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => toggleMobileMenu(!isMobileMenuVisible)}
+            >
+              Blog
+            </a>
           </li>
 
           <li>
-            <a href="https://devero.io/" rel="noopener noreferrer" target="_blank" onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>Devero</a>
+            <a
+              href="https://devero.io/"
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => toggleMobileMenu(!isMobileMenuVisible)}
+            >
+              Devero
+            </a>
           </li>
 
           {/* <li>
@@ -58,11 +81,16 @@ const Header = memo(() => {
           </li> */}
 
           <li>
-            <span onClick={() => toggleMobileMenu(!isMobileMenuVisible)}><Link href="/contact"><a>Contact</a></Link></span>
+            <span onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
+              <Link href="/contact">Contact</Link>
+            </span>
           </li>
         </ul>
 
-        <button className="nav__toggler nav__toggler--toggle" onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
+        <button
+          className="nav__toggler nav__toggler--toggle"
+          onClick={() => toggleMobileMenu(!isMobileMenuVisible)}
+        >
           <span />
           <span />
           <span />
