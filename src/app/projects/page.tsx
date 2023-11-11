@@ -1,132 +1,43 @@
-'use client'
-
-import { memo, useCallback, useEffect, useState } from 'react'
-import Image from 'next/image'
-import GitHub from 'github-api'
-import Zoom from 'react-medium-image-zoom'
+import { Octokit } from '@octokit/rest'
 
 import { githubCredentials } from '../../../credentials/credentials-github'
 
-import Layout from '../../components/layout'
+import Layout from '@/components/layout'
 
-type Repository = {
-  description: string
-  fork: boolean
-  html_url: string
-  id: string
-  isFork: boolean
-  language: string
-  name: string
-  url: string
-}
+import { projects } from '@/data/projects'
 
-const gh = new GitHub({
-  username: githubCredentials.username,
-  password: githubCredentials.password,
-  token: githubCredentials.token,
+const octokit = new Octokit({
+  auth: githubCredentials.token,
 })
 
-const projects = [
-  {
-    alt: 'Supernova',
-    src: '/images/thumbnails/thumbnail-supernova@2x.jpg',
-    href: 'https://www.supernova.io',
-    title: 'Supernova',
-    no: '1',
-  },
-  {
-    alt: 'Fresh & Tasty',
-    src: '/images/thumbnails/thumbnail-fresh-tasty@2x.jpg',
-    href: 'https://www.freshandtasty.cz',
-    title: 'Fresh & Tasty',
-    no: '2',
-  },
-  {
-    alt: 'Slavnosti růžového vína',
-    src: '/images/thumbnails/thumbnail-slavnosti-ruzoveho-vina@2x.jpg',
-    href: 'https://www.slavnostiruzovehovina.cz',
-    title: 'Slavnosti růžového vína',
-    no: '3',
-  },
-  {
-    alt: 'Česká Whisky',
-    src: '/images/thumbnails/thumbnail-ceska-whisky@2x.jpg',
-    href: 'https://www.ceskawhisky.cz',
-    title: 'Česká Whisky',
-    no: '4',
-  },
-  {
-    alt: 'Tesla Motors',
-    src: '/images/thumbnails/thumbnail-tesla@2x.jpg',
-    href: '',
-    title: 'Tesla Motors',
-    no: '5',
-  },
-  {
-    alt: 'Harley-Davidson',
-    src: '/images/thumbnails/thumbnail-harley-davidson@2x.jpg',
-    href: '',
-    title: 'Harley-Davidson',
-    no: '6',
-  },
-]
+async function getRepos() {
+  try {
+    const response = await octokit.repos.listForUser({
+      username: 'alexdevero',
+      type: 'owner',
+      sort: 'updated',
+      per_page: 100,
+    })
 
-const alexData = gh.getUser('alexdevero')
+    return response.data.map((repo) => ({
+      id: repo.id,
+      name: repo.name,
+      description: repo.description,
+      url: repo.html_url,
+      language: repo.language,
+      isFork: repo.fork,
+    }))
+  } catch (error) {
+    console.error(error)
+    return null
+  }
+}
 
-const Projects = memo(() => {
-  const [areGithubDataReady, setAreGithubDataReady] = useState(false)
-  const [displayProjects] = useState(false)
-  const [githubData, setGithubData] = useState<Repository[]>([])
+export default async function Projects() {
+  const repos = await getRepos()
 
-  const fetchGithubRepository = useCallback(() => {
-    alexData.listRepos(
-      { sort: 'pushed', since: '' },
-      async (error: unknown, repositories: Repository[]) => {
-        // List all repositories
-        // docs: http://github-tools.github.io/github/
-        await Promise.all(
-          repositories.map(async (repository) => {
-            const repositoryName = await repository.name
-            const repositoryDescription = await repository.description
-            const repositoryId = await repository.id
-            const repositoryIsFork = await repository.fork
-            const repositoryLanguage = await repository.language
-            const repositoryURL = await repository.html_url
-
-            return {
-              name: repositoryName,
-              description: repositoryDescription,
-              id: repositoryId,
-              isFork: repositoryIsFork,
-              language: repositoryLanguage,
-              url: repositoryURL,
-            }
-          })
-        )
-          .then((data) => {
-            setAreGithubDataReady(true)
-            setGithubData(
-              data.filter((project) =>
-                project.isFork === false ? 1 : 0
-              ) as Repository[]
-            )
-          })
-          .catch((e) => {
-            // eslint-disable-next-line no-console
-            console.log(e)
-          })
-
-        if (error) {
-          // eslint-disable-next-line no-console
-          console.log(error)
-        }
-      }
-    )
-  }, [])
-
-  useEffect(() => {
-    fetchGithubRepository()
-  }, [fetchGithubRepository])
+  const displayProjects = true
+  const areGithubDataReady = repos !== null
 
   return (
     <Layout page="projects" title="Projects | Alex Devero">
@@ -146,41 +57,14 @@ const Projects = memo(() => {
 
           <div className="row">
             {projects.map((project) => (
-              <div key={project.title} className="col-md-6 col-lg-4">
+              <div key={project.company} className="col-md-6 col-lg-4">
                 <div className="project__container">
-                  <div className="project__header">
-                    <Zoom>
-                      <Image
-                        height="500"
-                        alt={project.alt}
-                        src={project.src}
-                        width="500"
-                        className="project__thumbnail"
-                      />
-                    </Zoom>
-                  </div>
+                  <span className="project__number">{project.position}</span>
 
-                  <div className="project__body">
-                    <div className="project__link">
-                      <span className="project__number">
-                        No.<span>{project.no}</span>
-                      </span>
-
-                      <h5 className="project__heading h5">{project.title}</h5>
-
-                      <a
-                        href={project.href}
-                        className="project__link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <span
-                          className="fas fa-external-link-alt"
-                          style={{ marginLeft: 6, fontSize: 16 }}
-                        />
-                      </a>
-                    </div>
-                  </div>
+                  <h5 className="project__heading h5">{project.company}</h5>
+                  <h5 className="project__heading h5">
+                    {project.yearFrom}-{project.yearTo}{' '}
+                  </h5>
                 </div>
               </div>
             ))}
@@ -204,31 +88,25 @@ const Projects = memo(() => {
 
         {areGithubDataReady && (
           <ul className="projects__github-list list--unstyled mt-1">
-            {githubData.length > 0 &&
-              githubData.map((repository, index) => {
-                return (
-                  <li key={repository.id}>
-                    No.{index < 10 ? `0${index}` : index}:{' '}
-                    <a
-                      className="link--red"
-                      href={repository.url}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      {repository.name}{' '}
-                      {repository.language !== null &&
-                        `(${repository.language})`}
-                    </a>
-                  </li>
-                )
-              })}
+            {repos?.map((repository, index) => {
+              return (
+                <li key={repository.id}>
+                  No.{index < 10 ? `0${index}` : index}:{' '}
+                  <a
+                    className="link--red"
+                    href={repository.url}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {repository.name}{' '}
+                    {repository.language !== null && `(${repository.language})`}
+                  </a>
+                </li>
+              )
+            })}
           </ul>
         )}
       </div>
     </Layout>
   )
-})
-
-Projects.displayName = 'Projects'
-
-export default Projects
+}

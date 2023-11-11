@@ -35,6 +35,7 @@
     "ship": "npm run build && npm run export"
   },
   "dependencies": {
+    "@octokit/rest": "^20.0.2",
     "axios": "1.6.1",
     "github-api": "3.4.0",
     "next": "14.0.2",

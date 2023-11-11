@@ -28,7 +28,7 @@
     "block-scoped-var": "warn",
     "block-spacing": "warn",
     "brace-style": "error",
-    "camelcase": "warn",
+    // "camelcase": "warn",
     "comma-dangle": [
       "warn",
       {
@@ -286,7 +286,7 @@
 
     // JSX
     "react/jsx-boolean-value": ["error", "never"],
-    "react/jsx-child-element-spacing": "error",
+    // "react/jsx-child-element-spacing": "error",
     "react/jsx-closing-bracket-location": "error",
     "react/jsx-closing-tag-location": "error",
     "react/jsx-curly-newline": "error",
@@ -338,7 +338,7 @@
     // "@typescript-eslint/explicit-member-accessibility": "error",
     "@typescript-eslint/indent": ["warn", 2, { "SwitchCase": 1 }],
     // "@typescript-eslint/interface-name-prefix": "error",
-    "@typescript-eslint/member-delimiter-style": "error",
+    // "@typescript-eslint/member-delimiter-style": "error",
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-empty-interface": "error",
     "@typescript-eslint/no-explicit-any": "error",
