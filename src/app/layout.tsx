@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { Inter } from 'next/font/google'
 
 // Import Base
 import './../styles/base/_modern-normalize.css'
@@ -25,17 +26,22 @@ import './../styles/pages/_page-home.css'
 import './../styles/pages/_page-projects.css'
 
 import 'react-medium-image-zoom/dist/styles.css'
+import { type Metadata } from 'next'
+
+const inter = Inter({
+  display: 'swap',
+  subsets: ['latin-ext'],
+})
+
+export const metadata: Metadata = {
+  title: 'Alex Devero',
+  description: 'Entrepreneur, designer and developer from Czech Republic.',
+}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
-        {/* <!-- Typeface Raleway --> */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&amp;subset=latin-ext&display=optional"
-        />
-
         {/* <!-- Font Awesome --> */}
         <link
           rel="stylesheet"
