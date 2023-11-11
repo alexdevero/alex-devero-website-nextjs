@@ -1,11 +1,13 @@
+'use client'
+
 import { memo, useCallback, useEffect, useState } from 'react'
 import Image from 'next/image'
 import GitHub from 'github-api'
 import Zoom from 'react-medium-image-zoom'
 
-import { githubCredentials } from '../../credentials/credentials-github'
+import { githubCredentials } from '../../../credentials/credentials-github'
 
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 
 type Repository = {
   description: string

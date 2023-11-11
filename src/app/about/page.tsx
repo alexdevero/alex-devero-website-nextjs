@@ -1,12 +1,14 @@
+'use client'
+
 import axios, { AxiosError } from 'axios'
 import { memo, useCallback, useEffect, useState } from 'react'
 import { xml2js } from 'xml-js'
 
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 
-import { goodreadsCredentials } from '../../credentials/credentials-goodreads'
+import { goodreadsCredentials } from '../../../credentials/credentials-goodreads'
 
-import { personalLinks, socialMedia } from '../data/links'
+import { personalLinks, socialMedia } from '../../data/links'
 
 type UserShelf = {
   name: {

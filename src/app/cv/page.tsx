@@ -1,8 +1,8 @@
 import { memo, useEffect, useState } from 'react'
 
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 
-import { Cv as CvType } from '../types/cv'
+import { Cv as CvType } from '../../types/cv'
 
 const Cv = memo(() => {
   const [cv, setCv] = useState<CvType | null>(null)

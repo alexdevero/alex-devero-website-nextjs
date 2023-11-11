@@ -1,8 +1,6 @@
-import { memo } from 'react'
-
 import Layout from '../components/layout'
 
-const NotFoundPage = memo(() => (
+const NotFoundPage = () => (
   <Layout page="error" title="404 | Alex Devero">
     <div className="container">
       <div className="row justify-content-center">
@@ -18,8 +16,6 @@ const NotFoundPage = memo(() => (
       </div>
     </div>
   </Layout>
-))
-
-NotFoundPage.displayName = 'NotFoundPage'
+)
 
 export default NotFoundPage

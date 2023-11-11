@@ -2,7 +2,7 @@ import { memo } from 'react'
 // import axios from 'axios'
 // import Recaptcha from 'react-recaptcha''
 
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 
 const Contact = memo(() => {
   // const [formEmail, setFormEmail] = useState('')

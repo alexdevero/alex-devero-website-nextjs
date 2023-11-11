@@ -1,3 +1,5 @@
+'use client'
+
 import { memo, useCallback, useState } from 'react'
 import Link from 'next/link'
 
@@ -74,10 +76,6 @@ const Header = memo(() => {
 
           {/* <li>
             <a href="https://studio.devero.io/" rel="noopener noreferrer" target="_blank" onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>Studio</a>
-          </li> */}
-
-          {/* <li>
-            <span onClick={() => toggleMobileMenu(!isMobileMenuVisible)}><Link href="/thanks"><a>Thanks</a></Link></span>
           </li> */}
 
           <li>
