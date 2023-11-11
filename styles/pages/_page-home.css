@@ -1,8 +1,0 @@
-/* Page - Home */
-.page--home .page-content {
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
-  justify-content: center;
-  text-align: center;
-}
