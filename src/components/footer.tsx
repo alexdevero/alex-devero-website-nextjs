@@ -1,14 +1,14 @@
-import { memo, useMemo } from 'react'
+import { useMemo } from 'react'
 
 import { socialMedia } from '../data/links'
 
-const Footer = memo(() => {
+export default function Footer() {
   const currentYear = useMemo(() => new Date().getFullYear().toString(), [])
 
   return (
-    <footer className="footer">
+    <footer className="py-5">
       <nav>
-        <ul className="footer__media">
+        <ul className="flex align-center justify-center gap-4">
           <li>
             <a
               href={socialMedia.twitter}
@@ -81,13 +81,9 @@ const Footer = memo(() => {
         </ul>
       </nav>
 
-      <small className="footer__copy">
+      <p className="text-center mt-3 text-xs">
         Copyright &copy; <span>{currentYear}</span> Alex Devero
-      </small>
+      </p>
     </footer>
   )
-})
-
-Footer.displayName = 'Footer'
-
-export default Footer
+}

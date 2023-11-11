@@ -1,10 +1,11 @@
-import { memo, ReactChild } from 'react'
+import { ReactNode } from 'react'
+
 import Head from 'next/head'
 
 import Footer from './footer'
 import Header from './header'
 
-export const Layout = memo(({ children, page, title }: { children: ReactChild | ReactChild[]; page: string; title: string}) => (
+export const Layout = ({ children, title }: { children: ReactNode | ReactNode[]; title: string }) => (
   <>
     {title && (
       <Head>
@@ -12,16 +13,14 @@ export const Layout = memo(({ children, page, title }: { children: ReactChild | 
       </Head>
     )}
 
-    <div className={`page-wrapper page--${page}`}>
+    <div className='flex h-screen w-screen flex-1 flex-col px-7'>
       <Header />
 
-      <main className="page-content">{children}</main>
+      <main className='flex flex-1 flex-col'>{children}</main>
 
       <Footer />
     </div>
   </>
-))
-
-Layout.displayName = 'Layout'
+)
 
 export default Layout

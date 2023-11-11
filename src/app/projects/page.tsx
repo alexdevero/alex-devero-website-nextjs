@@ -1,10 +1,9 @@
 import { Octokit } from '@octokit/rest'
 
-import { githubCredentials } from '../../../credentials/credentials-github'
-
 import Layout from '@/components/layout'
-
 import { projects } from '@/data/projects'
+
+import { githubCredentials } from '../../../credentials/credentials-github'
 
 const octokit = new Octokit({
   auth: githubCredentials.token,
@@ -19,7 +18,7 @@ async function getRepos() {
       per_page: 100,
     })
 
-    return response.data.map((repo) => ({
+    return response.data.map(repo => ({
       id: repo.id,
       name: repo.name,
       description: repo.description,
@@ -40,32 +39,22 @@ export default async function Projects() {
   const areGithubDataReady = repos !== null
 
   return (
-    <Layout page="projects" title="Projects | Alex Devero">
-      <div className="hero">
-        <h1>Projects</h1>
-      </div>
+    <Layout title='Projects | Alex Devero'>
+      <h1 className='mb-5 mt-8 text-center text-5xl font-bold'>Projects</h1>
 
       {displayProjects ? (
-        <div className="projects__dashboard container">
-          <div className="row justify-content-center">
-            <div className="col-md-10 col-lg-7 col-xl-6">
-              <p className="mb-3 text--center">
-                Featured examples of my design & development work:
-              </p>
-            </div>
-          </div>
+        <div className='flex flex-col items-center justify-center'>
+          <p className='mb-8 text-center'>Some companies I've worked with so far:</p>
 
-          <div className="row">
-            {projects.map((project) => (
-              <div key={project.company} className="col-md-6 col-lg-4">
-                <div className="project__container">
-                  <span className="project__number">{project.position}</span>
+          <div className='mb-8 grid grid-cols-1 justify-center gap-6 md:grid-cols-2 lg:grid-cols-4'>
+            {projects.map(project => (
+              <div key={project.company} className='flex flex-col'>
+                <span className='text-lg font-bold'>{project.position}</span>
 
-                  <h5 className="project__heading h5">{project.company}</h5>
-                  <h5 className="project__heading h5">
-                    {project.yearFrom}-{project.yearTo}{' '}
-                  </h5>
-                </div>
+                <h5 className='text-base font-medium'>{project.company}</h5>
+                <h5 className='text-sm text-slate-500'>
+                  {project.yearFrom}-{project.yearTo}{' '}
+                </h5>
               </div>
             ))}
           </div>
@@ -74,32 +63,21 @@ export default async function Projects() {
         <span />
       )}
 
-      <div className="projects__header container">
-        <div className="mt-2 mb-2 text--center">
-          {/* <p>Welcome to my personal laboratory.</p> */}
-
-          <p>
-            Here are some projects I worked and that are on my{' '}
-            <a href="https://github.com/alexdevero">GitHub</a>:
-          </p>
-        </div>
+      <div>
+        <p className='mb-6 mt-2 text-center'>
+          Here are some projects I worked and that are on my <a href='https://github.com/alexdevero'>GitHub</a>:
+        </p>
 
         {!areGithubDataReady && <span>Loading...</span>}
 
         {areGithubDataReady && (
-          <ul className="projects__github-list list--unstyled mt-1">
+          <ul className='grid grid-cols-1 gap-2 md:grid-cols-2'>
             {repos?.map((repository, index) => {
               return (
                 <li key={repository.id}>
                   No.{index < 10 ? `0${index}` : index}:{' '}
-                  <a
-                    className="link--red"
-                    href={repository.url}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    {repository.name}{' '}
-                    {repository.language !== null && `(${repository.language})`}
+                  <a className='underline' href={repository.url} rel='noopener noreferrer' target='_blank'>
+                    {repository.name} {repository.language !== null && `(${repository.language})`}
                   </a>
                 </li>
               )

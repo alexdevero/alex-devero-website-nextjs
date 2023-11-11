@@ -1,23 +1,15 @@
-import { memo } from 'react'
+import { Layout } from '@/components/layout'
 
-import { Layout } from '../components/layout'
-
-const Home = memo(() => {
+export default function Home() {
   return (
-    <Layout page="home" title="Home | Alex Devero">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-md-10 col-lg-7 col-xl-6">
-            <h1 className="mb-2">Alex Devero</h1>
+    <Layout title='Home | Alex Devero'>
+      <div className='flex w-full flex-1 items-center justify-center'>
+        <div className='max-w-2xl'>
+          <h1 className='mb-2 text-center text-5xl font-bold'>Alex Devero</h1>
 
-            <p>Entrepreneur, designer and developer from Czech Republic.</p>
-          </div>
+          <p className='text-base'>Entrepreneur, designer and developer from Czech Republic.</p>
         </div>
       </div>
     </Layout>
   )
-})
-
-Home.displayName = 'Home'
-
-export default Home
+}

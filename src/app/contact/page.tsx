@@ -1,10 +1,8 @@
-import { memo } from 'react'
 // import axios from 'axios'
 // import Recaptcha from 'react-recaptcha''
+import Layout from '@/components/layout'
 
-import Layout from '../../components/layout'
-
-const Contact = memo(() => {
+export default function Contact() {
   // const [formEmail, setFormEmail] = useState('')
   // const [formMessage, setFormMessage] = useState('')
   // const [formName, setFormName] = useState('')
@@ -110,27 +108,19 @@ const Contact = memo(() => {
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
       </Helmet> */}
 
-      <Layout page="contact" title="Contact | Alex Devero">
-        <div className="hero">
-          <h1>Let's get in touch</h1>
-        </div>
+      <Layout title='Contact | Alex Devero'>
+        <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Let's get in touch</h1>
 
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-md-10 col-lg-7 col-xl-6">
-              <p>
-                Do you have some project you want to realize? Please, contact me
-                via <a href="mailto:deveroalex@gmail.com">email</a>. I will
-                reply in 3 days.{' '}
-                {/* You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information. */}
-              </p>
-
-              <p style={{ display: 'none' }}>
-                Do you have some project you want to realize? Please, contact me
-                via the form below. I will reply in 3 days.{' '}
-                {/* You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information. */}
-              </p>
-            </div>
+        <div className='flex flex-1 justify-center'>
+          <div className='flex max-w-3xl flex-col gap-3'>
+            <p>
+              Do you have some project you want to realize? Let's get in touch! Contact me on my{' '}
+              <a href='mailto:deveroalex@gmail.com' className='underline'>
+                email
+              </a>
+              .
+              {/* You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information. */}
+            </p>
           </div>
 
           {/* <div className="row justify-content-center">
@@ -213,8 +203,4 @@ const Contact = memo(() => {
       </Layout>
     </>
   )
-})
-
-Contact.displayName = 'Contact'
-
-export default Contact
+}
