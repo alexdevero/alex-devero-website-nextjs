@@ -10,7 +10,7 @@ export const projects: Project[] = [
     company: 'CDN77',
     position: 'Developer',
     yearFrom: '2023',
-    yearTo: '2024',
+    yearTo: 'present',
   },
   {
     company: 'Digitoo',
