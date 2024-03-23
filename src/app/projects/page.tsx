@@ -40,13 +40,13 @@ export default async function Projects() {
 
   return (
     <Layout title='Projects | Alex Devero'>
-      <h1 className='mb-5 mt-8 text-center text-5xl font-bold'>Projects</h1>
+      <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Projects</h1>
 
       {displayProjects ? (
         <div className='flex flex-col items-center justify-center'>
-          <p className='mb-8 text-center'>Some companies I've worked with so far:</p>
+          <p className='mb-8 text-center'>Below is a list of companies I've worked with so far:</p>
 
-          <div className='mb-8 grid grid-cols-1 justify-center gap-6 md:grid-cols-2 lg:grid-cols-4'>
+          <div className='mb-8 grid grid-cols-1 justify-center gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {projects.map(project => (
               <div key={project.company} className='flex flex-col'>
                 <span className='text-lg font-bold'>{project.position}</span>
@@ -70,20 +70,22 @@ export default async function Projects() {
 
         {!areGithubDataReady && <span>Loading...</span>}
 
-        {areGithubDataReady && (
-          <ul className='grid grid-cols-1 gap-2 md:grid-cols-2'>
-            {repos?.map((repository, index) => {
-              return (
-                <li key={repository.id}>
-                  No.{index < 10 ? `0${index}` : index}:{' '}
-                  <a className='underline' href={repository.url} rel='noopener noreferrer' target='_blank'>
-                    {repository.name} {repository.language !== null && `(${repository.language})`}
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-        )}
+        <div className='m-auto max-w-[720px]'>
+          {areGithubDataReady && (
+            <ul className='grid grid-cols-1 gap-2 md:grid-cols-2'>
+              {repos?.map((repository, index) => {
+                return (
+                  <li key={repository.id}>
+                    No.{index < 10 ? `0${index}` : index}:{' '}
+                    <a className='underline' href={repository.url} rel='noopener noreferrer' target='_blank'>
+                      {repository.name} {repository.language !== null && `(${repository.language})`}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+        </div>
       </div>
     </Layout>
   )
