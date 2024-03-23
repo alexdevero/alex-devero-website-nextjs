@@ -7,10 +7,16 @@ type Project = {
 
 export const projects: Project[] = [
   {
+    company: 'CDN77',
+    position: 'Developer',
+    yearFrom: '2023',
+    yearTo: '2024',
+  },
+  {
     company: 'Digitoo',
     position: 'Front-end & React Developer',
     yearFrom: '2019',
-    yearTo: 'Present',
+    yearTo: '2023',
   },
   {
     company: 'Persoo',
