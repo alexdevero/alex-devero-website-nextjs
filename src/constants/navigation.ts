@@ -1,3 +1,5 @@
+import { socialMedia } from './links'
+
 type NavigationLink = {
   title: string
   path: string
@@ -48,5 +50,53 @@ export const navigationLinks: NavigationLink[] = [
     title: 'Login',
     path: '/login',
     visible: true,
+  },
+]
+
+export const footerLinks: NavigationLink[] = [
+  {
+    title: 'twitter',
+    path: socialMedia.twitter,
+    visible: true,
+  },
+  {
+    title: 'facebook',
+    path: socialMedia.facebook,
+    visible: false,
+  },
+  {
+    title: 'instagram',
+    path: socialMedia.instagram,
+    visible: true,
+  },
+  {
+    title: 'linkedin',
+    path: socialMedia.linkedIn,
+    visible: true,
+  },
+  {
+    title: 'dribbble',
+    path: socialMedia.dribbble,
+    visible: false,
+  },
+  {
+    title: 'github',
+    path: socialMedia.github,
+    visible: true,
+  },
+  {
+    title: 'codepen',
+    path: socialMedia.codepen,
+    visible: true,
+  },
+  {
+    title: 'angellist',
+    path: socialMedia.angellist,
+    visible: false,
+  },
+  {
+    title: 'stack-overflow',
+    path: socialMedia.stackoverflow,
+    visible: false,
   },
 ]
