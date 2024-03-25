@@ -39,7 +39,7 @@ export default async function Projects() {
   const areGithubDataReady = repos !== null
 
   return (
-    <Layout title='Projects | Alex Devero'>
+    <Layout title='Projects'>
       <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Projects</h1>
 
       {displayProjects ? (

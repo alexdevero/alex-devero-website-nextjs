@@ -9,7 +9,7 @@ export const Layout = ({ children, title }: { children: ReactNode | ReactNode[];
   <>
     {title && (
       <Head>
-        <title>{title}</title>
+        <title>{`${title} | Alex Devero`}</title>
       </Head>
     )}
 

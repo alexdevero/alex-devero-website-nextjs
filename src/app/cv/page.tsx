@@ -4,7 +4,7 @@ import { cvRecords } from '@/data/cv-records'
 
 export default function Cv() {
   return (
-    <Layout title='CV | Alex Devero'>
+    <Layout title='CV'>
       <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>My CV</h1>
 
       <div className='mb-8 ml-auto mr-auto flex max-w-md flex-col gap-2'>

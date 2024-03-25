@@ -58,7 +58,7 @@ export default async function About() {
   const goodreadsData = await fetchGoodreadsData()
 
   return (
-    <Layout title='About | Alex Devero'>
+    <Layout title='About'>
       <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>About</h1>
 
       <div className='flex flex-1 justify-center'>

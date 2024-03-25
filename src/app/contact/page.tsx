@@ -108,7 +108,7 @@ export default function Contact() {
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
       </Helmet> */}
 
-      <Layout title='Contact | Alex Devero'>
+      <Layout title='Contact'>
         <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Let's get in touch</h1>
 
         <div className='flex flex-1 justify-center'>
