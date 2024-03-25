@@ -49,11 +49,11 @@ export default async function Projects() {
           <div className='mb-8 grid grid-cols-1 justify-center gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {projects.map(project => (
               <div key={project.name} className='flex flex-col'>
-                <span className='text-lg font-bold'>{project.position}</span>
+                <span className='text-lg font-bold'>{project.name}</span>
 
-                <h5 className='text-base font-medium'>{project.name}</h5>
+                <h5 className='text-base font-medium'>{project.position}</h5>
                 <h5 className='text-sm text-slate-500'>
-                  {project.yearFrom}-{project.yearTo}{' '}
+                  {project.yearFrom}-{project.yearTo}
                 </h5>
               </div>
             ))}
