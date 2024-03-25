@@ -2,7 +2,7 @@ import axios from 'axios'
 import { xml2js } from 'xml-js'
 
 import Layout from '@/components/layout'
-import { personalLinks, socialMedia } from '@/data/links'
+import { personalLinks, socialMedia } from '@/constants/links'
 
 import { goodreadsCredentials } from '../../../credentials/credentials-goodreads'
 
@@ -32,9 +32,7 @@ async function fetchGoodreadsData() {
   try {
     const response = await axios
       .get(
-        `${'https://cors-anywhere.herokuapp.com/'}https://www.goodreads.com/user/show/17435617.xml?key=${
-          goodreadsCredentials.key
-        }`
+        `${'https://cors-anywhere.herokuapp.com/'}https://www.goodreads.com/user/show/17435617.xml?key=${goodreadsCredentials.key}`
       )
       .then(data => data.data)
     const responseConverted = await xml2js(response, { compact: true })
