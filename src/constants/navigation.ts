@@ -11,7 +11,12 @@ export const navigationLinks: NavigationLink[] = [
     visible: false, // Probably not necessary to have root path in the navigation
   },
   {
-    title: 'Projects',
+    title: 'Work',
+    path: '/work',
+    visible: true,
+  },
+  {
+    title: 'Projects', // Mainly personal projects aside to freelance work
     path: '/projects',
     visible: true,
   },
