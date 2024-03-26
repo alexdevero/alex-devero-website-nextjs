@@ -6,10 +6,10 @@ import { backend, frontend, languages, misc, programmingLanguages, tools } from 
 
 export const CvCharts = () => {
   return (
-    <div className='min-h-full'>
+    <div className='m-auto min-h-full lg:max-w-5xl'>
       <div className='grid min-h-full grid-cols-2 gap-6'>
         <div className='flex flex-col gap-3'>
-          <h1 className='m-0'>Front-end:</h1>
+          <h1 className='m-0 text-base font-bold'>Front-end:</h1>
           <ResponsiveContainer className='h-[300px]'>
             <RadarChart cx='50%' cy='50%' outerRadius='80%' data={frontend}>
               <PolarGrid />
@@ -20,7 +20,7 @@ export const CvCharts = () => {
           </ResponsiveContainer>
         </div>
         <div className='flex flex-col gap-3'>
-          <h1 className='m-0'>Backend-end:</h1>
+          <h1 className='m-0 text-base font-bold'>Backend-end:</h1>
           <ResponsiveContainer className='min-h-[300px]'>
             <RadarChart cx='50%' cy='50%' outerRadius='80%' data={backend}>
               <PolarGrid />
@@ -31,7 +31,7 @@ export const CvCharts = () => {
           </ResponsiveContainer>
         </div>
         <div className='flex flex-col gap-3'>
-          <h1 className='m-0'>Tools:</h1>
+          <h1 className='m-0 text-base font-bold'>Tools:</h1>
           <ResponsiveContainer className='min-h-[300px]'>
             <RadarChart cx='50%' cy='50%' outerRadius='80%' data={tools}>
               <PolarGrid />
@@ -42,7 +42,7 @@ export const CvCharts = () => {
           </ResponsiveContainer>
         </div>
         <div className='flex flex-col gap-3'>
-          <h1 className='m-0'>Misc:</h1>
+          <h1 className='text-md mbase font-bold'>Misc:</h1>
           <ResponsiveContainer className='min-h-[300px]'>
             <RadarChart cx='50%' cy='50%' outerRadius='80%' data={misc}>
               <PolarGrid />
@@ -53,7 +53,7 @@ export const CvCharts = () => {
           </ResponsiveContainer>
         </div>
         <div className='flex flex-col gap-3'>
-          <h1 className='m-0'>Programming languages:</h1>
+          <h1 className='text-md mbase font-bold'>Programming languages:</h1>
           <ResponsiveContainer className='min-h-[300px]'>
             <RadarChart cx='50%' cy='50%' outerRadius='80%' data={programmingLanguages}>
               <PolarGrid />
@@ -66,7 +66,7 @@ export const CvCharts = () => {
       </div>
       <div className='mt-8 grid min-h-full grid-cols-2 gap-4'>
         <div className='flex flex-col gap-3'>
-          <h1 className='m-0'>Languages:</h1>
+          <h1 className='text-md mbase font-bold'>Languages:</h1>
           <ResponsiveContainer className='min-h-[300px]'>
             <RadarChart cx='50%' cy='50%' outerRadius='80%' data={languages}>
               <PolarGrid />
