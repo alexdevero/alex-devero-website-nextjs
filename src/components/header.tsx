@@ -15,6 +15,9 @@ const Header = () => {
   return (
     <header className='header'>
       <nav className='flex py-6'>
+        <Link href='/' className='font-bold'>
+          AD
+        </Link>
         <ul className='flex flex-1 items-center justify-center gap-4'>
           <li>
             <button className='nav__toggler nav__toggler--close' onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>

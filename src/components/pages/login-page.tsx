@@ -7,6 +7,7 @@ import { z } from 'zod'
 
 import { Button } from '../button'
 import { Input } from '../form-elements/input'
+import Layout from '../layout'
 
 const formSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Invalid email'),
@@ -35,7 +36,7 @@ export const LoginPage = () => {
   }
 
   return (
-    <div>
+    <Layout title='Contact'>
       <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Login</h1>
 
       <div className='m-auto max-w-[280px]'>
@@ -62,6 +63,6 @@ export const LoginPage = () => {
           </div>
         </form>
       </div>
-    </div>
+    </Layout>
   )
 }

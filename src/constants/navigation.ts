@@ -23,13 +23,13 @@ export const navigationLinks: NavigationLink[] = [
     visible: true,
   },
   {
-    title: 'About',
-    path: '/about',
+    title: 'CV',
+    path: '/cv',
     visible: true,
   },
   {
-    title: 'CV',
-    path: '/cv',
+    title: 'About',
+    path: '/about',
     visible: true,
   },
   {
@@ -42,13 +42,13 @@ export const navigationLinks: NavigationLink[] = [
     visible: false,
   },
   {
-    title: 'Contact',
-    path: '/contact',
+    title: 'Login',
+    path: '/login',
     visible: true,
   },
   {
-    title: 'Login',
-    path: '/login',
+    title: 'Contact',
+    path: '/contact',
     visible: true,
   },
 ]
