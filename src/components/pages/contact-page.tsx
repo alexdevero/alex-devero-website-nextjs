@@ -1,97 +1,113 @@
+'use client'
+
+import { zodResolver } from '@hookform/resolvers/zod'
+
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+
+import { Button } from '../button'
+import { Input } from '../form-elements/input'
+import { Textarea } from '../form-elements/textarea'
 import Layout from '../layout'
 
-export const ContactPage = () => (
-  <Layout title='Contact'>
-    <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Let's get in touch</h1>
+const formEnabled = false
 
-    <div className='flex flex-1 justify-center'>
-      <div className='flex max-w-3xl flex-col gap-3'>
-        <p>
-          Do you have some project you want to realize? Let's get in touch! Contact me on my{' '}
-          <a href='mailto:deveroalex@gmail.com' className='underline'>
-            email
-          </a>
-          .
-          {/* You can also <a href="#">click here</a> to reveal QR code and scan it. It contains my contact information. */}
-        </p>
-      </div>
+const formSchema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  email: z.string().min(1, 'Email is required').email('Invalid email'),
+  message: z.string().min(1, 'Message is required'),
+})
 
-      {/* <div className="row justify-content-center">
-      <div className="col-lg-8">
-        <form action="">
-          <div className="row">
-            <div className="col-md-6">
-              <fieldset>
-                <label htmlFor="formName">Full name</label>
+const initialValues = {
+  name: '',
+  email: '',
+  message: '',
+}
 
-                <input onChange={this.handleInputChange} type="text" name="formName" id="formName" required={true} />
-              </fieldset>
-            </div>
+type FormValues = typeof initialValues
 
-            <div className="col-md-6">
-              <fieldset>
-                <label htmlFor="formEmail">Email address</label>
+export const ContactPage = () => {
+  const {
+    formState: { errors, isSubmitting, isSubmitSuccessful },
+    handleSubmit,
+    register,
+  } = useForm<FormValues>({
+    defaultValues: initialValues,
+    resolver: zodResolver(formSchema),
+  })
 
-                <input onChange={this.handleInputChange} type="email" name="formEmail" id="formEmail" required={true} />
-              </fieldset>
+  const handleFormSubmit = async (values: FormValues) => {
+    console.log('Contact', values)
+  }
+
+  return (
+    <Layout title='Contact'>
+      <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Let's get in touch</h1>
+
+      <div className='flex flex-col items-center'>
+        <div className='flex max-w-3xl flex-col gap-3'>
+          <p>
+            Do you have some project you want to realize? Let's get in touch! Contact me on my{' '}
+            <a href='mailto:deveroalex@gmail.com' className='underline'>
+              email
+            </a>
+            .
+          </p>
+        </div>
+
+        {formEnabled && (
+          <div className='flex flex-col items-center justify-center'>
+            <div className='mt-5 w-full max-w-lg'>
+              <form action='' className='flex flex-col gap-3' onSubmit={handleSubmit(handleFormSubmit)}>
+                <Input
+                  id='name'
+                  label='Name:'
+                  hasError={!!errors.name}
+                  errorMessage={errors.name?.message}
+                  {...register('name')}
+                />
+
+                <Input
+                  id='email'
+                  label='E-mail:'
+                  hasError={!!errors.email}
+                  errorMessage={errors.email?.message}
+                  {...register('email')}
+                />
+
+                <Textarea
+                  id='formMessage'
+                  label='Message:'
+                  hasError={!!errors.message}
+                  errorMessage={errors.message?.message}
+                  {...register('message')}
+                />
+
+                {/* <fieldset>
+                  <Recaptcha
+                    onloadCallback={this.onCaptchaLoad}
+                    sitekey="6Ldt6RgUAAAAAKtaxY2787y3S7uP5Wp9kzL0PMMg"
+                    render="explicit"
+                    verifyCallback={this.onCaptchaVerify}
+                  />
+                </fieldset> */}
+
+                {isSubmitSuccessful && (
+                  <p>
+                    <strong>Your message is on the way. I will reply in three days.</strong>
+                  </p>
+                )}
+
+                <div>
+                  <Button disabled={isSubmitting || isSubmitSuccessful} type='submit'>
+                    Send
+                  </Button>
+                </div>
+              </form>
             </div>
           </div>
-
-          <fieldset className="input--username">
-            <label htmlFor="formUsername">Username</label>
-
-            <input onChange={this.handleInputChange} type="text" name="formUsername" id="formUsername" />
-          </fieldset>
-
-          <fieldset>
-            <label>Your message</label>
-
-            <textarea onChange={this.handleInputChange} name="formMessage" id="formMessage" required={true} />
-          </fieldset>
-
-          <fieldset>
-            <label htmlFor="formNewsletter">
-              <input className="styled-checkbox" onClick={this.handleCheckboxClick} type="checkbox" name="formNewsletter" id="formNewsletter" defaultChecked={false} />
-
-              <span>Yes, I want to be informed about new tech, design & business articles.</span>
-            </label>
-          </fieldset>
-
-          {/* <fieldset>
-            <Recaptcha
-              onloadCallback={this.onCaptchaLoad}
-              sitekey="6Ldt6RgUAAAAAKtaxY2787y3S7uP5Wp9kzL0PMMg"
-              render="explicit"
-              verifyCallback={this.onCaptchaVerify}
-            />
-          </fieldset> * /}
-
-          {isFormSubmitted && (
-            <fieldset>
-              <p><strong>Your message is on the way. I will reply in three days.</strong></p>
-            </fieldset>
-          )}
-
-          {isErrorSpamBotShown && (
-            <fieldset>
-              <p><strong>We don't work with spammers and bots.</strong></p>
-            </fieldset>
-          )}
-
-          {isErrorShown && (
-            <fieldset>
-              <p><strong>Please, make sure to fill all fields.</strong></p>
-            </fieldset>
-          )}
-
-          <fieldset>
-            <button onClick={this.handleFormSubmit} className="btn">
-              Send
-            </button>
-          </fieldset>
-        </form>
+        )}
       </div>
-    </div> */}
-    </div>
-  </Layout>
-)
+    </Layout>
+  )
+}
