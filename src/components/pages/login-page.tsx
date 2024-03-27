@@ -7,6 +7,7 @@ import { z } from 'zod'
 
 import { Button } from '../button'
 import { Input } from '../form-elements/input'
+import { Heading } from '../heading'
 import Layout from '../layout'
 
 const formSchema = z.object({
@@ -37,9 +38,9 @@ export const LoginPage = () => {
 
   return (
     <Layout title='Contact'>
-      <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Login</h1>
+      <Heading>Login</Heading>
 
-      <div className='m-auto max-w-[280px]'>
+      <div className='mx-auto max-w-[280px]'>
         <form className='flex flex-col gap-2' action='' onSubmit={handleSubmit(handleLogin)}>
           <Input
             id='email'

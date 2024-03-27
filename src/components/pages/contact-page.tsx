@@ -8,6 +8,7 @@ import { z } from 'zod'
 import { Button } from '../button'
 import { Input } from '../form-elements/input'
 import { Textarea } from '../form-elements/textarea'
+import { Heading } from '../heading'
 import Layout from '../layout'
 
 const formEnabled = false
@@ -42,7 +43,7 @@ export const ContactPage = () => {
 
   return (
     <Layout title='Contact'>
-      <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Let's get in touch</h1>
+      <Heading>Let's get in touch</Heading>
 
       <div className='flex flex-col items-center'>
         <div className='flex max-w-3xl flex-col gap-3'>

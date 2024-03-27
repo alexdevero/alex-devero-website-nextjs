@@ -1,5 +1,6 @@
 import { Octokit } from '@octokit/rest'
 
+import { Heading } from '@/components/heading'
 import Layout from '@/components/layout'
 import { projects } from '@/data/projects'
 
@@ -40,7 +41,7 @@ export default async function Projects() {
 
   return (
     <Layout title='Projects'>
-      <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Projects</h1>
+      <Heading>Projects</Heading>
 
       {displayProjects ? (
         <div className='flex flex-col items-center justify-center'>

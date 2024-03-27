@@ -1,3 +1,4 @@
+import { Heading } from '@/components/heading'
 import { cvRecords } from '@/data/cv-records'
 
 import Layout from '../../layout'
@@ -5,7 +6,7 @@ import { CvCharts } from './cv-charts'
 
 export const CvPage = () => (
   <Layout title='CV'>
-    <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>My CV</h1>
+    <Heading>My CV</Heading>
 
     <div className='mb-8 ml-auto mr-auto flex max-w-md flex-col gap-2'>
       <div>

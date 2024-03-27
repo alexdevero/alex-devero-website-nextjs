@@ -1,11 +1,12 @@
 import { personalLinks, socialMedia } from '@/constants/links'
 
+import { Heading } from '../heading'
 import Layout from '../layout'
 import { Link } from '../link'
 
 export const AboutPage = () => (
   <Layout title='About'>
-    <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>About</h1>
+    <Heading>About</Heading>
 
     <div className='flex flex-1 justify-center'>
       <div className='flex max-w-3xl flex-col gap-3'>

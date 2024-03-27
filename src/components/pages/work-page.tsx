@@ -1,10 +1,11 @@
 import { work } from '@/data/work'
 
+import { Heading } from '../heading'
 import Layout from '../layout'
 
 export const WorkPage = () => (
   <Layout title='Work'>
-    <h1 className='mb-8 mt-8 text-center text-5xl font-bold'>Work</h1>
+    <Heading>Work</Heading>
 
     <div className='flex flex-col items-center justify-center'>
       <p className='mb-8 text-center'>Below is are companies I've worked with so far:</p>
