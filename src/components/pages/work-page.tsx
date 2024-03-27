@@ -9,9 +9,9 @@ export const WorkPage = () => (
     <div className='flex flex-col items-center justify-center'>
       <p className='mb-8 text-center'>Below is are companies I've worked with so far:</p>
 
-      <div className='mb-8 grid grid-cols-1 justify-center gap-6 md:grid-cols-2 lg:grid-cols-3'>
+      <div className='mb-8 grid grid-cols-1 justify-center gap-6'>
         {work.map(project => (
-          <div key={project.company} className='flex flex-col'>
+          <div key={project.company} className='flex flex-col text-center'>
             <span className='text-lg font-bold'>{project.company}</span>
 
             <h5 className='text-base font-medium'>{project.position}</h5>

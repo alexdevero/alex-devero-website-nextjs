@@ -12,4 +12,10 @@ export const projects: Project[] = [
     yearFrom: '2023',
     yearTo: 'Present',
   },
+  {
+    name: 'Puppio',
+    position: 'Developer',
+    yearFrom: '2023',
+    yearTo: 'Present',
+  },
 ]

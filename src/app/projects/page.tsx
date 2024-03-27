@@ -46,9 +46,9 @@ export default async function Projects() {
         <div className='flex flex-col items-center justify-center'>
           <p className='mb-8 text-center'>Below are some bigger projects I am currently working on:</p>
 
-          <div className='mb-8 grid grid-cols-1 justify-center gap-6 md:grid-cols-2 lg:grid-cols-3'>
+          <div className='mb-8 grid grid-cols-1 justify-center gap-6'>
             {projects.map(project => (
-              <div key={project.name} className='flex flex-col'>
+              <div key={project.name} className='flex flex-col text-center'>
                 <span className='text-lg font-bold'>{project.name}</span>
 
                 <h5 className='text-base font-medium'>{project.position}</h5>
