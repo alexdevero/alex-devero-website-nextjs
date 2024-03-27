@@ -35,15 +35,18 @@
     "ship": "npm run build && npm run export"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@octokit/rest": "^20.0.2",
     "axios": "1.6.8",
     "github-api": "3.4.0",
     "next": "14.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.51.2",
     "react-medium-image-zoom": "5.1.10",
     "recharts": "^2.12.3",
-    "xml-js": "1.6.11"
+    "xml-js": "1.6.11",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.4",
