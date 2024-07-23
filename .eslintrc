@@ -2,7 +2,7 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
-    "sourceType": "module"
+    "sourceType": "module",
   },
   "plugins": [
     // "eslint-plugin-local-rules",
@@ -10,16 +10,19 @@
     "import",
     // "node",
     // "promise",
-    "react"
+    "react",
   ],
+  "settings": {
+    "react": {
+      "version": "detect",
+    },
+  },
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "browser": true,
   },
-  "extends": [
-    "plugin:react-hooks/recommended",
-    "plugin:@next/next/recommended"
-  ],
+  "extends": ["plugin:react-hooks/recommended", "plugin:@next/next/recommended"],
   "rules": {
     // 0 - "off"; 1 - "warn"; 2 - "error"
     // Inspired by https://github.com/standard/eslint-config-standard/blob/master/eslintrc.json
@@ -36,8 +39,8 @@
         "objects": "only-multiline",
         "imports": "only-multiline",
         "exports": "only-multiline",
-        "functions": "only-multiline"
-      }
+        "functions": "only-multiline",
+      },
     ],
     "comma-spacing": ["error", { "before": false, "after": true }],
     "comma-style": ["error", "last"],
@@ -99,10 +102,10 @@
         "groups": [
           ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
           ["&&", "||"],
-          ["in", "instanceof"]
+          ["in", "instanceof"],
         ],
-        "allowSamePrecedence": true
-      }
+        "allowSamePrecedence": true,
+      },
     ],
     "no-mixed-spaces-and-tabs": "error",
     "no-multi-spaces": "warn",
@@ -147,17 +150,11 @@
       {
         "allowShortCircuit": true,
         "allowTernary": true,
-        "allowTaggedTemplates": true
-      }
+        "allowTaggedTemplates": true,
+      },
     ],
-    "no-unused-vars": [
-      "error",
-      { "vars": "all", "args": "none", "ignoreRestSiblings": true }
-    ],
-    "no-use-before-define": [
-      "error",
-      { "functions": false, "classes": false, "variables": false }
-    ],
+    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": true }],
+    "no-use-before-define": ["error", { "functions": false, "classes": false, "variables": false }],
     "no-useless-call": "error",
     "no-useless-computed-key": "error",
     "no-useless-constructor": "error",
@@ -167,28 +164,14 @@
     "no-whitespace-before-property": "error",
     "no-with": "error",
     "object-curly-spacing": ["error", "always"],
-    "object-property-newline": [
-      "error",
-      { "allowMultiplePropertiesPerLine": true }
-    ],
+    "object-property-newline": ["error", { "allowMultiplePropertiesPerLine": true }],
     "one-var": ["error", { "initialized": "never" }],
-    "operator-linebreak": [
-      "error",
-      "after",
-      { "overrides": { "?": "before", ":": "before" } }
-    ],
-    "padded-blocks": [
-      "error",
-      { "blocks": "never", "switches": "never", "classes": "never" }
-    ],
+    "operator-linebreak": ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
+    "padded-blocks": ["error", { "blocks": "never", "switches": "never", "classes": "never" }],
     "prefer-const": "error",
     "prefer-promise-reject-errors": "error",
     "quote-props": ["error", "as-needed"],
-    "quotes": [
-      "error",
-      "single",
-      { "avoidEscape": true, "allowTemplateLiterals": true }
-    ],
+    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
     "rest-spread-spacing": ["error", "never"],
     "semi": ["error", "never"],
     "semi-spacing": ["error", { "before": false, "after": true }],
@@ -198,8 +181,8 @@
       {
         "anonymous": "never",
         "named": "never",
-        "asyncArrow": "always"
-      }
+        "asyncArrow": "always",
+      },
     ],
     "space-in-parens": ["error", "never"],
     "space-infix-ops": "error",
@@ -212,9 +195,9 @@
         "block": {
           "balanced": true,
           "markers": ["*package", "!", ",", ":", "::", "flow-include"],
-          "exceptions": ["*"]
-        }
-      }
+          "exceptions": ["*"],
+        },
+      },
     ],
     // "sort-imports": ["warn", { "ignoreCase": true }],
     // "sort-keys": "warn",
@@ -267,10 +250,7 @@
     "react/no-unused-state": "error",
     "react/no-will-update-set-state": "error",
     "react/prefer-es6-class": "error",
-    "react/prefer-stateless-function": [
-      "error",
-      { "ignorePureComponents": true }
-    ],
+    "react/prefer-stateless-function": ["error", { "ignorePureComponents": true }],
     // "react/prop-types": "error",
     "react/react-in-jsx-scope": "off",
     // "react/require-default-props": "error",
@@ -292,10 +272,7 @@
     "react/jsx-curly-newline": "error",
     "react/jsx-curly-spacing": ["error", "never"],
     "react/jsx-equals-spacing": ["error", "never"],
-    "react/jsx-filename-extension": [
-      "error",
-      { "extensions": ["js", ".jsx", "tsx"] }
-    ],
+    "react/jsx-filename-extension": ["error", { "extensions": ["js", ".jsx", "tsx"] }],
     "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
     "react/jsx-handler-names": "error",
     "react/jsx-indent": ["error", 2],
@@ -311,19 +288,19 @@
     "react/jsx-fragments": ["error", "syntax"],
     "react/jsx-pascal-case": "error",
     "react/jsx-props-no-multi-spaces": "error",
-    "react/jsx-sort-default-props": "error",
     "react/jsx-sort-props": [
       "error",
       {
         "callbacksLast": true,
         "shorthandFirst": false,
         "noSortAlphabetically": true,
-        "reservedFirst": true
-      }
+        "reservedFirst": true,
+      },
     ],
     "react/jsx-space-before-closing": "error",
     "react/jsx-uses-react": "off",
     "react/jsx-uses-vars": "error",
+    "react/sort-default-props": "error",
 
     // TypeScript
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -331,7 +308,7 @@
     "@typescript-eslint/ban-types": "error",
     "@typescript-eslint/naming-convention": [
       "error",
-      { "selector": "variableLike", "format": ["camelCase", "PascalCase"] }
+      { "selector": "variableLike", "format": ["camelCase", "PascalCase"] },
     ],
     // "@typescript-eslint/class-name-casing": "error",
     // "@typescript-eslint/explicit-function-return-type": "error",
@@ -351,6 +328,6 @@
     // "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-namespace-keyword": "error",
     "@typescript-eslint/triple-slash-reference": "error",
-    "@typescript-eslint/type-annotation-spacing": "error"
-  }
+    "@typescript-eslint/type-annotation-spacing": "error",
+  },
 }
