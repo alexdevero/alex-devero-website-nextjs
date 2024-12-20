@@ -6,19 +6,22 @@ import { Link } from '../link'
 
 export const AboutPage = () => (
   <Layout title='About'>
-    <Heading>About</Heading>
+    <Heading>About Me</Heading>
 
     <div className='flex flex-1 justify-center'>
       <div className='flex max-w-3xl flex-col gap-3'>
-        <p>I am developer, product designer, tinkerer and occasional blogger from Czech Republic.</p>
-
         <p>
-          I am passionate about programming, technology, startups, business, design and stuff beyond. My goal is to use
-          technology to make things that solve problems and make people's lives better.
+          I'm Alex Devero, a passionate full-stack TypeScript developer from the Czech Republic, specializing in
+          building dynamic web applications with React and Next.js.
         </p>
 
         <p>
-          When I am not working on some project, I occasionally write on{' '}
+          With a strong background in product design, I bridge the gap between functionality and user experience. My
+          mission is to leverage technology to solve real-world problems and enhance people's lives.
+        </p>
+
+        <p>
+          Beyond coding, I share insights on my blog{' '}
           <Link className='underline' href={personalLinks.blog}>
             my blog
           </Link>{' '}
@@ -26,7 +29,7 @@ export const AboutPage = () => (
         </p>
 
         <p>
-          I am somewhat active on{' '}
+          You can find me on{' '}
           <Link href={socialMedia.linkedIn} className='underline'>
             Linkedin
           </Link>{' '}
@@ -34,15 +37,15 @@ export const AboutPage = () => (
           <Link href={socialMedia.twitter} className='underline'>
             X
           </Link>{' '}
-          where are share my tips, ideas and cool stuff about programming, technology, startups and other things.
+          where I discuss industry trends and connect with fellow professionals.
         </p>
 
         <p>
-          I am also an avid reader. You can find many of the books I've read so far on{' '}
+          As an avid reader, I frequently update my Goodreads{' '}
           <Link className='underline' href={socialMedia.goodreads}>
-            Goodreads
-          </Link>
-          .
+            Goodreads profile
+          </Link>{' '}
+          with my latest reads. .
         </p>
       </div>
     </div>
