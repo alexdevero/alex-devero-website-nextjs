@@ -8,7 +8,7 @@ type Work = {
 export const work: Work[] = [
   {
     company: 'CDN77',
-    position: 'Developer',
+    position: 'Fullstack developer',
     yearFrom: '2023',
     yearTo: 'present',
   },
@@ -20,7 +20,7 @@ export const work: Work[] = [
   },
   {
     company: 'Persoo',
-    position: 'Front-end Developer',
+    position: 'Front-end TypeScript Developer',
     yearFrom: '2019',
     yearTo: '2021',
   },
@@ -32,7 +32,7 @@ export const work: Work[] = [
   },
   {
     company: 'StartMonday',
-    position: 'Front-end Developer',
+    position: 'Front-end TypeScript Developer',
     yearFrom: '2016',
     yearTo: '2017',
   },

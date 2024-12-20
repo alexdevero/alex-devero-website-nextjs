@@ -5,10 +5,10 @@ import Layout from '../layout'
 
 export const WorkPage = () => (
   <Layout title='Work'>
-    <Heading>Work</Heading>
+    <Heading>Professional Experience</Heading>
 
     <div className='flex flex-col items-center justify-center'>
-      <p className='mb-8 text-center'>Below is are companies I've worked with so far:</p>
+      <p className='mb-8 text-center'>Companies and Projects I've Contributed To:</p>
 
       <div className='mb-8 grid grid-cols-1 justify-center gap-6'>
         {work.map(project => (
