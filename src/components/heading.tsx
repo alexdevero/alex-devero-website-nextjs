@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from 'react'
+import type { FC, HTMLAttributes } from 'react'
 
 import classNames from 'classnames'
 

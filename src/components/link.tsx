@@ -1,6 +1,7 @@
-import { ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
 
-import NextLink, { LinkProps } from 'next/link'
+import type { LinkProps } from 'next/link'
+import NextLink from 'next/link'
 
 type Props = {
   children: ReactNode
@@ -8,7 +9,7 @@ type Props = {
   disabled?: boolean
 } & LinkProps
 
-export const Link = ({ className, href, children, ...rest }: Props) => {
+export const Link: FC<Props> = ({ className, href, children, ...props }) => {
   const isExternal = href.toString().startsWith('http')
 
   return (
@@ -17,7 +18,7 @@ export const Link = ({ className, href, children, ...rest }: Props) => {
       className={className}
       rel={isExternal ? 'noopener noreferrer' : undefined}
       target={isExternal ? '_blank' : undefined}
-      {...rest}
+      {...props}
     >
       {children}
     </NextLink>

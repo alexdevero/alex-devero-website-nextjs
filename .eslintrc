@@ -3,7 +3,9 @@
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
+    "project": "./tsconfig.json",
   },
+  "ignorePatterns": ["./next.config.js", "./postcss.config.js", "./tailwind.config.js"],
   "plugins": [
     // "eslint-plugin-local-rules",
     "@typescript-eslint",
@@ -329,5 +331,7 @@
     "@typescript-eslint/prefer-namespace-keyword": "error",
     "@typescript-eslint/triple-slash-reference": "error",
     "@typescript-eslint/type-annotation-spacing": "error",
+    "@typescript-eslint/consistent-type-exports": 2,
+    "@typescript-eslint/consistent-type-imports": 2,
   },
 }
