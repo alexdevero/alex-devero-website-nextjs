@@ -44,7 +44,7 @@ export const navigationLinks: NavigationLink[] = [
   {
     title: 'Login',
     path: '/login',
-    visible: true,
+    visible: false,
   },
   {
     title: 'Contact',

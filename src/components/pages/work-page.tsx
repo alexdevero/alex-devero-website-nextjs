@@ -12,7 +12,7 @@ export const WorkPage = () => (
 
       <div className="mb-8 flex flex-col justify-center gap-6">
         {work.map(project => (
-          <div key={project.company} className="flex flex-row items-start justify-start gap-3">
+          <div key={project.company} className="flex flex-row items-start justify-start gap-3 md:gap-5">
             <div className="flex w-[128px] items-center justify-center text-gray-800 opacity-60 grayscale">
               {project.logo({
                 className: 'w-[128px]',
