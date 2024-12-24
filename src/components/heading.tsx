@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react'
+import { FC, HTMLAttributes } from 'react'
 
 import classNames from 'classnames'
 
@@ -7,7 +7,7 @@ type Props = HTMLAttributes<HTMLHeadingElement> & {
   centered?: boolean
 }
 
-export const Heading = ({ as = 'h1', centered = true, children, ...rest }: Props) => {
+export const Heading: FC<Props> = ({ as = 'h1', centered = true, children, ...rest }) => {
   const Element = as
 
   return (
