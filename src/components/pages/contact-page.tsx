@@ -42,14 +42,14 @@ export const ContactPage = () => {
   }
 
   return (
-    <Layout title='Contact'>
+    <Layout title="Contact">
       <Heading>Let's get in touch</Heading>
 
-      <div className='flex flex-col items-center'>
-        <div className='flex max-w-3xl flex-col gap-3'>
+      <div className="flex flex-col items-center">
+        <div className="flex max-w-3xl flex-col gap-3">
           <p>
             Do you have some project you want to realize? Let's get in touch! Contact me on my{' '}
-            <a href='mailto:deveroalex@gmail.com' className='underline'>
+            <a href="mailto:deveroalex@gmail.com" className="underline">
               email
             </a>
             .
@@ -57,28 +57,28 @@ export const ContactPage = () => {
         </div>
 
         {formEnabled && (
-          <div className='flex flex-col items-center justify-center'>
-            <div className='mt-5 w-full max-w-lg'>
-              <form action='' className='flex flex-col gap-3' onSubmit={handleSubmit(handleFormSubmit)}>
+          <div className="flex flex-col items-center justify-center">
+            <div className="mt-5 w-full max-w-lg">
+              <form action="" className="flex flex-col gap-3" onSubmit={handleSubmit(handleFormSubmit)}>
                 <Input
-                  id='name'
-                  label='Name:'
+                  id="name"
+                  label="Name:"
                   hasError={!!errors.name}
                   errorMessage={errors.name?.message}
                   {...register('name')}
                 />
 
                 <Input
-                  id='email'
-                  label='E-mail:'
+                  id="email"
+                  label="E-mail:"
                   hasError={!!errors.email}
                   errorMessage={errors.email?.message}
                   {...register('email')}
                 />
 
                 <Textarea
-                  id='formMessage'
-                  label='Message:'
+                  id="formMessage"
+                  label="Message:"
                   hasError={!!errors.message}
                   errorMessage={errors.message?.message}
                   {...register('message')}
@@ -100,7 +100,7 @@ export const ContactPage = () => {
                 )}
 
                 <div>
-                  <Button disabled={isSubmitting || isSubmitSuccessful} type='submit'>
+                  <Button disabled={isSubmitting || isSubmitSuccessful} type="submit">
                     Send
                   </Button>
                 </div>

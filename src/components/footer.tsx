@@ -7,13 +7,13 @@ export const Footer: FC = () => {
   const currentYear = useMemo(() => new Date().getFullYear().toString(), [])
 
   return (
-    <footer className='py-5'>
+    <footer className="py-5">
       <nav>
-        <ul className='align-center flex justify-center gap-4'>
+        <ul className="align-center flex justify-center gap-4">
           {footerLinks.map(link =>
             link.visible ? (
               <li key={link.path}>
-                <a href={link.path} rel='noopener noreferrer' target='_blank'>
+                <a href={link.path} rel="noopener noreferrer" target="_blank">
                   <span className={`fab fa-${link.title}`} />
                 </a>
               </li>
@@ -22,7 +22,7 @@ export const Footer: FC = () => {
         </ul>
       </nav>
 
-      <p className='mt-3 text-center text-xs'>
+      <p className="mt-3 text-center text-xs">
         Copyright &copy; <span>{currentYear}</span> Alex Devero
       </p>
     </footer>

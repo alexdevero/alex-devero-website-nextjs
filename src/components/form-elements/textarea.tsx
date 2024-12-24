@@ -13,8 +13,8 @@ type Props = HTMLAttributes<HTMLTextAreaElement> & {
 
 export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
   ({ label, id, hasError, errorMessage, ...rest }, ref) => (
-    <div className='flex flex-col gap-1'>
-      <div className='flex justify-between gap-2'>
+    <div className="flex flex-col gap-1">
+      <div className="flex justify-between gap-2">
         {label && <label htmlFor={id}>{label}</label>}
         <textarea
           ref={ref}

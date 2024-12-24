@@ -40,20 +40,20 @@ export default async function Projects() {
   const areGithubDataReady = repos !== null
 
   return (
-    <Layout title='Projects'>
+    <Layout title="Projects">
       <Heading>Projects</Heading>
 
       {displayProjects ? (
-        <div className='flex flex-col items-center justify-center'>
-          <p className='mb-8 text-center'>Below are some bigger projects I am currently working on:</p>
+        <div className="flex flex-col items-center justify-center">
+          <p className="mb-8 text-center">Below are some bigger projects I am currently working on:</p>
 
-          <div className='mb-8 grid grid-cols-1 justify-center gap-6'>
+          <div className="mb-8 grid grid-cols-1 justify-center gap-6">
             {projects.map(project => (
-              <div key={project.name} className='flex flex-col text-center'>
-                <span className='text-lg font-bold'>{project.name}</span>
+              <div key={project.name} className="flex flex-col text-center">
+                <span className="text-lg font-bold">{project.name}</span>
 
-                <h5 className='text-base font-medium'>{project.position}</h5>
-                <h5 className='text-sm text-slate-500'>
+                <h5 className="text-base font-medium">{project.position}</h5>
+                <h5 className="text-sm text-slate-500">
                   {project.yearFrom}-{project.yearTo}
                 </h5>
               </div>
@@ -65,20 +65,20 @@ export default async function Projects() {
       )}
 
       <div>
-        <p className='mb-6 mt-2 text-center'>
-          Here are some projects I worked and that are on my <a href='https://github.com/alexdevero'>GitHub</a>:
+        <p className="mb-6 mt-2 text-center">
+          Here are some projects I worked and that are on my <a href="https://github.com/alexdevero">GitHub</a>:
         </p>
 
         {!areGithubDataReady && <span>Loading...</span>}
 
-        <div className='m-auto max-w-[720px]'>
+        <div className="m-auto max-w-[720px]">
           {areGithubDataReady && (
-            <ul className='grid grid-cols-1 gap-2 md:grid-cols-2'>
+            <ul className="grid grid-cols-1 gap-2 md:grid-cols-2">
               {repos?.map((repository, index) => {
                 return (
                   <li key={repository.id}>
                     No.{index < 10 ? `0${index}` : index}:{' '}
-                    <a className='underline' href={repository.url} rel='noopener noreferrer' target='_blank'>
+                    <a className="underline" href={repository.url} rel="noopener noreferrer" target="_blank">
                       {repository.name} {repository.language !== null && `(${repository.language})`}
                     </a>
                   </li>

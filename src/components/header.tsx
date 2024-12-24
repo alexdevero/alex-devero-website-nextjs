@@ -14,14 +14,14 @@ export const Header: FC = () => {
   const [isMobileMenuVisible, toggleMobileMenu] = useState(false)
 
   return (
-    <header className='header'>
-      <nav className='flex py-6'>
-        <Link href='/' className='font-bold'>
+    <header className="header">
+      <nav className="flex py-6">
+        <Link href="/" className="font-bold">
           AD
         </Link>
-        <ul className='flex flex-1 items-center justify-center gap-4'>
+        <ul className="flex flex-1 items-center justify-center gap-4">
           <li>
-            <button className='nav__toggler nav__toggler--close' onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
+            <button className="nav__toggler nav__toggler--close" onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
               <span />
               <span />
             </button>
@@ -40,7 +40,7 @@ export const Header: FC = () => {
           )}
         </ul>
 
-        <button className='max-md:flex' onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
+        <button className="max-md:flex" onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
           <span />
           <span />
           <span />

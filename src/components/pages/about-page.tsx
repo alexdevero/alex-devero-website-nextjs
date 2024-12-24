@@ -5,11 +5,11 @@ import Layout from '../layout'
 import { Link } from '../link'
 
 export const AboutPage = () => (
-  <Layout title='About'>
+  <Layout title="About">
     <Heading>About Me</Heading>
 
-    <div className='flex flex-1 justify-center'>
-      <div className='flex max-w-3xl flex-col gap-3'>
+    <div className="flex flex-1 justify-center">
+      <div className="flex max-w-3xl flex-col gap-3">
         <p>
           I'm Alex Devero, a passionate full-stack TypeScript developer from the Czech Republic, specializing in
           building dynamic web applications with React and Next.js.
@@ -22,7 +22,7 @@ export const AboutPage = () => (
 
         <p>
           Beyond coding, I share insights on my blog{' '}
-          <Link className='underline' href={personalLinks.blog}>
+          <Link className="underline" href={personalLinks.blog}>
             my blog
           </Link>{' '}
           about programming, startups, business, tech and beyond.
@@ -30,11 +30,11 @@ export const AboutPage = () => (
 
         <p>
           You can find me on{' '}
-          <Link href={socialMedia.linkedIn} className='underline'>
+          <Link href={socialMedia.linkedIn} className="underline">
             Linkedin
           </Link>{' '}
           and{' '}
-          <Link href={socialMedia.twitter} className='underline'>
+          <Link href={socialMedia.twitter} className="underline">
             X
           </Link>{' '}
           where I discuss industry trends and connect with fellow professionals.
@@ -42,7 +42,7 @@ export const AboutPage = () => (
 
         <p>
           As an avid reader, I frequently update my Goodreads{' '}
-          <Link className='underline' href={socialMedia.goodreads}>
+          <Link className="underline" href={socialMedia.goodreads}>
             Goodreads profile
           </Link>{' '}
           with my latest reads. .

@@ -37,30 +37,30 @@ export const LoginPage = () => {
   }
 
   return (
-    <Layout title='Contact'>
+    <Layout title="Contact">
       <Heading>Login</Heading>
 
-      <div className='mx-auto max-w-[280px]'>
-        <form className='flex flex-col gap-2' action='' onSubmit={handleSubmit(handleLogin)}>
+      <div className="mx-auto max-w-[280px]">
+        <form className="flex flex-col gap-2" action="" onSubmit={handleSubmit(handleLogin)}>
           <Input
-            id='email'
-            type='email'
-            label='E-mail:'
+            id="email"
+            type="email"
+            label="E-mail:"
             hasError={!!errors.email}
             errorMessage={errors.email?.message}
             {...register('email')}
           />
           <Input
-            id='password'
-            type='password'
-            label='Password:'
+            id="password"
+            type="password"
+            label="Password:"
             hasError={!!errors.password}
             errorMessage={errors.password?.message}
             {...register('password')}
           />
 
           <div>
-            <Button type='submit'>Login</Button>
+            <Button type="submit">Login</Button>
           </div>
         </form>
       </div>

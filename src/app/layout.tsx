@@ -19,14 +19,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='en' className={inter.className}>
+    <html lang="en" className={inter.className}>
       <head>
         {/* <!-- Font Awesome --> */}
         <link
-          rel='stylesheet'
-          href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
-          integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU'
-          crossOrigin='anonymous'
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossOrigin="anonymous"
         />
       </head>
       <body>{children}</body>

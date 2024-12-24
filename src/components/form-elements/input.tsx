@@ -14,8 +14,8 @@ type Props = HTMLAttributes<HTMLInputElement> & {
 
 export const Input = forwardRef<HTMLInputElement, Props>(
   ({ hasError, id, errorMessage, label, type = 'text', ...rest }, ref) => (
-    <div className='flex flex-col gap-1'>
-      <div className='flex justify-between gap-2'>
+    <div className="flex flex-col gap-1">
+      <div className="flex justify-between gap-2">
         {label && <label htmlFor={id}>{label}</label>}
         <input
           ref={ref}
