@@ -1,5 +1,5 @@
-type Props = {
-  children: string
-}
+import type { FC, PropsWithChildren } from 'react'
 
-export const ErrorMessage = ({ children }: Props) => <div className='text-sm text-red-500'>{children}</div>
+export const ErrorMessage: FC<PropsWithChildren> = ({ children }) => (
+  <div className='text-sm text-red-500'>{children}</div>
+)

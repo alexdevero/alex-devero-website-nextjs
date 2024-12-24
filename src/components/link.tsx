@@ -1,23 +1,22 @@
-import type { FC, ReactNode } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 
 import type { LinkProps } from 'next/link'
 import NextLink from 'next/link'
 
+const isExternal = (href: LinkProps['href']) => href.toString().startsWith('http')
+
 type Props = {
-  children: ReactNode
   className?: string
   disabled?: boolean
 } & LinkProps
 
-export const Link: FC<Props> = ({ className, href, children, ...props }) => {
-  const isExternal = href.toString().startsWith('http')
-
+export const Link: FC<PropsWithChildren<Props>> = ({ className, href, children, ...props }) => {
   return (
     <NextLink
       href={href}
       className={className}
-      rel={isExternal ? 'noopener noreferrer' : undefined}
-      target={isExternal ? '_blank' : undefined}
+      rel={isExternal(href) ? 'noopener noreferrer' : undefined}
+      target={isExternal(href) ? '_blank' : undefined}
       {...props}
     >
       {children}

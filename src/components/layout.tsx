@@ -2,8 +2,8 @@ import type { ReactNode } from 'react'
 
 import Head from 'next/head'
 
-import Footer from './footer'
-import Header from './header'
+import { Footer } from './footer'
+import { Header } from './header'
 
 export const Layout = ({ children, title }: { children: ReactNode | ReactNode[]; title: string }) => (
   <>

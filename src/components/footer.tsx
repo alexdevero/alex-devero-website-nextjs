@@ -1,8 +1,9 @@
+import type { FC } from 'react'
 import { useMemo } from 'react'
 
 import { footerLinks } from '@/constants/navigation'
 
-export default function Footer() {
+export const Footer: FC = () => {
   const currentYear = useMemo(() => new Date().getFullYear().toString(), [])
 
   return (

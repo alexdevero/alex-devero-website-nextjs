@@ -1,6 +1,8 @@
+import type { FC } from 'react'
+
 import Layout from '@/components/layout'
 
-const NotFoundPage = () => (
+const NotFoundPage: FC = () => (
   <Layout title='404'>
     <div className='flex flex-1 items-center justify-center text-center'>
       <div className='max-w-2xl'>

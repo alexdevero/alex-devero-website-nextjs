@@ -1,5 +1,6 @@
 'use client'
 
+import type { FC } from 'react'
 import { useState } from 'react'
 
 import { usePathname } from 'next/navigation'
@@ -8,7 +9,7 @@ import { navigationLinks } from '@/constants/navigation'
 
 import { Link } from './link'
 
-const Header = () => {
+export const Header: FC = () => {
   const pathname = usePathname()
   const [isMobileMenuVisible, toggleMobileMenu] = useState(false)
 
@@ -48,5 +49,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header
