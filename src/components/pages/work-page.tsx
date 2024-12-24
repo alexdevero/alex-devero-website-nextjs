@@ -14,7 +14,9 @@ export const WorkPage = () => (
         {work.map(project => (
           <div key={project.company} className="flex flex-row items-start justify-start gap-3">
             <div className="flex w-[128px] items-center justify-center text-gray-800 opacity-60 grayscale">
-              {project.logo}
+              {project.logo({
+                className: 'w-[128px]',
+              })}
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-bold">{project.company}</span>
