@@ -41,6 +41,15 @@ export async function POST(request: Request) {
     )
   }
 
+  if (!process.env.RESEND_API_KEY) {
+    return Response.json(
+      { message: 'No ReSend API key provided' },
+      {
+        status: 400,
+      }
+    )
+  }
+
   if (recatpchaResponseJson.score < 0.5) {
     return Response.json(
       { message: 'Failed reCAPTCHA score' },
