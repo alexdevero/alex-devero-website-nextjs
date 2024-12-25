@@ -8,8 +8,8 @@ import { z } from 'zod'
 import { Button } from '../button'
 import { Input } from '../form-elements/input'
 import { Textarea } from '../form-elements/textarea'
-import { Heading } from '../heading'
 import Layout from '../layout'
+import { Typography } from '../typography'
 
 const formEnabled = false
 
@@ -43,17 +43,19 @@ export const ContactPage = () => {
 
   return (
     <Layout title="Contact">
-      <Heading>Let's get in touch</Heading>
+      <Typography as="h1" variant="h1">
+        Let's get in touch
+      </Typography>
 
       <div className="flex flex-col items-center">
         <div className="flex max-w-3xl flex-col gap-3">
-          <p>
+          <Typography>
             Do you have some project you want to realize? Let's get in touch! Contact me on my{' '}
             <a href="mailto:deveroalex@gmail.com" className="underline">
               email
             </a>
             .
-          </p>
+          </Typography>
         </div>
 
         {formEnabled && (
@@ -94,9 +96,9 @@ export const ContactPage = () => {
                 </fieldset> */}
 
                 {isSubmitSuccessful && (
-                  <p>
+                  <Typography as="div" className="text-green-500">
                     <strong>Your message is on the way. I will reply in three days.</strong>
-                  </p>
+                  </Typography>
                 )}
 
                 <div>

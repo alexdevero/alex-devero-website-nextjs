@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/rest'
 
-import { Heading } from '@/components/heading'
 import Layout from '@/components/layout'
+import { Typography } from '@/components/typography'
 import { projects } from '@/data/projects'
 
 import { githubCredentials } from '../../../credentials/credentials-github'
@@ -41,11 +41,15 @@ export default async function Projects() {
 
   return (
     <Layout title="Projects">
-      <Heading>Projects</Heading>
+      <Typography as="h1" variant="h1">
+        Projects
+      </Typography>
 
       {displayProjects ? (
         <div className="flex flex-col items-center justify-center">
-          <p className="mb-8 text-center">Below are some bigger projects I am currently working on:</p>
+          <Typography className="mb-8 text-center">
+            Below are some bigger projects I am currently working on:
+          </Typography>
 
           <div className="mb-8 grid grid-cols-1 justify-center gap-6">
             {projects.map(project => (
@@ -65,9 +69,9 @@ export default async function Projects() {
       )}
 
       <div>
-        <p className="mb-6 mt-2 text-center">
+        <Typography className="mb-6 mt-2 text-center">
           Here are some projects I worked and that are on my <a href="https://github.com/alexdevero">GitHub</a>:
-        </p>
+        </Typography>
 
         {!areGithubDataReady && <span>Loading...</span>}
 
