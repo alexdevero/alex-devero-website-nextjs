@@ -24,18 +24,16 @@ export const Link: FC<PropsWithChildren<Props>> = ({
   initialUnderline = true,
   ...props
 }) => {
+  const linkClasses = classNames(classes, className, {
+    'cursor-not-allowed': props.disabled,
+    'text-gray-800 underline': active,
+    underline: initialUnderline,
+    'no-underline': !initialUnderline,
+  })
+
   if (href.toString().startsWith('mailto:') || href.toString().startsWith('tel:')) {
     return (
-      <a
-        href={href.toString()}
-        className={classNames(classes, className, {
-          'cursor-not-allowed': props.disabled,
-          'text-gray-800 underline': active,
-          underline: initialUnderline,
-          'no-underline': !initialUnderline,
-        })}
-        {...props}
-      >
+      <a href={href.toString()} className={linkClasses} {...props}>
         {children}
       </a>
     )
@@ -44,10 +42,7 @@ export const Link: FC<PropsWithChildren<Props>> = ({
   return (
     <NextLink
       href={href}
-      className={classNames(classes, className, {
-        'cursor-not-allowed': props.disabled,
-        'text-gray-800 underline': active,
-      })}
+      className={linkClasses}
       rel={isExternal(href) ? 'noopener noreferrer' : undefined}
       target={isExternal(href) ? '_blank' : undefined}
       {...props}
