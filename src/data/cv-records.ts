@@ -256,6 +256,25 @@ export const programmingLanguages = [
   },
 ]
 
+export const testing = [
+  {
+    name: 'React Testing Library',
+    value: 60,
+  },
+  {
+    name: 'Vitest',
+    value: 60,
+  },
+  {
+    name: 'Jest',
+    value: 40,
+  },
+  {
+    name: 'Cypress',
+    value: 40,
+  },
+]
+
 export const languages = [
   {
     name: 'Czech',
