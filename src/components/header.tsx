@@ -16,7 +16,7 @@ export const Header: FC = () => {
   return (
     <header className="header">
       <nav className="flex py-6">
-        <Link href="/" className="font-bold">
+        <Link href="/" className="font-bold no-underline hover:no-underline">
           AD
         </Link>
         <ul className="flex flex-1 items-center justify-center gap-4">
@@ -29,12 +29,10 @@ export const Header: FC = () => {
 
           {navigationLinks.map(link =>
             link.visible ? (
-              <span
-                key={link.path}
-                className={pathname === link.path ? 'underline' : ''}
-                onClick={() => toggleMobileMenu(!isMobileMenuVisible)}
-              >
-                <Link href={link.path}>{link.title}</Link>
+              <span key={link.path} onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
+                <Link active={pathname === link.path} href={link.path} initialUnderline={false}>
+                  {link.title}
+                </Link>
               </span>
             ) : null
           )}
