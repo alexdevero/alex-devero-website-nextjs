@@ -10,8 +10,10 @@ import SupernovaLogo from '@/public/images/logos/supernova-logo.svg'
 
 type LogoProps = SVGProps<SVGSVGElement>
 
+export type Company = 'CDN77' | 'Digitoo' | 'Persoo' | 'Retino' | 'Supernova' | 'StartMonday'
+
 type Work = {
-  company: string
+  company: Company
   position: string
   yearFrom: string
   yearTo: string

@@ -1,3 +1,3 @@
-import { WorkPage } from '@/components/pages/work-page'
+import { WorkPage } from '@/components/pages/WorkPage/work-page'
 
 export default WorkPage

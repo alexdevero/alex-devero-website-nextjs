@@ -1,7 +1,8 @@
 import { work } from '@/data/work'
 
-import { Heading } from '../heading'
-import Layout from '../layout'
+import { Heading } from '../../heading'
+import Layout from '../../layout'
+import { getLogoColorClasses, getLogoImageWith } from './utils'
 
 export const WorkPage = () => (
   <Layout title="Work">
@@ -12,10 +13,11 @@ export const WorkPage = () => (
 
       <div className="mb-8 flex flex-col justify-center gap-6">
         {work.map(project => (
-          <div key={project.company} className="flex flex-row items-start justify-start gap-3 md:gap-5">
-            <div className="flex w-[128px] items-center justify-center text-gray-800 opacity-60 grayscale">
+          <div key={project.company} className="flex flex-row items-center justify-start gap-3 md:gap-5">
+            <div className="flex w-[128px] items-center justify-center">
               {project.logo({
-                className: 'w-[128px]',
+                className: `object-contain ${getLogoColorClasses(project.company)}`,
+                style: getLogoImageWith(project.company),
               })}
             </div>
             <div className="flex flex-col">
