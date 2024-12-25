@@ -1,3 +1,5 @@
+import { Cta } from '@/components/cta/cta'
+import { Typography } from '@/components/typography'
 import { work } from '@/data/work'
 
 import { Heading } from '../../heading'
@@ -9,7 +11,7 @@ export const WorkPage = () => (
     <Heading>Professional Experience</Heading>
 
     <div className="flex flex-col items-center justify-center">
-      <p className="mb-8 text-center">Companies and Projects I've Contributed To:</p>
+      <Typography className="mb-8 text-center">Companies and Projects I've Contributed To:</Typography>
 
       <div className="mb-8 flex flex-col justify-center gap-6">
         {work.map(project => (
@@ -31,6 +33,8 @@ export const WorkPage = () => (
           </div>
         ))}
       </div>
+
+      <Cta />
     </div>
   </Layout>
 )

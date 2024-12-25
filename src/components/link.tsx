@@ -5,12 +5,13 @@ import NextLink from 'next/link'
 
 import classNames from 'classnames'
 
-const classes = 'text-gray-500 transition-all hover:text-gray-800 hover:underline'
+import { buttonClasses } from './button'
 
 const isExternal = (href: LinkProps['href']) => href.toString().startsWith('http')
 
 type Props = {
   active?: boolean
+  buttonStyle?: boolean
   className?: string
   disabled?: boolean
   initialUnderline?: boolean
@@ -18,18 +19,25 @@ type Props = {
 
 export const Link: FC<PropsWithChildren<Props>> = ({
   active,
+  buttonStyle,
   className,
   href,
   children,
   initialUnderline = true,
   ...props
 }) => {
-  const linkClasses = classNames(classes, className, {
-    'cursor-not-allowed': props.disabled,
-    'text-gray-800 underline': active,
-    underline: initialUnderline,
-    'no-underline': !initialUnderline,
-  })
+  const linkClasses = classNames(
+    'transition-all',
+    {
+      'cursor-not-allowed': props.disabled,
+      'text-gray-800 underline': active && !buttonStyle,
+      underline: initialUnderline,
+      'no-underline': !initialUnderline || buttonStyle,
+      'text-gray-500 hover:text-gray-800 hover:underline': !buttonStyle,
+      [buttonClasses]: buttonStyle,
+    },
+    className
+  )
 
   if (href.toString().startsWith('mailto:') || href.toString().startsWith('tel:')) {
     return (

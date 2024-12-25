@@ -1,3 +1,4 @@
+import { Cta } from '@/components/cta/cta'
 import { Link } from '@/components/link'
 import { Typography } from '@/components/typography'
 import { cvRecords } from '@/data/cv-records'
@@ -40,5 +41,7 @@ export const CvPage = () => (
     <div className="h-full">
       <CvCharts />
     </div>
+
+    <Cta />
   </Layout>
 )

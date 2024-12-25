@@ -25,7 +25,7 @@ export const Heading: FC<Props> = ({
   return (
     <Element
       className={classNames(
-        'mb-8 mt-8 text-center font-bold',
+        'mb-8 mt-8 text-center font-bold text-gray-800',
         {
           'text-center': centered,
           'text-5xl': heading || !subheading,

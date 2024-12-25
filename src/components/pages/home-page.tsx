@@ -10,13 +10,19 @@ export const HomePage = () => (
           Alex Devero
         </Typography>
 
-        <Typography>Full-stack TypeScript Developer Specializing in React and Next.js Applications</Typography>
+        <Typography>Full-stack TypeScript developer specializing in React and Next.js applications</Typography>
 
-        <Typography>Helping startups and businesses create scalable, high-performance web applications.</Typography>
-
-        <Typography>
-          Discover How I Can Elevate Your Project – <Link href="/contact">Learn More</Link>.
+        <Typography className="my-3">
+          I help individuals, startups and businesses create scalable, high-performance web applications with great UX.
         </Typography>
+
+        <div className="mt-4 flex flex-col items-center justify-center gap-2">
+          <Link href="/work">Discover my work</Link>
+
+          <Link href="/contact" buttonStyle>
+            Let's discuss your project
+          </Link>
+        </div>
       </div>
     </div>
   </Layout>

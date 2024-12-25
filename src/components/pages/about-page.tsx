@@ -1,5 +1,6 @@
 import { personalLinks, socialMedia } from '@/constants/links'
 
+import { Cta } from '../cta/cta'
 import Layout from '../layout'
 import { Link } from '../link'
 import { Typography } from '../typography'
@@ -23,6 +24,10 @@ export const AboutPage = () => (
         </Typography>
 
         <Typography>
+          Ready to Collaborate? <Link href="/contact">Let's Connect.</Link>
+        </Typography>
+
+        <Typography>
           Beyond coding, I share insights on my blog <Link href={personalLinks.blog}>my blog</Link> about programming,
           startups, business, tech and beyond.
         </Typography>
@@ -37,6 +42,8 @@ export const AboutPage = () => (
           As an avid reader, I frequently update my Goodreads{' '}
           <Link href={socialMedia.goodreads}>Goodreads profile</Link> with my latest reads. .
         </Typography>
+
+        <Cta />
       </div>
     </div>
   </Layout>

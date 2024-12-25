@@ -50,7 +50,7 @@ export const ContactPage = () => {
       <div className="flex flex-col items-center">
         <div className="flex max-w-3xl flex-col gap-3">
           <Typography>
-            Do you have some project you want to realize? Let's get in touch! Contact me on my{' '}
+            Ready to start your project? fill out the form below. Contact me on my{' '}
             <a href="mailto:deveroalex@gmail.com" className="underline">
               email
             </a>
