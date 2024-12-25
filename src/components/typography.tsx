@@ -2,36 +2,54 @@ import type { FC, HTMLAttributes, PropsWithChildren } from 'react'
 
 import classNames from 'classnames'
 
+import type { HeadingElementType } from './heading'
 import { Heading } from './heading'
 
-type TypographyElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div'
+type TypographyElement = HeadingElementType | 'p' | 'span' | 'div'
 
-type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle' | 'body' | 'small'
+type Variant = HeadingElementType | 'subtitle' | 'body' | 'small'
+
+type CommonHeadingProps = HTMLAttributes<HTMLHeadingElement> & {
+  heading?: boolean
+  subheading?: boolean
+}
 
 type CommonProps = {
-  h1: HTMLAttributes<HTMLHeadingElement>
-  h2: HTMLAttributes<HTMLHeadingElement>
-  h3: HTMLAttributes<HTMLHeadingElement>
-  h4: HTMLAttributes<HTMLHeadingElement>
-  h5: HTMLAttributes<HTMLHeadingElement>
-  h6: HTMLAttributes<HTMLHeadingElement>
+  h1: CommonHeadingProps
+  h2: CommonHeadingProps
+  h3: CommonHeadingProps
+  h4: CommonHeadingProps
+  h5: CommonHeadingProps
+  h6: CommonHeadingProps
   p: HTMLAttributes<HTMLParagraphElement>
   span: HTMLAttributes<HTMLSpanElement>
   div: HTMLAttributes<HTMLDivElement>
 }
 
+const variantClasses = {
+  h1: 'text-5xl',
+  h2: 'text-4xl',
+  h3: 'text-3xl',
+  h4: 'text-2xl',
+  h5: 'text-xl',
+  h6: 'text-lg',
+  subtitle: 'text-lg',
+  body: 'text-base',
+  small: 'text-sm',
+} satisfies Record<Variant, string>
+
 type Props = {
-  as: TypographyElement
-  variant: Variant
+  as?: TypographyElement
+  variant?: Variant
   className?: string
 } & CommonProps[TypographyElement]
 
-export const Typography: FC<PropsWithChildren<Props>> = ({ as = 'div', className, variant, ...props }) => {
+export const Typography: FC<PropsWithChildren<Props>> = ({ as = 'div', className, variant = 'body', ...props }) => {
   const El = as
 
   if (variant.startsWith('h')) {
-    return <Heading {...props} />
+    return <Heading className={classNames(className, variantClasses[variant as Variant])} {...props} />
   }
 
-  return <El className={classNames(className)} {...props} />
+  return <El className={classNames(className, variantClasses[variant as Variant], 'text-gray-500')} {...props} />
 }
