@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { type Metadata } from 'next'
+import { ReCaptchaProvider } from 'next-recaptcha-v3'
 import { Inter } from 'next/font/google'
 
 import 'react-medium-image-zoom/dist/styles.css'
@@ -29,7 +30,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           crossOrigin="anonymous"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>{children}</ReCaptchaProvider>
+      </body>
     </html>
   )
 }

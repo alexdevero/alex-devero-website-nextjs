@@ -2,6 +2,10 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 
+import { useState } from 'react'
+
+import { useReCaptcha } from 'next-recaptcha-v3'
+
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -11,16 +15,18 @@ import { Textarea } from '../form-elements/textarea'
 import Layout from '../layout'
 import { Typography } from '../typography'
 
-const formEnabled = false
+const formEnabled = true
 
 const formSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
+  firstName: z.string().min(1, 'First name is required'),
+  lastName: z.string().min(1, 'Last name is required'),
   email: z.string().min(1, 'Email is required').email('Invalid email'),
   message: z.string().min(1, 'Message is required'),
 })
 
 const initialValues = {
-  name: '',
+  firstName: '',
+  lastName: '',
   email: '',
   message: '',
 }
@@ -28,6 +34,7 @@ const initialValues = {
 type FormValues = typeof initialValues
 
 export const ContactPage = () => {
+  const { executeRecaptcha } = useReCaptcha()
   const {
     formState: { errors, isSubmitting, isSubmitSuccessful },
     handleSubmit,
@@ -36,9 +43,33 @@ export const ContactPage = () => {
     defaultValues: initialValues,
     resolver: zodResolver(formSchema),
   })
+  const [error, setError] = useState<string | null>(null)
 
   const handleFormSubmit = async (values: FormValues) => {
-    console.log('Contact', values)
+    try {
+      const token = await executeRecaptcha('form_submit')
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...values, token }),
+      })
+      const data = await res.json()
+
+      if (!res.ok) {
+        throw new Error(data.message)
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message)
+      }
+
+      if (typeof error === 'string') {
+        setError(error)
+      }
+    }
   }
 
   return (
@@ -62,13 +93,23 @@ export const ContactPage = () => {
           <div className="flex flex-col items-center justify-center">
             <div className="mt-5 w-full max-w-lg">
               <form action="" className="flex flex-col gap-3" onSubmit={handleSubmit(handleFormSubmit)}>
-                <Input
-                  id="name"
-                  label="Name:"
-                  hasError={!!errors.name}
-                  errorMessage={errors.name?.message}
-                  {...register('name')}
-                />
+                <div className="flex flex-col gap-3 md:flex-row">
+                  <Input
+                    id="firstName"
+                    label="First name:"
+                    hasError={!!errors.firstName}
+                    errorMessage={errors.firstName?.message}
+                    {...register('firstName')}
+                  />
+
+                  <Input
+                    id="lastName"
+                    label="Last name:"
+                    hasError={!!errors.lastName}
+                    errorMessage={errors.lastName?.message}
+                    {...register('lastName')}
+                  />
+                </div>
 
                 <Input
                   id="email"
@@ -86,24 +127,20 @@ export const ContactPage = () => {
                   {...register('message')}
                 />
 
-                {/* <fieldset>
-                  <Recaptcha
-                    onloadCallback={this.onCaptchaLoad}
-                    sitekey="6Ldt6RgUAAAAAKtaxY2787y3S7uP5Wp9kzL0PMMg"
-                    render="explicit"
-                    verifyCallback={this.onCaptchaVerify}
-                  />
-                </fieldset> */}
-
                 {isSubmitSuccessful && (
                   <Typography as="div" className="text-green-500">
-                    <strong>Your message is on the way. I will reply in three days.</strong>
+                    Your message is on the way. I will reply in three days.
+                  </Typography>
+                )}
+                {error && (
+                  <Typography as="div" className="text-red-500">
+                    {error}
                   </Typography>
                 )}
 
                 <div>
                   <Button disabled={isSubmitting || isSubmitSuccessful} type="submit">
-                    Send
+                    Send message
                   </Button>
                 </div>
               </form>
