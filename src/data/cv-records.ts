@@ -131,19 +131,11 @@ export const frontend = [
 export const backend = [
   {
     name: 'Node.js',
-    value: 30,
+    value: 50,
   },
   {
     name: 'Express.js',
-    value: 30,
-  },
-  {
-    name: 'REST',
-    value: 60,
-  },
-  {
-    name: 'GraphQL',
-    value: 40,
+    value: 50,
   },
   {
     name: 'Nest.js',
@@ -153,14 +145,28 @@ export const backend = [
     name: 'Deno',
     value: 5,
   },
+]
+
+export const api = [
+  {
+    name: 'REST',
+    value: 80,
+  },
+  {
+    name: 'GraphQL',
+    value: 50,
+  },
+  {
+    name: '',
+    value: 0,
+  },
+]
+
+export const databases = [
   {
     name: 'SQL',
     value: 30,
   },
-  // {
-  //   name: 'Redis',
-  //   value: 5,
-  // },
   {
     name: 'PostgreSQL',
     value: 30,
@@ -170,19 +176,19 @@ export const backend = [
     value: 30,
   },
   {
-    name: 'RabbitMQ',
-    value: 5,
+    name: 'Firebase',
+    value: 60,
   },
 ]
 
 export const misc = [
   {
     name: 'Git',
-    value: 80,
+    value: 90,
   },
   {
     name: 'MacOS',
-    value: 70,
+    value: 90,
   },
   {
     name: 'Docker',
@@ -190,16 +196,8 @@ export const misc = [
   },
   {
     name: 'Webpack',
-    value: 40,
+    value: 60,
   },
-  {
-    name: 'Firebase',
-    value: 50,
-  },
-  // {
-  //   name: 'Kubernetes',
-  //   value: 10,
-  // },
   {
     name: 'CI/CD',
     value: 40,
@@ -209,19 +207,19 @@ export const misc = [
 export const tools = [
   {
     name: 'VS Code',
-    value: 70,
+    value: 90,
   },
   {
     name: 'Npm',
-    value: 60,
+    value: 80,
   },
   {
     name: 'Yarn',
-    value: 60,
+    value: 75,
   },
   {
     name: 'Jira',
-    value: 60,
+    value: 70,
   },
   {
     name: 'Figma',
@@ -232,11 +230,11 @@ export const tools = [
 export const programmingLanguages = [
   {
     name: 'JavaScript',
-    value: 40,
+    value: 85,
   },
   {
     name: 'TypeScript',
-    value: 40,
+    value: 75,
   },
   {
     name: 'Python',
@@ -250,24 +248,20 @@ export const programmingLanguages = [
     name: 'Rust',
     value: 2,
   },
-  {
-    name: 'R',
-    value: 1,
-  },
 ]
 
 export const testing = [
   {
     name: 'React Testing Library',
-    value: 60,
+    value: 70,
   },
   {
     name: 'Vitest',
-    value: 60,
+    value: 70,
   },
   {
     name: 'Jest',
-    value: 40,
+    value: 60,
   },
   {
     name: 'Cypress',
@@ -282,7 +276,7 @@ export const languages = [
   },
   {
     name: 'English',
-    value: 89,
+    value: 92,
   },
   {
     name: 'Spanish',

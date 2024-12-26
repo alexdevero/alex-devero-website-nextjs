@@ -3,15 +3,27 @@
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer } from 'recharts'
 
 import { Typography } from '@/components/typography'
-import { backend, frontend, languages, misc, programmingLanguages, testing, tools } from '@/data/cv-records'
+import {
+  api,
+  backend,
+  databases,
+  frontend,
+  languages,
+  misc,
+  programmingLanguages,
+  testing,
+  tools,
+} from '@/data/cv-records'
 
 const charts = [
+  { title: 'Programming languages:', data: programmingLanguages },
   { title: 'Front-end:', data: frontend },
   { title: 'Backend-end:', data: backend },
+  { title: 'APIs:', data: api },
+  { title: 'Databases:', data: databases },
+  { title: 'Testing:', data: testing },
   { title: 'Tools:', data: tools },
   { title: 'Misc:', data: misc },
-  { title: 'Testing:', data: testing },
-  { title: 'Programming languages:', data: programmingLanguages },
   { title: 'Languages:', data: languages },
 ]
 
