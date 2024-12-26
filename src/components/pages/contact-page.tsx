@@ -138,8 +138,8 @@ export const ContactPage = () => {
                   </Typography>
                 )}
 
-                <div>
-                  <Button disabled={isSubmitting || isSubmitSuccessful} type="submit">
+                <div className="flex justify-center">
+                  <Button disabled={isSubmitting || isSubmitSuccessful} type="submit" fullWidth>
                     Send message
                   </Button>
                 </div>
