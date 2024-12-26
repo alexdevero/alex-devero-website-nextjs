@@ -18,6 +18,11 @@ export const navigationLinks: NavigationLink[] = [
     visible: true,
   },
   {
+    title: 'Services',
+    path: '/services',
+    visible: true,
+  },
+  {
     title: 'Projects', // Mainly personal projects aside to freelance work
     path: '/projects',
     visible: true,

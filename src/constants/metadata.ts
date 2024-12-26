@@ -4,7 +4,8 @@ export const baseMetaTitle = 'Full-Stack TypeScript Development Services | React
 
 export const baseMetadata = {
   title: `Alex Devero | ${baseMetaTitle}`,
-  description: 'Full-stack TypeScript developer and React & Next.js specialist from Czech Republic.',
+  description:
+    'Offering expert full-stack TypeScript development, specializing in React and Next.js applications. Available for freelance projects and consulting. Limited availability—book your project today.',
 }
 
 export const getMetadata = (title: string, description?: string): Metadata => ({
