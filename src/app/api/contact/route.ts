@@ -33,6 +33,7 @@ export async function POST(request: Request) {
   const recatpchaResponseJson = (await recatpchaResponse.json()) as RecaptchaResponse
 
   if (!recatpchaResponseJson.success) {
+    console.log('!recatpchaResponseJson.success')
     return Response.json(
       { message: 'Failed reCAPTCHA' },
       {
@@ -42,6 +43,7 @@ export async function POST(request: Request) {
   }
 
   if (!process.env.RESEND_API_KEY) {
+    console.log('!process.env.RESEND_API_KEY')
     return Response.json(
       { message: 'No ReSend API key provided' },
       {
@@ -51,6 +53,7 @@ export async function POST(request: Request) {
   }
 
   if (recatpchaResponseJson.score < 0.5) {
+    console.log('recatpchaResponseJson.score < 0.5')
     return Response.json(
       { message: 'Failed reCAPTCHA score' },
       {
@@ -60,6 +63,7 @@ export async function POST(request: Request) {
   }
 
   if (!process.env.CONTACT_EMAIL) {
+    console.log('!process.env.CONTACT_EMAIL')
     return Response.json(
       { message: 'No contact email provided' },
       {
@@ -70,6 +74,7 @@ export async function POST(request: Request) {
 
   // Send email to yourself
   try {
+    console.log('Sending email')
     await resend.emails.send({
       from: requestFormData.email,
       to: process.env.CONTACT_EMAIL,
@@ -89,6 +94,7 @@ export async function POST(request: Request) {
       }
     )
   } catch (error) {
+    console.log('Failed to send email')
     return Response.json(
       { message: (error as ErrorResponse).message ?? 'Failed to send email' },
       {
