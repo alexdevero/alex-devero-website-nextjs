@@ -54,30 +54,32 @@ export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) =>
     )}
 
     <div>
-      <Typography className="mb-6 mt-2 text-center">
-        Here are some projects I worked and that are on my <a href="https://github.com/alexdevero">GitHub</a>:
-      </Typography>
-
       {!areGithubDataReady && !error && <span>Loading...</span>}
 
-      <div className="m-auto max-w-[720px]">
-        {areGithubDataReady && (
-          <ul className="grid grid-cols-1 gap-2 md:grid-cols-2">
-            {repos?.map((repository, index) => {
-              return (
-                <li key={repository.id}>
-                  <Typography as="span" variant="body">
-                    No.{index < 10 ? `0${index}` : index}:{' '}
-                    <Link className="underline" href={repository.url}>
-                      {repository.name} {repository.language !== null && `(${repository.language})`}
-                    </Link>
-                  </Typography>
-                </li>
-              )
-            })}
-          </ul>
-        )}
-      </div>
+      {areGithubDataReady && (
+        <>
+          <Typography className="mb-6 mt-2 text-center">
+            Here are some projects I worked and that are on my <a href="https://github.com/alexdevero">GitHub</a>:
+          </Typography>
+
+          <div className="m-auto max-w-[720px]">
+            <ul className="grid grid-cols-1 gap-2 md:grid-cols-2">
+              {repos?.map((repository, index) => {
+                return (
+                  <li key={repository.id}>
+                    <Typography as="span" variant="body">
+                      No.{index < 10 ? `0${index}` : index}:{' '}
+                      <Link className="underline" href={repository.url}>
+                        {repository.name} {repository.language !== null && `(${repository.language})`}
+                      </Link>
+                    </Typography>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </>
+      )}
     </div>
   </Layout>
 )
