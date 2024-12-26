@@ -75,7 +75,7 @@ export async function POST(request: Request) {
   // Send email to yourself
   try {
     console.log('Sending email', JSON.stringify(requestFormData))
-    await resend.emails.send({
+    const res = await resend.emails.send({
       from: requestFormData.email,
       to: process.env.CONTACT_EMAIL,
       subject: 'Contact from alexdevero.com',
@@ -86,6 +86,8 @@ export async function POST(request: Request) {
 <p>Message: ${requestFormData.message}</p>
 `,
     })
+
+    console.log('Email sent', JSON.stringify(res))
 
     return Response.json(
       { message: 'Success' },
