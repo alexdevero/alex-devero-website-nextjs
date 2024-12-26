@@ -20,7 +20,7 @@ type Props = HTMLAttributes<HTMLInputElement> & {
 
 export const Input = forwardRef<HTMLInputElement, Props>(
   ({ hasError, id, errorMessage, label, type = 'text', ...rest }, ref) => (
-    <div className="flex flex-col gap-1">
+    <div className="flex w-full flex-col gap-1">
       <InputWrapper>
         {label && <Label htmlFor={id}>{label}</Label>}
         <input

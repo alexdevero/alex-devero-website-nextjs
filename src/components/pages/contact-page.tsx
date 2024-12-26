@@ -90,10 +90,10 @@ export const ContactPage = () => {
         </div>
 
         {formEnabled && (
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex w-full flex-col items-center justify-center">
             <div className="mt-5 w-full max-w-lg">
               <form action="" className="flex flex-col gap-3" onSubmit={handleSubmit(handleFormSubmit)}>
-                <div className="flex flex-col gap-3 md:flex-row">
+                <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                   <Input
                     id="firstName"
                     label="First name:"
