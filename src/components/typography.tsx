@@ -51,5 +51,10 @@ export const Typography: FC<PropsWithChildren<Props>> = ({ as = 'div', className
     return <Heading className={classNames(className, variantClasses[variant as Variant])} {...props} />
   }
 
-  return <El className={classNames(className, variantClasses[variant as Variant], 'text-gray-500')} {...props} />
+  return (
+    <El
+      className={classNames(className, variantClasses[variant as Variant], 'text-gray-500 dark:text-gray-500')}
+      {...props}
+    />
+  )
 }

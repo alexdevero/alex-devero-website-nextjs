@@ -3,6 +3,9 @@ import { useMemo } from 'react'
 
 import { footerLinks } from '@/constants/navigation'
 
+import { Link } from './link'
+import { Typography } from './typography'
+
 export const Footer: FC = () => {
   const currentYear = useMemo(() => new Date().getFullYear().toString(), [])
 
@@ -13,18 +16,18 @@ export const Footer: FC = () => {
           {footerLinks.map(link =>
             link.visible ? (
               <li key={link.path}>
-                <a href={link.path} rel="noopener noreferrer" target="_blank">
+                <Link href={link.path}>
                   <span className={`fab fa-${link.title}`} />
-                </a>
+                </Link>
               </li>
             ) : null
           )}
         </ul>
       </nav>
 
-      <p className="mt-3 text-center text-xs">
+      <Typography as="p" className="mt-3 text-center text-xs">
         Copyright &copy; <span>{currentYear}</span> Alex Devero
-      </p>
+      </Typography>
     </footer>
   )
 }

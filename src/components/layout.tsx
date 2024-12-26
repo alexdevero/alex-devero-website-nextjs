@@ -13,7 +13,7 @@ export const Layout = ({ children, title }: { children: ReactNode | ReactNode[];
       </Head>
     )}
 
-    <div className="flex h-screen w-screen flex-1 flex-col px-7">
+    <div className="flex min-h-screen w-screen flex-1 flex-col bg-white px-7 dark:bg-gray-900 dark:text-white">
       <Header />
 
       <main className="flex flex-1 flex-col">{children}</main>

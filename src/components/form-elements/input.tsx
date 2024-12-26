@@ -8,7 +8,7 @@ import { InputWrapper } from './input-wrapper'
 import { Label } from './label'
 
 export const inputClasses =
-  'rounded-sm border border-gray-300 py-1 px-1.5 text-sm transition-all hover:border-blue-400 hover:shadow-[0_0_0_2px_rgba(96,165,250,0.6)]'
+  'rounded-sm border border-gray-300 py-1 px-1.5 text-sm transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_0_2px_rgba(96,165,250,0.6)] dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300'
 export const inputErrorClasses = '!border-red-500 hover:!shadow-[0_0_0_2px_rgba(239,68,68,0.4)]'
 
 type Props = HTMLAttributes<HTMLInputElement> & {

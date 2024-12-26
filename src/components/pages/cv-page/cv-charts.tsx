@@ -16,8 +16,8 @@ const charts = [
 ]
 
 export const CvCharts = () => (
-  <div className="m-auto min-h-full px-8">
-    <div className="grid min-h-full grid-cols-1 gap-x-4 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+  <div className="m-auto min-h-full">
+    <div className="m-auto grid min-h-full max-w-[calc(100vw-64px)] grid-cols-1 gap-x-4 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
       {charts.map(({ title, data }) => (
         <div key={title} className="flex flex-col gap-3">
           <Typography as="h2" variant="h5" className="m-0 text-base font-bold">

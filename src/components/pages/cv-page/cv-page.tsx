@@ -14,26 +14,39 @@ export const CvPage = () => (
 
     <div className="mb-8 ml-auto mr-auto flex max-w-md flex-col gap-2">
       <div>
-        <span className="font-semibold">Name:</span> <Typography as="span">{cvRecords.personalInfo.name}</Typography>
+        <Typography as="span" className="font-semibold">
+          Name:
+        </Typography>{' '}
+        <Typography as="span">{cvRecords.personalInfo.name}</Typography>
       </div>
       <div>
-        <span className="font-semibold">Location:</span>{' '}
+        <Typography as="span" className="font-semibold">
+          Location:
+        </Typography>{' '}
         <Typography as="span">{cvRecords.personalInfo.address}</Typography>
       </div>
       <div>
-        <span className="font-semibold">E-mail:</span>{' '}
+        <Typography as="span" className="font-semibold">
+          E-mail:
+        </Typography>{' '}
         <Link href={`mailto:${cvRecords.personalInfo.email}`}>{cvRecords.personalInfo.email}</Link>
       </div>
       <div>
-        <span className="font-semibold">Web:</span>{' '}
+        <Typography as="span" className="font-semibold">
+          Web:
+        </Typography>{' '}
         <Link href={cvRecords.personalInfo.website}>{cvRecords.personalInfo.website}</Link>
       </div>
       <div>
-        <span className="font-semibold">Github:</span>{' '}
+        <Typography as="span" className="font-semibold">
+          Github:
+        </Typography>{' '}
         <Link href={cvRecords.personalInfo.github}>{cvRecords.personalInfo.github}</Link>
       </div>
       <div>
-        <span className="font-semibold">Linkedin:</span>{' '}
+        <Typography as="span" className="font-semibold">
+          Linkedin:
+        </Typography>{' '}
         <Link href={cvRecords.personalInfo.linkedin}>{cvRecords.personalInfo.linkedin}</Link>
       </div>
     </div>

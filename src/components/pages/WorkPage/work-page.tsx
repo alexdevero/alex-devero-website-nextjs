@@ -23,12 +23,16 @@ export const WorkPage = () => (
               })}
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold">{project.company}</span>
+              <Typography as="span" className="text-lg font-bold">
+                {project.company}
+              </Typography>
 
-              <h5 className="text-base font-medium">{project.position}</h5>
-              <h5 className="text-sm text-slate-500">
+              <Typography as="h5" variant="body" className="font-medium">
+                {project.position}
+              </Typography>
+              <Typography as="h5" variant="small" className="text-slate-500">
                 {project.yearFrom}-{project.yearTo}{' '}
-              </h5>
+              </Typography>
             </div>
           </div>
         ))}

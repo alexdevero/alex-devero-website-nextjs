@@ -1,6 +1,7 @@
 import { Octokit } from '@octokit/rest'
 
 import Layout from '@/components/layout'
+import { Link } from '@/components/link'
 import { Typography } from '@/components/typography'
 import { projects } from '@/data/projects'
 
@@ -54,12 +55,16 @@ export default async function Projects() {
           <div className="mb-8 grid grid-cols-1 justify-center gap-6">
             {projects.map(project => (
               <div key={project.name} className="flex flex-col text-center">
-                <span className="text-lg font-bold">{project.name}</span>
+                <Typography as="span" variant="subtitle" className="font-bold">
+                  {project.name}
+                </Typography>
 
-                <h5 className="text-base font-medium">{project.position}</h5>
-                <h5 className="text-sm text-slate-500">
+                <Typography as="h5" variant="body" className="mt-1 font-medium">
+                  {project.position}
+                </Typography>
+                <Typography as="h5" variant="small" className="mt-1 text-slate-500">
                   {project.yearFrom}-{project.yearTo}
-                </h5>
+                </Typography>
               </div>
             ))}
           </div>
@@ -81,10 +86,12 @@ export default async function Projects() {
               {repos?.map((repository, index) => {
                 return (
                   <li key={repository.id}>
-                    No.{index < 10 ? `0${index}` : index}:{' '}
-                    <a className="underline" href={repository.url} rel="noopener noreferrer" target="_blank">
-                      {repository.name} {repository.language !== null && `(${repository.language})`}
-                    </a>
+                    <Typography as="span" variant="body">
+                      No.{index < 10 ? `0${index}` : index}:{' '}
+                      <Link className="underline" href={repository.url}>
+                        {repository.name} {repository.language !== null && `(${repository.language})`}
+                      </Link>
+                    </Typography>
                   </li>
                 )
               })}

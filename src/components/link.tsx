@@ -27,13 +27,13 @@ export const Link: FC<PropsWithChildren<Props>> = ({
   ...props
 }) => {
   const linkClasses = classNames(
-    'transition-all',
+    'transition-all duration-300',
     {
       'cursor-not-allowed': props.disabled,
-      'text-gray-800 underline': active && !buttonStyle,
-      underline: initialUnderline,
-      'no-underline': !initialUnderline || buttonStyle,
-      'text-gray-500 hover:text-gray-800 hover:underline': !buttonStyle,
+      'text-gray-800 underline dark:text-gray-400': active && !buttonStyle,
+      underline: initialUnderline || active,
+      'no-underline': (!initialUnderline && !active) || buttonStyle,
+      'text-gray-500 hover:text-gray-800 hover:underline dark:hover:text-gray-400': !buttonStyle,
       [buttonClasses]: buttonStyle,
     },
     className

@@ -22,7 +22,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
         <textarea
           ref={ref}
           id={id}
-          className={classNames(inputClasses, {
+          className={classNames(inputClasses, 'min-h-12 resize-y', {
             [inputErrorClasses]: hasError,
           })}
           {...rest}

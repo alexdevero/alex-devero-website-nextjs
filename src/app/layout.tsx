@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react'
 
 import { type Metadata } from 'next'
-import { ReCaptchaProvider } from 'next-recaptcha-v3'
 import { Inter } from 'next/font/google'
 
 import 'react-medium-image-zoom/dist/styles.css'
 
+import { AppProviders } from '@/contexts/providers'
 import '@/styles/global.css'
 
 const inter = Inter({
@@ -29,9 +29,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
           crossOrigin="anonymous"
         />
+        {/* Check for theme preference on page load to avoid to avoid FOUC */}
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.classList.toggle(
+              'dark',
+              localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+            )`,
+          }}
+        />
       </head>
       <body>
-        <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>{children}</ReCaptchaProvider>
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   )

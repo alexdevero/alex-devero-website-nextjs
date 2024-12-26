@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation'
 import { navigationLinks } from '@/constants/navigation'
 
 import { Link } from './link'
+import { ThemeSwitcher } from './theme-switcher/ThemeSwitcher'
 
 export const Header: FC = () => {
   const pathname = usePathname()
@@ -37,6 +38,10 @@ export const Header: FC = () => {
             ) : null
           )}
         </ul>
+
+        <div>
+          <ThemeSwitcher />
+        </div>
 
         <button className="max-md:flex" onClick={() => toggleMobileMenu(!isMobileMenuVisible)}>
           <span />
