@@ -3,7 +3,7 @@ import { Link } from '../link'
 import { Typography } from '../typography'
 
 export const HomePage = () => (
-  <Layout title="Home">
+  <Layout>
     <div className="flex w-full flex-1 items-center justify-center">
       <div className="max-w-2xl text-center">
         <Typography as="h1" variant="h1">

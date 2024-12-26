@@ -6,7 +6,7 @@ import { Link } from '../link'
 import { Typography } from '../typography'
 
 export const AboutPage = () => (
-  <Layout title="About">
+  <Layout>
     <Typography as="h1" variant="h1">
       About Me
     </Typography>

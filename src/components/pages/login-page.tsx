@@ -37,7 +37,7 @@ export const LoginPage = () => {
   }
 
   return (
-    <Layout title="Contact">
+    <Layout>
       <Heading>Login</Heading>
 
       <div className="mx-auto max-w-[280px]">

@@ -23,7 +23,7 @@ type Props = {
 }
 
 export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) => (
-  <Layout title="Projects">
+  <Layout>
     <Typography as="h1" variant="h1">
       Projects
     </Typography>

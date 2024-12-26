@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react'
 
-import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import 'react-medium-image-zoom/dist/styles.css'
 
+import { getMetadata } from '@/constants/metadata'
 import { AppProviders } from '@/contexts/providers'
 import '@/styles/global.css'
 
@@ -13,10 +13,7 @@ const inter = Inter({
   subsets: ['latin-ext'],
 })
 
-export const metadata: Metadata = {
-  title: 'Alex Devero',
-  description: 'Entrepreneur, designer and developer from Czech Republic.',
-}
+export const metadata = getMetadata('Alex Devero')
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

@@ -1,13 +1,13 @@
 import { Cta } from '@/components/cta/cta'
+import { Heading } from '@/components/heading'
+import Layout from '@/components/layout'
 import { Typography } from '@/components/typography'
 import { work } from '@/data/work'
 
-import { Heading } from '../../heading'
-import Layout from '../../layout'
 import { getLogoColorClasses, getLogoImageWith } from './utils'
 
 export const WorkPage = () => (
-  <Layout title="Work">
+  <Layout>
     <Heading>Professional Experience</Heading>
 
     <div className="flex flex-col items-center justify-center">

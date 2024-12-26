@@ -73,7 +73,7 @@ export const ContactPage = () => {
   }
 
   return (
-    <Layout title="Contact">
+    <Layout>
       <Typography as="h1" variant="h1">
         Let's get in touch
       </Typography>

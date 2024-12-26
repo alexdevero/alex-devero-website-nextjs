@@ -1,3 +1,7 @@
+import { getMetadata } from '@/constants/metadata'
+
+export const metadata = getMetadata('Blog')
+
 export default function BlogPost() {
   return (
     <div>

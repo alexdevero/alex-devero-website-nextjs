@@ -1,26 +1,16 @@
-import type { ReactNode } from 'react'
-
-import Head from 'next/head'
+import type { FC, PropsWithChildren } from 'react'
 
 import { Footer } from './footer'
 import { Header } from './header'
 
-export const Layout = ({ children, title }: { children: ReactNode | ReactNode[]; title: string }) => (
-  <>
-    {title && (
-      <Head>
-        <title>{`${title} | Alex Devero`}</title>
-      </Head>
-    )}
+export const Layout: FC<PropsWithChildren> = ({ children }) => (
+  <div className="flex min-h-screen w-screen flex-1 flex-col bg-white px-7 dark:bg-gray-900 dark:text-white">
+    <Header />
 
-    <div className="flex min-h-screen w-screen flex-1 flex-col bg-white px-7 dark:bg-gray-900 dark:text-white">
-      <Header />
+    <main className="flex flex-1 flex-col">{children}</main>
 
-      <main className="flex flex-1 flex-col">{children}</main>
-
-      <Footer />
-    </div>
-  </>
+    <Footer />
+  </div>
 )
 
 export default Layout
