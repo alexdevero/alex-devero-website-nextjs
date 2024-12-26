@@ -4,6 +4,7 @@ import { forwardRef } from 'react'
 import classNames from 'classnames'
 
 import { ErrorMessage } from './error-message'
+import { inputClasses, inputErrorClasses } from './input'
 import { InputWrapper } from './input-wrapper'
 import { Label } from './label'
 
@@ -21,8 +22,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
         <textarea
           ref={ref}
           id={id}
-          className={classNames('rounded-sm border border-solid border-gray-400 p-1 text-sm', {
-            'border-red-500': hasError,
+          className={classNames(inputClasses, {
+            [inputErrorClasses]: hasError,
           })}
           {...rest}
         />
