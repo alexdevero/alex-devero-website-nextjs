@@ -74,7 +74,7 @@ export async function POST(request: Request) {
 
   // Send email to yourself
   try {
-    console.log('Sending email')
+    console.log('Sending email', JSON.stringify(requestFormData))
     await resend.emails.send({
       from: requestFormData.email,
       to: process.env.CONTACT_EMAIL,
