@@ -3,7 +3,7 @@ import type { FC, HTMLAttributes } from 'react'
 import classNames from 'classnames'
 
 export const buttonClasses =
-  'flex h-9 items-center justify-center rounded-sm bg-gray-800 px-5 text-sm text-white transition-all duration-300 hover:bg-gray-600 active:bg-gray-900 disabled:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-700 dark:active:bg-gray-800 dark:disabled:bg-gray-400'
+  'flex h-9 items-center justify-center rounded-sm bg-gray-800 px-5 text-sm text-white transition-all duration-300 hover:bg-gray-600 active:bg-gray-900 disabled:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-700 dark:active:bg-gray-800 dark:disabled:bg-gray-800'
 
 type Props = HTMLAttributes<HTMLButtonElement> & {
   children: string
