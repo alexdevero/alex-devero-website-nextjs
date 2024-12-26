@@ -33,7 +33,6 @@ export async function POST(request: Request) {
   const recatpchaResponseJson = (await recatpchaResponse.json()) as RecaptchaResponse
 
   if (!recatpchaResponseJson.success) {
-    console.log('!recatpchaResponseJson.success')
     return Response.json(
       { message: 'Failed reCAPTCHA' },
       {
@@ -43,7 +42,6 @@ export async function POST(request: Request) {
   }
 
   if (!process.env.RESEND_API_KEY) {
-    console.log('!process.env.RESEND_API_KEY')
     return Response.json(
       { message: 'No ReSend API key provided' },
       {
@@ -53,7 +51,6 @@ export async function POST(request: Request) {
   }
 
   if (recatpchaResponseJson.score < 0.5) {
-    console.log('recatpchaResponseJson.score < 0.5')
     return Response.json(
       { message: 'Failed reCAPTCHA score' },
       {
@@ -63,7 +60,6 @@ export async function POST(request: Request) {
   }
 
   if (!process.env.CONTACT_EMAIL) {
-    console.log('!process.env.CONTACT_EMAIL')
     return Response.json(
       { message: 'No contact email provided' },
       {
@@ -74,9 +70,9 @@ export async function POST(request: Request) {
 
   // Send email to yourself
   try {
-    console.log('Sending email', JSON.stringify(requestFormData))
-    const res = await resend.emails.send({
-      from: requestFormData.email,
+    await resend.emails.send({
+      // This must be from verified domain, otherwise it will not work (can't verify gmail since it is not my domain)
+      from: 'Alex Devero website <website@alexdevero.com>',
       to: process.env.CONTACT_EMAIL,
       subject: 'Contact from alexdevero.com',
       html: `
@@ -87,8 +83,6 @@ export async function POST(request: Request) {
 `,
     })
 
-    console.log('Email sent', JSON.stringify(res))
-
     return Response.json(
       { message: 'Success' },
       {
@@ -96,7 +90,6 @@ export async function POST(request: Request) {
       }
     )
   } catch (error) {
-    console.log('Failed to send email')
     return Response.json(
       { message: (error as ErrorResponse).message ?? 'Failed to send email' },
       {
