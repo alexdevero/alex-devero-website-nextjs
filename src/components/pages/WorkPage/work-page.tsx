@@ -1,5 +1,4 @@
 import { Cta } from '@/components/cta/cta'
-import { Heading } from '@/components/heading'
 import Layout from '@/components/layout'
 import { Typography } from '@/components/typography'
 import { work } from '@/data/work'
@@ -8,7 +7,9 @@ import { getLogoColorClasses, getLogoImageWith } from './utils'
 
 export const WorkPage = () => (
   <Layout>
-    <Heading>Professional Experience</Heading>
+    <Typography as="h1" variant="h1">
+      Professional Experience
+    </Typography>
 
     <div className="flex flex-col items-center justify-center">
       <Typography className="mb-8 text-center">Companies and Projects I've Contributed To:</Typography>

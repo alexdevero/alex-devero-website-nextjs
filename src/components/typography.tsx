@@ -41,6 +41,7 @@ const variantClasses = {
 type Props = {
   as?: TypographyElement
   variant?: Variant
+  centered?: boolean
   className?: string
 } & CommonProps[TypographyElement]
 
