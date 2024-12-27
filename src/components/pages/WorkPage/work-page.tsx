@@ -16,7 +16,7 @@ export const WorkPage = () => (
 
       <div className="mb-8 flex flex-col justify-center gap-6">
         {work.map(project => (
-          <div key={project.company} className="flex flex-row items-center justify-start gap-3 md:gap-5">
+          <div key={project.company} className="flex flex-col justify-start gap-5 sm:flex-row sm:items-center">
             <div className="flex w-[128px] items-center justify-center">
               {project.logo({
                 className: `object-contain ${getLogoColorClasses(project.company)}`,
