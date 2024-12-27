@@ -44,6 +44,7 @@ export const ContactPage = () => {
     resolver: zodResolver(formSchema),
   })
   const [error, setError] = useState<string | null>(null)
+  const [messageSent, setMessageSent] = useState(false)
 
   const handleFormSubmit = async (values: FormValues) => {
     try {
@@ -61,6 +62,9 @@ export const ContactPage = () => {
       if (!res.ok) {
         throw new Error(data.message)
       }
+
+      setError(null)
+      setMessageSent(true)
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message)
@@ -140,7 +144,7 @@ export const ContactPage = () => {
 
                 <div className="flex justify-center">
                   <Button disabled={isSubmitting || isSubmitSuccessful} type="submit" fullWidth>
-                    Send message
+                    {messageSent ? 'Message sent' : 'Send message'}
                   </Button>
                 </div>
               </form>
