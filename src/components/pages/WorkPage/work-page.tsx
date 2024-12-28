@@ -14,7 +14,7 @@ export const WorkPage = () => (
     <div className="flex flex-col items-center justify-center">
       <Typography className="mb-8 text-center">Companies and Projects I've Contributed To:</Typography>
 
-      <div className="mb-8 flex flex-col justify-center gap-6">
+      <div className="mb-8 flex flex-col justify-center gap-10">
         {work.map(project => (
           <div key={project.company} className="flex flex-col justify-start gap-5 sm:flex-row sm:items-center">
             <div className="flex w-[128px] items-center justify-center">
@@ -34,6 +34,16 @@ export const WorkPage = () => (
               <Typography as="h5" variant="small" className="text-slate-500">
                 {project.yearFrom}-{project.yearTo}{' '}
               </Typography>
+
+              <ul>
+                {project.responsibilities.map(responsibility => (
+                  <li key={responsibility}>
+                    <Typography as="span" variant="small" className="text-slate-500">
+                      - {responsibility}
+                    </Typography>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         ))}

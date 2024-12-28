@@ -18,6 +18,7 @@ type Work = {
   yearFrom: string
   yearTo: string
   logo: (props: LogoProps) => ReactNode
+  responsibilities: string[]
 }
 
 export const work: Work[] = [
@@ -27,6 +28,12 @@ export const work: Work[] = [
     yearFrom: '2023',
     yearTo: 'present',
     logo: (props: LogoProps) => <Cdn77Logo {...props} />,
+    responsibilities: [
+      'Developing web applications using React, Next.js, TypeScript and Tailwind CSS.',
+      'Optimizing application performance and code quality.',
+      'Refactoring legacy code to improve maintainability and performance.',
+      'Establishing culture of React/Next.js testing practices.',
+    ],
   },
   {
     company: 'Digitoo',
@@ -34,6 +41,12 @@ export const work: Work[] = [
     yearFrom: '2021',
     yearTo: '2023',
     logo: (props: LogoProps) => <DigitooLogo {...props} />,
+    responsibilities: [
+      'Developing web application using React, Next.js, TypeScript and Tailwind CSS.',
+      'Leading migration of legacy codebase to Next.js',
+      'Collaborating on setting direction for frontend architecture.',
+      'Mentoring junior developers and providing guidance.',
+    ],
   },
   {
     company: 'Persoo',
@@ -41,6 +54,11 @@ export const work: Work[] = [
     yearFrom: '2019',
     yearTo: '2021',
     logo: (props: LogoProps) => <PersooLogo {...props} />,
+    responsibilities: [
+      'Developing web applications using JavaScript and TypeScript.',
+      'Working directly with clients to provide solutions.',
+      'Leading frontend development team and mentoring junior developers.',
+    ],
   },
   {
     company: 'Retino',
@@ -48,6 +66,10 @@ export const work: Work[] = [
     yearFrom: '2019',
     yearTo: '2019',
     logo: (props: LogoProps) => <RetinoLogo {...props} />,
+    responsibilities: [
+      'Developing web application using TypeScript and React.',
+      'Providing guidance on React development best practices.',
+    ],
   },
   {
     company: 'Supernova',
@@ -55,6 +77,10 @@ export const work: Work[] = [
     yearFrom: '2017',
     yearTo: '2019',
     logo: (props: LogoProps) => <SupernovaLogo {...props} />,
+    responsibilities: [
+      'Working alongside CEO to build a new product from scratch.',
+      'Setting direction for frontend architecture.',
+    ],
   },
   {
     company: 'StartMonday',
@@ -62,5 +88,6 @@ export const work: Work[] = [
     yearFrom: '2016',
     yearTo: '2017',
     logo: (props: LogoProps) => <StartMondayLogo {...props} />,
+    responsibilities: ['Developing web applications using TypeScript.'],
   },
 ]
