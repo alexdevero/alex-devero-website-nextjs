@@ -18,14 +18,14 @@ export const Header: FC = () => {
   useEffect(() => {
     setIsMounted(true)
     return () => {
-      // document.body.style.overflow = 'auto'
+      document.body.style.overflow = 'auto'
     }
   }, [])
 
   const handleMobileMenuToggle = (isVisible: boolean) => {
     if (!isMounted) return
     setIsMobileMenuVisible(isVisible)
-    // document.body.style.overflow = isVisible ? 'hidden' : 'auto'
+    document.body.style.overflow = isVisible ? 'hidden' : 'auto'
   }
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export const Header: FC = () => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
         setIsMobileMenuVisible(false)
-        // document.body.style.overflow = 'auto'
+        document.body.style.overflow = 'auto'
       }
     }
 
