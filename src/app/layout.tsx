@@ -2,8 +2,6 @@ import type { ReactNode } from 'react'
 
 import { Inter } from 'next/font/google'
 
-import 'react-medium-image-zoom/dist/styles.css'
-
 import { getMetadata } from '@/constants/metadata'
 import { AppProviders } from '@/contexts/providers'
 import '@/styles/global.css'
