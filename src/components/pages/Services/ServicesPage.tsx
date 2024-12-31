@@ -1,13 +1,13 @@
 import type { FC } from 'react'
 
 import { Cta } from '@/components/cta/cta'
-import Layout from '@/components/layout'
+import { DefaultLayout } from '@/components/defaultLayout'
 import { Typography } from '@/components/typography'
 
 const isNearYearEnd = new Date().getMonth() >= 10
 
 export const ServicesPage: FC = () => (
-  <Layout>
+  <DefaultLayout>
     <Typography as="h1" variant="h1">
       Services
     </Typography>
@@ -74,5 +74,5 @@ export const ServicesPage: FC = () => (
     </div>
 
     <Cta />
-  </Layout>
+  </DefaultLayout>
 )

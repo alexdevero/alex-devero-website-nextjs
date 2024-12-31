@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 
-import Layout from '@/components/layout'
+import { DefaultLayout } from '@/components/defaultLayout'
 import { Link } from '@/components/link'
 import { Typography } from '@/components/typography'
 import { projects } from '@/data/projects'
@@ -23,7 +23,7 @@ type Props = {
 }
 
 export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) => (
-  <Layout>
+  <DefaultLayout>
     <Typography as="h1" variant="h1">
       Projects
     </Typography>
@@ -81,5 +81,5 @@ export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) =>
         </>
       )}
     </div>
-  </Layout>
+  </DefaultLayout>
 )

@@ -6,9 +6,9 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { Button } from '../button'
+import { DefaultLayout } from '../defaultLayout'
 import { Input } from '../form-elements/input'
 import { Heading } from '../heading'
-import Layout from '../layout'
 
 const formSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Invalid email'),
@@ -33,11 +33,12 @@ export const LoginPage = () => {
   })
 
   const handleLogin = async (values: FormValues) => {
+    // eslint-disable-next-line no-console
     console.log('Login', values)
   }
 
   return (
-    <Layout>
+    <DefaultLayout>
       <Heading>Login</Heading>
 
       <div className="mx-auto max-w-[280px]">
@@ -64,6 +65,6 @@ export const LoginPage = () => {
           </div>
         </form>
       </div>
-    </Layout>
+    </DefaultLayout>
   )
 }

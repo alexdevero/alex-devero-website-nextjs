@@ -1,5 +1,5 @@
 import { Cta } from '@/components/cta/cta'
-import Layout from '@/components/layout'
+import { DefaultLayout } from '@/components/defaultLayout'
 import { Link } from '@/components/link'
 import { Typography } from '@/components/typography'
 import { cvRecords } from '@/data/cv-records'
@@ -7,7 +7,7 @@ import { cvRecords } from '@/data/cv-records'
 import { CvCharts } from './cv-charts'
 
 export const CvPage = () => (
-  <Layout>
+  <DefaultLayout>
     <Typography as="h1" variant="h1">
       My CV
     </Typography>
@@ -56,5 +56,5 @@ export const CvPage = () => (
     </div>
 
     <Cta />
-  </Layout>
+  </DefaultLayout>
 )

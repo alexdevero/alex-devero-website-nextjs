@@ -10,9 +10,9 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { Button } from '../button'
+import { DefaultLayout } from '../defaultLayout'
 import { Input } from '../form-elements/input'
 import { Textarea } from '../form-elements/textarea'
-import Layout from '../layout'
 import { Typography } from '../typography'
 
 const formEnabled = true
@@ -77,7 +77,7 @@ export const ContactPage = () => {
   }
 
   return (
-    <Layout>
+    <DefaultLayout>
       <Typography as="h1" variant="h1">
         Let's get in touch
       </Typography>
@@ -152,6 +152,6 @@ export const ContactPage = () => {
           </div>
         )}
       </div>
-    </Layout>
+    </DefaultLayout>
   )
 }

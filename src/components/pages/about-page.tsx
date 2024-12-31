@@ -1,12 +1,12 @@
 import { personalLinks, socialMedia } from '@/constants/links'
 
 import { Cta } from '../cta/cta'
-import Layout from '../layout'
+import { DefaultLayout } from '../defaultLayout'
 import { Link } from '../link'
 import { Typography } from '../typography'
 
 export const AboutPage = () => (
-  <Layout>
+  <DefaultLayout>
     <Typography as="h1" variant="h1">
       About Me
     </Typography>
@@ -46,5 +46,5 @@ export const AboutPage = () => (
         <Cta />
       </div>
     </div>
-  </Layout>
+  </DefaultLayout>
 )

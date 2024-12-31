@@ -8,7 +8,7 @@ import RetinoLogo from '@/public/images/logos/retino-logo.svg'
 import StartMondayLogo from '@/public/images/logos/start-monday-logo.svg'
 import SupernovaLogo from '@/public/images/logos/supernova-logo.svg'
 
-type LogoProps = SVGProps<SVGSVGElement>
+export type LogoProps = SVGProps<SVGSVGElement>
 
 export type Company = 'CDN77' | 'Digitoo' | 'Persoo' | 'Retino' | 'Supernova' | 'StartMonday'
 

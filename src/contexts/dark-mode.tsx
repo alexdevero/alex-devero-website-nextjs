@@ -36,6 +36,7 @@ export const DarkModeProvider: FC<PropsWithChildren> = props => {
     } else {
       handleDarkModeChange(false)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {

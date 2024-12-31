@@ -1,9 +1,9 @@
-import Layout from '../layout'
+import { DefaultLayout } from '../defaultLayout'
 import { Link } from '../link'
 import { Typography } from '../typography'
 
 export const HomePage = () => (
-  <Layout>
+  <DefaultLayout>
     <div className="flex w-full flex-1 items-center justify-center">
       <div className="max-w-2xl text-center">
         <Typography as="h1" variant="h1">
@@ -25,5 +25,5 @@ export const HomePage = () => (
         </div>
       </div>
     </div>
-  </Layout>
+  </DefaultLayout>
 )
