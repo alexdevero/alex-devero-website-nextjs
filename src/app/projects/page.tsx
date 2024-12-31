@@ -3,13 +3,10 @@ import { Octokit } from '@octokit/rest'
 import { ProjectsPage } from '@/components/pages/Projects/ProjectsPage'
 import { getMetadata } from '@/constants/metadata'
 
-import { githubCredentials } from '../../../credentials/credentials-github'
-
 export const metadata = getMetadata('Projects')
 
-const octokit = new Octokit({
-  auth: githubCredentials.token,
-})
+// Looks like auth is not needed at least for now for read only access
+const octokit = new Octokit({})
 
 async function getRepos() {
   try {
