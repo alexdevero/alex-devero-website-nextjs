@@ -15,7 +15,7 @@ export const metadata = getMetadata('Alex Devero')
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang="en" className={inter.className}>
       <head>
         {/* <!-- Font Awesome --> */}
         <link
@@ -25,7 +25,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           crossOrigin="anonymous"
         />
         {/* Check for theme preference on page load to avoid FOUC */}
-        <script
+        {/* TODO: Disabled because of hydration error */}
+        {/* <script
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: `document.documentElement.classList.toggle(
@@ -33,7 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
             )`,
           }}
-        />
+        /> */}
       </head>
       <body>
         <AppProviders>{children}</AppProviders>
