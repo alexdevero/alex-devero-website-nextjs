@@ -15,7 +15,7 @@ export const metadata = getMetadata('Alex Devero')
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
         {/* <!-- Font Awesome --> */}
         <link
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
           crossOrigin="anonymous"
         />
-        {/* Check for theme preference on page load to avoid to avoid FOUC */}
+        {/* Check for theme preference on page load to avoid FOUC */}
         <script
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
