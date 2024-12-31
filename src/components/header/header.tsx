@@ -3,8 +3,6 @@
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 
-import { usePathname } from 'next/navigation'
-
 import classNames from 'classnames'
 
 import { navigationLinks } from '@/constants/navigation'
@@ -14,15 +12,25 @@ import { ThemeSwitcher } from '../theme-switcher/ThemeSwitcher'
 import { NavToggleButton } from './NavToggleButton'
 
 export const Header: FC = () => {
-  const pathname = usePathname()
+  const [isMounted, setIsMounted] = useState(false)
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false)
 
-  const handleMobileMenuToggle = (isMobileMenuVisible: boolean) => {
-    setIsMobileMenuVisible(isMobileMenuVisible)
-    document.body.style.overflow = isMobileMenuVisible ? 'hidden' : 'auto'
+  useEffect(() => {
+    setIsMounted(true)
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [])
+
+  const handleMobileMenuToggle = (isVisible: boolean) => {
+    if (!isMounted) return
+    setIsMobileMenuVisible(isVisible)
+    document.body.style.overflow = isVisible ? 'hidden' : 'auto'
   }
 
   useEffect(() => {
+    if (!isMounted) return
+
     const handleResize = () => {
       if (window.innerWidth > 768) {
         setIsMobileMenuVisible(false)
@@ -31,12 +39,12 @@ export const Header: FC = () => {
     }
 
     window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [isMounted])
 
-    return () => {
-      document.body.style.overflow = 'auto'
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  if (!isMounted) {
+    return null // Return null on server-side and initial client-side render
+  }
 
   return (
     <header className="header">
@@ -44,6 +52,7 @@ export const Header: FC = () => {
         <Link href="/" className="font-bold no-underline hover:no-underline">
           AD
         </Link>
+
         <ul
           className={classNames('flex flex-1 items-center justify-center gap-4', {
             'max-md:fixed max-md:inset-0 max-md:z-10 max-md:flex-col max-md:bg-white max-md:dark:bg-gray-900':
@@ -51,22 +60,10 @@ export const Header: FC = () => {
             'hidden md:flex': !isMobileMenuVisible,
           })}
         >
-          <li>
-            <NavToggleButton
-              navOpen={isMobileMenuVisible}
-              onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)}
-            />
-          </li>
-
           {navigationLinks.map(link =>
             link.visible ? (
               <span key={link.path} onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)}>
-                <Link
-                  active={pathname === link.path}
-                  href={link.path}
-                  initialUnderline={false}
-                  className="max-md:text-lg"
-                >
+                <Link href={link.path} initialUnderline={false} className="max-md:text-lg">
                   {link.title}
                 </Link>
               </span>
@@ -76,7 +73,6 @@ export const Header: FC = () => {
 
         <div className="flex items-center gap-4">
           <ThemeSwitcher />
-
           <NavToggleButton navOpen={isMobileMenuVisible} onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)} />
         </div>
       </nav>
