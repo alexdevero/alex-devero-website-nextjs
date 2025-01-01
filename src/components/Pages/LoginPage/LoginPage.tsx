@@ -5,10 +5,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button } from '../button'
-import { DefaultLayout } from '../defaultLayout'
-import { Input } from '../form-elements/input'
-import { Heading } from '../heading'
+import { Button } from '../../Button'
+import { DefaultLayout } from '../../DefaultLayout'
+import { Input } from '../../FormElements/Input'
+import { Heading } from '../../Heading'
 
 const formSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Invalid email'),

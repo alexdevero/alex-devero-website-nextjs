@@ -1,10 +1,10 @@
-import { Cta } from '@/components/cta/cta'
-import { DefaultLayout } from '@/components/defaultLayout'
-import { Link } from '@/components/link'
-import { Typography } from '@/components/typography'
+import { Cta } from '@/components/Cta/Cta'
+import { DefaultLayout } from '@/components/DefaultLayout'
+import { Link } from '@/components/Link'
+import { Typography } from '@/components/Typography'
 import { cvRecords } from '@/data/cv-records'
 
-import { CvCharts } from './cv-charts'
+import { CvCharts } from './CvCharts'
 
 export const CvPage = () => (
   <DefaultLayout>

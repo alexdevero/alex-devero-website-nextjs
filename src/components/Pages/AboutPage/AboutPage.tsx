@@ -1,9 +1,9 @@
 import { personalLinks, socialMedia } from '@/constants/links'
 
-import { Cta } from '../cta/cta'
-import { DefaultLayout } from '../defaultLayout'
-import { Link } from '../link'
-import { Typography } from '../typography'
+import { Cta } from '../../Cta/Cta'
+import { DefaultLayout } from '../../DefaultLayout'
+import { Link } from '../../Link'
+import { Typography } from '../../Typography'
 
 export const AboutPage = () => (
   <DefaultLayout>
@@ -14,13 +14,14 @@ export const AboutPage = () => (
     <div className="flex flex-1 justify-center">
       <div className="flex max-w-3xl flex-col gap-3">
         <Typography>
-          I'm Alex Devero, a passionate full-stack TypeScript developer from the Czech Republic, specializing in
-          building dynamic web applications with React and Next.js.
+          I'm Alex Devero, a passionate full-stack TypeScript developer from the Czech Republic,
+          specializing in building dynamic web applications with React and Next.js.
         </Typography>
 
         <Typography>
-          With a strong background in product design, I bridge the gap between functionality and user experience. My
-          mission is to leverage technology to solve real-world problems and enhance people's lives.
+          With a strong background in product design, I bridge the gap between functionality and
+          user experience. My mission is to leverage technology to solve real-world problems and
+          enhance people's lives.
         </Typography>
 
         <Typography>
@@ -28,14 +29,14 @@ export const AboutPage = () => (
         </Typography>
 
         <Typography>
-          Beyond coding, I share insights on my blog <Link href={personalLinks.blog}>my blog</Link> about programming,
-          startups, business, tech and beyond.
+          Beyond coding, I share insights on my blog <Link href={personalLinks.blog}>my blog</Link>{' '}
+          about programming, startups, business, tech and beyond.
         </Typography>
 
         <Typography>
           You can find me on <Link href={socialMedia.linkedIn}>Linkedin</Link> and{' '}
-          <Link href={socialMedia.twitter}>X</Link> where I discuss industry trends and connect with fellow
-          professionals.
+          <Link href={socialMedia.twitter}>X</Link> where I discuss industry trends and connect with
+          fellow professionals.
         </Typography>
 
         <Typography>

@@ -1,5 +1,5 @@
-import { DefaultLayout } from '@/components/defaultLayout'
-import { Typography } from '@/components/typography'
+import { DefaultLayout } from '@/components/DefaultLayout'
+import { Typography } from '@/components/Typography'
 import { getMetadata } from '@/constants/metadata'
 
 export const metadata = getMetadata('404')

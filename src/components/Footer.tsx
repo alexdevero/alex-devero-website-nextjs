@@ -5,8 +5,8 @@ import { useMemo } from 'react'
 
 import { footerLinks } from '@/constants/navigation'
 
-import { Link } from './link'
-import { Typography } from './typography'
+import { Link } from './Link'
+import { Typography } from './Typography'
 
 export const Footer: FC = () => {
   const currentYear = useMemo(() => new Date().getFullYear().toString(), [])

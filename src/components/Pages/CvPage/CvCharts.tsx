@@ -1,8 +1,15 @@
 'use client'
 
-import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer } from 'recharts'
+import {
+  PolarAngleAxis,
+  PolarGrid,
+  PolarRadiusAxis,
+  Radar,
+  RadarChart,
+  ResponsiveContainer,
+} from 'recharts'
 
-import { Typography } from '@/components/typography'
+import { Typography } from '@/components/Typography'
 import {
   api,
   backend,

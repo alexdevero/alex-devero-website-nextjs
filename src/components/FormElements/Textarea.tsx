@@ -3,10 +3,10 @@ import { forwardRef } from 'react'
 
 import classNames from 'classnames'
 
-import { ErrorMessage } from './error-message'
-import { inputClasses, inputErrorClasses } from './input'
-import { InputWrapper } from './input-wrapper'
-import { Label } from './label'
+import { ErrorMessage } from './ErrorMessage'
+import { inputClasses, inputErrorClasses } from './Input'
+import { InputWrapper } from './InputWrapper'
+import { Label } from './Label'
 
 type Props = HTMLAttributes<HTMLTextAreaElement> & {
   label?: string

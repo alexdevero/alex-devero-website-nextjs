@@ -5,7 +5,7 @@ import NextLink from 'next/link'
 
 import classNames from 'classnames'
 
-import { buttonClasses } from './button'
+import { buttonClasses } from './Button'
 
 const isExternal = (href: LinkProps['href']) => href.toString().startsWith('http')
 

@@ -2,8 +2,8 @@ import type { FC, HTMLAttributes, PropsWithChildren } from 'react'
 
 import classNames from 'classnames'
 
-import type { HeadingElementType } from './heading'
-import { Heading } from './heading'
+import type { HeadingElementType } from './Heading'
+import { Heading } from './Heading'
 
 type TypographyElement = HeadingElementType | 'p' | 'span' | 'div'
 
@@ -45,16 +45,27 @@ type Props = {
   className?: string
 } & CommonProps[TypographyElement]
 
-export const Typography: FC<PropsWithChildren<Props>> = ({ as = 'div', className, variant = 'body', ...props }) => {
+export const Typography: FC<PropsWithChildren<Props>> = ({
+  as = 'div',
+  className,
+  variant = 'body',
+  ...props
+}) => {
   const El = as
 
   if (variant.startsWith('h')) {
-    return <Heading className={classNames(className, variantClasses[variant as Variant])} {...props} />
+    return (
+      <Heading className={classNames(className, variantClasses[variant as Variant])} {...props} />
+    )
   }
 
   return (
     <El
-      className={classNames(className, variantClasses[variant as Variant], 'text-gray-500 dark:text-gray-500')}
+      className={classNames(
+        className,
+        variantClasses[variant as Variant],
+        'text-gray-500 dark:text-gray-500'
+      )}
       {...props}
     />
   )
