@@ -1,3 +1,5 @@
+'use client'
+
 import type { FC } from 'react'
 
 import classNames from 'classnames'
@@ -6,9 +8,11 @@ import { useDarkMode } from '@/contexts/dark-mode'
 import MoonIcon from '@/public/images/icons/moon.svg'
 import SunIcon from '@/public/images/icons/sun.svg'
 
+import { Icon } from '../icon/Icon'
+
 const themeOptions = [
-  { label: 'Light', value: false, icon: <SunIcon className="size-5 text-inherit transition-colors duration-300" /> },
-  { label: 'Dark', value: true, icon: <MoonIcon className="size-5 text-inherit transition-colors duration-300" /> },
+  { label: 'Light', value: false, icon: SunIcon },
+  { label: 'Dark', value: true, icon: MoonIcon },
 ] as const
 
 export const ThemeSwitcher: FC = () => {
@@ -28,7 +32,10 @@ export const ThemeSwitcher: FC = () => {
               })}
               onClick={() => handleDarkModeChange(option.value)}
             >
-              {option.icon}
+              <Icon
+                icon={option.icon}
+                className="size-5 text-inherit transition-colors duration-300"
+              />
               <span className="sr-only">{option.label}</span>
             </button>
           </li>

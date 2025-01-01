@@ -7,16 +7,16 @@ module.exports = {
   // env: {
   //   ASSET_PREFIX: assetPrefix,
   // }
-  // experimental: {
-  //   turbo: {
-  //     rules: {
-  //       '*.svg': {
-  //         loaders: ['@svgr/webpack'],
-  //         as: '*.js'
-  //       }
-  //     }
-  //   }
-  // }
+  experimental: {
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js'
+        }
+      }
+    }
+  },
   webpack: config => {
     config.module.rules.push({
       test: /\.svg$/,

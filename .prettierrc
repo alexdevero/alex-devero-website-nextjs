@@ -7,7 +7,7 @@
   "singleQuote": true,
   "jsxSingleQuote": false,
   "arrowParens": "avoid",
-  "printWidth": 120,
+  "printWidth": 100,
   "endOfLine": "auto",
   "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
   "importOrder": ["server-only", "^react$", "^styled-components", "^next", "^@mui", "^[a-zA-Z]", "^@/", "^\\."],
