@@ -1,8 +1,8 @@
 import type { FC } from 'react'
 
-import { DefaultLayout } from '@/components/defaultLayout'
-import { Link } from '@/components/link'
-import { Typography } from '@/components/typography'
+import { DefaultLayout } from '@/components/DefaultLayout'
+import { Link } from '@/components/Link'
+import { Typography } from '@/components/Typography'
 import { projects } from '@/data/projects'
 
 const displayProjects = true
@@ -30,7 +30,9 @@ export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) =>
 
     {displayProjects ? (
       <div className="flex flex-col items-center justify-center">
-        <Typography className="mb-8 text-center">Below are some bigger projects I am currently working on:</Typography>
+        <Typography className="mb-8 text-center">
+          Below are some bigger projects I am currently working on:
+        </Typography>
 
         <div className="mb-8 grid grid-cols-1 justify-center gap-6">
           {projects.map(project => (
@@ -59,7 +61,8 @@ export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) =>
       {areGithubDataReady && (
         <>
           <Typography className="mb-6 mt-2 text-center">
-            Here are some projects I worked and that are on my <a href="https://github.com/alexdevero">GitHub</a>:
+            Here are some projects I worked and that are on my{' '}
+            <a href="https://github.com/alexdevero">GitHub</a>:
           </Typography>
 
           <div className="m-auto max-w-[720px]">
@@ -70,7 +73,8 @@ export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) =>
                     <Typography as="span" variant="body">
                       No.{index < 10 ? `0${index}` : index}:{' '}
                       <Link className="underline" href={repository.url}>
-                        {repository.name} {repository.language !== null && `(${repository.language})`}
+                        {repository.name}{' '}
+                        {repository.language !== null && `(${repository.language})`}
                       </Link>
                     </Typography>
                   </li>

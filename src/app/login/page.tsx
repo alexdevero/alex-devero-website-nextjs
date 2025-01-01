@@ -1,4 +1,4 @@
-import { LoginPage } from '@/components/pages/login-page'
+import { LoginPage } from '@/components/Pages/LoginPage/LoginPage'
 import { getMetadata } from '@/constants/metadata'
 
 export const metadata = getMetadata('Login')

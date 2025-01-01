@@ -1,6 +1,6 @@
-import { DefaultLayout } from '../defaultLayout'
-import { Link } from '../link'
-import { Typography } from '../typography'
+import { DefaultLayout } from '../../DefaultLayout'
+import { Link } from '../../Link'
+import { Typography } from '../../Typography'
 
 export const HomePage = () => (
   <DefaultLayout>
@@ -10,10 +10,13 @@ export const HomePage = () => (
           Alex Devero
         </Typography>
 
-        <Typography>Full-stack TypeScript developer specializing in React and Next.js applications</Typography>
+        <Typography>
+          Full-stack TypeScript developer specializing in React and Next.js applications
+        </Typography>
 
         <Typography className="my-3">
-          I help individuals, startups and businesses create scalable, high-performance web applications with great UX.
+          I help individuals, startups and businesses create scalable, high-performance web
+          applications with great UX.
         </Typography>
 
         <div className="mt-4 flex flex-col items-center justify-center gap-2">

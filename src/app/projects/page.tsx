@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/rest'
 
-import { ProjectsPage } from '@/components/pages/Projects/ProjectsPage'
+import { ProjectsPage } from '@/components/Pages/Projects/ProjectsPage'
 import { getMetadata } from '@/constants/metadata'
 
 export const metadata = getMetadata('Projects')
@@ -30,7 +30,8 @@ async function getRepos() {
     }
   } catch (error) {
     console.error(error)
-    const errorMessage = (error as Error).message || 'An error occurred while fetching data from GitHub.'
+    const errorMessage =
+      (error as Error).message || 'An error occurred while fetching data from GitHub.'
     return { repos: null, error: errorMessage }
   }
 }

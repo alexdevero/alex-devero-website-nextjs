@@ -1,4 +1,4 @@
-import { AboutPage } from '@/components/pages/about-page'
+import { AboutPage } from '@/components/Pages/AboutPage/AboutPage'
 import { getMetadata } from '@/constants/metadata'
 
 export const metadata = getMetadata('About')

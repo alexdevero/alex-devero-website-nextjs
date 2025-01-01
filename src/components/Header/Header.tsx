@@ -7,8 +7,8 @@ import classNames from 'classnames'
 
 import { navigationLinks } from '@/constants/navigation'
 
-import { Link } from '../link'
-import { ThemeSwitcher } from '../theme-switcher/ThemeSwitcher'
+import { Link } from '../Link'
+import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher'
 import { NavToggleButton } from './NavToggleButton'
 
 export const Header: FC = () => {
@@ -73,7 +73,10 @@ export const Header: FC = () => {
 
         <div className="flex items-center gap-4">
           <ThemeSwitcher />
-          <NavToggleButton navOpen={isMobileMenuVisible} onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)} />
+          <NavToggleButton
+            navOpen={isMobileMenuVisible}
+            onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)}
+          />
         </div>
       </nav>
     </header>

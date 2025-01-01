@@ -8,7 +8,7 @@ import { useDarkMode } from '@/contexts/dark-mode'
 import MoonIcon from '@/public/images/icons/moon.svg'
 import SunIcon from '@/public/images/icons/sun.svg'
 
-import { Icon } from '../icon/Icon'
+import { Icon } from '../Icon/Icon'
 
 const themeOptions = [
   { label: 'Light', value: false, icon: SunIcon },

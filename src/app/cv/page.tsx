@@ -1,4 +1,4 @@
-import { CvPage } from '@/components/pages/cv-page/cv-page'
+import { CvPage } from '@/components/Pages/CvPage/CvPage'
 import { getMetadata } from '@/constants/metadata'
 
 export const metadata = getMetadata('CV')

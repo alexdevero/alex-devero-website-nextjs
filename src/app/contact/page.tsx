@@ -1,4 +1,4 @@
-import { ContactPage } from '@/components/pages/contact-page'
+import { ContactPage } from '@/components/Pages/ContactPage/ContactPage'
 import { getMetadata } from '@/constants/metadata'
 
 export const metadata = getMetadata('Contact')

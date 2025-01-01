@@ -9,11 +9,11 @@ import { useReCaptcha } from 'next-recaptcha-v3'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button } from '../button'
-import { DefaultLayout } from '../defaultLayout'
-import { Input } from '../form-elements/input'
-import { Textarea } from '../form-elements/textarea'
-import { Typography } from '../typography'
+import { Button } from '../../Button'
+import { DefaultLayout } from '../../DefaultLayout'
+import { Input } from '../../FormElements/Input'
+import { Textarea } from '../../FormElements/Textarea'
+import { Typography } from '../../Typography'
 
 const formEnabled = true
 
@@ -96,7 +96,11 @@ export const ContactPage = () => {
         {formEnabled && (
           <div className="flex w-full flex-col items-center justify-center">
             <div className="mt-5 w-full max-w-lg">
-              <form action="" className="flex flex-col gap-3" onSubmit={handleSubmit(handleFormSubmit)}>
+              <form
+                action=""
+                className="flex flex-col gap-3"
+                onSubmit={handleSubmit(handleFormSubmit)}
+              >
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                   <Input
                     id="firstName"

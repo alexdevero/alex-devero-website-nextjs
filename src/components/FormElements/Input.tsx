@@ -3,9 +3,9 @@ import { forwardRef } from 'react'
 
 import classNames from 'classnames'
 
-import { ErrorMessage } from './error-message'
-import { InputWrapper } from './input-wrapper'
-import { Label } from './label'
+import { ErrorMessage } from './ErrorMessage'
+import { InputWrapper } from './InputWrapper'
+import { Label } from './Label'
 
 export const inputClasses =
   'rounded-sm border border-gray-300 py-1 px-1.5 text-sm transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_0_2px_rgba(96,165,250,0.6)] dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300'

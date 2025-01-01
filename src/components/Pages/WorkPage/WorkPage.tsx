@@ -1,6 +1,6 @@
-import { Cta } from '@/components/cta/cta'
-import { DefaultLayout } from '@/components/defaultLayout'
-import { Typography } from '@/components/typography'
+import { Cta } from '@/components/Cta/Cta'
+import { DefaultLayout } from '@/components/DefaultLayout'
+import { Typography } from '@/components/Typography'
 import { work } from '@/data/work'
 
 import { WorkLogo } from './WorkLogo'
