@@ -39,9 +39,11 @@ export const Link: FC<PropsWithChildren<Props>> = ({
     className
   )
 
-  if (href.toString().startsWith('mailto:') || href.toString().startsWith('tel:')) {
+  const parsedHref = typeof href === 'string' ? href : href.toString()
+
+  if (parsedHref.startsWith('mailto:') || parsedHref.startsWith('tel:')) {
     return (
-      <a href={href.toString()} className={linkClasses} {...props}>
+      <a href={parsedHref} className={linkClasses} {...props}>
         {children}
       </a>
     )
@@ -49,10 +51,10 @@ export const Link: FC<PropsWithChildren<Props>> = ({
 
   return (
     <NextLink
-      href={href}
+      href={parsedHref}
       className={linkClasses}
-      rel={isExternal(href) ? 'noopener noreferrer' : undefined}
-      target={isExternal(href) ? '_blank' : undefined}
+      rel={isExternal(parsedHref) ? 'noopener noreferrer' : undefined}
+      target={isExternal(parsedHref) ? '_blank' : undefined}
       {...props}
     >
       {children}
