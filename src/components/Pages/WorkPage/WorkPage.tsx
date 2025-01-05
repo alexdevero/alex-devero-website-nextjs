@@ -20,15 +20,15 @@ export const WorkPage = () => (
         Companies and Projects I've Contributed To:
       </Typography>
 
-      <div className="mb-8 flex flex-col justify-center gap-10">
+      <div className="mb-8 flex flex-col justify-center gap-16">
         {work.map(project => (
           <div
             key={project.company}
-            className="flex flex-col justify-start gap-5 sm:flex-row sm:items-center"
+            className="flex flex-col justify-start gap-5 sm:flex-row sm:items-start"
           >
             <WorkLogo company={project.company} LogoComponent={project.logo} />
 
-            <div className="flex flex-col gap-1 md:mx-auto md:max-w-[600px]">
+            <div className="flex flex-col gap-1 md:max-w-[600px]">
               {workPageInfo.map(item => {
                 const value = getWorkInfoValue(item, project)
 

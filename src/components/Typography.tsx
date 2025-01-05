@@ -39,14 +39,15 @@ const variantClasses = {
 
 type Props = {
   as?: TypographyElement
-  variant?: Variant
   centered?: boolean
   className?: string
   muted?: boolean
+  variant?: Variant
 } & CommonProps[TypographyElement]
 
 export const Typography: FC<PropsWithChildren<Props>> = ({
   as = 'div',
+  centered = false,
   className,
   muted = false,
   variant = 'body',
@@ -65,6 +66,7 @@ export const Typography: FC<PropsWithChildren<Props>> = ({
       className={classNames(className, variantClasses[variant as Variant], {
         'text-gray-500 dark:text-gray-500': !muted,
         'font-medium text-gray-400 dark:text-gray-600': muted,
+        'text-center': centered,
       })}
       {...props}
     />

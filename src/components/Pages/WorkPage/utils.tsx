@@ -52,19 +52,30 @@ export const getLogoColorClasses = (companyName: Company) => {
   }
 }
 
+/**
+ * Converts a label to a pretty label
+ * @param label - The label to convert
+ * @returns The pretty label (e.g. caseStudy -> Case Study)
+ */
+const formatKeyToLabel = (label: string) => {
+  return label.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())
+}
+
 export const getWorkInfoValue = (
   item: (typeof workPageInfo)[number],
   project: (typeof work)[number]
 ): string | JSX.Element | JSX.Element[][] | null => {
   if (item.useList) {
-    const value = item.keys.map(key => project[key].map(item => <li key={item}>{item}</li>))
+    const value = item.keys.map(key => project[key].map(item => <li key={item}>&ndash; {item}</li>))
 
-    return value
+    return <ul>{value}</ul>
   }
 
   if (item.link) {
-    const href = project[item.keys[0]]
-    return href ? <Link href={href}>{href}</Link> : null
+    const keyLabel = item.keys[0]
+    const href = project[keyLabel]
+    const prettyLabel = formatKeyToLabel(keyLabel)
+    return href ? <Link href={href}>View {prettyLabel}</Link> : null
   }
 
   const value = item.keys

@@ -10,7 +10,7 @@ type WorkLogoProps = {
 }
 
 export const WorkLogo: FC<WorkLogoProps> = ({ company, LogoComponent }) => (
-  <div className="flex w-[128px] items-center justify-center">
+  <div className="flex w-[128px] max-w-[128px] items-center justify-center">
     {LogoComponent({
       className: `object-contain ${getLogoColorClasses(company)}`,
       style: getLogoImageWith(company),
