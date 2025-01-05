@@ -1,9 +1,13 @@
+import classNames from 'classnames'
+
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
 import { Typography } from '@/components/Typography'
 import { work } from '@/data/work'
 
 import { WorkLogo } from './WorkLogo'
+import { workPageInfo } from './constants'
+import { getWorkInfoValue } from './utils'
 
 export const WorkPage = () => (
   <DefaultLayout>
@@ -24,27 +28,33 @@ export const WorkPage = () => (
           >
             <WorkLogo company={project.company} LogoComponent={project.logo} />
 
-            <div className="flex flex-col">
-              <Typography as="span" className="text-lg font-bold">
-                {project.company}
-              </Typography>
+            <div className="flex flex-col gap-1 md:mx-auto md:max-w-[600px]">
+              {workPageInfo.map(item => {
+                const value = getWorkInfoValue(item, project)
 
-              <Typography as="h5" variant="body" className="font-medium">
-                {project.position}
-              </Typography>
-              <Typography as="h5" variant="small" className="text-slate-500">
-                {project.yearFrom}-{project.yearTo}{' '}
-              </Typography>
+                if (!value) return null
 
-              <ul>
-                {project.responsibilities.map(responsibility => (
-                  <li key={responsibility}>
-                    <Typography as="span" variant="small" className="text-slate-500">
-                      - {responsibility}
-                    </Typography>
-                  </li>
-                ))}
-              </ul>
+                return (
+                  <div key={item.label} className="flex flex-col gap-1.5">
+                    <div
+                      className={classNames('flex gap-1', {
+                        'flex-col': item.useList,
+                      })}
+                    >
+                      <Typography
+                        as="span"
+                        variant="body"
+                        className="font-medium text-gray-400 dark:!text-gray-600"
+                      >
+                        {item.label}:
+                      </Typography>{' '}
+                      <Typography as="span" variant="body">
+                        {value}
+                      </Typography>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
         ))}
