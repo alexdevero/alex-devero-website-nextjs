@@ -8,6 +8,7 @@ export const cvRecords = {
     website: 'https://alexdevero.com',
     github: 'https://github.com/alexdevero',
     linkedin: 'https://cz.linkedin.com/in/alexdevero',
+    substack: 'https://alexdevero.substack.com',
   },
   education: [
     {

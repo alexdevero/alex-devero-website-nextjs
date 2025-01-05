@@ -1,6 +1,5 @@
-import type { FC, HTMLAttributes, PropsWithChildren } from 'react'
-
 import classNames from 'classnames'
+import type { FC, HTMLAttributes, PropsWithChildren } from 'react'
 
 import type { HeadingElementType } from './Heading'
 import { Heading } from './Heading'
@@ -43,11 +42,13 @@ type Props = {
   variant?: Variant
   centered?: boolean
   className?: string
+  muted?: boolean
 } & CommonProps[TypographyElement]
 
 export const Typography: FC<PropsWithChildren<Props>> = ({
   as = 'div',
   className,
+  muted = false,
   variant = 'body',
   ...props
 }) => {
@@ -61,11 +62,10 @@ export const Typography: FC<PropsWithChildren<Props>> = ({
 
   return (
     <El
-      className={classNames(
-        className,
-        variantClasses[variant as Variant],
-        'text-gray-500 dark:text-gray-500'
-      )}
+      className={classNames(className, variantClasses[variant as Variant], {
+        'text-gray-500 dark:text-gray-500': !muted,
+        'font-medium text-gray-400 dark:text-gray-600': muted,
+      })}
       {...props}
     />
   )

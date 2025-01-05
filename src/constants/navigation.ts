@@ -23,11 +23,6 @@ export const navigationLinks: NavigationLink[] = [
     visible: true,
   },
   {
-    title: 'Projects', // Mainly personal projects aside to freelance work
-    path: '/projects',
-    visible: true,
-  },
-  {
     title: 'CV',
     path: '/cv',
     visible: true,
@@ -35,6 +30,11 @@ export const navigationLinks: NavigationLink[] = [
   {
     title: 'About',
     path: '/about',
+    visible: true,
+  },
+  {
+    title: 'Projects', // Mainly personal projects aside to freelance work
+    path: '/projects',
     visible: true,
   },
   {
@@ -58,49 +58,60 @@ export const navigationLinks: NavigationLink[] = [
   },
 ]
 
-export const footerLinks: NavigationLink[] = [
+type FooterLink = {
+  iconClass: string
+  path: string
+  visible?: boolean
+}
+
+export const footerLinks: FooterLink[] = [
   {
-    title: 'twitter',
+    iconClass: 'fab fa-twitter',
     path: socialMedia.twitter,
     visible: true,
   },
   {
-    title: 'facebook',
+    iconClass: 'fab fa-facebook',
     path: socialMedia.facebook,
     visible: false,
   },
   {
-    title: 'instagram',
+    iconClass: 'fab fa-instagram',
     path: socialMedia.instagram,
     visible: true,
   },
   {
-    title: 'linkedin',
+    iconClass: 'fab fa-linkedin',
     path: socialMedia.linkedIn,
     visible: true,
   },
   {
-    title: 'dribbble',
+    iconClass: 'fab fa-dribbble',
     path: socialMedia.dribbble,
     visible: false,
   },
   {
-    title: 'github',
+    iconClass: 'fab fa-github',
     path: socialMedia.github,
     visible: true,
   },
   {
-    title: 'codepen',
+    iconClass: 'fa fa-bookmark',
+    path: socialMedia.substack,
+    visible: true,
+  },
+  {
+    iconClass: 'fab fa-codepen',
     path: socialMedia.codepen,
     visible: true,
   },
   {
-    title: 'angellist',
+    iconClass: 'fab fa-angellist',
     path: socialMedia.angellist,
     visible: false,
   },
   {
-    title: 'stack-overflow',
+    iconClass: 'fab fa-stack-overflow',
     path: socialMedia.stackoverflow,
     visible: false,
   },

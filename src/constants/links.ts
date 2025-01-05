@@ -9,6 +9,7 @@ export const socialMedia = {
   linkedIn: 'https://cz.linkedin.com/in/alexdevero',
   stackoverflow: 'https://stackoverflow.com/story/alexdevero',
   twitter: 'https://twitter.com/alexdevero',
+  substack: 'https://alexdevero.substack.com',
 }
 
 export const personalLinks = {

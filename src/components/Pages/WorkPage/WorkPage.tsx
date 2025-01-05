@@ -41,11 +41,7 @@ export const WorkPage = () => (
                         'flex-col': item.useList,
                       })}
                     >
-                      <Typography
-                        as="span"
-                        variant="body"
-                        className="font-medium text-gray-400 dark:!text-gray-600"
-                      >
+                      <Typography as="span" variant="body" muted>
                         {item.label}:
                       </Typography>{' '}
                       <Typography as="span" variant="body">

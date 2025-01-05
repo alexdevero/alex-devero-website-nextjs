@@ -19,7 +19,7 @@ export const Footer: FC = () => {
             link.visible ? (
               <li key={link.path}>
                 <Link href={link.path}>
-                  <span className={`fab fa-${link.title}`} />
+                  <span className={link.iconClass} />
                 </Link>
               </li>
             ) : null
