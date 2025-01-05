@@ -69,10 +69,11 @@ export const getWorkInfoValue = (
 
   const value = item.keys
     .map(key => {
-      if (Array.isArray(project[key])) {
-        return project[key].join(item.delimiter || ', ')
+      const keyValue = project[key]
+      if (Array.isArray(keyValue)) {
+        return keyValue.join(item.delimiter || ', ')
       }
-      return project[key]
+      return keyValue
     })
     .join(item.delimiter || ', ')
 
