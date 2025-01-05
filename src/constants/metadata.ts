@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-export const baseMetaTitle = 'Full-Stack TypeScript Development Services | React & Next.js Specialist'
+export const baseMetaTitle = 'Full-stack developer and TypeScript, React & Next.js specialist'
 
 export const baseMetadata = {
   title: `Alex Devero | ${baseMetaTitle}`,

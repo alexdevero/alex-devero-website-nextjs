@@ -9,6 +9,8 @@ import { useReCaptcha } from 'next-recaptcha-v3'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
+import { Link } from '@/components/Link'
+
 import { Button } from '../../Button'
 import { DefaultLayout } from '../../DefaultLayout'
 import { Input } from '../../FormElements/Input'
@@ -18,15 +20,13 @@ import { Typography } from '../../Typography'
 const formEnabled = true
 
 const formSchema = z.object({
-  firstName: z.string().min(1, 'First name is required'),
-  lastName: z.string().min(1, 'Last name is required'),
+  name: z.string().min(1, 'Name is required'),
   email: z.string().min(1, 'Email is required').email('Invalid email'),
   message: z.string().min(1, 'Message is required'),
 })
 
 const initialValues = {
-  firstName: '',
-  lastName: '',
+  name: '',
   email: '',
   message: '',
 }
@@ -84,13 +84,7 @@ export const ContactPage = () => {
 
       <div className="flex flex-col items-center">
         <div className="flex max-w-3xl flex-col gap-3">
-          <Typography>
-            Ready to start your project? fill out the form below. Contact me on my{' '}
-            <a href="mailto:deveroalex@gmail.com" className="underline">
-              email
-            </a>
-            .
-          </Typography>
+          <Typography>Let's create something amazing together. Get in touch!</Typography>
         </div>
 
         {formEnabled && (
@@ -101,23 +95,13 @@ export const ContactPage = () => {
                 className="flex flex-col gap-3"
                 onSubmit={handleSubmit(handleFormSubmit)}
               >
-                <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-                  <Input
-                    id="firstName"
-                    label="First name:"
-                    hasError={!!errors.firstName}
-                    errorMessage={errors.firstName?.message}
-                    {...register('firstName')}
-                  />
-
-                  <Input
-                    id="lastName"
-                    label="Last name:"
-                    hasError={!!errors.lastName}
-                    errorMessage={errors.lastName?.message}
-                    {...register('lastName')}
-                  />
-                </div>
+                <Input
+                  id="name"
+                  label="Name:"
+                  hasError={!!errors.name}
+                  errorMessage={errors.name?.message}
+                  {...register('name')}
+                />
 
                 <Input
                   id="email"
@@ -155,6 +139,16 @@ export const ContactPage = () => {
             </div>
           </div>
         )}
+
+        <div className="mt-8 flex flex-col items-center">
+          <Typography>
+            Prefer email? Reach me at{' '}
+            <Link href="mailto:deveroalex@gmail.com" className="underline">
+              email
+            </Link>
+            .
+          </Typography>
+        </div>
       </div>
     </DefaultLayout>
   )

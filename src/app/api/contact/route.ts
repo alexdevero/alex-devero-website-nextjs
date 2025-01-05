@@ -11,8 +11,7 @@ type RecaptchaResponse = {
 }
 
 type ContactRequest = {
-  firstName: string
-  lastName: string
+  name: string
   email: string
   message: string
   token: string
@@ -76,8 +75,7 @@ export async function POST(request: Request) {
       to: process.env.CONTACT_EMAIL,
       subject: 'Contact from alexdevero.com',
       html: `
-<p>First name: ${requestFormData.firstName}</p>
-<p>Last name: ${requestFormData.lastName}</p>
+<p>Name: ${requestFormData.name}</p>
 <p>E-mail: ${requestFormData.email}</p>
 <p>Message: ${requestFormData.message}</p>
 `,
