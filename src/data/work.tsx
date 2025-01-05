@@ -47,6 +47,7 @@ export const work: Work[] = [
       'Refactoring legacy code to improve maintainability and performance.',
       'Establishing culture of React/Next.js testing practices.',
     ],
+    caseStudy: '/case-study/cdn77',
   },
   {
     company: 'Digitoo',

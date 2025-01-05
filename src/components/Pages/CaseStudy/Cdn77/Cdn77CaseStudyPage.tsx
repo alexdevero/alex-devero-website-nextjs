@@ -4,19 +4,20 @@ import { Typography } from '@/components/Typography'
 
 import { impactAchievements, keyLearnings, responsibilities } from './data'
 
-export const DigitooCaseStudyPage = () => (
+export const Cdn77CaseStudyPage = () => (
   <DefaultLayout>
     <div className="flex flex-col items-center">
       <Typography as="h1" variant="h1" className="max-w-3xl">
-        Transforming Digitoo's MVP into a Scalable Customer-Facing Platform
+        Modernizing CDN77's Internal App: From Legacy to High-Performance Next.js
       </Typography>
     </div>
 
     <div className="mb-4 flex flex-col items-center">
       <div className="mb-6 flex max-w-3xl flex-col gap-8">
         <Typography centered>
-          Digitoo is a platform that allows you to digitize and manage your accounting records
-          throughout the entire accounting process.
+          CDN77 is a global content delivery network (CDN) provider. Combining full live streaming
+          and video-on-demand (VOD) services, CDN77 delivers seamless user experiences for its
+          customers, covering everything from video streaming to infrastructure management.
         </Typography>
 
         <div className="flex flex-col gap-2">
@@ -24,9 +25,9 @@ export const DigitooCaseStudyPage = () => (
             Context:
           </Typography>
           <Typography>
-            Hired as a frontend React developer at an early-stage startup to transform their MVP
-            into a scalable, customer-facing platform and enable the onboarding of their first
-            clients.
+            Brought on as a full-stack TypeScript, React, and Next.js developer to modernize CDN77's
+            internal application. The goal was to enhance performance, scalability, and user
+            experience while contributing to other key company projects.
           </Typography>
         </div>
 
@@ -71,8 +72,8 @@ export const DigitooCaseStudyPage = () => (
       </div>
 
       <Cta
-        text="Ready to transform your product into a high-performance, scalable platform?"
-        ctaText="Let's build something incredible together"
+        text="Need a skilled developer to transform your platform into a scalable, high-performance product?"
+        ctaText="Let's create something extraordinary together"
       />
     </div>
   </DefaultLayout>
