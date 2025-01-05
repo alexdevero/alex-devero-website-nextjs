@@ -3,12 +3,20 @@ import type { FC } from 'react'
 import { Link } from '../Link'
 import { Typography } from '../Typography'
 
-export const Cta: FC = () => (
+type Props = {
+  text?: string
+  ctaText?: string
+}
+
+export const Cta: FC<Props> = ({
+  text = 'Interested in working together?',
+  ctaText = "Let's discuss your project",
+}) => (
   <div className="mt-2 flex flex-col items-center justify-center gap-2">
-    <Typography>Interested in working together?</Typography>
+    <Typography>{text}</Typography>
 
     <Link href="/contact" buttonStyle>
-      Let's discuss your project
+      {ctaText}
     </Link>
   </div>
 )

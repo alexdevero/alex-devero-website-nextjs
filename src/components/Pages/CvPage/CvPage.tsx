@@ -17,6 +17,6 @@ export const CvPage: FC = () => (
 
     <Skills />
 
-    <Cta />
+    <Cta text="Ready to bring your project to life?" />
   </DefaultLayout>
 )
