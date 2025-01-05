@@ -25,23 +25,29 @@ export const AboutPage = () => (
         </Typography>
 
         <Typography>
-          Ready to Collaborate? <Link href="/contact">Let's Connect.</Link>
+          Let's turn your ideas into exceptional web applications.{' '}
+          <Link href="/contact">Contact me today.</Link>
         </Typography>
 
         <Typography>
-          Beyond coding, I share insights on my blog <Link href={personalLinks.blog}>my blog</Link>{' '}
+          When I'm not coding, you can find me at the gym, reading about startups, or experimenting
+          with new tech.
+        </Typography>
+
+        <Typography>
+          I also like to share insights on my blog <Link href={personalLinks.blog}>my blog</Link>{' '}
           about programming, startups, business, tech and beyond.
         </Typography>
 
-        <Typography>
+        {/* <Typography>
           You can find me on <Link href={socialMedia.linkedIn}>Linkedin</Link> and{' '}
           <Link href={socialMedia.twitter}>X</Link> where I discuss industry trends and connect with
           fellow professionals.
-        </Typography>
+        </Typography> */}
 
         <Typography>
-          As an avid reader, I frequently update my Goodreads{' '}
-          <Link href={socialMedia.goodreads}>Goodreads profile</Link> with my latest reads. .
+          As an avid reader, I am regularly updating my reading list on{' '}
+          <Link href={socialMedia.goodreads}>Goodreads</Link> with my latest reads.
         </Typography>
 
         <Cta />
