@@ -1,14 +1,5 @@
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
-
-import { useState } from 'react'
-
-import { useReCaptcha } from 'next-recaptcha-v3'
-
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-
 import { Link } from '@/components/Link'
 
 import { Button } from '../../Button'
@@ -16,65 +7,21 @@ import { DefaultLayout } from '../../DefaultLayout'
 import { Input } from '../../FormElements/Input'
 import { Textarea } from '../../FormElements/Textarea'
 import { Typography } from '../../Typography'
+import { useContactForm } from './useContactForm'
 
 const formEnabled = true
 
-const formSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().min(1, 'Email is required').email('Invalid email'),
-  message: z.string().min(1, 'Message is required'),
-})
-
-const initialValues = {
-  name: '',
-  email: '',
-  message: '',
-}
-
-type FormValues = typeof initialValues
-
 export const ContactPage = () => {
-  const { executeRecaptcha } = useReCaptcha()
   const {
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    errors,
     handleSubmit,
+    handleFormSubmit,
+    isSubmitting,
+    isSubmitSuccessful,
     register,
-  } = useForm<FormValues>({
-    defaultValues: initialValues,
-    resolver: zodResolver(formSchema),
-  })
-  const [error, setError] = useState<string | null>(null)
-  const [messageSent, setMessageSent] = useState(false)
-
-  const handleFormSubmit = async (values: FormValues) => {
-    try {
-      const token = await executeRecaptcha('form_submit')
-
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ...values, token }),
-      })
-      const data = await res.json()
-
-      if (!res.ok) {
-        throw new Error(data.message)
-      }
-
-      setError(null)
-      setMessageSent(true)
-    } catch (error) {
-      if (error instanceof Error) {
-        setError(error.message)
-      }
-
-      if (typeof error === 'string') {
-        setError(error)
-      }
-    }
-  }
+    submitError,
+    messageSent,
+  } = useContactForm()
 
   return (
     <DefaultLayout>
@@ -124,9 +71,9 @@ export const ContactPage = () => {
                     Your message is on the way. I will reply in three days.
                   </Typography>
                 )}
-                {error && (
+                {submitError && (
                   <Typography as="div" className="text-red-500">
-                    {error}
+                    {submitError}
                   </Typography>
                 )}
 
