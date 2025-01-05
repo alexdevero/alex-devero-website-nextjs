@@ -11,19 +11,20 @@ export const HomePage = () => (
         </Typography>
 
         <Typography>
-          Full-stack TypeScript developer specializing in React and Next.js applications
+          Full-stack TypeScript developer specializing in React and Next.js. Building lightning-fast
+          React & Next.js apps that grow your business and delight users.
         </Typography>
 
         <Typography className="my-3">
-          I help individuals, startups and businesses create scalable, high-performance web
-          applications with great UX.
+          Helping startups and businesses scale with clean, maintainable, and high-performance
+          React/Next.js apps that users love.
         </Typography>
 
         <div className="mt-4 flex flex-col items-center justify-center gap-2">
-          <Link href="/work">Discover my work</Link>
+          <Link href="/work">Explore my portfolio and see what I can build for you</Link>
 
           <Link href="/contact" buttonStyle>
-            Let's discuss your project
+            Let's make your project a reality
           </Link>
         </div>
       </div>
