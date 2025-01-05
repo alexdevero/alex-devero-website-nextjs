@@ -69,6 +69,7 @@ export const work: Work[] = [
       'Collaborating on setting direction for frontend architecture.',
       'Mentoring junior developers and providing guidance.',
     ],
+    caseStudy: '/case-study/digitoo',
   },
   {
     company: 'Persoo',
