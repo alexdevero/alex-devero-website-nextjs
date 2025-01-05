@@ -10,7 +10,7 @@
   "printWidth": 100,
   "endOfLine": "auto",
   "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
-  "importOrder": ["server-only", "^react$", "^styled-components", "^next", "^@mui", "^[a-zA-Z]", "^@/", "^\\."],
+  "importOrder": ["server-only", "<THIRD_PARTY_MODULES>", "^[a-zA-Z]", "^@/", "^\\."],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }
