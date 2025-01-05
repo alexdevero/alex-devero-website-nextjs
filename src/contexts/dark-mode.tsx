@@ -31,22 +31,26 @@ export const DarkModeProvider: FC<PropsWithChildren> = props => {
     const darkModeRecord = localStorage.getItem('theme')
     if (darkModeRecord) {
       handleDarkModeChange(darkModeRecord === 'dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.theme === 'dark') {
+    } else if (
+      window.matchMedia('(prefers-color-scheme: dark)').matches ||
+      localStorage.theme === 'dark'
+    ) {
       handleDarkModeChange(true)
-    } else {
+    } else if (
+      window.matchMedia('(prefers-color-scheme: light)').matches ||
+      localStorage.theme === 'light'
+    ) {
       handleDarkModeChange(false)
+    } else {
+      // Use dark mode by default if no preference or theme is set
+      handleDarkModeChange(true)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
-    const handleStorageEventChange = () => {
-      if (localStorage.theme === 'dark') {
-        setDarkMode(true)
-      } else {
-        setDarkMode(false)
-      }
-    }
+    const handleStorageEventChange = () => setDarkMode(localStorage.theme === 'dark')
+
     window.addEventListener('storage', handleStorageEventChange)
 
     return () => window.removeEventListener('storage', handleStorageEventChange)
