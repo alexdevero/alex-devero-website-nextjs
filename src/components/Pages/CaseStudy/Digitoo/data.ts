@@ -5,6 +5,7 @@ export const responsibilities = [
   'Modernized the years-old Nx monorepo setup, streamlining development workflows.',
   'Developed reusable UI components with TailwindCSS to speed up feature development.',
   'Collaborated with designers and backend developers to implement and optimize core features, ensuring seamless integration.',
+  'Helped with migration of company website from Vue.js to Next.js and continued development of it',
 ]
 
 export const impactAchievements = [
@@ -14,6 +15,8 @@ export const impactAchievements = [
   'Delivered three major features (~8,000 lines of code each), contributing directly to onboarding 40+ new clients.',
   'Built a reusable component library, reducing development time for new features.',
   'Helped increase frontend testing coverage, ensuring higher-quality releases and fewer production bugs.',
+  'Developed and delivered a couple of landing pages for marketing purposes',
+  'Helped finish redesign and migration of company website from Vue.js to Next.js',
 ]
 
 export const keyLearnings = [
