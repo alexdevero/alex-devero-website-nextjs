@@ -1,9 +1,8 @@
 'use client'
 
+import classNames from 'classnames'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
-
-import classNames from 'classnames'
 
 import { navigationLinks } from '@/constants/navigation'
 
@@ -60,13 +59,19 @@ export const Header: FC = () => {
             'hidden md:flex': !isMobileMenuVisible,
           })}
         >
+          <li>
+            <NavToggleButton
+              navOpen={isMobileMenuVisible}
+              onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)}
+            />
+          </li>
           {navigationLinks.map(link =>
             link.visible ? (
-              <span key={link.path} onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)}>
+              <li key={link.path} onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)}>
                 <Link href={link.path} initialUnderline={false} className="max-md:text-lg">
                   {link.title}
                 </Link>
-              </span>
+              </li>
             ) : null
           )}
         </ul>
