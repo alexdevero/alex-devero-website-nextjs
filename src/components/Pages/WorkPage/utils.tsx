@@ -75,7 +75,7 @@ export const getWorkInfoValue = (
     const keyLabel = item.keys[0]
     const href = project[keyLabel]
     const prettyLabel = formatKeyToLabel(keyLabel)
-    return href ? <Link href={href}>View {prettyLabel}</Link> : null
+    return href ? <Link href={href}>See {prettyLabel}</Link> : null
   }
 
   const value = item.keys
