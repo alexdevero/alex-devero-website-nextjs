@@ -84,6 +84,7 @@ export const work: Work[] = [
       'Working directly with clients to provide solutions.',
       'Leading frontend development team and mentoring junior developers.',
     ],
+    caseStudy: '/case-study/persoo',
   },
   {
     company: 'Retino',
