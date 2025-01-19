@@ -1,4 +1,7 @@
-import { GoogleTagManager } from '@next/third-parties/google'
+import {
+  GoogleAnalytics,
+  // GoogleTagManager
+} from '@next/third-parties/google'
 
 import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
@@ -7,7 +10,8 @@ import { getMetadata } from '@/constants/metadata'
 import { AppProviders } from '@/contexts/providers'
 import '@/styles/global.css'
 
-const GoogleTagManagerId = process.env.GA_TAG_MANAGER_ID
+// const GoogleTagManagerId = process.env.GA_TAG_MANAGER_ID
+const gaId = process.env.GA_ID
 
 const inter = Inter({
   display: 'swap',
@@ -19,7 +23,7 @@ export const metadata = getMetadata('Alex Devero')
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
-      {GoogleTagManagerId && <GoogleTagManager gtmId={GoogleTagManagerId} />}
+      {/* {GoogleTagManagerId && <GoogleTagManager gtmId={GoogleTagManagerId} />} */}
 
       <head>
         {/* <!-- Font Awesome --> */}
@@ -44,6 +48,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <AppProviders>{children}</AppProviders>
       </body>
+
+      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   )
 }
