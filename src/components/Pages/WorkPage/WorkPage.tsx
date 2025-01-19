@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
 import { Typography } from '@/components/Typography'
+import { pageTitles } from '@/constants/page-titles'
 import { work } from '@/data/work'
 
 import { WorkLogo } from './WorkLogo'
@@ -12,7 +13,7 @@ import { getWorkInfoValue } from './utils'
 export const WorkPage = () => (
   <DefaultLayout>
     <Typography as="h1" variant="h1">
-      Professional Experience
+      {pageTitles.work}
     </Typography>
 
     <div className="flex flex-col items-center justify-center">

@@ -3,6 +3,7 @@ import type { FC } from 'react'
 import { DefaultLayout } from '@/components/DefaultLayout'
 import { Link } from '@/components/Link'
 import { Typography } from '@/components/Typography'
+import { pageTitles } from '@/constants/page-titles'
 import { projects } from '@/data/projects'
 
 const displayProjects = true
@@ -25,7 +26,7 @@ type Props = {
 export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) => (
   <DefaultLayout>
     <Typography as="h1" variant="h1">
-      Projects
+      {pageTitles.projects}
     </Typography>
 
     {displayProjects ? (

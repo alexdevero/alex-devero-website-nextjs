@@ -1,4 +1,5 @@
 import { personalLinks, socialMedia } from '@/constants/links'
+import { pageTitles } from '@/constants/page-titles'
 
 import { Cta } from '../../Cta/Cta'
 import { DefaultLayout } from '../../DefaultLayout'
@@ -8,7 +9,7 @@ import { Typography } from '../../Typography'
 export const AboutPage = () => (
   <DefaultLayout>
     <Typography as="h1" variant="h1">
-      About Me
+      {pageTitles.about}
     </Typography>
 
     <div className="flex flex-1 justify-center">

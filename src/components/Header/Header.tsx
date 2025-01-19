@@ -53,11 +53,14 @@ export const Header: FC = () => {
         </Link>
 
         <ul
-          className={classNames('flex flex-1 items-center justify-center gap-4', {
-            'max-md:fixed max-md:inset-0 max-md:z-10 max-md:flex-col max-md:bg-white max-md:dark:bg-gray-900':
-              isMobileMenuVisible,
-            'hidden md:flex': !isMobileMenuVisible,
-          })}
+          className={classNames(
+            'flex flex-1 items-center justify-center sm:gap-4 md:gap-2 lg:gap-6',
+            {
+              'max-md:fixed max-md:inset-0 max-md:z-10 max-md:flex-col max-md:bg-white max-md:dark:bg-gray-900':
+                isMobileMenuVisible,
+              'hidden md:flex': !isMobileMenuVisible,
+            }
+          )}
         >
           <li>
             <NavToggleButton

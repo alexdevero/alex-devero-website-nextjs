@@ -1,6 +1,7 @@
 'use client'
 
 import { Link } from '@/components/Link'
+import { pageTitles } from '@/constants/page-titles'
 
 import { Button } from '../../Button'
 import { DefaultLayout } from '../../DefaultLayout'
@@ -26,7 +27,7 @@ export const ContactPage = () => {
   return (
     <DefaultLayout>
       <Typography as="h1" variant="h1">
-        Let's get in touch
+        {pageTitles.contact}
       </Typography>
 
       <div className="flex flex-col items-center">
