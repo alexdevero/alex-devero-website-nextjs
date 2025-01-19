@@ -34,7 +34,7 @@ const charts = [
   { title: 'Languages:', data: languages },
 ]
 
-export const CvCharts = () => (
+export const ResumeCharts = () => (
   <div className="m-auto min-h-full">
     <div className="m-auto grid min-h-full max-w-[calc(100vw-64px)] grid-cols-1 gap-x-4 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
       {charts.map(({ title, data }) => (

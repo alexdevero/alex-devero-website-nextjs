@@ -23,8 +23,8 @@ export const navigationLinks: NavigationLink[] = [
     visible: true,
   },
   {
-    title: 'CV',
-    path: '/cv',
+    title: 'Resume',
+    path: '/resume',
     visible: true,
   },
   {

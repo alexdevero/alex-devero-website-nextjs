@@ -7,10 +7,10 @@ import { Typography } from '@/components/Typography'
 import { QuickInfo } from './QuickInfo'
 import { Skills } from './Skills'
 
-export const CvPage: FC = () => (
+export const ResumePage: FC = () => (
   <DefaultLayout>
     <Typography as="h1" variant="h1">
-      My CV
+      My Resume
     </Typography>
 
     <QuickInfo />

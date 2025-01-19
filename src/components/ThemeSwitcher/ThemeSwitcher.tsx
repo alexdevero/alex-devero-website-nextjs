@@ -1,8 +1,7 @@
 'use client'
 
-import type { FC } from 'react'
-
 import classNames from 'classnames'
+import type { FC } from 'react'
 
 import { useDarkMode } from '@/contexts/dark-mode'
 import MoonIcon from '@/public/images/icons/moon.svg'
@@ -20,7 +19,7 @@ export const ThemeSwitcher: FC = () => {
 
   return (
     <div>
-      <ul className="flex gap-2">
+      <ul className="flex gap-3">
         {themeOptions.map(option => (
           <li key={option.label}>
             <button
