@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "3.9.1",
+    "@next/third-parties": "^15.1.5",
     "@octokit/rest": "21.0.2",
     "@svgr/webpack": "^8.1.0",
     "axios": "1.7.9",
