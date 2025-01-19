@@ -15,24 +15,35 @@ export const AboutPage = () => (
     <div className="flex flex-1 justify-center">
       <div className="flex max-w-3xl flex-col gap-3">
         <Typography>
-          I'm Alex Devero, a passionate full-stack TypeScript developer from the Czech Republic,
-          specializing in building dynamic web applications with React and Next.js.
+          Hi, I'm Alex Devero—a full-stack TypeScript developer based in the Czech Republic. I
+          specialize in building dynamic, high-performance web applications with React and Next.js
+          that solve problems and deliver amazing user experiences.
         </Typography>
 
         <Typography>
-          With a strong background in product design, I bridge the gap between functionality and
-          user experience. My mission is to leverage technology to solve real-world problems and
-          enhance people's lives.
+          With a strong background in product design, I bring a unique mix of creativity and
+          technical expertise to every project. My goal? To bridge the gap between functionality and
+          usability, creating solutions that not only work but make life easier (and maybe even a
+          little more fun) for the people who use them.
+        </Typography>
+
+        <Typography as="h2" variant="h4" className="mb-4" centered={false}>
+          What Makes Me Tick
         </Typography>
 
         <Typography>
-          When I'm not coding, you can find me at the gym, reading about startups, or experimenting
-          with new tech.
+          When I'm not deep in code, you'll probably find me lifting weights at the gym, diving into
+          books about startups and innovation, or tinkering with the latest tech. I love exploring
+          new ideas, whether it's through hands-on experiments or reading about the journeys of
+          other creators and entrepreneurs.
         </Typography>
 
         <Typography>
-          I also like to share insights on my blog <Link href={personalLinks.blog}>my blog</Link>{' '}
-          about programming, startups, business, tech and beyond.
+          I'm also a big believer in sharing knowledge. On{' '}
+          <Link href={personalLinks.blog}>my blog</Link>, I write about programming, startups,
+          business, and all the things that keep me curious. And as an avid reader, I'm constantly
+          updating my Goodreads profile with new finds—feel free to check it out if you're a fellow
+          bookworm!
         </Typography>
 
         {/* <Typography>
@@ -46,7 +57,10 @@ export const AboutPage = () => (
           <Link href={socialMedia.goodreads}>Goodreads</Link> with my latest reads.
         </Typography>
 
-        <Cta />
+        <Cta
+          text="Whether you have a project in mind or just want to brainstorm ideas, I'd love to hear from you."
+          centered
+        />
       </div>
     </div>
   </DefaultLayout>
