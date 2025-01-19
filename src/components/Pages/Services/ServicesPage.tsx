@@ -20,16 +20,23 @@ export const ServicesPage: FC = () => {
       <div className="flex justify-center">
         <div className="flex max-w-3xl flex-col gap-3">
           <Typography>
-            Welcome to my Services page. I am Alex Devero, a seasoned full-stack TypeScript
-            developer with over 10 years of experience: I specialize in building scalable,
-            high-performance web applications with focus on UX, using React and Next.js. I work with
-            individuals, startups, and businesses to help them bring their digital visions to life.
+            Hi! I'm Alex Devero, a full-stack TypeScript developer with over 10 years of experience
+            building web applications that don't just work—they wow. I specialize in React and
+            Next.js, crafting scalable, high-performance apps with a focus on great user
+            experiences.
           </Typography>
 
           <Typography>
-            With a strong background in product design, I strive to bridge the gap between
-            functionality and user experience. My mission is to leverage technology to solve
-            real-world problems and enhance people's lives.
+            Whether you're an individual with an idea, a startup in need of momentum, or a business
+            aiming to level up your digital game, I'm here to help you turn your vision into
+            reality.
+          </Typography>
+
+          <Typography>
+            With a background in product design, I bring a unique mix of technical expertise and
+            UX-first thinking to every project. My goal? To create solutions that not only solve
+            real-world problems but make life a little easier (and more enjoyable) for the people
+            who use them.
           </Typography>
 
           <div className="my-8">
@@ -40,10 +47,13 @@ export const ServicesPage: FC = () => {
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
               <div>
                 <Typography as="h3" variant="h6" centered={false} className="!mb-2">
-                  Custom Web Application Development
+                  Web Application Development
                 </Typography>
                 <Typography>
-                  Deliver high-performance, scalable web applications that help your business grow.
+                  Let's build something amazing together! I can help you create web applications
+                  that are fast, scalable, and tailored to your needs—whether it's for a growing
+                  startup or an established business. I focus on delivering apps that your users
+                  will love and your business can rely on.
                 </Typography>
               </div>
               <div>
@@ -51,7 +61,11 @@ export const ServicesPage: FC = () => {
                   Consulting Services
                 </Typography>
                 <Typography>
-                  Optimize your codebase, reduce tech debt, and improve project delivery timelines.
+                  Need a second pair of eyes on your codebase? Or maybe some guidance on improving
+                  performance, improving test coverage, and cutting down tech debt? I offer
+                  consulting services to help you optimize your projects and streamline your
+                  development process. Think of me as your technical problem-solver and trusted
+                  advisor.
                 </Typography>
               </div>
               <div>
@@ -59,27 +73,58 @@ export const ServicesPage: FC = () => {
                   Project-Based Engagements
                 </Typography>
                 <Typography>
-                  Get high-quality solutions delivered on time and within budget.
+                  Got a project that needs a dedicated developer? I take on project-based work to
+                  deliver high-quality solutions on time and within budget. Whether it's a single
+                  feature or a full-blown app, I'll bring it to life with precision and care.
                 </Typography>
               </div>
             </div>
           </div>
 
-          <div>
+          <div className="my-8">
+            <Typography as="h2" variant="h4" className="mb-4" centered={false}>
+              Why Work With Me?
+            </Typography>
+
+            <ul>
+              <li>
+                <Typography>
+                  &ndash; 10+ years of hands-on experience with TypeScript, React, and Next.js.
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  &ndash; A unique blend of technical skills and UX expertise.
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  &ndash; A commitment to delivering solutions that are not just functional but
+                  exceptional.
+                </Typography>
+              </li>
+            </ul>
+          </div>
+
+          <div className="mb-8">
             <Typography as="h2" variant="h4" className="mb-4" centered={false}>
               Availability and Booking
             </Typography>
 
             <Typography>
-              Due to high demand, I accept a limited number of projects each quarter to maintain the
-              highest quality standards. Limited slots available for {availability}—secure your
-              project today. project today.
+              I take on a limited number of projects each quarter to make sure every client gets my
+              full attention and top-quality results. Right now, I'm booking for {availability}, and
+              slots are filling up fast.
             </Typography>
           </div>
         </div>
       </div>
 
-      <Cta />
+      <Cta
+        text="Ready to bring your idea to life? Whether you're looking for a developer, consultant, or partner for your next project, I'd love to hear from you."
+        ctaText="Let's talk!"
+        centered
+      />
     </DefaultLayout>
   )
 }

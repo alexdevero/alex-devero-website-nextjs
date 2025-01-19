@@ -26,11 +26,6 @@ export const AboutPage = () => (
         </Typography>
 
         <Typography>
-          Let's turn your ideas into exceptional web applications.{' '}
-          <Link href="/contact">Contact me today.</Link>
-        </Typography>
-
-        <Typography>
           When I'm not coding, you can find me at the gym, reading about startups, or experimenting
           with new tech.
         </Typography>

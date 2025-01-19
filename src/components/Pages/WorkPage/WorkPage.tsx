@@ -22,9 +22,7 @@ export const WorkPage = () => (
     </Typography>
 
     <div className="flex flex-col items-center justify-center">
-      <Typography className="mb-8 text-center">Companies and projects I've been part of</Typography>
-
-      <Typography className="mx-auto mb-12 max-w-[600px] text-center">
+      <Typography className="mx-auto mb-12 max-w-3xl text-left">
         Throughout my career, I've had the opportunity to work with a variety of companies and
         contribute to projects that solve real-world problems. Below, you'll find a timeline of my
         professional experience, showcasing the roles I've taken on and the value I've brought to
