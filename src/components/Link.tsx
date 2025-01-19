@@ -1,9 +1,7 @@
-import type { FC, PropsWithChildren } from 'react'
-
+import classNames from 'classnames'
 import type { LinkProps } from 'next/link'
 import NextLink from 'next/link'
-
-import classNames from 'classnames'
+import type { FC, PropsWithChildren } from 'react'
 
 import { buttonClasses } from './Button'
 

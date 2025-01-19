@@ -1,9 +1,8 @@
+import classNames from 'classnames'
 import type { FC, HTMLAttributes } from 'react'
 
-import classNames from 'classnames'
-
 export const buttonClasses =
-  'flex h-9 items-center justify-center rounded-sm bg-gray-800 px-5 text-sm text-white transition-all duration-300 hover:bg-gray-600 active:bg-gray-900 disabled:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-700 dark:active:bg-gray-800 dark:disabled:bg-gray-800'
+  'flex h-9 items-center justify-center rounded-sm bg-blue-600 px-5 text-sm text-white transition-all duration-300 hover:bg-blue-700 active:bg-blue-900 disabled:bg-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:active:bg-blue-800 dark:disabled:bg-blue-800'
 
 type Props = HTMLAttributes<HTMLButtonElement> & {
   children: string
