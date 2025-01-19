@@ -38,13 +38,14 @@ export const WorkPage = () => (
                   <div key={item.label} className="flex flex-col gap-1.5">
                     <div
                       className={classNames('flex gap-1', {
-                        'flex-col': item.useList,
+                        'flex-col': item.useList || item.label === 'Tech stack',
                       })}
                     >
                       <Typography as="span" variant="body" muted>
                         {item.label}:
                       </Typography>{' '}
                       <Typography as="span" variant="body">
+                        {item.label === 'Tech stack' && <>&ndash; </>}
                         {value}
                       </Typography>
                     </div>
