@@ -1,9 +1,6 @@
-import type { JSX } from 'react'
-
 import { Link } from '@/components/Link'
-import type { Company, work } from '@/data/work'
-
-import type { workPageInfo } from './constants'
+import { Typography } from '@/components/Typography'
+import type { Company, TechStack } from '@/data/work'
 
 export const getLogoImageWith = (
   companyName: Company
@@ -52,41 +49,94 @@ export const getLogoColorClasses = (companyName: Company) => {
   }
 }
 
-/**
- * Converts a label to a pretty label
- * @param label - The label to convert
- * @returns The pretty label (e.g. caseStudy -> Case Study)
- */
-const formatKeyToLabel = (label: string) => {
-  return label.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())
+export const renderCompany = (company: string, label: string) => (
+  <div className="flex gap-1">
+    <Typography as="span" variant="body" muted>
+      {label}:
+    </Typography>{' '}
+    <Typography as="span" variant="body">
+      {company}
+    </Typography>
+  </div>
+)
+
+export const renderRole = (role: string, label: string) => (
+  <div className="flex gap-1">
+    <Typography as="span" variant="body" muted>
+      {label}:
+    </Typography>{' '}
+    <Typography as="span" variant="body">
+      {role}
+    </Typography>
+  </div>
+)
+
+export const renderYear = (yearFrom: string, yearTo: string, label: string) => {
+  const content = yearFrom === yearTo ? yearFrom : `${yearFrom} - ${yearTo}`
+
+  return (
+    <div className="flex gap-1">
+      <Typography as="span" variant="body" muted>
+        {label}:
+      </Typography>{' '}
+      <Typography as="span" variant="body">
+        {content}
+      </Typography>
+    </div>
+  )
 }
 
-export const getWorkInfoValue = (
-  item: (typeof workPageInfo)[number],
-  project: (typeof work)[number]
-): string | JSX.Element | JSX.Element[][] | null => {
-  if (item.useList) {
-    const value = item.keys.map(key => project[key].map(item => <li key={item}>&ndash; {item}</li>))
+export const renderTechStack = (techStack: TechStack, label: string) => {
+  if (Object.keys(techStack).length === 0) return null
 
-    return <ul>{value}</ul>
-  }
+  return (
+    <div className="flex flex-col gap-1">
+      <Typography as="span" variant="body" muted>
+        {label}:
+      </Typography>
+      <ul className="pl-4">
+        {Object.entries(techStack).map(([key, value]) => (
+          <li key={key}>
+            <Typography as="span" variant="body">
+              &ndash;{' '}
+              <Typography as="span" muted>
+                {key}:
+              </Typography>{' '}
+              {value}
+            </Typography>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
 
-  if (item.link) {
-    const keyLabel = item.keys[0]
-    const href = project[keyLabel]
-    const prettyLabel = formatKeyToLabel(keyLabel)
-    return href ? <Link href={href}>See {prettyLabel}</Link> : null
-  }
+export const renderResponsibilities = (responsibilities: string[], label: string) => (
+  <div className="flex flex-col gap-1">
+    <Typography as="span" variant="body" muted>
+      {label}:
+    </Typography>{' '}
+    <ul className="pl-4">
+      {responsibilities.map(responsibility => (
+        <li key={responsibility}>
+          <Typography as="span" variant="body">
+            &ndash; {responsibility}
+          </Typography>
+        </li>
+      ))}
+    </ul>
+  </div>
+)
 
-  const value = item.keys
-    .map(key => {
-      const keyValue = project[key]
-      if (Array.isArray(keyValue)) {
-        return keyValue.join(item.delimiter || ', ')
-      }
-      return keyValue
-    })
-    .join(item.delimiter || ', ')
+export const renderCaseStudy = (caseStudy: string | undefined, label: string) => {
+  if (!caseStudy) return null
 
-  return value
+  return (
+    <div className="flex gap-1">
+      <Typography as="span" variant="body" muted>
+        {label}:
+      </Typography>{' '}
+      <Link href={caseStudy}>See case study</Link>
+    </div>
+  )
 }

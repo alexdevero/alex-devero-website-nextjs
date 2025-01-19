@@ -12,13 +12,17 @@ export type LogoProps = SVGProps<SVGSVGElement>
 
 export type Company = 'CDN77' | 'Digitoo' | 'Persoo' | 'Retino' | 'Supernova' | 'StartMonday'
 
+export type StackCategory = 'frontend' | 'backend' | 'devops' | 'database'
+
+export type TechStack = Partial<Record<StackCategory, string>>
+
 type Work = {
   company: Company
   position: string
   yearFrom: string
   yearTo: string
   logo: (props: LogoProps) => ReactNode
-  technologies: string[]
+  technologies: TechStack
   responsibilities: string[]
   caseStudy?: string
 }
@@ -30,17 +34,12 @@ export const work: Work[] = [
     yearFrom: '2023',
     yearTo: 'present',
     logo: (props: LogoProps) => <Cdn77Logo {...props} />,
-    technologies: [
-      'React',
-      'Next.js',
-      'TypeScript',
-      'Tailwind CSS',
-      'Express',
-      'GraphQL',
-      'REST',
-      'PostgreSQL',
-      'Docker',
-    ],
+    technologies: {
+      frontend: 'React, Next.js, TypeScript, Tailwind CSS',
+      backend: 'Express, GraphQL, REST, PostgreSQL',
+      devops: 'Docker',
+      database: 'PostgreSQL',
+    },
     responsibilities: [
       'Developing web apps using React, Next.js, TypeScript and Tailwind CSS.',
       'Optimizing application performance and code quality.',
@@ -55,20 +54,17 @@ export const work: Work[] = [
     yearFrom: '2021',
     yearTo: '2023',
     logo: (props: LogoProps) => <DigitooLogo {...props} />,
-    technologies: [
-      'React',
-      'Next.js',
-      'TypeScript',
-      'Sass (Scss)',
-      'Tailwind CSS',
-      'Docker',
-      'GraphQL',
-    ],
+    technologies: {
+      frontend: 'React, Next.js, TypeScript, Sass (Scss), Tailwind CSS',
+      backend: 'Nest.js, GraphQL, REST, PostgreSQL',
+      devops: 'Docker',
+      database: 'PostgreSQL',
+    },
     responsibilities: [
-      'Developing web apps using React, Next.js, TypeScript and Tailwind CSS.',
-      'Leading migration of legacy codebase to Next.js',
-      'Collaborating on setting direction for frontend architecture.',
-      'Mentoring junior developers and providing guidance.',
+      'Developed web apps using React, Next.js, TypeScript and Tailwind CSS.',
+      'Led migration of legacy codebase to Next.js',
+      'Collaborated on setting direction for frontend architecture.',
+      'Mentored junior developers and provided guidance.',
     ],
     caseStudy: '/case-study/digitoo',
   },
@@ -78,11 +74,13 @@ export const work: Work[] = [
     yearFrom: '2019',
     yearTo: '2021',
     logo: (props: LogoProps) => <PersooLogo {...props} />,
-    technologies: ['JavaScript', 'TypeScript', 'CSS', 'HTML'],
+    technologies: {
+      frontend: 'JavaScript, TypeScript, CSS, HTML',
+    },
     responsibilities: [
-      'Developing web app using JavaScript and TypeScript.',
-      'Working directly with clients to provide solutions.',
-      'Leading frontend development team and mentoring junior developers.',
+      'Developed web app using JavaScript and TypeScript.',
+      'Worked directly with clients to provide solutions.',
+      'Led frontend development team and mentored junior developers.',
     ],
     caseStudy: '/case-study/persoo',
   },
@@ -92,10 +90,12 @@ export const work: Work[] = [
     yearFrom: '2019',
     yearTo: '2019',
     logo: (props: LogoProps) => <RetinoLogo {...props} />,
-    technologies: ['TypeScript', 'React', 'CSS'],
+    technologies: {
+      frontend: 'React, TypeScript, CSS, Sass (Scss)',
+    },
     responsibilities: [
-      'Developing web app using TypeScript and React.',
-      'Providing guidance on React development best practices.',
+      'Developed web app using TypeScript and React.',
+      'Provided guidance on React development best practices.',
     ],
   },
   {
@@ -104,11 +104,13 @@ export const work: Work[] = [
     yearFrom: '2017',
     yearTo: '2019',
     logo: (props: LogoProps) => <SupernovaLogo {...props} />,
-    technologies: ['TypeScript', 'React', 'CSS', 'Sass (Scss)'],
+    technologies: {
+      frontend: 'React, TypeScript, CSS, Sass (Scss)',
+    },
     responsibilities: [
-      'Developing web app using TypeScript and React.',
-      'Working alongside CEO to build a new product from scratch.',
-      'Setting direction for frontend architecture.',
+      'Developed web app using TypeScript and React.',
+      'Worked alongside CEO to build a new product from scratch.',
+      'Set direction for frontend architecture.',
     ],
   },
   {
@@ -117,7 +119,9 @@ export const work: Work[] = [
     yearFrom: '2016',
     yearTo: '2017',
     logo: (props: LogoProps) => <StartMondayLogo {...props} />,
-    technologies: ['TypeScript', 'CSS', 'HTML'],
-    responsibilities: ['Developing web apps using TypeScript.'],
+    technologies: {
+      frontend: 'TypeScript, CSS, HTML',
+    },
+    responsibilities: ['Developed web apps using TypeScript.'],
   },
 ]

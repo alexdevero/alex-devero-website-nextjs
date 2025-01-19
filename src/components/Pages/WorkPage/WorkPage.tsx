@@ -1,5 +1,3 @@
-import classNames from 'classnames'
-
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
 import { Typography } from '@/components/Typography'
@@ -8,7 +6,14 @@ import { work } from '@/data/work'
 
 import { WorkLogo } from './WorkLogo'
 import { workPageInfo } from './constants'
-import { getWorkInfoValue } from './utils'
+import {
+  renderCaseStudy,
+  renderCompany,
+  renderResponsibilities,
+  renderRole,
+  renderTechStack,
+  renderYear,
+} from './utils'
 
 export const WorkPage = () => (
   <DefaultLayout>
@@ -17,8 +22,13 @@ export const WorkPage = () => (
     </Typography>
 
     <div className="flex flex-col items-center justify-center">
-      <Typography className="mb-8 text-center">
-        Companies and Projects I've Contributed To:
+      <Typography className="mb-8 text-center">Companies and projects I've been part of</Typography>
+
+      <Typography className="mx-auto mb-12 max-w-[600px] text-center">
+        Throughout my career, I've had the opportunity to work with a variety of companies and
+        contribute to projects that solve real-world problems. Below, you'll find a timeline of my
+        professional experience, showcasing the roles I've taken on and the value I've brought to
+        each project.
       </Typography>
 
       <div className="mb-8 flex flex-col justify-center gap-16">
@@ -31,27 +41,32 @@ export const WorkPage = () => (
 
             <div className="flex flex-col gap-1 md:max-w-[600px]">
               {workPageInfo.map(item => {
-                const value = getWorkInfoValue(item, project)
-
-                if (!value) return null
-
-                return (
-                  <div key={item.label} className="flex flex-col gap-1.5">
-                    <div
-                      className={classNames('flex gap-1', {
-                        'flex-col': item.useList || item.label === 'Tech stack',
-                      })}
-                    >
-                      <Typography as="span" variant="body" muted>
-                        {item.label}:
-                      </Typography>{' '}
-                      <Typography as="span" variant="body">
-                        {item.label === 'Tech stack' && <>&ndash; </>}
-                        {value}
-                      </Typography>
-                    </div>
-                  </div>
-                )
+                switch (item.key) {
+                  case 'company':
+                    return renderCompany(project.company, item.label)
+                  case 'position':
+                    return renderRole(project.position, item.label)
+                  case 'year':
+                    return renderYear(project.yearFrom, project.yearTo, item.label)
+                  case 'techStack':
+                    return (
+                      <div className="mt-3">
+                        {renderTechStack(project.technologies, item.label)}
+                      </div>
+                    )
+                  case 'responsibilities':
+                    return (
+                      <div className="mt-3">
+                        {renderResponsibilities(project.responsibilities, item.label)}
+                      </div>
+                    )
+                  case 'caseStudy':
+                    return (
+                      <div className="mt-3">{renderCaseStudy(project.caseStudy, item.label)}</div>
+                    )
+                  default:
+                    return null
+                }
               })}
             </div>
           </div>

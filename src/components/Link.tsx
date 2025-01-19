@@ -31,7 +31,8 @@ export const Link: FC<PropsWithChildren<Props>> = ({
       'text-gray-800 underline dark:text-gray-400': active && !buttonStyle,
       underline: initialUnderline || active,
       'no-underline': (!initialUnderline && !active) || buttonStyle,
-      'text-gray-500 hover:text-gray-800 hover:underline dark:hover:text-gray-400': !buttonStyle,
+      'text-gray-500 font-semibold hover:text-gray-800 hover:underline dark:hover:text-gray-400':
+        !buttonStyle,
       [buttonClasses]: buttonStyle,
     },
     className
