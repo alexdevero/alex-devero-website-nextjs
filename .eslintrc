@@ -300,7 +300,6 @@
         "reservedFirst": true,
       },
     ],
-    "react/jsx-space-before-closing": "error",
     "react/jsx-uses-react": "off",
     "react/jsx-uses-vars": "error",
     "react/sort-default-props": "error",
