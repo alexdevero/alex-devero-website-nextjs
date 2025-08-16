@@ -1,101 +1,60 @@
 'use client'
 
-import { Link } from '@/components/Link'
-import { pageTitles } from '@/constants/page-titles'
+import type { FC, MouseEvent } from 'react'
 
 import { Button } from '../../Button'
 import { DefaultLayout } from '../../DefaultLayout'
-import { Input } from '../../FormElements/Input'
-import { Textarea } from '../../FormElements/Textarea'
 import { Typography } from '../../Typography'
-import { useContactForm } from './useContactForm'
+import { CalendlyCard } from './CalendlyCard'
+import { ContactForm } from './ContactForm'
+import { SummaryBox } from './SummaryBox'
 
 const formEnabled = true
 
-export const ContactPage = () => {
-  const {
-    errors,
-    handleSubmit,
-    handleFormSubmit,
-    isSubmitting,
-    isSubmitSuccessful,
-    register,
-    submitError,
-    messageSent,
-  } = useContactForm()
+export const ContactPage: FC = () => {
+  const handleAnchorClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+
+    const target = event.target as HTMLAnchorElement
+    const href = target.href
+    const targetId = href.split('#')[1]
+    const targetElement = document.getElementById(targetId)
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <DefaultLayout>
-      <Typography as="h1" variant="h1">
-        {pageTitles.contact}
+      <Typography as="h1" variant="h1" centered>
+        Let’s Talk
       </Typography>
 
       <div className="flex flex-col items-center">
         <div className="flex max-w-3xl flex-col gap-3">
-          <Typography>Let's create something amazing together. Get in touch!</Typography>
+          <Typography>
+            Book a 20-minute discovery call — or send a message. I reply within{' '}
+            <strong>24 hours CET</strong>.
+          </Typography>
         </div>
 
-        {formEnabled && (
-          <div className="flex w-full flex-col items-center justify-center">
-            <div className="mt-5 w-full max-w-lg">
-              <form
-                action=""
-                className="flex flex-col gap-3"
-                onSubmit={handleSubmit(handleFormSubmit)}
-              >
-                <Input
-                  id="name"
-                  label="Name:"
-                  hasError={!!errors.name}
-                  errorMessage={errors.name?.message}
-                  {...register('name')}
-                />
+        <div className="mt-4 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button href="#schedule" onClick={handleAnchorClick}>
+            Schedule a call
+          </Button>
+          <Button href="#contact-form" variant="outline" onClick={handleAnchorClick}>
+            Send a message
+          </Button>
+        </div>
 
-                <Input
-                  id="email"
-                  label="E-mail:"
-                  hasError={!!errors.email}
-                  errorMessage={errors.email?.message}
-                  {...register('email')}
-                />
+        <div className="my-auto mt-10 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          <CalendlyCard />
 
-                <Textarea
-                  id="formMessage"
-                  label="Message:"
-                  hasError={!!errors.message}
-                  errorMessage={errors.message?.message}
-                  {...register('message')}
-                />
+          <div id="contact-form" className="flex flex-col gap-6 md:gap-8">
+            {formEnabled && <ContactForm />}
 
-                {isSubmitSuccessful && (
-                  <Typography as="div" className="text-green-500">
-                    Your message is on the way. I will reply in three days.
-                  </Typography>
-                )}
-                {submitError && (
-                  <Typography as="div" className="text-red-500">
-                    {submitError}
-                  </Typography>
-                )}
-
-                <div className="flex justify-center">
-                  <Button disabled={isSubmitting || isSubmitSuccessful} type="submit" fullWidth>
-                    {messageSent ? 'Message sent' : 'Send message'}
-                  </Button>
-                </div>
-              </form>
-            </div>
+            <SummaryBox />
           </div>
-        )}
-
-        <div className="mt-8 flex flex-col items-center">
-          <Typography>
-            Prefer email? Reach me at{' '}
-            <Link href="mailto:deveroalex@gmail.com" className="underline">
-              email
-            </Link>
-            .
-          </Typography>
         </div>
       </div>
     </DefaultLayout>

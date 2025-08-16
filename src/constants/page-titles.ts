@@ -4,7 +4,7 @@ export const pageTitles = {
   services: 'How I Can Help',
   work: "What I've Done",
   resume: 'My Resume',
-  contact: "Let's Talk",
+  contact: 'Hire Me',
   projects: "What I've Built",
   blog: 'Blog',
   devero: 'Devero',
