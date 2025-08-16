@@ -49,7 +49,7 @@ export const Header: FC = () => {
     <header className="header">
       <nav className="flex justify-between py-6">
         <Link href="/" className="font-bold no-underline hover:no-underline">
-          AD
+          AlexDevero
         </Link>
 
         <ul
