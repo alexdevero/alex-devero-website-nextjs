@@ -1,12 +1,14 @@
 import classNames from 'classnames'
-import type { FC, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 
 import { Link } from './Link'
 
 export const buttonClasses =
-  'flex h-9 items-center justify-center rounded-sm bg-blue-600 px-5 text-sm text-white transition-all duration-300 hover:bg-blue-700 active:bg-blue-900 disabled:bg-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:active:bg-blue-800 dark:disabled:bg-blue-800'
+  'flex h-9 items-center justify-center rounded-sm bg-blue-600 px-5 text-sm transition-all duration-300 hover:bg-blue-700 active:bg-blue-900 disabled:bg-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:active:bg-blue-800 dark:disabled:bg-blue-800'
 
-type Props = HTMLAttributes<HTMLButtonElement> & {
+type Props<T extends 'link' | 'button'> = HTMLAttributes<
+  T extends 'link' ? HTMLAnchorElement : HTMLButtonElement
+> & {
   children: string
   disabled?: boolean
   type?: 'button' | 'submit' | 'reset'
@@ -16,7 +18,7 @@ type Props = HTMLAttributes<HTMLButtonElement> & {
   variant?: 'default' | 'outline'
 }
 
-export const Button: FC<Props> = ({
+export const Button = <T extends 'link' | 'button'>({
   centered = true,
   className,
   disabled,
@@ -26,13 +28,13 @@ export const Button: FC<Props> = ({
   href,
   variant = 'default',
   ...props
-}) => {
+}: Props<T>) => {
   const classes = classNames(buttonClasses, className, {
     'mx-auto': centered,
     'w-full': fullWidth,
-    'bg-blue-600 hover:bg-blue-700 active:bg-blue-900 disabled:bg-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:active:bg-blue-800 dark:disabled:bg-blue-800':
+    'bg-blue-600 hover:bg-blue-700 active:bg-blue-900 disabled:bg-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:active:bg-blue-800 text-white dark:disabled:bg-blue-800':
       variant === 'default',
-    'bg-transparent text-white/70 border border-white/15 hover:bg-gray-600/25 hover:text-white dark:bg-transparent dark:text-white/70 dark:border-white/15 active:bg-gray-600/25 dark:active:bg-gray-600/25 dark:hover:bg-gray-600/25 dark:hover:text-white':
+    'bg-transparent text-gray-400 border border-gray-300 hover:bg-gray-600/15 hover:text-gray-500 dark:bg-transparent dark:text-white/70 dark:border-white/15 active:bg-gray-600/25 dark:active:bg-gray-600/25 dark:hover:bg-gray-600/25 dark:hover:text-white':
       variant === 'outline',
   })
 
@@ -45,7 +47,12 @@ export const Button: FC<Props> = ({
   }
 
   return (
-    <button type={type} className={classes} disabled={disabled} {...props}>
+    <button
+      type={type}
+      className={classes}
+      disabled={disabled}
+      {...(props as HTMLAttributes<HTMLButtonElement>)}
+    >
       {children}
     </button>
   )
