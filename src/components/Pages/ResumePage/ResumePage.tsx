@@ -10,7 +10,7 @@ import { Skills } from './Skills'
 
 export const ResumePage: FC = () => (
   <DefaultLayout>
-    <Typography as="h1" variant="h1">
+    <Typography as="h1" variant="h1" centered>
       {pageTitles.resume}
     </Typography>
 

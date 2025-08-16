@@ -13,7 +13,7 @@ export const ServicesPage: FC = () => {
 
   return (
     <DefaultLayout>
-      <Typography as="h1" variant="h1">
+      <Typography as="h1" variant="h1" centered>
         {pageTitles.services}
       </Typography>
 

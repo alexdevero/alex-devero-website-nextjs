@@ -15,7 +15,7 @@ export const HomePage: FC = () => (
   <DefaultLayout>
     <div className="flex w-full flex-1 items-center justify-center">
       <div className="max-w-2xl text-center">
-        <Typography as="h1" variant="h1">
+        <Typography as="h1" variant="h1" centered>
           TypeScript / React / Next.js Specialist
         </Typography>
 

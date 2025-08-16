@@ -8,7 +8,7 @@ import { Typography } from '../../Typography'
 
 export const AboutPage = () => (
   <DefaultLayout>
-    <Typography as="h1" variant="h1">
+    <Typography as="h1" variant="h1" centered>
       {pageTitles.about}
     </Typography>
 

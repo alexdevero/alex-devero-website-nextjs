@@ -17,7 +17,7 @@ import {
 
 export const WorkPage = () => (
   <DefaultLayout>
-    <Typography as="h1" variant="h1">
+    <Typography as="h1" variant="h1" centered>
       {pageTitles.work}
     </Typography>
 

@@ -57,7 +57,11 @@ export const Typography: FC<PropsWithChildren<Props>> = ({
 
   if (variant.startsWith('h')) {
     return (
-      <Heading className={classNames(className, variantClasses[variant as Variant])} {...props} />
+      <Heading
+        className={classNames(className, variantClasses[variant as Variant])}
+        centered={centered}
+        {...props}
+      />
     )
   }
 
