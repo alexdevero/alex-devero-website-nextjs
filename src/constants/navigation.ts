@@ -24,19 +24,19 @@ export const navigationLinks: NavigationLink[] = [
     visible: true,
   },
   {
-    title: pageTitles.resume,
-    path: '/resume',
-    visible: true,
-  },
-  {
     title: pageTitles.about,
     path: '/about',
     visible: true,
   },
   {
+    title: pageTitles.resume,
+    path: '/resume',
+    visible: true,
+  },
+  {
     title: pageTitles.projects, // Mainly personal projects aside to freelance work
     path: '/projects',
-    visible: true,
+    visible: false,
   },
   {
     title: pageTitles.blog,
