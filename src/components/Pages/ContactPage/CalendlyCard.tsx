@@ -2,6 +2,7 @@ import type { FC } from 'react'
 
 import { Card } from '@/components/Card/Card'
 import { Typography } from '@/components/Typography'
+import { calendlyLink } from '@/constants/links'
 
 export const CalendlyCard: FC = () => (
   <Card>
@@ -17,7 +18,7 @@ export const CalendlyCard: FC = () => (
       {/* Calendly inline widget begin */}
       <div
         className="calendly-inline-widget"
-        data-url="https://calendly.com/deveroalex/30min?hide_event_type_details=1"
+        data-url={`${calendlyLink}?hide_event_type_details=1`}
         style={{ minWidth: '320px', height: '700px' }}
       />
       <script

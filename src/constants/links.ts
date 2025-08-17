@@ -17,4 +17,4 @@ export const personalLinks = {
   company: 'https://devero.io',
 }
 
-export const calendlyLink = 'https://calendly.com/deveroalex/30min'
+export const calendlyLink = 'https://calendly.com/deveroalex/20-minute-call'
