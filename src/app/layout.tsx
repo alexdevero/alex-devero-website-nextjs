@@ -1,9 +1,9 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
 
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
 
-import { getMetadata } from '@/constants/metadata'
 import { AppProviders } from '@/contexts/providers'
 import '@/styles/global.css'
 
@@ -14,7 +14,15 @@ const inter = Inter({
   subsets: ['latin-ext'],
 })
 
-export const metadata = getMetadata('Alex Devero')
+export const metadata: Metadata = {
+  metadataBase: new URL('https://alexdevero.com'),
+  applicationName: 'Alex Devero',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f5f5f5' },
+    { media: '(prefers-color-scheme: dark)', color: '#121212' },
+  ],
+  icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' },
+}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

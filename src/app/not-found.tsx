@@ -2,7 +2,11 @@ import { DefaultLayout } from '@/components/DefaultLayout'
 import { Typography } from '@/components/Typography'
 import { getMetadata } from '@/constants/metadata'
 
-export const metadata = getMetadata('404')
+export const metadata = getMetadata({
+  title: '404',
+  description: 'Page not found',
+  pathname: '/404',
+})
 
 export default function NotFound() {
   return (
