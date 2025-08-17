@@ -1,6 +1,6 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
 
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
 
@@ -14,13 +14,16 @@ const inter = Inter({
   subsets: ['latin-ext'],
 })
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://alexdevero.com'),
-  applicationName: 'Alex Devero',
+export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#f5f5f5' },
     { media: '(prefers-color-scheme: dark)', color: '#121212' },
   ],
+}
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://alexdevero.com'),
+  applicationName: 'Alex Devero',
   icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' },
 }
 
