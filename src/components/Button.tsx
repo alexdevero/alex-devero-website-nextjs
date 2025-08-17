@@ -34,7 +34,7 @@ export const Button = <T extends 'link' | 'button'>({
     'w-full': fullWidth,
     'bg-blue-600 hover:bg-blue-700 active:bg-blue-900 disabled:bg-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:active:bg-blue-800 text-white dark:disabled:bg-blue-800 hover:text-white':
       variant === 'default',
-    'bg-transparent text-gray-400 border border-gray-300 hover:bg-gray-600/15 hover:text-gray-500 dark:bg-transparent dark:text-gray-1300 dark:border-gray-1300 dark:hover:bg-gray-600/25 dark:hover:text-gray-1500 dark:hover:border-gray-1500':
+    'bg-transparent text-gray-600 border border-gray-300 hover:bg-gray-600/15 hover:text-gray-700 dark:bg-transparent dark:text-gray-1300 dark:border-gray-1300 dark:hover:bg-gray-600/25 dark:hover:text-gray-1500 dark:hover:border-gray-1500':
       variant === 'outline',
   })
 

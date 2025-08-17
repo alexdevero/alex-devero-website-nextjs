@@ -48,7 +48,10 @@ export const Header: FC = () => {
   return (
     <header className="header">
       <nav className="flex justify-between py-6">
-        <Link href="/" className="font-bold no-underline hover:no-underline">
+        <Link
+          href="/"
+          className="dark:!text-gray-1000 font-bold !text-gray-800 no-underline hover:no-underline"
+        >
           AlexDevero
         </Link>
 
