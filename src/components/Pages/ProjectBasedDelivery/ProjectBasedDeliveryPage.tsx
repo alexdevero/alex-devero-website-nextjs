@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 
+import { Button } from '@/components/Button'
 import { Card } from '@/components/Card/Card'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
@@ -9,6 +10,10 @@ import { pageTitles } from '@/constants/page-titles'
 
 export const ProjectBasedDeliveryPage: FC = () => (
   <DefaultLayout>
+    <Button href="/services" variant="outline">
+      {'<- Back'}
+    </Button>
+
     <Typography as="h1" variant="h1" centered>
       {pageTitles.projectBasedDelivery}
     </Typography>
