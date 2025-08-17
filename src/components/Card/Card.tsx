@@ -1,10 +1,12 @@
 import classNames from 'classnames'
+import Link from 'next/link'
 import type { FC, PropsWithChildren } from 'react'
 
 type Props = {
   className?: string
   fitContent?: boolean
   isInteractive?: boolean
+  href?: string
 }
 
 export const Card: FC<PropsWithChildren<Props>> = ({
@@ -12,17 +14,23 @@ export const Card: FC<PropsWithChildren<Props>> = ({
   className,
   fitContent = false,
   isInteractive = false,
-}) => (
-  <div
-    className={classNames(
-      'rounded-lg bg-gray-50 p-6 dark:bg-gray-800/50',
-      {
-        'w-fit': fitContent,
-        'cursor-pointer transition-all duration-300 hover:shadow-lg': isInteractive,
-      },
-      className
-    )}
-  >
-    {children}
-  </div>
-)
+  href,
+}) => {
+  const Wrapper = isInteractive && href !== undefined ? Link : 'div'
+
+  return (
+    <Wrapper
+      className={classNames(
+        'rounded-lg bg-gray-50 p-6 dark:bg-gray-800/50',
+        {
+          'w-fit': fitContent,
+          'cursor-pointer transition-all duration-300 hover:shadow-lg': isInteractive,
+        },
+        className
+      )}
+      href={href ?? '/'}
+    >
+      {children}
+    </Wrapper>
+  )
+}
