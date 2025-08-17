@@ -71,7 +71,7 @@ export const WorkPage = () => (
         ))}
       </div>
 
-      <Cta />
+      <Cta text="Interested in working together?" />
     </div>
   </DefaultLayout>
 )

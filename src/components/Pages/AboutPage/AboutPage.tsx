@@ -36,6 +36,7 @@ export const AboutPage = () => (
 
         <Typography>Outside of code, you’ll usually find me:</Typography>
         <List
+          listStyle="dashes"
           items={[
             'Training at the gym (my daily discipline anchor).',
             'Reading about startups, tech innovation, and the great builders of history.',

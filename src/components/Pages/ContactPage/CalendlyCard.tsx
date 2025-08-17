@@ -7,7 +7,7 @@ import { calendlyLink } from '@/constants/links'
 export const CalendlyCard: FC = () => (
   <Card>
     <div id="schedule" className="flex flex-col gap-2">
-      <Typography as="h2" variant="h4" centered={false} className="!mb-2">
+      <Typography as="h2" variant="h4" centered={false} className="!mb-2 mt-0">
         Schedule a call
       </Typography>
 

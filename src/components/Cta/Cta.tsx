@@ -12,19 +12,17 @@ type Props = {
   centered?: boolean
 }
 
-export const Cta: FC<Props> = ({
-  text = 'Interested in working together?',
-  ctaText = 'Send a message',
-  centered = false,
-}) => (
+export const Cta: FC<Props> = ({ text, ctaText = 'Send a message', centered = false }) => (
   <div
     className={classNames('my-8 flex flex-col items-center justify-center gap-2', {
       'text-center': centered,
     })}
   >
-    <div className="mb-3 flex max-w-md flex-col items-center justify-center gap-2">
-      <Typography>{text}</Typography>
-    </div>
+    {text !== undefined && (
+      <div className="mb-3 flex max-w-md flex-col items-center justify-center gap-2">
+        <Typography>{text}</Typography>
+      </div>
+    )}
 
     <div className="flex flex-col gap-2 sm:flex-row">
       <Button href={calendlyLink} centered={false}>
