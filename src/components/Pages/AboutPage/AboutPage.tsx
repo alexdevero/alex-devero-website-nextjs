@@ -1,5 +1,5 @@
+import { List } from '@/components/List/List'
 import { personalLinks, socialMedia } from '@/constants/links'
-import { pageTitles } from '@/constants/page-titles'
 
 import { Cta } from '../../Cta/Cta'
 import { DefaultLayout } from '../../DefaultLayout'
@@ -9,56 +9,63 @@ import { Typography } from '../../Typography'
 export const AboutPage = () => (
   <DefaultLayout>
     <Typography as="h1" variant="h1" centered>
-      {pageTitles.about}
+      About Alex Devero
     </Typography>
 
     <div className="flex flex-1 justify-center">
       <div className="flex max-w-3xl flex-col gap-3">
         <Typography>
-          Hi, I'm Alex Devero—a full-stack TypeScript developer based in the Czech Republic. I
-          specialize in building dynamic, high-performance web applications with React and Next.js
-          that solve problems and deliver amazing user experiences.
+          Hi, I’m Alex Devero — a TypeScript/React/Next.js specialist based in Prague. I help
+          companies build fast, reliable, and scalable web apps that cut load times, improve
+          conversions, and ship on schedule.
         </Typography>
 
         <Typography>
-          With a strong background in product design, I bring a unique mix of creativity and
-          technical expertise to every project. My goal? To bridge the gap between functionality and
-          usability, creating solutions that not only work but make life easier (and maybe even a
-          little more fun) for the people who use them.
+          I combine 5+ years of front-end expertise with a strong product design background, which
+          means I don’t just code features — I deliver products users love.
         </Typography>
 
-        <Typography as="h2" variant="h4" className="mb-4" centered={false}>
-          What Makes Me Tick
-        </Typography>
-
-        <Typography>
-          When I'm not deep in code, you'll probably find me lifting weights at the gym, diving into
-          books about startups and innovation, or tinkering with the latest tech. I love exploring
-          new ideas, whether it's through hands-on experiments or reading about the journeys of
-          other creators and entrepreneurs.
+        <Typography as="h2" variant="h4" className="mb-1" centered={false}>
+          What Drives Me
         </Typography>
 
         <Typography>
-          I'm also a big believer in sharing knowledge. On{' '}
-          <Link href={personalLinks.blog}>my blog</Link>, I write about programming, startups,
-          business, and all the things that keep me curious. And as an avid reader, I'm constantly
-          updating my Goodreads profile with new finds—feel free to check it out if you're a fellow
-          bookworm!
+          Building things is what I do best. Whether it’s an app, a business idea, or a new product
+          concept, I’m wired to turn ideas into execution.
         </Typography>
 
-        {/* <Typography>
-          You can find me on <Link href={socialMedia.linkedIn}>Linkedin</Link> and{' '}
-          <Link href={socialMedia.twitter}>X</Link> where I discuss industry trends and connect with
-          fellow professionals.
-        </Typography> */}
+        <Typography>Outside of code, you’ll usually find me:</Typography>
+        <List
+          items={[
+            'Training at the gym (my daily discipline anchor).',
+            'Reading about startups, tech innovation, and the great builders of history.',
+            'Experimenting with new tools and frameworks to push what’s possible.',
+          ]}
+        />
 
         <Typography>
-          As an avid reader, I am regularly updating my reading list on{' '}
-          <Link href={socialMedia.goodreads}>Goodreads</Link> with my latest reads.
+          This mix of curiosity and execution helps me spot problems fast and create solutions that
+          last.
+        </Typography>
+
+        <Typography as="h2" variant="h4" className="mb-1" centered={false}>
+          Beyond the Code
+        </Typography>
+
+        <Typography>
+          I believe in sharing knowledge and giving back. On my{' '}
+          <Link href={personalLinks.blog}>blog</Link>, I write about React, Next.js, startups, and
+          the lessons learned building projects from the ground up.
+        </Typography>
+
+        <Typography>
+          I’m also a lifelong learner — you’ll find my{' '}
+          <Link href={socialMedia.goodreads}>Goodreads</Link> filled with everything from software
+          engineering to business strategy and biographies of great founders.
         </Typography>
 
         <Cta
-          text="Whether you have a project in mind or just want to brainstorm ideas, I'd love to hear from you."
+          text="Whether you need a high-performance React/Next.js app or want to brainstorm your next big project, let’s connect."
           centered
         />
       </div>

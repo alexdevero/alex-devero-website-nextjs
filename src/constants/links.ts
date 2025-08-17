@@ -13,7 +13,7 @@ export const socialMedia = {
 }
 
 export const personalLinks = {
-  blog: 'https://blog.alexdevero.com/',
+  blog: 'https://alexsdispatch.substack.com/', // 'https://blog.alexdevero.com/',
   company: 'https://devero.io',
 }
 

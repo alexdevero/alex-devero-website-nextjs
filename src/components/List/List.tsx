@@ -16,7 +16,7 @@ export const List: FC<Props> = ({ className, items, listStyle = 'disc' }) => (
       {
         'list-disc': listStyle === 'disc',
         'list-decimal': listStyle === 'decimal',
-        'pl-4': listStyle !== 'dashes',
+        'pl-[17px]': listStyle !== 'dashes',
       },
       className
     )}
