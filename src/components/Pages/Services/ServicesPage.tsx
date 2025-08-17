@@ -21,8 +21,8 @@ export const ServicesPage: FC = () => (
       <Cta text={undefined} ctaText="Contact me" centered />
     </div>
 
-    <div className="flex justify-center">
-      <div className="flex max-w-3xl flex-col gap-6 lg:gap-10">
+    <div className="mt-4 flex justify-center">
+      <div className="flex max-w-3xl flex-col gap-6 lg:gap-14">
         {/* <Typography>
             Hi! I'm Alex Devero, a full-stack TypeScript developer with over 10 years of experience
             building web applications that don't just work—they wow. I specialize in React and
@@ -44,51 +44,53 @@ export const ServicesPage: FC = () => (
           </Typography> */}
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
-          <Card isInteractive>
+          <Card isInteractive href="/services/web-app-development">
             <Typography as="h3" variant="h6" centered={false} className="!mb-2 mt-0">
               Web Application Development
             </Typography>
             <Typography>
-              Fast, scalable apps with clean code and device-safe UX, built reliably from MVP to v1.
+              Build fast, scalable TypeScript/Next.js applications—MVP through full-scale
+              product—built with clean architecture, and on-time delivery.
             </Typography>
+            <span className="block text-right text-gray-400">→</span>
           </Card>
-          <Card isInteractive>
+          <Card isInteractive href="/services/consulting">
             <Typography as="h3" variant="h6" centered={false} className="!mb-2 mt-0">
               Consulting & Code Audit
             </Typography>
             <Typography>
-              Deep dive into performance, architecture, test suite, and technical health. Actionable
-              fixes in 2–3 days.
+              Deep-dive performance, testing, and architecture audits with actionable feedback in
+              days—not weeks—to optimize velocity and delivery quality.
             </Typography>
+            <span className="block text-right text-gray-400">→</span>
           </Card>
-          <Card isInteractive>
+          <Card isInteractive href="/services/project-based-delivery">
             <Typography as="h3" variant="h6" centered={false} className="!mb-2 mt-0">
               Project-Based Delivery
             </Typography>
             <Typography>
-              Need a feature or full web app? I deliver it with precision, testing, and a
-              high-performance mindset.
+              Need a feature or full app delivered right, first time? I deliver polished,
+              high-performance solutions end-to-end—with test coverage and quality built-in.
             </Typography>
+            <span className="block text-right text-gray-400">→</span>
           </Card>
         </div>
 
-        <div>
-          <Card fitContent>
-            <Typography as="h2" variant="h4" className="mb-4 mt-0" centered={false}>
-              Why Work With Me
-            </Typography>
+        <Card fitContent>
+          <Typography as="h2" variant="h4" className="mb-4 mt-0" centered={false}>
+            Why Work With Me
+          </Typography>
 
-            <List
-              listStyle="dashes"
-              items={[
-                '9+ years years in JavaScript, TypeScript, React, Next.js.',
-                'Built and scaled apps for CDN77, Digitoo (visual logos)',
-                'UX-first approach meets code discipline',
-                'Performance, test coverage, and velocity = standard',
-              ]}
-            />
-          </Card>
-        </div>
+          <List
+            listStyle="dashes"
+            items={[
+              '9+ years years in JavaScript, TypeScript, React, Next.js.',
+              'Built and scaled apps for CDN77, Digitoo (visual logos)',
+              'UX-first approach meets code discipline',
+              'Performance, test coverage, and velocity = standard',
+            ]}
+          />
+        </Card>
 
         <div className="mb-8">
           <Typography as="h2" variant="h4" className="mb-4" centered={false}>

@@ -21,7 +21,7 @@ export const Card: FC<PropsWithChildren<Props>> = ({
   return (
     <Wrapper
       className={classNames(
-        'rounded-lg bg-gray-50 p-6 dark:bg-gray-800/50',
+        'flex flex-col rounded-lg bg-gray-50 p-6 dark:bg-gray-800/50',
         {
           'w-fit': fitContent,
           'cursor-pointer transition-all duration-300 hover:shadow-lg': isInteractive,

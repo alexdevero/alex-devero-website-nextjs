@@ -12,4 +12,16 @@ export const getMetadata = (title: string, description?: string): Metadata => ({
   ...baseMetadata,
   title: `${title} | ${baseMetaTitle}`,
   description: description || baseMetadata.description,
+  openGraph: {
+    title: `${title} | ${baseMetaTitle}`,
+    description: description || baseMetadata.description,
+    type: 'website',
+    url: 'https://alexdevero.com',
+    siteName: 'Alex Devero',
+  },
+  twitter: {
+    title: `${title} | ${baseMetaTitle}`,
+    description: description || baseMetadata.description,
+    card: 'summary_large_image',
+  },
 })

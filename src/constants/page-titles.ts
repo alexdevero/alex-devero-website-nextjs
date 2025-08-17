@@ -9,4 +9,7 @@ export const pageTitles = {
   blog: 'Blog',
   devero: 'Devero',
   login: 'Login',
+  consulting: 'Consulting & Code Audit',
+  projectBasedDelivery: 'Project-based Delivery',
+  webAppDevelopment: 'Web Application Development',
 }
