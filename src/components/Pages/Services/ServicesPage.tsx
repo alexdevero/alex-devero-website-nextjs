@@ -2,6 +2,7 @@ import type { FC } from 'react'
 
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
+import { List } from '@/components/List/List'
 import { Typography } from '@/components/Typography'
 import { pageTitles } from '@/constants/page-titles'
 
@@ -86,24 +87,14 @@ export const ServicesPage: FC = () => {
               Why Work With Me?
             </Typography>
 
-            <ul>
-              <li>
-                <Typography>
-                  &ndash; 10+ years of hands-on experience with TypeScript, React, and Next.js.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  &ndash; A unique blend of technical skills and UX expertise.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  &ndash; A commitment to delivering solutions that are not just functional but
-                  exceptional.
-                </Typography>
-              </li>
-            </ul>
+            <List
+              listStyle="dashes"
+              items={[
+                '10+ years of hands-on experience with TypeScript, React, and Next.js.',
+                'A unique blend of technical skills and UX expertise.',
+                'A commitment to delivering solutions that are not just functional but exceptional.',
+              ]}
+            />
           </div>
 
           <div className="mb-8">
