@@ -1,4 +1,5 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from '@vercel/analytics/next'
 
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
@@ -52,6 +53,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <AppProviders>{children}</AppProviders>
+
+        <Analytics />
       </body>
 
       {gaId && <GoogleAnalytics gaId={gaId} />}
