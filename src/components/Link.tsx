@@ -13,6 +13,7 @@ type Props = {
   className?: string
   disabled?: boolean
   initialUnderline?: boolean
+  hasStylesOverride?: boolean
 } & LinkProps
 
 export const Link: FC<PropsWithChildren<Props>> = ({
@@ -22,6 +23,7 @@ export const Link: FC<PropsWithChildren<Props>> = ({
   href,
   children,
   initialUnderline = true,
+  hasStylesOverride = false,
   ...props
 }) => {
   const linkClasses = classNames(
@@ -31,8 +33,8 @@ export const Link: FC<PropsWithChildren<Props>> = ({
       'text-gray-800 underline dark:text-gray-1100': active && !buttonStyle,
       underline: initialUnderline || active,
       'no-underline': (!initialUnderline && !active) || buttonStyle,
-      'text-gray-500 font-semibold hover:text-gray-800 hover:underline dark:text-gray-1300 dark:hover:text-gray-1500':
-        !buttonStyle,
+      'text-gray-500 hover:text-gray-800 hover:underline dark:text-gray-1300 dark:hover:text-gray-1500':
+        !buttonStyle && !hasStylesOverride,
       [buttonClasses]: buttonStyle,
     },
     className

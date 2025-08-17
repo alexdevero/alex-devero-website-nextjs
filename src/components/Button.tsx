@@ -40,7 +40,11 @@ export const Button = <T extends 'link' | 'button'>({
 
   if (href) {
     return (
-      <Link href={href} className={classNames(classes, 'no-underline hover:no-underline')}>
+      <Link
+        href={href}
+        className={classNames(classes, 'no-underline hover:no-underline')}
+        hasStylesOverride
+      >
         {children}
       </Link>
     )
