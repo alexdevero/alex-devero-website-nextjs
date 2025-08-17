@@ -15,7 +15,7 @@ export const Card: FC<PropsWithChildren<Props>> = ({
 }) => (
   <div
     className={classNames(
-      'rounded-lg border border-gray-200 p-6 dark:border-slate-800',
+      'rounded-lg bg-gray-50 p-6 dark:bg-gray-800/50',
       {
         'w-fit': fitContent,
         'cursor-pointer transition-all duration-300 hover:shadow-lg': isInteractive,
