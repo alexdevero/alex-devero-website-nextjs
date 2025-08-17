@@ -68,8 +68,8 @@ export const Typography: FC<PropsWithChildren<Props>> = ({
   return (
     <El
       className={classNames(className, variantClasses[variant as Variant], {
-        'text-gray-500 dark:text-gray-500': !muted,
-        'font-medium text-gray-400 dark:text-gray-600': muted,
+        'dark:text-gray-1100 text-gray-500': !muted,
+        'dark:text-gray-1400 font-medium text-gray-400': muted,
         'text-center': centered,
       })}
       {...props}

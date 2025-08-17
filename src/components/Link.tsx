@@ -28,10 +28,10 @@ export const Link: FC<PropsWithChildren<Props>> = ({
     'transition-all duration-300',
     {
       'cursor-not-allowed': props.disabled,
-      'text-gray-800 underline dark:text-gray-400': active && !buttonStyle,
+      'text-gray-800 underline dark:text-gray-1100': active && !buttonStyle,
       underline: initialUnderline || active,
       'no-underline': (!initialUnderline && !active) || buttonStyle,
-      'text-gray-500 font-semibold hover:text-gray-800 hover:underline dark:hover:text-gray-400':
+      'text-gray-500 font-semibold hover:text-gray-800 hover:underline dark:text-gray-1300 dark:hover:text-gray-1500':
         !buttonStyle,
       [buttonClasses]: buttonStyle,
     },

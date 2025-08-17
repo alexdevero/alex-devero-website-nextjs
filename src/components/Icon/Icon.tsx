@@ -1,6 +1,5 @@
-import type { FC, SVGProps } from 'react'
-
 import classNames from 'classnames'
+import type { FC, SVGProps } from 'react'
 
 type Props = {
   icon: FC<SVGProps<SVGSVGElement>>

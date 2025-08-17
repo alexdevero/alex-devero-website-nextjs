@@ -20,7 +20,7 @@ export const Heading: FC<Props> = ({
   return (
     <Element
       className={classNames(
-        'mb-8 mt-8 font-bold text-gray-800 dark:text-gray-400',
+        'dark:text-gray-1000 mb-8 mt-8 font-bold text-gray-800',
         {
           'text-center': centered,
         },
