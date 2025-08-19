@@ -50,7 +50,7 @@ export const Header: FC = () => {
       <nav className="flex justify-between py-6">
         <Link
           href="/"
-          className="dark:!text-gray-1000 font-bold !text-gray-800 no-underline hover:no-underline"
+          className="font-bold !text-gray-800 no-underline hover:no-underline dark:!text-gray-1000"
         >
           AlexDevero
         </Link>
@@ -59,13 +59,13 @@ export const Header: FC = () => {
           className={classNames(
             'flex flex-1 items-center justify-center sm:gap-4 md:gap-2 lg:gap-6',
             {
-              'max-md:fixed max-md:inset-0 max-md:z-10 max-md:flex-col max-md:bg-white max-md:dark:bg-gray-900':
+              'max-md:fixed max-md:inset-0 max-md:z-10 max-md:flex-col max-md:bg-white max-md:dark:bg-black-100':
                 isMobileMenuVisible,
               'hidden md:flex': !isMobileMenuVisible,
             }
           )}
         >
-          <li>
+          <li className="max-md:py-2">
             <NavToggleButton
               navOpen={isMobileMenuVisible}
               onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)}
@@ -73,8 +73,12 @@ export const Header: FC = () => {
           </li>
           {navigationLinks.map(link =>
             link.visible ? (
-              <li key={link.path} onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)}>
-                <Link href={link.path} initialUnderline={false} className="max-md:text-lg">
+              <li
+                key={link.path}
+                className="max-md:py-2"
+                onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)}
+              >
+                <Link href={link.path} initialUnderline={false} className="max-md:text-xl">
                   {link.title}
                 </Link>
               </li>
