@@ -1,19 +1,26 @@
 import type { FC } from 'react'
 
+import { Card } from '@/components/Card/Card'
+import { Link } from '@/components/Link'
+import { List } from '@/components/List/List'
 import { Typography } from '@/components/Typography'
-
-import { personalInfo } from './data'
+import { calendlyLink, email } from '@/constants/links'
 
 export const QuickInfo: FC = () => (
-  <div className="mb-8 ml-auto mr-auto flex max-w-md flex-col gap-2">
-    {personalInfo.map(item => (
-      <div key={item.heading}>
-        <Typography as="span" className="inline-flex items-center gap-1" muted>
-          <span className={item.iconClass} />
-          {item.heading}:
-        </Typography>{' '}
-        <Typography as="span">{item.text}</Typography>
-      </div>
-    ))}
-  </div>
+  <Card fitContent>
+    <Typography as="h2" className="!mt-0" variant="h2">
+      Quick Facts
+    </Typography>
+
+    <List
+      items={[
+        'Location: Prague, Czech Republic (CET)',
+        'Availability: Limited slots each quarter',
+        <>
+          Contact: <Link href={`mailto:${email}`}>{email}</Link> ·{' '}
+          <Link href={calendlyLink}>Schedule a 20-min call</Link>
+        </>,
+      ]}
+    />
+  </Card>
 )

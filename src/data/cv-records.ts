@@ -1,14 +1,16 @@
+import { email, personalLinks, socialMedia } from '@/constants/links'
+
 export const cvRecords = {
   personalInfo: {
     name: 'Alex Devero',
     age: 32,
     address: 'Prague, Czech Republic',
     phone: '',
-    email: 'deveroalex@gmail.com',
-    website: 'https://alexdevero.com',
-    github: 'https://github.com/alexdevero',
-    linkedin: 'https://cz.linkedin.com/in/alexdevero',
-    substack: 'https://alexdevero.substack.com',
+    email: email,
+    website: personalLinks.website,
+    github: socialMedia.github,
+    linkedin: socialMedia.linkedIn,
+    substack: socialMedia.substack,
   },
   education: [
     {

@@ -4,6 +4,7 @@ import type { FC } from 'react'
 
 import { Card } from '@/components/Card/Card'
 import { Link } from '@/components/Link'
+import { email } from '@/constants/links'
 
 import { Button } from '../../Button'
 import { Input } from '../../FormElements/Input'
@@ -76,8 +77,8 @@ export const ContactForm: FC = () => {
 
       <Typography className="mt-4">
         Prefer email? Reach me at{' '}
-        <Link href="mailto:deveroalex@gmail.com" className="underline">
-          deveroalex@gmail.com
+        <Link href={`mailto:${email}`} className="underline">
+          {email}
         </Link>
         .
       </Typography>

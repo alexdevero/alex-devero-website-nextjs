@@ -1,0 +1,19 @@
+import type { FC } from 'react'
+
+import { Link } from '@/components/Link'
+import { Typography } from '@/components/Typography'
+import { calendlyLink, cvLink } from '@/constants/links'
+
+export const Download: FC = () => (
+  <div>
+    <Typography as="h2" variant="h2">
+      Download
+    </Typography>
+
+    <Link href={cvLink}>Download PDF</Link>
+
+    <Typography as="p" variant="body" className="mt-4" muted>
+      {'>'} Prefer a quick intro? <Link href={calendlyLink}>Schedule a 20-min call</Link>.
+    </Typography>
+  </div>
+)

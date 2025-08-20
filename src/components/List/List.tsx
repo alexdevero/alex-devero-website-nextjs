@@ -1,11 +1,11 @@
 import classNames from 'classnames'
-import type { FC } from 'react'
+import type { FC, ReactNode } from 'react'
 
 import { Typography } from '../Typography'
 
 type Props = {
   className?: string
-  items: string[]
+  items: (string | ReactNode)[]
   listStyle?: 'disc' | 'decimal' | 'dashes'
 }
 
@@ -22,7 +22,7 @@ export const List: FC<Props> = ({ className, items, listStyle = 'disc' }) => (
     )}
   >
     {items.map(item => (
-      <li key={item}>
+      <li key={typeof item === 'string' ? item : item?.toString()}>
         <Typography as="span">
           {listStyle === 'dashes' ? <>&ndash; </> : null}
           {item}
