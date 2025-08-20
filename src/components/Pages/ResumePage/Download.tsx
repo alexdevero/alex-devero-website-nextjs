@@ -1,3 +1,7 @@
+'use client'
+
+import { track } from '@vercel/analytics'
+
 import type { FC } from 'react'
 
 import { Link } from '@/components/Link'
@@ -10,7 +14,9 @@ export const Download: FC = () => (
       Download
     </Typography>
 
-    <Link href={cvLinkLocal}>Download PDF</Link>
+    <Link href={cvLinkLocal} onClick={() => track('download_cv')}>
+      Download PDF
+    </Link>
 
     <Typography as="p" variant="body" className="mt-4" muted>
       {'>'} Prefer a quick intro? <Link href={calendlyLink}>Schedule a 20-min call</Link>.

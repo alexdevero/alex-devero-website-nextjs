@@ -1,3 +1,7 @@
+'use client'
+
+import { track } from '@vercel/analytics'
+
 import classNames from 'classnames'
 import type { FC } from 'react'
 
@@ -25,7 +29,7 @@ export const Cta: FC<Props> = ({ text, ctaText = 'Send a message', centered = fa
     )}
 
     <div className="flex flex-col gap-2 sm:flex-row">
-      <Button href={calendlyLink} centered={false}>
+      <Button href={calendlyLink} centered={false} onClick={() => track('cta_schedule_call')}>
         Schedule a 20-min call
       </Button>
       <Button href="/contact" variant="outline">

@@ -1,3 +1,7 @@
+'use client'
+
+import { track } from '@vercel/analytics'
+
 import type { FC } from 'react'
 
 import { Card } from '@/components/Card/Card'
@@ -18,7 +22,9 @@ export const QuickInfo: FC = () => (
         'Availability: Limited slots each quarter',
         <>
           Contact: <Link href={`mailto:${email}`}>{email}</Link> ·{' '}
-          <Link href={calendlyLink}>Schedule a 20-min call</Link>
+          <Link href={calendlyLink} onClick={() => track('resume_schedule_call')}>
+            Schedule a 20-min call
+          </Link>
         </>,
       ]}
     />

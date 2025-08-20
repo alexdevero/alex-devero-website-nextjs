@@ -1,3 +1,7 @@
+'use client'
+
+import { track } from '@vercel/analytics'
+
 import classNames from 'classnames'
 import type { FC } from 'react'
 
@@ -46,7 +50,11 @@ export const HomePage: FC = () => (
             See case studies
           </Button>
 
-          <Button href={calendlyLink} centered={false}>
+          <Button
+            href={calendlyLink}
+            centered={false}
+            onClick={() => track('homepage_schedule_call')}
+          >
             Book a 20-min call
           </Button>
         </div>
