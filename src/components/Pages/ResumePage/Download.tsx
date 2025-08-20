@@ -2,7 +2,7 @@ import type { FC } from 'react'
 
 import { Link } from '@/components/Link'
 import { Typography } from '@/components/Typography'
-import { calendlyLink, cvLink } from '@/constants/links'
+import { calendlyLink, cvLinkLocal } from '@/constants/links'
 
 export const Download: FC = () => (
   <div>
@@ -10,7 +10,7 @@ export const Download: FC = () => (
       Download
     </Typography>
 
-    <Link href={cvLink}>Download PDF</Link>
+    <Link href={cvLinkLocal}>Download PDF</Link>
 
     <Typography as="p" variant="body" className="mt-4" muted>
       {'>'} Prefer a quick intro? <Link href={calendlyLink}>Schedule a 20-min call</Link>.
