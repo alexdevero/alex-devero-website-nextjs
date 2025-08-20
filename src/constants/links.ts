@@ -22,5 +22,7 @@ export const calendlyLink = 'https://calendly.com/deveroalex/20-minute-call'
 
 export const email = 'deveroalex@gmail.com'
 
+export const cvLinkLocal = '/files/alex-devero-cv.pdf'
+
 export const cvLink =
   'https://drive.google.com/file/d/1HheWCg7qGjzFH0tLcPByKoIaCnSufdbP/view?usp=drive_link'
