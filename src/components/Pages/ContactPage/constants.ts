@@ -6,7 +6,10 @@ export const formSchema = z.object({
   message: z.string().min(1, 'Message is required'),
 })
 
-export const initialValues = {
+export type FormValues = z.infer<typeof formSchema>
+type FormInput = z.input<typeof formSchema>
+
+export const initialValues: FormInput = {
   name: '',
   email: '',
   message: '',

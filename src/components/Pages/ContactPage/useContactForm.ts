@@ -6,8 +6,8 @@ import { useReCaptcha } from 'next-recaptcha-v3'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
+import type { FormValues } from './constants'
 import { formSchema, initialValues } from './constants'
-import type { FormValues } from './types'
 
 export const useContactForm = () => {
   const { executeRecaptcha } = useReCaptcha()
