@@ -1,5 +1,6 @@
 import { socialMedia } from './links'
 import { pageTitles } from './page-titles'
+import { routers } from './router'
 
 type NavigationLink = {
   title: string
@@ -10,51 +11,51 @@ type NavigationLink = {
 export const navigationLinks: NavigationLink[] = [
   {
     title: pageTitles.home,
-    path: '/',
+    path: routers.home,
     visible: false, // Probably not necessary to have root path in the navigation
   },
   {
     title: pageTitles.work,
-    path: '/work',
+    path: routers.work,
     visible: true,
   },
   {
     title: pageTitles.services,
-    path: '/services',
+    path: routers.services,
     visible: true,
   },
   {
     title: pageTitles.about,
-    path: '/about',
+    path: routers.about,
     visible: true,
   },
   {
     title: pageTitles.resume,
-    path: '/resume',
+    path: routers.resume,
     visible: true,
   },
   {
     title: pageTitles.projects, // Mainly personal projects aside to freelance work
-    path: '/projects',
+    path: routers.projects,
     visible: false,
   },
   {
     title: pageTitles.blog,
-    path: 'https://blog.alexdevero.com/',
+    path: routers.blog,
   },
   {
     title: pageTitles.devero,
-    path: 'https://devero.io/',
+    path: routers.devero,
     visible: false,
   },
   {
     title: pageTitles.login,
-    path: '/login',
+    path: routers.login,
     visible: false,
   },
   {
     title: pageTitles.contact,
-    path: '/contact',
+    path: routers.contact,
     visible: true,
   },
 ]
