@@ -1,3 +1,4 @@
+import { Button } from '@/components/Button'
 import { Card } from '@/components/Card/Card'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
@@ -10,6 +11,10 @@ import { getWorkDuration } from './utils'
 
 export const Cdn77CaseStudyPage = () => (
   <DefaultLayout>
+    <Button href={routers.work} variant="outline">
+      {'<- Back'}
+    </Button>
+
     <div className="mx-auto flex w-full max-w-3xl flex-col gap-6">
       <div className="flex flex-col items-center">
         <Typography as="h1" className="mb-4 max-w-3xl" variant="h1">
@@ -29,7 +34,7 @@ export const Cdn77CaseStudyPage = () => (
       </div>
 
       <Card fitContent>
-        <Typography as="h2" centered={false} className="mb-3! mt-0!" variant="h4">
+        <Typography as="h2" centered={false} className="mt-0! mb-3!" variant="h4">
           Quick Results
         </Typography>
 

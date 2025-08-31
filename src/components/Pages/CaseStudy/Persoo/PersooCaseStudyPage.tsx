@@ -1,8 +1,10 @@
 import type { FC } from 'react'
 
+import { Button } from '@/components/Button'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
 import { Typography } from '@/components/Typography'
+import { routers } from '@/constants/router'
 
 import {
   impactAchievements,
@@ -15,6 +17,10 @@ import {
 
 export const PersooCaseStudyPage: FC = () => (
   <DefaultLayout>
+    <Button href={routers.work} variant="outline">
+      {'<- Back'}
+    </Button>
+
     <div className="flex flex-col items-center">
       <Typography as="h1" className="max-w-3xl" variant="h1">
         From Developer to Founder: Driving Innovation and Leadership at Persoo

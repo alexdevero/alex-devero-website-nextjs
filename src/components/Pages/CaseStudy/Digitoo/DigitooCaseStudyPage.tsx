@@ -1,11 +1,17 @@
+import { Button } from '@/components/Button'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
 import { Typography } from '@/components/Typography'
+import { routers } from '@/constants/router'
 
 import { impactAchievements, keyLearnings, responsibilities } from './data'
 
 export const DigitooCaseStudyPage = () => (
   <DefaultLayout>
+    <Button href={routers.work} variant="outline">
+      {'<- Back'}
+    </Button>
+
     <div className="flex flex-col items-center">
       <Typography as="h1" className="max-w-3xl" variant="h1">
         Transforming Digitoo&apos;s MVP into a Scalable Customer-Facing Platform
