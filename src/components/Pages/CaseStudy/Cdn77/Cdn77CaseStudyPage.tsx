@@ -1,3 +1,4 @@
+import { Card } from '@/components/Card/Card'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
 import { List } from '@/components/List/List'
@@ -26,6 +27,22 @@ export const Cdn77CaseStudyPage = () => (
         <Tag label={`Duration: ${getWorkDuration('2023-12-01', 'present')} months`} />
         <Tag label="Stack: Next.js, TS, Node.js, REST/GraphQL, Tailwind CSS, Vitest" />
       </div>
+
+      <Card fitContent>
+        <Typography as="h2" centered={false} className="!mb-3 !mt-0" variant="h4">
+          Quick Results
+        </Typography>
+
+        <List
+          items={[
+            'Swapped legacy UI for a custom design system—consistent, future-proof UI',
+            'Refactored for modularity—less coupling, cleaner code',
+            'Integrated tests—deployment confidence, fewer regressions',
+            'Ship velocity increased',
+            'Scalable foundation set for next-gen app work',
+          ]}
+        />
+      </Card>
 
       <Cta className="!my-4" ctaText="See more work" ctaUrl={routers.work} />
 
@@ -58,10 +75,10 @@ export const Cdn77CaseStudyPage = () => (
         <List
           className="list-disc pl-5"
           items={[
-            'Migrate to custom design system',
-            'Refactor for modularity',
-            'Introduce component/integration tests',
-            'Performance passes',
+            'Migrated from deprecated UI components to a custom design system',
+            'Refactored monolithic components into modular ones with clear boundaries',
+            'Added integration and unit tests with CI enforcement',
+            'Performance audit with bundle optimizations',
           ]}
         />
 
@@ -83,8 +100,21 @@ export const Cdn77CaseStudyPage = () => (
         </Typography>
         <List
           className="list-disc pl-5"
-          items={['Maintainability ↑', 'Velocity ↑', 'Stability ↑', 'UX consistency ↑']}
+          items={[
+            'New features shipped seamlessly',
+            'PR reviews faster and more confident',
+            'Reduced bug chatter in deployment channels',
+            'Onboarding new team members became smoother due to clearer patterns',
+          ]}
         />
+
+        <Typography as="h3" variant="h4">
+          Learnings
+        </Typography>
+        <Typography>
+          Refactoring and adding tests on the go doesn’t block delivery—it sets you up for
+          sustainable velocity.
+        </Typography>
       </article>
 
       {/* <div className="mb-6 flex flex-col gap-8">
