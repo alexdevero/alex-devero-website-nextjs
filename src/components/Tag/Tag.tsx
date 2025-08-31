@@ -12,7 +12,7 @@ export const Tag: FC<Props> = ({ label, className }) => (
   <Typography
     as="span"
     className={classNames(
-      'rounded border border-zinc-800 bg-zinc-700/70 px-2 py-1 !text-gray-400',
+      'rounded border border-gray-200 bg-gray-200 px-2 py-1 !text-gray-500 dark:border-zinc-800 dark:bg-zinc-700/70 dark:!text-gray-400',
       className
     )}
     variant="small"
