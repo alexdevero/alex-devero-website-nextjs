@@ -1,6 +1,7 @@
 import React from 'react'
 import type { ReactNode, SVGProps } from 'react'
 
+import { routes } from '@/constants/router'
 import Cdn77Logo from '@/public/images/logos/cdn77-logo.svg'
 import DigitooLogo from '@/public/images/logos/digitoo-logo.svg'
 import PersooLogo from '@/public/images/logos/persoo-logo.svg'
@@ -46,7 +47,7 @@ export const work: Work[] = [
       'Refactoring legacy code to improve maintainability and performance.',
       'Establishing culture of React/Next.js testing practices.',
     ],
-    caseStudy: '/case-study/cdn77',
+    caseStudy: routes.caseStudyCdn77,
   },
   {
     company: 'Digitoo',
@@ -66,7 +67,7 @@ export const work: Work[] = [
       'Collaborated on setting direction for frontend architecture.',
       'Mentored junior developers and provided guidance.',
     ],
-    caseStudy: '/case-study/digitoo',
+    caseStudy: routes.caseStudyDigitoo,
   },
   {
     company: 'Persoo',
@@ -82,7 +83,7 @@ export const work: Work[] = [
       'Worked directly with clients to provide solutions.',
       'Led frontend development team and mentored junior developers.',
     ],
-    caseStudy: '/case-study/persoo',
+    caseStudy: routes.caseStudyPersoo,
   },
   {
     company: 'Retino',
@@ -112,7 +113,7 @@ export const work: Work[] = [
       'Worked alongside CEO to build a new product from scratch.',
       'Set direction for frontend architecture.',
     ],
-    caseStudy: '/case-study/supernova',
+    caseStudy: routes.caseStudySupernova,
   },
   {
     company: 'StartMonday',

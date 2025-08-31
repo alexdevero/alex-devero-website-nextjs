@@ -1,6 +1,6 @@
 import { socialMedia } from './links'
 import { pageTitles } from './page-titles'
-import { routers } from './router'
+import { routes } from './router'
 
 type NavigationLink = {
   path: string
@@ -11,51 +11,51 @@ type NavigationLink = {
 export const navigationLinks: NavigationLink[] = [
   {
     title: pageTitles.home,
-    path: routers.home,
+    path: routes.home,
     visible: false, // Probably not necessary to have root path in the navigation
   },
   {
     title: pageTitles.work,
-    path: routers.work,
+    path: routes.work,
     visible: true,
   },
   {
     title: pageTitles.services,
-    path: routers.services,
+    path: routes.services,
     visible: true,
   },
   {
     title: pageTitles.about,
-    path: routers.about,
+    path: routes.about,
     visible: true,
   },
   {
     title: pageTitles.resume,
-    path: routers.resume,
+    path: routes.resume,
     visible: true,
   },
   {
     title: pageTitles.projects, // Mainly personal projects aside to freelance work
-    path: routers.projects,
+    path: routes.projects,
     visible: false,
   },
   {
     title: pageTitles.blog,
-    path: routers.blog,
+    path: routes.blog,
   },
   {
     title: pageTitles.devero,
-    path: routers.devero,
+    path: routes.devero,
     visible: false,
   },
   {
     title: pageTitles.login,
-    path: routers.login,
+    path: routes.login,
     visible: false,
   },
   {
     title: pageTitles.contact,
-    path: routers.contact,
+    path: routes.contact,
     visible: true,
   },
 ]

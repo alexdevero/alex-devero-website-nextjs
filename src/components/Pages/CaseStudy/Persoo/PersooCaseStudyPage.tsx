@@ -7,13 +7,13 @@ import { DefaultLayout } from '@/components/DefaultLayout'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
-import { routers } from '@/constants/router'
+import { routes } from '@/constants/router'
 
 import { getWorkDuration } from '../Cdn77/utils'
 
 export const PersooCaseStudyPage: FC = () => (
   <DefaultLayout>
-    <Button href={routers.work} variant="outline">
+    <Button href={routes.work} variant="outline">
       {'<- Back'}
     </Button>
 
@@ -52,7 +52,7 @@ export const PersooCaseStudyPage: FC = () => (
         />
       </Card>
 
-      <Cta className="my-4!" ctaText="See more work" ctaUrl={routers.work} />
+      <Cta className="my-4!" ctaText="See more work" ctaUrl={routes.work} />
 
       <article className="space-y-6 lg:col-span-2">
         <Typography as="h2" variant="h3">
@@ -129,7 +129,7 @@ export const PersooCaseStudyPage: FC = () => (
         </Typography>
       </article>
 
-      <Cta className="my-4!" ctaText="See more work" ctaUrl={routers.work} />
+      <Cta className="my-4!" ctaText="See more work" ctaUrl={routes.work} />
     </div>
   </DefaultLayout>
 )

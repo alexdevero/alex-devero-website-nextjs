@@ -2,13 +2,13 @@ import { Octokit } from '@octokit/rest'
 
 import { ProjectsPage } from '@/components/Pages/Projects/ProjectsPage'
 import { getMetadata } from '@/constants/metadata'
-import { routers } from '@/constants/router'
+import { routes } from '@/constants/router'
 
 export const metadata = getMetadata({
   title: 'Projects',
   description:
     'Fast, scalable React/Next.js delivery: development, audits, and project-based execution.',
-  pathname: routers.projects,
+  pathname: routes.projects,
 })
 
 // Looks like auth is not needed at least for now for read only access

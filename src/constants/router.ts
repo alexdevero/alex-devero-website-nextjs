@@ -1,4 +1,4 @@
-export const routers = {
+export const routes = {
   home: '/',
   work: '/work',
   services: '/services',

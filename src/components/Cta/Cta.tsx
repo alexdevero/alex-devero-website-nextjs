@@ -6,7 +6,7 @@ import classNames from 'classnames'
 import type { FC } from 'react'
 
 import { calendlyLink } from '@/constants/links'
-import { routers } from '@/constants/router'
+import { routes } from '@/constants/router'
 
 import { Button } from '../Button'
 import { Typography } from '../Typography'
@@ -24,7 +24,7 @@ export const Cta: FC<Props> = ({
   className,
   ctaText = 'Send a message',
   centered = false,
-  ctaUrl = routers.contact,
+  ctaUrl = routes.contact,
 }) => (
   <div
     className={classNames('my-8 flex flex-col items-center justify-center gap-2', className, {
