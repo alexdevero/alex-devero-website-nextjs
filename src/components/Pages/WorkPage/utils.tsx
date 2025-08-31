@@ -50,7 +50,7 @@ export const getLogoColorClasses = (companyName: Company) => {
 }
 
 export const renderCompany = (company: string, label: string) => (
-  <div className="flex gap-1">
+  <div key={company} className="flex gap-1">
     <Typography as="span" variant="body" muted>
       {label}:
     </Typography>{' '}
@@ -61,7 +61,7 @@ export const renderCompany = (company: string, label: string) => (
 )
 
 export const renderRole = (role: string, label: string) => (
-  <div className="flex gap-1">
+  <div key={role} className="flex gap-1">
     <Typography as="span" variant="body" muted>
       {label}:
     </Typography>{' '}
@@ -75,7 +75,7 @@ export const renderYear = (yearFrom: string, yearTo: string, label: string) => {
   const content = yearFrom === yearTo ? yearFrom : `${yearFrom} - ${yearTo}`
 
   return (
-    <div className="flex gap-1">
+    <div key={content} className="flex gap-1">
       <Typography as="span" variant="body" muted>
         {label}:
       </Typography>{' '}
@@ -90,7 +90,7 @@ export const renderTechStack = (techStack: TechStack, label: string) => {
   if (Object.keys(techStack).length === 0) return null
 
   return (
-    <div className="flex flex-col gap-1">
+    <div key={label} className="flex flex-col gap-1">
       <Typography as="span" variant="body" muted>
         {label}:
       </Typography>
@@ -112,7 +112,7 @@ export const renderTechStack = (techStack: TechStack, label: string) => {
 }
 
 export const renderResponsibilities = (responsibilities: string[], label: string) => (
-  <div className="flex flex-col gap-1">
+  <div key={label} className="flex flex-col gap-1">
     <Typography as="span" variant="body" muted>
       {label}:
     </Typography>{' '}
@@ -132,7 +132,7 @@ export const renderCaseStudy = (caseStudy: string | undefined, label: string) =>
   if (!caseStudy) return null
 
   return (
-    <div className="flex gap-1">
+    <div key={caseStudy} className="flex gap-1">
       <Typography as="span" variant="body" muted>
         {label}:
       </Typography>{' '}
