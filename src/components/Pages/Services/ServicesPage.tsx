@@ -45,7 +45,7 @@ export const ServicesPage: FC = () => (
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
           <Card href="/services/web-app-development" isInteractive>
-            <Typography as="h3" centered={false} className="!mb-2 mt-0" variant="h6">
+            <Typography as="h3" centered={false} className="mb-2! mt-0" variant="h6">
               Web Application Development
             </Typography>
             <Typography>
@@ -55,7 +55,7 @@ export const ServicesPage: FC = () => (
             <span className="block text-right text-gray-400">→</span>
           </Card>
           <Card href="/services/consulting" isInteractive>
-            <Typography as="h3" centered={false} className="!mb-2 mt-0" variant="h6">
+            <Typography as="h3" centered={false} className="mb-2! mt-0" variant="h6">
               Consulting & Code Audit
             </Typography>
             <Typography>
@@ -65,7 +65,7 @@ export const ServicesPage: FC = () => (
             <span className="block text-right text-gray-400">→</span>
           </Card>
           <Card href="/services/project-based-delivery" isInteractive>
-            <Typography as="h3" centered={false} className="!mb-2 mt-0" variant="h6">
+            <Typography as="h3" centered={false} className="mb-2! mt-0" variant="h6">
               Project-Based Delivery
             </Typography>
             <Typography>

@@ -25,7 +25,7 @@ export const ConsultingPage: FC = () => (
       </Typography>
 
       <Card fitContent>
-        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
+        <Typography as="h2" centered={false} className="mb-3! mt-0" variant="h4">
           Quick Results
         </Typography>
 
@@ -40,7 +40,7 @@ export const ConsultingPage: FC = () => (
       </Card>
 
       <div className="flex flex-col gap-2">
-        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
+        <Typography as="h2" centered={false} className="mb-3! mt-0" variant="h4">
           What This Includes
         </Typography>
 
@@ -57,7 +57,7 @@ export const ConsultingPage: FC = () => (
       </div>
 
       <div className="mb-8 flex flex-col gap-2">
-        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
+        <Typography as="h2" centered={false} className="mb-3! mt-0" variant="h4">
           Ideal For
         </Typography>
 

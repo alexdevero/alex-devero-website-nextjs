@@ -49,7 +49,7 @@ export const Header: FC = () => {
     <header className="header">
       <nav className="flex justify-between py-6">
         <Link
-          className="font-bold !text-gray-800 no-underline hover:no-underline dark:!text-gray-1000"
+          className="font-bold text-gray-800! no-underline hover:no-underline dark:text-gray-1000!"
           href="/"
         >
           AlexDevero

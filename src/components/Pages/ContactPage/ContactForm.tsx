@@ -26,7 +26,7 @@ export const ContactForm: FC = () => {
 
   return (
     <Card>
-      <Typography as="h2" centered={false} className="!mb-2 mt-0" variant="h4">
+      <Typography as="h2" centered={false} className="mb-2! mt-0" variant="h4">
         Send a message
       </Typography>
 

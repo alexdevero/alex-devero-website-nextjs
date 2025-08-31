@@ -12,7 +12,7 @@ import { calendlyLink, email } from '@/constants/links'
 
 export const QuickInfo: FC = () => (
   <Card fitContent>
-    <Typography as="h2" className="!mt-0" variant="h2">
+    <Typography as="h2" className="mt-0!" variant="h2">
       Quick Facts
     </Typography>
 

@@ -6,7 +6,7 @@ import { Typography } from '@/components/Typography'
 
 export const SummaryBox: FC = () => (
   <Card>
-    <Typography as="h2" centered={false} className="!mb-2 mt-0" variant="h4">
+    <Typography as="h2" centered={false} className="mb-2! mt-0" variant="h4">
       What to expect
     </Typography>
 

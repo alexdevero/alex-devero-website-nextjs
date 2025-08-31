@@ -29,7 +29,7 @@ export const Cdn77CaseStudyPage = () => (
       </div>
 
       <Card fitContent>
-        <Typography as="h2" centered={false} className="!mb-3 !mt-0" variant="h4">
+        <Typography as="h2" centered={false} className="mb-3! mt-0!" variant="h4">
           Quick Results
         </Typography>
 
@@ -44,7 +44,7 @@ export const Cdn77CaseStudyPage = () => (
         />
       </Card>
 
-      <Cta className="!my-4" ctaText="See more work" ctaUrl={routers.work} />
+      <Cta className="my-4!" ctaText="See more work" ctaUrl={routers.work} />
 
       <article className="space-y-6 lg:col-span-2">
         <Typography as="h2" variant="h3">
@@ -169,7 +169,7 @@ export const Cdn77CaseStudyPage = () => (
         </div>
       </div> */}
 
-      <Cta className="!my-4" ctaText="See more work" ctaUrl={routers.work} />
+      <Cta className="my-4!" ctaText="See more work" ctaUrl={routers.work} />
     </div>
   </DefaultLayout>
 )
