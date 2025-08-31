@@ -122,58 +122,6 @@ export const Cdn77CaseStudyPage = () => (
         </Typography>
       </article>
 
-      {/* <div className="mb-6 flex flex-col gap-8">
-        <div className="flex flex-col gap-2">
-          <Typography as="h3" muted>
-            Context:
-          </Typography>
-          <Typography>
-            Brought on as a full-stack TypeScript, React, and Next.js developer to modernize
-            CDN77&apos;s internal application. The goal was to enhance performance, scalability, and
-            user experience while contributing to other key company projects.
-          </Typography>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <Typography as="h3" muted>
-            Responsibilities:
-          </Typography>
-          <ul className="flex flex-col gap-1">
-            {responsibilities.map(responsibility => (
-              <li key={responsibility.substring(0, 20)}>
-                <Typography>&ndash; {responsibility}</Typography>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <Typography as="h3" muted>
-            Impact & Achievements:
-          </Typography>
-          <ul className="flex flex-col gap-1">
-            {impactAchievements.map(achievement => (
-              <li key={achievement.substring(0, 20)}>
-                <Typography>&ndash; {achievement}</Typography>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <Typography as="h3" muted>
-            Key Learnings:
-          </Typography>
-          <ul className="flex flex-col gap-1">
-            {keyLearnings.map(achievement => (
-              <li key={achievement.substring(0, 20)}>
-                <Typography>&ndash; {achievement}</Typography>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div> */}
-
       <Cta className="my-4!" ctaText="See more work" ctaUrl={routers.work} />
     </div>
   </DefaultLayout>
