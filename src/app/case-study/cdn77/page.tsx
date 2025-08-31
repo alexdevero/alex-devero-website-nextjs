@@ -3,10 +3,11 @@ import { getMetadata } from '@/constants/metadata'
 import { routers } from '@/constants/router'
 
 export const metadata = getMetadata({
-  title: 'CDN77 Case Study',
+  title: 'Modernizing CDN77’s Internal App',
   description:
-    'Fast, scalable React/Next.js delivery: development, audits, and project-based execution.',
+    'Refactor + design-system migration of a three-year-old Next.js app to improve performance, maintainability, and developer velocity.',
   pathname: routers.caseStudyCdn77,
+  ogType: 'article',
 })
 
 export default Cdn77CaseStudyPage

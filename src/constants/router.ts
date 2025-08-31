@@ -15,6 +15,9 @@ export const routers = {
   contact: '/contact',
   notFound: '/404',
   caseStudyCdn77: '/case-study/cdn77',
-  caseStudyDevero: '/case-study/digitoo',
+  caseStudyDigitoo: '/case-study/digitoo',
   caseStudyPersoo: '/case-study/persoo',
+  caseStudyRetino: '/case-study/retino',
+  caseStudyStartMonday: '/case-study/start-monday',
+  caseStudySupernova: '/case-study/supernova',
 } as const
