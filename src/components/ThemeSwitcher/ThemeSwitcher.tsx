@@ -23,7 +23,7 @@ export const ThemeSwitcher: FC = () => {
         {themeOptions.map(option => (
           <li key={option.label}>
             <button
-              className={classNames('flex items-center gap-2', {
+              className={classNames('flex items-center gap-2 hover:cursor-pointer', {
                 'text-gray-400 hover:text-gray-600 hover:underline dark:text-gray-500 dark:hover:text-gray-400':
                   darkMode !== option.value,
                 'text-gray-800 dark:text-gray-400': darkMode === option.value,
@@ -32,7 +32,7 @@ export const ThemeSwitcher: FC = () => {
               onClick={() => handleDarkModeChange(option.value)}
             >
               <Icon
-                className="size-5 text-inherit transition-colors duration-300"
+                className="size-7 text-inherit transition-colors duration-300 md:size-6"
                 icon={option.icon}
               />
               <span className="sr-only">{option.label}</span>
