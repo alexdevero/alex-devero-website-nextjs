@@ -22,6 +22,7 @@
     "npm": ">=10.0.0",
     "yarn": ">=1.2.0"
   },
+  "packageManager": "yarn@1.22.22",
   "browserslist": [
     "last 7 versions",
     "ie >= 11"
@@ -45,12 +46,12 @@
     "@vercel/analytics": "^1.5.0",
     "axios": "1.7.9",
     "github-api": "3.4.0",
-    "next": "15.1.3",
+    "next": "15.5.2",
     "next-recaptcha-v3": "1.5.2",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
     "react-hook-form": "7.52.2",
-    "recharts": "2.15.0",
+    "recharts": "2.15.4",
     "resend": "4.0.1",
     "xml-js": "1.6.11",
     "zod": "3.24.1"
@@ -58,9 +59,9 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "15.1.8",
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
-    "@types/node": "22.17.1",
-    "@types/react": "19.0.0",
-    "@types/react-dom": "19.0.0",
+    "@types/node": "22.18.0",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "autoprefixer": "10.4.21",
