@@ -10,14 +10,6 @@ import { Typography } from '@/components/Typography'
 import { routers } from '@/constants/router'
 
 import { getWorkDuration } from '../Cdn77/utils'
-import {
-  impactAchievements,
-  keyLearnings,
-  responsibilitiesClientProjects,
-  responsibilitiesFounder,
-  responsibilitiesTeamLead,
-  responsibilitiesWidgetDevelopment,
-} from './data'
 
 export const PersooCaseStudyPage: FC = () => (
   <DefaultLayout>

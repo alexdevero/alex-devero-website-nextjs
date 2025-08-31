@@ -112,6 +112,7 @@ export const work: Work[] = [
       'Worked alongside CEO to build a new product from scratch.',
       'Set direction for frontend architecture.',
     ],
+    caseStudy: '/case-study/supernova',
   },
   {
     company: 'StartMonday',
