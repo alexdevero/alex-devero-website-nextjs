@@ -1,25 +1,93 @@
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
+import { List } from '@/components/List/List'
+import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
+import { routers } from '@/constants/router'
 
-import { impactAchievements, keyLearnings, responsibilities } from './data'
+import { getWorkDuration } from './utils'
 
 export const Cdn77CaseStudyPage = () => (
   <DefaultLayout>
-    <div className="flex flex-col items-center">
-      <Typography as="h1" className="max-w-3xl" variant="h1">
-        Modernizing CDN77&apos;s Internal App: From Legacy to High-Performance Next.js
-      </Typography>
-    </div>
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-6">
+      <div className="flex flex-col items-center">
+        <Typography as="h1" className="mb-4 max-w-3xl" variant="h1">
+          Modernizing CDN77&apos;s Internal App
+        </Typography>
 
-    <div className="mb-4 flex flex-col items-center">
-      <div className="mb-6 flex max-w-3xl flex-col gap-8">
-        <Typography centered>
+        <Typography as="p" variant="body">
+          Refactor + design-system migration of a three-year-old Next.js app to improve performance,
+          maintainability, and developer velocity.
+        </Typography>
+      </div>
+
+      <div className="flex flex-wrap gap-2 text-xs text-zinc-400">
+        <Tag label="Role: Full-Stack Developer" />
+        <Tag label={`Duration: ${getWorkDuration('2023-12-01', 'present')} months`} />
+        <Tag label="Stack: Next.js, TS, Node.js, REST/GraphQL, Tailwind CSS, Vitest" />
+      </div>
+
+      <Cta className="!my-4" ctaText="See more work" ctaUrl={routers.work} />
+
+      <article className="space-y-6 lg:col-span-2">
+        <Typography as="h2" variant="h3">
+          Client & Context
+        </Typography>
+        <Typography>
           CDN77 is a global content delivery network (CDN) provider. Combining full live streaming
           and video-on-demand (VOD) services, CDN77 delivers seamless user experiences for its
           customers, covering everything from video streaming to infrastructure management.
         </Typography>
 
+        <Typography as="h3" variant="h4">
+          Problem / Constraints
+        </Typography>
+        <List
+          className="list-disc pl-5"
+          items={[
+            'Legacy patterns slowing feature work',
+            'Third-party UI lock-in',
+            'Low test coverage → fragile deploys',
+            'Refactor while shipping',
+          ]}
+        />
+
+        <Typography as="h3" variant="h4">
+          Approach
+        </Typography>
+        <List
+          className="list-disc pl-5"
+          items={[
+            'Migrate to custom design system',
+            'Refactor for modularity',
+            'Introduce component/integration tests',
+            'Performance passes',
+          ]}
+        />
+
+        <Typography as="h3" variant="h4">
+          Solution Highlights
+        </Typography>
+        <List
+          className="list-disc pl-5"
+          items={[
+            'New DS across key flows',
+            'Lower coupling, clearer boundaries',
+            'CI-backed tests prevent regressions',
+            'Kept delivery on schedule',
+          ]}
+        />
+
+        <Typography as="h3" variant="h4">
+          Results
+        </Typography>
+        <List
+          className="list-disc pl-5"
+          items={['Maintainability ↑', 'Velocity ↑', 'Stability ↑', 'UX consistency ↑']}
+        />
+      </article>
+
+      {/* <div className="mb-6 flex flex-col gap-8">
         <div className="flex flex-col gap-2">
           <Typography as="h3" muted>
             Context:
@@ -69,12 +137,9 @@ export const Cdn77CaseStudyPage = () => (
             ))}
           </ul>
         </div>
-      </div>
+      </div> */}
 
-      <Cta
-        ctaText="Let's create something extraordinary together"
-        text="Need a skilled developer to transform your platform into a scalable, high-performance product?"
-      />
+      <Cta className="!my-4" ctaText="See more work" ctaUrl={routers.work} />
     </div>
   </DefaultLayout>
 )
