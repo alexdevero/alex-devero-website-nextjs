@@ -29,7 +29,7 @@ export const DigitooCaseStudyPage = () => (
 
       <div className="flex flex-wrap gap-2 text-xs text-zinc-400">
         <Tag label="Role: Frontend React → Next.js" />
-        <Tag label={`Duration: ${getWorkDuration('2021-06-01', '2023-11-01')} months`} />
+        <Tag label={`Duration: ${getWorkDuration('2021-06-01', '2023-11-30')} months`} />
         <Tag label="Stack: Next.js, TS, Tailwind CSS, Nx monorepo" />
       </div>
 
