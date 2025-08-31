@@ -25,27 +25,26 @@ export const WebAppDevelopmentPage: FC = () => (
       </Typography>
 
       <Card fitContent>
-        <Typography as="h2" variant="h4" className="!mb-3 mt-0" centered={false}>
+        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
           Quick Results
         </Typography>
 
         <List
-          listStyle="dashes"
           items={[
             'Load times improved 40% (LCP/FCP)',
             'Test coverage maintained ≥ 80%',
             'Delivered MVPs in 4–8 weeks',
           ]}
+          listStyle="dashes"
         />
       </Card>
 
       <div className="flex flex-col gap-2">
-        <Typography as="h2" variant="h4" className="!mb-3 mt-0" centered={false}>
+        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
           What This Includes
         </Typography>
 
         <List
-          listStyle="dashes"
           items={[
             'MVP → full product build using TS/Next.js',
             'Modular, maintainable architecture + clean code',
@@ -53,11 +52,12 @@ export const WebAppDevelopmentPage: FC = () => (
             'End-to-end testing, deploy pipelines, and monitoring',
             'Documentation + handoff support',
           ]}
+          listStyle="dashes"
         />
       </div>
 
       <div className="mb-8 flex flex-col gap-2">
-        <Typography as="h2" variant="h4" className="!mb-3 mt-0" centered={false}>
+        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
           Ideal For
         </Typography>
 
@@ -68,6 +68,6 @@ export const WebAppDevelopmentPage: FC = () => (
       </div>
     </div>
 
-    <Cta text={undefined} ctaText="Contact me" centered />
+    <Cta ctaText="Contact me" text={undefined} centered />
   </DefaultLayout>
 )

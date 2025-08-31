@@ -11,28 +11,30 @@ export const inputClasses =
 export const inputErrorClasses = '!border-red-500 hover:!shadow-[0_0_0_2px_rgba(239,68,68,0.4)]'
 
 type Props = HTMLAttributes<HTMLInputElement> & {
+  errorMessage?: string
+  hasError?: boolean
   label?: string
   type?: 'text' | 'email' | 'password'
-  hasError?: boolean
-  errorMessage?: string
 }
 
 export const Input = forwardRef<HTMLInputElement, Props>(
   ({ hasError, id, errorMessage, label, type = 'text', ...rest }, ref) => (
     <div className="flex w-full flex-col gap-1">
       <InputWrapper>
-        {label && <Label htmlFor={id}>{label}</Label>}
+        {Boolean(label) && <Label htmlFor={id}>{label}</Label>}
         <input
           ref={ref}
-          id={id}
-          type={type}
           className={classNames(inputClasses, {
             [inputErrorClasses]: hasError,
           })}
+          id={id}
+          type={type}
           {...rest}
         />
       </InputWrapper>
-      {hasError && errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      {Boolean(hasError && errorMessage) && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   )
 )
+
+Input.displayName = 'Input'

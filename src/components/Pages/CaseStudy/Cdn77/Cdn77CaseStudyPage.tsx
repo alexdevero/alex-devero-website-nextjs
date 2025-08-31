@@ -7,8 +7,8 @@ import { impactAchievements, keyLearnings, responsibilities } from './data'
 export const Cdn77CaseStudyPage = () => (
   <DefaultLayout>
     <div className="flex flex-col items-center">
-      <Typography as="h1" variant="h1" className="max-w-3xl">
-        Modernizing CDN77's Internal App: From Legacy to High-Performance Next.js
+      <Typography as="h1" className="max-w-3xl" variant="h1">
+        Modernizing CDN77&apos;s Internal App: From Legacy to High-Performance Next.js
       </Typography>
     </div>
 
@@ -25,9 +25,9 @@ export const Cdn77CaseStudyPage = () => (
             Context:
           </Typography>
           <Typography>
-            Brought on as a full-stack TypeScript, React, and Next.js developer to modernize CDN77's
-            internal application. The goal was to enhance performance, scalability, and user
-            experience while contributing to other key company projects.
+            Brought on as a full-stack TypeScript, React, and Next.js developer to modernize
+            CDN77&apos;s internal application. The goal was to enhance performance, scalability, and
+            user experience while contributing to other key company projects.
           </Typography>
         </div>
 
@@ -72,8 +72,8 @@ export const Cdn77CaseStudyPage = () => (
       </div>
 
       <Cta
-        text="Need a skilled developer to transform your platform into a scalable, high-performance product?"
         ctaText="Let's create something extraordinary together"
+        text="Need a skilled developer to transform your platform into a scalable, high-performance product?"
       />
     </div>
   </DefaultLayout>

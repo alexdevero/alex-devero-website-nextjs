@@ -2,9 +2,10 @@
 
 import type { FC, MouseEvent } from 'react'
 
-import { Button } from '../../Button'
-import { DefaultLayout } from '../../DefaultLayout'
-import { Typography } from '../../Typography'
+import { Button } from '@/components/Button'
+import { DefaultLayout } from '@/components/DefaultLayout'
+import { Typography } from '@/components/Typography'
+
 import { CalendlyCard } from './CalendlyCard'
 import { ContactForm } from './ContactForm'
 import { SummaryBox } from './SummaryBox'
@@ -50,7 +51,7 @@ export const ContactPage: FC = () => {
         <div className="my-auto mt-10 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           <CalendlyCard />
 
-          <div id="contact-form" className="flex flex-col gap-6 md:gap-8">
+          <div className="flex flex-col gap-6 md:gap-8" id="contact-form">
             {formEnabled && <ContactForm />}
 
             <SummaryBox />

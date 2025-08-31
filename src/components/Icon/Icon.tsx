@@ -2,11 +2,11 @@ import classNames from 'classnames'
 import type { FC, SVGProps } from 'react'
 
 type Props = {
-  icon: FC<SVGProps<SVGSVGElement>>
   className?: string
+  height?: number
+  icon: FC<SVGProps<SVGSVGElement>>
   size?: number
   width?: number
-  height?: number
 }
 
 export const Icon: FC<Props> = ({
@@ -19,8 +19,8 @@ export const Icon: FC<Props> = ({
 }) => (
   <IconComponent
     className={classNames(className)}
-    width={size ?? width}
     height={size ?? height}
+    width={size ?? width}
     {...props}
   />
 )

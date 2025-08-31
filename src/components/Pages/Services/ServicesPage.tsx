@@ -14,11 +14,11 @@ export const ServicesPage: FC = () => (
     </Typography>
 
     <div className="mx-auto flex max-w-3xl flex-col">
-      <Typography as="p" centered className="mb-0">
+      <Typography as="p" className="mb-0" centered>
         Fast, scalable web apps. Avoid rewrite debt. Solve problems — then scale.
       </Typography>
 
-      <Cta text={undefined} ctaText="Contact me" centered />
+      <Cta ctaText="Contact me" text={undefined} centered />
     </div>
 
     <div className="mt-4 flex justify-center">
@@ -44,8 +44,8 @@ export const ServicesPage: FC = () => (
           </Typography> */}
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
-          <Card isInteractive href="/services/web-app-development">
-            <Typography as="h3" variant="h6" centered={false} className="!mb-2 mt-0">
+          <Card href="/services/web-app-development" isInteractive>
+            <Typography as="h3" centered={false} className="!mb-2 mt-0" variant="h6">
               Web Application Development
             </Typography>
             <Typography>
@@ -54,8 +54,8 @@ export const ServicesPage: FC = () => (
             </Typography>
             <span className="block text-right text-gray-400">→</span>
           </Card>
-          <Card isInteractive href="/services/consulting">
-            <Typography as="h3" variant="h6" centered={false} className="!mb-2 mt-0">
+          <Card href="/services/consulting" isInteractive>
+            <Typography as="h3" centered={false} className="!mb-2 mt-0" variant="h6">
               Consulting & Code Audit
             </Typography>
             <Typography>
@@ -64,8 +64,8 @@ export const ServicesPage: FC = () => (
             </Typography>
             <span className="block text-right text-gray-400">→</span>
           </Card>
-          <Card isInteractive href="/services/project-based-delivery">
-            <Typography as="h3" variant="h6" centered={false} className="!mb-2 mt-0">
+          <Card href="/services/project-based-delivery" isInteractive>
+            <Typography as="h3" centered={false} className="!mb-2 mt-0" variant="h6">
               Project-Based Delivery
             </Typography>
             <Typography>
@@ -77,23 +77,23 @@ export const ServicesPage: FC = () => (
         </div>
 
         <Card fitContent>
-          <Typography as="h2" variant="h4" className="mb-4 mt-0" centered={false}>
+          <Typography as="h2" centered={false} className="mb-4 mt-0" variant="h4">
             Why Work With Me
           </Typography>
 
           <List
-            listStyle="dashes"
             items={[
               '9+ years years in JavaScript, TypeScript, React, Next.js.',
               'Built and scaled apps for CDN77, Digitoo (visual logos)',
               'UX-first approach meets code discipline',
               'Performance, test coverage, and velocity = standard',
             ]}
+            listStyle="dashes"
           />
         </Card>
 
         <div className="mb-8">
-          <Typography as="h2" variant="h4" className="mb-4" centered={false}>
+          <Typography as="h2" centered={false} className="mb-4" variant="h4">
             Availability
           </Typography>
 

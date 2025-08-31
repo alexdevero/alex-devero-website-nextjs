@@ -17,7 +17,7 @@ export const SelectedWork: FC = () => (
       ]}
     />
 
-    <Typography as="p" variant="body" className="mt-4" muted>
+    <Typography as="p" className="mt-4" variant="body" muted>
       {'>'} See detailed write-ups on the <Link href="/work">Work</Link> page.
     </Typography>
   </div>

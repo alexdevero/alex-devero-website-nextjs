@@ -7,8 +7,8 @@ import { impactAchievements, keyLearnings, responsibilities } from './data'
 export const DigitooCaseStudyPage = () => (
   <DefaultLayout>
     <div className="flex flex-col items-center">
-      <Typography as="h1" variant="h1" className="max-w-3xl">
-        Transforming Digitoo's MVP into a Scalable Customer-Facing Platform
+      <Typography as="h1" className="max-w-3xl" variant="h1">
+        Transforming Digitoo&apos;s MVP into a Scalable Customer-Facing Platform
       </Typography>
     </div>
 
@@ -71,8 +71,8 @@ export const DigitooCaseStudyPage = () => (
       </div>
 
       <Cta
-        text="Ready to transform your product into a high-performance, scalable platform?"
         ctaText="Let's build something incredible together"
+        text="Ready to transform your product into a high-performance, scalable platform?"
       />
     </div>
   </DefaultLayout>

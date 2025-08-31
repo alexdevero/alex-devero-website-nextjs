@@ -1,36 +1,36 @@
 export type PersonalInfo = {
-  name: string
-  age: number
   address: string
-  phone: string
+  age: number
   email: string
-  website: string
   github: string
   linkedin: string
+  name: string
+  phone: string
+  website: string
 }
 
 export type Education = {
-  school: string
+  date: string
   degree: string
   major: string
-  date: string
+  school: string
 }
 
 export type Experience = {
   company: string
-  title: string
   date: string
   description: string
+  title: string
 }
 
 export type Skill = {
-  name: string
   level: number
+  name: string
 }
 
 export type Cv = {
-  personalInfo: PersonalInfo
   education: Education[]
   experience: Experience[]
+  personalInfo: PersonalInfo
   skills: Skill[]
 }

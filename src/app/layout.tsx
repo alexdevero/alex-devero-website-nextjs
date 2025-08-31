@@ -30,14 +30,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html className={inter.className} lang="en">
       <head>
         {/* <!-- Font Awesome --> */}
         <link
-          rel="stylesheet"
+          crossOrigin="anonymous"
           href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-          crossOrigin="anonymous"
+          rel="stylesheet"
         />
         {/* Check for theme preference on page load to avoid FOUC */}
         {/* TODO: Disabled because of hydration error */}
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Analytics />
       </body>
 
-      {gaId && <GoogleAnalytics gaId={gaId} />}
+      {gaId !== undefined && <GoogleAnalytics gaId={gaId} />}
     </html>
   )
 }

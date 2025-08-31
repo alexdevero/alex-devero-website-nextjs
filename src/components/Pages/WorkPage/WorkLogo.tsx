@@ -5,8 +5,8 @@ import type { Company, LogoProps } from '@/data/work'
 import { getLogoColorClasses, getLogoImageWith } from './utils'
 
 type WorkLogoProps = {
-  company: Company
   LogoComponent: (props: LogoProps) => ReactNode
+  company: Company
 }
 
 export const WorkLogo: FC<WorkLogoProps> = ({ company, LogoComponent }) => (

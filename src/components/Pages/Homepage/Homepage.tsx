@@ -6,13 +6,13 @@ import classNames from 'classnames'
 import type { FC } from 'react'
 
 import { Button } from '@/components/Button'
+import { DefaultLayout } from '@/components/DefaultLayout'
+import { Typography } from '@/components/Typography'
 import { calendlyLink } from '@/constants/links'
 import Cdn77Logo from '@/public/images/logos/cdn77-logo.svg'
 import DigitooLogo from '@/public/images/logos/digitoo-logo.svg'
 import PersooLogo from '@/public/images/logos/persoo-logo.svg'
 
-import { DefaultLayout } from '../../DefaultLayout'
-import { Typography } from '../../Typography'
 import { getLogoColorClasses } from '../WorkPage/utils'
 
 export const HomePage: FC = () => (
@@ -46,13 +46,13 @@ export const HomePage: FC = () => (
         </Typography>
 
         <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/work" variant="outline" centered={false}>
+          <Button centered={false} href="/work" variant="outline">
             See case studies
           </Button>
 
           <Button
-            href={calendlyLink}
             centered={false}
+            href={calendlyLink}
             onClick={() => track('homepage_schedule_call')}
           >
             Book a 20-min call

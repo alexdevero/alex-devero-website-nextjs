@@ -16,7 +16,7 @@ import {
 export const PersooCaseStudyPage: FC = () => (
   <DefaultLayout>
     <div className="flex flex-col items-center">
-      <Typography as="h1" variant="h1" className="max-w-3xl">
+      <Typography as="h1" className="max-w-3xl" variant="h1">
         From Developer to Founder: Driving Innovation and Leadership at Persoo
       </Typography>
     </div>
@@ -26,7 +26,7 @@ export const PersooCaseStudyPage: FC = () => (
         <Typography centered>
           Persoo was a Czech startup specializing in e-commerce solutions such as behavior-driven
           search, recommendations, upsell, and cross-sell tools. It was later acquired by its
-          competitor Luigi's Box.
+          competitor Luigi&apos;s Box.
         </Typography>
 
         <div className="flex flex-col gap-2">
@@ -39,15 +39,15 @@ export const PersooCaseStudyPage: FC = () => (
             cross-sell tools.
           </Typography>
           <Typography>
-            Initially part of the implementation team, responsible for integrating Persoo's tools
-            into client websites and customizing them to meet specific business needs.
+            Initially part of the implementation team, responsible for integrating Persoo&apos;s
+            tools into client websites and customizing them to meet specific business needs.
           </Typography>
           <Typography>
             Later promoted to team lead, managing junior developers and overseeing implementation
-            projects, while modernizing the company's core widgets.
+            projects, while modernizing the company&apos;s core widgets.
           </Typography>
           <Typography>
-            Became one of the company's founders, contributing to strategic decision-making
+            Became one of the company&apos;s founders, contributing to strategic decision-making
             alongside technical work.
           </Typography>
         </div>
@@ -138,8 +138,8 @@ export const PersooCaseStudyPage: FC = () => (
       </div>
 
       <Cta
-        text="Looking for a skilled developer to modernize your tools or lead your team to deliver top-tier e-commerce solutions?"
         ctaText="Let's create something extraordinary together"
+        text="Looking for a skilled developer to modernize your tools or lead your team to deliver top-tier e-commerce solutions?"
       />
     </div>
   </DefaultLayout>

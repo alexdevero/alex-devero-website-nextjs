@@ -5,8 +5,8 @@ import type { Company, TechStack } from '@/data/work'
 export const getLogoImageWith = (
   companyName: Company
 ): {
-  width: number
   height?: number
+  width: number
 } => {
   switch (companyName) {
     case 'CDN77':

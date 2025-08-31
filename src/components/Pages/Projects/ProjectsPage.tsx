@@ -9,18 +9,18 @@ import { projects } from '@/data/projects'
 const displayProjects = true
 
 type GhRepo = {
-  id: number
-  name: string
   description: string | null
-  url: string
-  language: string | null | undefined
+  id: number
   isFork: boolean
+  language: string | null | undefined
+  name: string
+  url: string
 }
 
 type Props = {
   areGithubDataReady: boolean
-  repos: GhRepo[] | null
   error: string | null
+  repos: GhRepo[] | null
 }
 
 export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) => (
@@ -38,14 +38,14 @@ export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) =>
         <div className="mb-8 grid grid-cols-1 justify-center gap-6">
           {projects.map(project => (
             <div key={project.name} className="flex flex-col text-center">
-              <Typography as="span" variant="subtitle" className="font-bold">
+              <Typography as="span" className="font-bold" variant="subtitle">
                 {project.name}
               </Typography>
 
-              <Typography as="h5" variant="body" className="mt-1 font-medium">
+              <Typography as="h5" className="mt-1 font-medium" variant="body">
                 {project.position}
               </Typography>
-              <Typography as="h5" variant="small" className="mt-1 text-slate-500">
+              <Typography as="h5" className="mt-1 text-slate-500" variant="small">
                 {project.yearFrom}-{project.yearTo}
               </Typography>
             </div>
@@ -59,7 +59,7 @@ export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) =>
     <div>
       {!areGithubDataReady && !error && <span>Loading...</span>}
 
-      {areGithubDataReady && (
+      {areGithubDataReady ? (
         <>
           <Typography className="mb-6 mt-2 text-center">
             Here are some projects I worked and that are on my{' '}
@@ -84,7 +84,7 @@ export const ProjectsPage: FC<Props> = ({ areGithubDataReady, repos, error }) =>
             </ul>
           </div>
         </>
-      )}
+      ) : null}
     </div>
   </DefaultLayout>
 )

@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 
 type MetaOpts = {
-  title: string
   description?: string
-  pathname?: string // e.g. '/services'
-  ogImage?: { url: string; width?: number; height?: number; alt?: string }
-  twitterImage?: string // can mirror ogImage.url
-  ogType?: 'website' | 'article'
   index?: boolean // control robots
+  ogImage?: { alt?: string; height?: number; url: string; width?: number }
+  ogType?: 'website' | 'article'
+  pathname?: string // e.g. '/services'
+  title: string
+  twitterImage?: string // can mirror ogImage.url
 }
 
 export const baseMetaTitle = 'Full-stack developer - TypeScript, React & Next.js specialist'

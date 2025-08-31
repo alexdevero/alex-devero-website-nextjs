@@ -49,8 +49,8 @@ export const Header: FC = () => {
     <header className="header">
       <nav className="flex justify-between py-6">
         <Link
-          href="/"
           className="font-bold !text-gray-800 no-underline hover:no-underline dark:!text-gray-1000"
+          href="/"
         >
           AlexDevero
         </Link>
@@ -78,7 +78,7 @@ export const Header: FC = () => {
                 className="max-md:py-2"
                 onClick={() => handleMobileMenuToggle(!isMobileMenuVisible)}
               >
-                <Link href={link.path} initialUnderline={false} className="max-md:text-xl">
+                <Link className="max-md:text-xl" href={link.path} initialUnderline={false}>
                   {link.title}
                 </Link>
               </li>

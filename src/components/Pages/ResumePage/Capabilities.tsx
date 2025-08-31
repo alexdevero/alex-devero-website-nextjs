@@ -5,7 +5,7 @@ import { Typography } from '@/components/Typography'
 
 export const Capabilities: FC = () => (
   <div>
-    <Typography as="h2" variant="h2" centered={false}>
+    <Typography as="h2" centered={false} variant="h2">
       Capabilities
     </Typography>
 

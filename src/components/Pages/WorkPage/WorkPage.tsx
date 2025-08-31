@@ -23,10 +23,10 @@ export const WorkPage = () => (
 
     <div className="flex flex-col items-center justify-center">
       <Typography className="mx-auto mb-12 max-w-3xl text-left">
-        Throughout my career, I've had the opportunity to work with a variety of companies and
-        contribute to projects that solve real-world problems. Below, you'll find a timeline of my
-        professional experience, showcasing the roles I've taken on and the value I've brought to
-        each project.
+        Throughout my career, I&apos;ve had the opportunity to work with a variety of companies and
+        contribute to projects that solve real-world problems. Below, you&apos;ll find a timeline of
+        my professional experience, showcasing the roles I&apos;ve taken on and the value I&apos;ve
+        brought to each project.
       </Typography>
 
       <div className="mb-8 flex flex-col justify-center gap-16">
@@ -35,7 +35,7 @@ export const WorkPage = () => (
             key={project.company}
             className="flex flex-col justify-start gap-5 sm:flex-row sm:items-start"
           >
-            <WorkLogo company={project.company} LogoComponent={project.logo} />
+            <WorkLogo LogoComponent={project.logo} company={project.company} />
 
             <div className="flex flex-col gap-1 md:max-w-[600px]">
               {workPageInfo.map(item => {

@@ -14,6 +14,7 @@ type CommonHeadingProps = HTMLAttributes<HTMLHeadingElement> & {
 }
 
 type CommonProps = {
+  div: HTMLAttributes<HTMLDivElement>
   h1: CommonHeadingProps
   h2: CommonHeadingProps
   h3: CommonHeadingProps
@@ -22,7 +23,6 @@ type CommonProps = {
   h6: CommonHeadingProps
   p: HTMLAttributes<HTMLParagraphElement>
   span: HTMLAttributes<HTMLSpanElement>
-  div: HTMLAttributes<HTMLDivElement>
 }
 
 const variantClasses = {
@@ -58,8 +58,8 @@ export const Typography: FC<PropsWithChildren<Props>> = ({
   if (variant.startsWith('h')) {
     return (
       <Heading
-        className={classNames(className, variantClasses[variant as Variant])}
         centered={centered}
+        className={classNames(className, variantClasses[variant as Variant])}
         {...props}
       />
     )
@@ -69,7 +69,7 @@ export const Typography: FC<PropsWithChildren<Props>> = ({
     <El
       className={classNames(className, variantClasses[variant as Variant], {
         'text-black-200 dark:text-gray-1100': !muted,
-        'text-gray-1400 dark:text-gray-1400 font-medium': muted,
+        'font-medium text-gray-1400 dark:text-gray-1400': muted,
         'text-center': centered,
       })}
       {...props}

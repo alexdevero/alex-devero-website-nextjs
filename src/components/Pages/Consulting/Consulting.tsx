@@ -25,27 +25,26 @@ export const ConsultingPage: FC = () => (
       </Typography>
 
       <Card fitContent>
-        <Typography as="h2" variant="h4" className="!mb-3 mt-0" centered={false}>
+        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
           Quick Results
         </Typography>
 
         <List
-          listStyle="dashes"
           items={[
             '5–10 actionable findings per audit',
             'Speed bottlenecks located and numbered',
             'Test coverage and CI recommendations provided',
           ]}
+          listStyle="dashes"
         />
       </Card>
 
       <div className="flex flex-col gap-2">
-        <Typography as="h2" variant="h4" className="!mb-3 mt-0" centered={false}>
+        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
           What This Includes
         </Typography>
 
         <List
-          listStyle="dashes"
           items={[
             'Performance review (Lighthouse, profiling, bundling)',
             'Architecture & tech stack health check (scalability, modularity)',
@@ -53,11 +52,12 @@ export const ConsultingPage: FC = () => (
             'CI/CD setup review, build pipelines, pull-request flow',
             'Written audit with prioritized fix list + video walkthrough',
           ]}
+          listStyle="dashes"
         />
       </div>
 
       <div className="mb-8 flex flex-col gap-2">
-        <Typography as="h2" variant="h4" className="!mb-3 mt-0" centered={false}>
+        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
           Ideal For
         </Typography>
 
@@ -68,6 +68,6 @@ export const ConsultingPage: FC = () => (
       </div>
     </div>
 
-    <Cta text={undefined} ctaText="Contact me" centered />
+    <Cta ctaText="Contact me" text={undefined} centered />
   </DefaultLayout>
 )

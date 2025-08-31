@@ -39,15 +39,15 @@ export const ResumeCharts = () => (
     <div className="m-auto grid min-h-full max-w-[calc(100vw-64px)] grid-cols-1 gap-x-4 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
       {charts.map(({ title, data }) => (
         <div key={title} className="flex flex-col gap-3">
-          <Typography as="h2" variant="h5" className="m-0 text-base font-bold">
+          <Typography as="h2" className="m-0 text-base font-bold" variant="h5">
             {title}
           </Typography>
           <ResponsiveContainer className="min-h-[300px] lg:min-h-[250px]">
-            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+            <RadarChart cx="50%" cy="50%" data={data} outerRadius="80%">
               <PolarGrid />
               <PolarAngleAxis dataKey="name" />
               <PolarRadiusAxis domain={[0, 100]} />
-              <Radar dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+              <Radar dataKey="value" fill="#8884d8" fillOpacity={0.6} stroke="#8884d8" />
             </RadarChart>
           </ResponsiveContainer>
         </div>

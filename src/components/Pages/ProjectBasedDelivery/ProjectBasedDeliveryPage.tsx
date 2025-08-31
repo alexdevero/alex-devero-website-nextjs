@@ -25,27 +25,26 @@ export const ProjectBasedDeliveryPage: FC = () => (
       </Typography>
 
       <Card fitContent>
-        <Typography as="h2" variant="h4" className="!mb-3 mt-0" centered={false}>
+        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
           Quick Results
         </Typography>
 
         <List
-          listStyle="dashes"
           items={[
             'Feature shipped with ≥ 80% test coverage',
             'Project delivered below budget by 15%',
             'UX uplift via design-system templates applied',
           ]}
+          listStyle="dashes"
         />
       </Card>
 
       <div className="flex flex-col gap-2">
-        <Typography as="h2" variant="h4" className="!mb-3 mt-0" centered={false}>
+        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
           What This Includes
         </Typography>
 
         <List
-          listStyle="dashes"
           items={[
             'Full scoping (requirements → dev plan)',
             'Efficient build with TS/React/Next, design system, responsive UI',
@@ -53,11 +52,12 @@ export const ProjectBasedDeliveryPage: FC = () => (
             'Documentation + post-launch support (30 days)',
             'Delivery-ready with clean pull-requests and deployment notes',
           ]}
+          listStyle="dashes"
         />
       </div>
 
       <div className="mb-8 flex flex-col gap-2">
-        <Typography as="h2" variant="h4" className="!mb-3 mt-0" centered={false}>
+        <Typography as="h2" centered={false} className="!mb-3 mt-0" variant="h4">
           Ideal For
         </Typography>
 
@@ -68,6 +68,6 @@ export const ProjectBasedDeliveryPage: FC = () => (
       </div>
     </div>
 
-    <Cta text={undefined} ctaText="Contact me" centered />
+    <Cta ctaText="Contact me" text={undefined} centered />
   </DefaultLayout>
 )

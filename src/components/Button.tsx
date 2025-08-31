@@ -9,12 +9,12 @@ export const buttonClasses =
 type Props<T extends 'link' | 'button'> = HTMLAttributes<
   T extends 'link' ? HTMLAnchorElement : HTMLButtonElement
 > & {
+  centered?: boolean
   children: string
   disabled?: boolean
-  type?: 'button' | 'submit' | 'reset'
-  centered?: boolean
   fullWidth?: boolean
   href?: string
+  type?: 'button' | 'submit' | 'reset'
   variant?: 'default' | 'outline'
 }
 
@@ -41,8 +41,8 @@ export const Button = <T extends 'link' | 'button'>({
   if (href) {
     return (
       <Link
-        href={href}
         className={classNames(classes, 'no-underline hover:no-underline')}
+        href={href}
         hasStylesOverride
       >
         {children}
@@ -52,9 +52,9 @@ export const Button = <T extends 'link' | 'button'>({
 
   return (
     <button
-      type={type}
       className={classes}
       disabled={disabled}
+      type={type}
       {...(props as HTMLAttributes<HTMLButtonElement>)}
     >
       {children}

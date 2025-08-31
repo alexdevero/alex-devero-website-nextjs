@@ -11,9 +11,9 @@ import { Button } from '../Button'
 import { Typography } from '../Typography'
 
 type Props = {
-  text?: string
-  ctaText?: string
   centered?: boolean
+  ctaText?: string
+  text?: string
 }
 
 export const Cta: FC<Props> = ({ text, ctaText = 'Send a message', centered = false }) => (
@@ -29,7 +29,7 @@ export const Cta: FC<Props> = ({ text, ctaText = 'Send a message', centered = fa
     )}
 
     <div className="flex flex-col gap-2 sm:flex-row">
-      <Button href={calendlyLink} centered={false} onClick={() => track('cta_schedule_call')}>
+      <Button centered={false} href={calendlyLink} onClick={() => track('cta_schedule_call')}>
         Schedule a 20-min call
       </Button>
       <Button href="/contact" variant="outline">

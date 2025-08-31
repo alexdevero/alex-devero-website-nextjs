@@ -14,7 +14,7 @@ export default function NotFound() {
     <DefaultLayout>
       <div className="flex flex-1 items-center justify-center text-center">
         <div className="max-w-2xl">
-          <Typography as="h1" variant="h1" className="mb-2 text-4xl font-bold">
+          <Typography as="h1" className="mb-2 text-4xl font-bold" variant="h1">
             404 - NOT FOUND
           </Typography>
 

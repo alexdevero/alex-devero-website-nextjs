@@ -16,7 +16,7 @@ const compat = new FlatCompat({
 })
 
 export default defineConfig([
-  globalIgnores(['.next/']),
+  globalIgnores(['.next/', './next-env.d.ts']),
   {
     extends: fixupConfigRules(
       compat.extends(
@@ -78,7 +78,7 @@ export default defineConfig([
       'react/jsx-fragments': 'error',
       'react/jsx-no-constructed-context-values': 'error',
       'react/jsx-no-duplicate-props': 'error',
-      'react/jsx-no-leaked-render': 'warn',
+      // 'react/jsx-no-leaked-render': ['warn', { validStrategies: ['coerce', 'ternary'] }],
       'react/jsx-no-useless-fragment': 'error',
 
       'react/jsx-curly-brace-presence': [

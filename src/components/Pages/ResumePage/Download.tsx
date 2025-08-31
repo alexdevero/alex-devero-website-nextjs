@@ -18,7 +18,7 @@ export const Download: FC = () => (
       Download PDF
     </Link>
 
-    <Typography as="p" variant="body" className="mt-4" muted>
+    <Typography as="p" className="mt-4" variant="body" muted>
       {'>'} Prefer a quick intro? <Link href={calendlyLink}>Schedule a 20-min call</Link>.
     </Typography>
   </div>

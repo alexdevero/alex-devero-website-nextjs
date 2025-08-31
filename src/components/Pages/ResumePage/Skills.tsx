@@ -72,7 +72,7 @@ export const Skills: FC = () => (
         ))}
       </ul>
 
-      <Typography as="p" variant="body" className="my-4">
+      <Typography as="p" className="my-4" variant="body">
         Fluent communication ensures seamless collaboration with clients worldwide.
       </Typography>
     </div>

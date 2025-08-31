@@ -17,14 +17,14 @@ export type StackCategory = 'frontend' | 'backend' | 'devops' | 'database'
 export type TechStack = Partial<Record<StackCategory, string>>
 
 type Work = {
+  caseStudy?: string
   company: Company
+  logo: (props: LogoProps) => ReactNode
   position: string
+  responsibilities: string[]
+  technologies: TechStack
   yearFrom: string
   yearTo: string
-  logo: (props: LogoProps) => ReactNode
-  technologies: TechStack
-  responsibilities: string[]
-  caseStudy?: string
 }
 
 export const work: Work[] = [

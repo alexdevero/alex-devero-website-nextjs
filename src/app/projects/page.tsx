@@ -45,5 +45,5 @@ async function getRepos() {
 export default async function Projects() {
   const { repos, error } = await getRepos()
 
-  return <ProjectsPage areGithubDataReady={repos !== null} repos={repos} error={error} />
+  return <ProjectsPage areGithubDataReady={repos !== null} error={error} repos={repos} />
 }

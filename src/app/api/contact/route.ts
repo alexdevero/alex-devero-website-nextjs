@@ -2,18 +2,18 @@ import type { ErrorResponse } from 'resend'
 import { Resend } from 'resend'
 
 type RecaptchaResponse = {
-  success: boolean // whether this request was a valid reCAPTCHA token for your site
-  challenge_ts: Date // timestamp of the challenge load (ISO format yyyy-MM-dd'T'HH:mm:ssZZ)
-  hostname: string // the hostname of the site where the reCAPTCHA was solved
-  'error-codes': unknown[] // optional
-  score: number // the score for this request (0.0 - 1.0), 1 is very likely a good interaction, 0.0 is very likely a bot
   action: string // the action name for this request (important to verify)
+  challenge_ts: Date // timestamp of the challenge load (ISO format yyyy-MM-dd'T'HH:mm:ssZZ)
+  'error-codes': unknown[] // optional
+  hostname: string // the hostname of the site where the reCAPTCHA was solved
+  score: number // the score for this request (0.0 - 1.0), 1 is very likely a good interaction, 0.0 is very likely a bot
+  success: boolean // whether this request was a valid reCAPTCHA token for your site
 }
 
 type ContactRequest = {
-  name: string
   email: string
   message: string
+  name: string
   token: string
 }
 

@@ -3,8 +3,8 @@ import { pageTitles } from './page-titles'
 import { routers } from './router'
 
 type NavigationLink = {
-  title: string
   path: string
+  title: string
   visible?: boolean
 }
 

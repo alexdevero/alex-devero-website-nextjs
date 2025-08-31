@@ -12,8 +12,8 @@ type Props = {
   buttonStyle?: boolean
   className?: string
   disabled?: boolean
-  initialUnderline?: boolean
   hasStylesOverride?: boolean
+  initialUnderline?: boolean
 } & LinkProps
 
 export const Link: FC<PropsWithChildren<Props>> = ({
@@ -44,7 +44,7 @@ export const Link: FC<PropsWithChildren<Props>> = ({
 
   if (parsedHref.startsWith('mailto:') || parsedHref.startsWith('tel:')) {
     return (
-      <a href={parsedHref} className={linkClasses} {...props}>
+      <a className={linkClasses} href={parsedHref} {...props}>
         {children}
       </a>
     )
@@ -52,8 +52,8 @@ export const Link: FC<PropsWithChildren<Props>> = ({
 
   return (
     <NextLink
-      href={parsedHref}
       className={linkClasses}
+      href={parsedHref}
       rel={isExternal(parsedHref) ? 'noopener noreferrer' : undefined}
       target={isExternal(parsedHref) ? '_blank' : undefined}
       {...props}

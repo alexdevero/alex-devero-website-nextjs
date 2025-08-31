@@ -1,10 +1,9 @@
+import { Cta } from '@/components/Cta/Cta'
+import { DefaultLayout } from '@/components/DefaultLayout'
+import { Link } from '@/components/Link'
 import { List } from '@/components/List/List'
+import { Typography } from '@/components/Typography'
 import { personalLinks, socialMedia } from '@/constants/links'
-
-import { Cta } from '../../Cta/Cta'
-import { DefaultLayout } from '../../DefaultLayout'
-import { Link } from '../../Link'
-import { Typography } from '../../Typography'
 
 export const AboutPage = () => (
   <DefaultLayout>
@@ -25,7 +24,7 @@ export const AboutPage = () => (
           means I don’t just code features — I deliver products users love.
         </Typography>
 
-        <Typography as="h2" variant="h4" className="mb-1" centered={false}>
+        <Typography as="h2" centered={false} className="mb-1" variant="h4">
           What Drives Me
         </Typography>
 
@@ -36,12 +35,12 @@ export const AboutPage = () => (
 
         <Typography>Outside of code, you’ll usually find me:</Typography>
         <List
-          listStyle="dashes"
           items={[
             'Training at the gym (my daily discipline anchor).',
             'Reading about startups, tech innovation, and the great builders of history.',
             'Experimenting with new tools and frameworks to push what’s possible.',
           ]}
+          listStyle="dashes"
         />
 
         <Typography>
@@ -49,7 +48,7 @@ export const AboutPage = () => (
           last.
         </Typography>
 
-        <Typography as="h2" variant="h4" className="mb-1" centered={false}>
+        <Typography as="h2" centered={false} className="mb-1" variant="h4">
           Beyond the Code
         </Typography>
 

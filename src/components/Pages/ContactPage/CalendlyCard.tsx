@@ -6,8 +6,8 @@ import { calendlyLink } from '@/constants/links'
 
 export const CalendlyCard: FC = () => (
   <Card>
-    <div id="schedule" className="flex flex-col gap-2">
-      <Typography as="h2" variant="h4" centered={false} className="!mb-2 mt-0">
+    <div className="flex flex-col gap-2" id="schedule">
+      <Typography as="h2" centered={false} className="!mb-2 mt-0" variant="h4">
         Schedule a call
       </Typography>
 
@@ -22,8 +22,8 @@ export const CalendlyCard: FC = () => (
         style={{ minWidth: '320px', height: '700px' }}
       />
       <script
-        type="text/javascript"
         src="https://assets.calendly.com/assets/external/widget.js"
+        type="text/javascript"
         async
       />
       {/* Calendly inline widget end */}

@@ -5,10 +5,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button } from '../../Button'
-import { DefaultLayout } from '../../DefaultLayout'
-import { Input } from '../../FormElements/Input'
-import { Heading } from '../../Heading'
+import { Button } from '@/components/Button'
+import { DefaultLayout } from '@/components/DefaultLayout'
+import { Input } from '@/components/FormElements/Input'
+import { Heading } from '@/components/Heading'
 
 const formSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Invalid email'),
@@ -42,21 +42,21 @@ export const LoginPage = () => {
       <Heading>Login</Heading>
 
       <div className="mx-auto max-w-[280px]">
-        <form className="flex flex-col gap-2" action="" onSubmit={handleSubmit(handleLogin)}>
+        <form action="" className="flex flex-col gap-2" onSubmit={handleSubmit(handleLogin)}>
           <Input
-            id="email"
-            type="email"
-            label="E-mail:"
-            hasError={!!errors.email}
             errorMessage={errors.email?.message}
+            hasError={!!errors.email}
+            id="email"
+            label="E-mail:"
+            type="email"
             {...register('email')}
           />
           <Input
-            id="password"
-            type="password"
-            label="Password:"
-            hasError={!!errors.password}
             errorMessage={errors.password?.message}
+            hasError={!!errors.password}
+            id="password"
+            label="Password:"
+            type="password"
             {...register('password')}
           />
 

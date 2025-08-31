@@ -1,8 +1,8 @@
 export const getNextQuarterAndYear = (): {
-  quarter: number
-  year: number
   nextQuarter: number
   nextQuarterYear: number
+  quarter: number
+  year: number
 } => {
   const today = new Date()
   const quarter = Math.floor((today.getMonth() + 3) / 3)
