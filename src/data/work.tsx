@@ -85,20 +85,20 @@ export const work: Work[] = [
     ],
     caseStudy: routes.caseStudyPersoo,
   },
-  {
-    company: 'Retino',
-    position: 'Front-end TypeScript Developer',
-    yearFrom: '2019',
-    yearTo: '2019',
-    logo: (props: LogoProps) => <RetinoLogo {...props} />,
-    technologies: {
-      frontend: 'React, TypeScript, CSS, Sass (Scss)',
-    },
-    responsibilities: [
-      'Developed web app using TypeScript and React.',
-      'Provided guidance on React development best practices.',
-    ],
-  },
+  // {
+  //   company: 'Retino',
+  //   position: 'Front-end TypeScript Developer',
+  //   yearFrom: '2019',
+  //   yearTo: '2019',
+  //   logo: (props: LogoProps) => <RetinoLogo {...props} />,
+  //   technologies: {
+  //     frontend: 'React, TypeScript, CSS, Sass (Scss)',
+  //   },
+  //   responsibilities: [
+  //     'Developed web app using TypeScript and React.',
+  //     'Provided guidance on React development best practices.',
+  //   ],
+  // },
   {
     company: 'Supernova',
     position: 'Front-end & React Developer',
