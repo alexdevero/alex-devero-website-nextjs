@@ -2,21 +2,6 @@
 // const assetPrefix = isProd ? 'https://alexdevero.com/demos/ad-next/' : ''
 
 module.exports = {
-  // Use the CDN in production and localhost for development.
-  // assetPrefix: isProd ? 'https://alexdevero.com/demos/ad-next/' : '',
-  // env: {
-  //   ASSET_PREFIX: assetPrefix,
-  // }
-  experimental: {
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js'
-        }
-      }
-    }
-  },
   webpack: config => {
     config.module.rules.push({
       test: /\.svg$/,
@@ -41,5 +26,13 @@ module.exports = {
       ],
     })
     return config
+  },
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js'
+      }
+    }
   },
 }
