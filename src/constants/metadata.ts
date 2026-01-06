@@ -10,12 +10,12 @@ type MetaOpts = {
   twitterImage?: string // can mirror ogImage.url
 }
 
-export const baseMetaTitle = 'Full-stack developer - TypeScript, React & Next.js specialist'
+export const baseMetaTitle = 'Frontend Systems Engineer - TypeScript, React & Next.js'
 
 export const siteName = 'Alex Devero'
 
 const defaultDescription =
-  'TypeScript/React/Next.js specialist. I build fast, reliable web apps, deliver on time, and improve performance. Available for select freelance and consulting engagements.'
+  'I build frontend architecture in React & Next.js that holds up under real product complexity - reusable components, stable UX behavior, and well-defined domain boundaries.'
 
 export const baseMetadata = {
   title: `Alex Devero | ${baseMetaTitle}`,
