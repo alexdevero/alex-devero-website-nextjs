@@ -49,7 +49,7 @@ export const Header: FC = () => {
     <header className="header">
       <nav className="flex justify-between py-6">
         <Link
-          className="font-bold text-gray-800! no-underline hover:no-underline dark:text-gray-1000!"
+          className="dark:text-gray-1000! font-bold text-gray-800! no-underline hover:no-underline"
           href="/"
         >
           AlexDevero
@@ -59,7 +59,7 @@ export const Header: FC = () => {
           className={classNames(
             'flex flex-1 items-center justify-center sm:gap-4 md:gap-2 lg:gap-6',
             {
-              'max-md:fixed max-md:inset-0 max-md:z-10 max-md:flex-col max-md:bg-white max-md:dark:bg-black-100':
+              'max-md:dark:bg-black-100 max-md:fixed max-md:inset-0 max-md:z-10 max-md:flex-col max-md:bg-white':
                 isMobileMenuVisible,
               'hidden md:flex': !isMobileMenuVisible,
             }

@@ -20,11 +20,12 @@ export const HomePage: FC = () => (
     <div className="flex w-full flex-1 items-center justify-center">
       <div className="max-w-2xl text-center">
         <Typography as="h1" variant="h1" centered>
-          TypeScript / React / Next.js Specialist
+          Frontend Systems Engineer
         </Typography>
-
-        <Typography className="my-4">
-          I build fast, scalable, and reliable web applications that ship on time.
+        <Typography as="h2" variant="body" centered>
+          I build frontend architecture in React & Next.js that holds up under real product
+          complexity &ndash; reusable components, stable UX behavior, and well-defined domain
+          boundaries.
         </Typography>
 
         <Typography className="my-4 flex flex-col items-center justify-center gap-2 md:flex-row">
@@ -32,11 +33,11 @@ export const HomePage: FC = () => (
           <div className="flex flex-col items-center justify-center gap-3 md:flex-row">
             <Cdn77Logo
               alt="CDN77 logo"
-              className={classNames('h-8 w-auto', getLogoColorClasses('CDN77'))}
+              className={classNames('h-7 w-auto', getLogoColorClasses('CDN77'))}
             />
             <DigitooLogo
               alt="Digitoo logo"
-              className={classNames('h-8 w-auto', getLogoColorClasses('Digitoo'))}
+              className={classNames('h-7 w-auto', getLogoColorClasses('Digitoo'))}
             />
             <PersooLogo
               alt="Persoo logo"
