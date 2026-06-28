@@ -18,12 +18,13 @@ export const QuickInfo: FC = () => (
 
     <List
       items={[
-        'Location: Prague, Czech Republic (CET)',
-        'Availability: Limited slots each quarter',
+        'Role: Senior Frontend Engineer (React/Next.js) · Frontend Tech Lead',
+        'Experience: 10+ years building web applications',
+        'Location: Prague, Czech Republic (CET) · EU & remote',
         <>
           Contact: <Link href={`mailto:${email}`}>{email}</Link> ·{' '}
           <Link href={calendlyLink} onClick={() => track('resume_schedule_call')}>
-            Schedule a 20-min call
+            Book a call
           </Link>
         </>,
       ]}

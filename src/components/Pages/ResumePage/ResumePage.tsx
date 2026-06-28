@@ -20,8 +20,9 @@ export const ResumePage: FC = () => (
 
     <div className="mx-auto mb-12 max-w-[800px]">
       <Typography as="p" className="mb-8" variant="body" centered>
-        TypeScript / React / Next.js specialist based in Prague. I build fast, reliable web apps and
-        ship on schedule. Available for select freelance and consulting engagements.
+        Senior Frontend Engineer (React/Next.js) and Frontend Tech Lead based in Prague, with 10+
+        years building fast, reliable web applications. Open to senior frontend and tech-lead roles
+        across the EU and remote.
       </Typography>
 
       <QuickInfo />
