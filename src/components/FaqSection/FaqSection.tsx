@@ -4,9 +4,9 @@ import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { Typography } from '@/components/Typography'
 import { type FaqItem, getFaqPageJsonLd } from '@/constants/metadata'
 
-// Renders a case study's FAQ as both visible Q&A and FAQPage JSON-LD from a
-// single item list, so the structured data always matches the page.
-export const CaseStudyFaq: FC<{ items: FaqItem[] }> = ({ items }) => (
+// Renders a FAQ as both visible Q&A and FAQPage JSON-LD from a single item
+// list, so the structured data always matches the page.
+export const FaqSection: FC<{ items: FaqItem[] }> = ({ items }) => (
   <section className="flex flex-col gap-3">
     <JsonLd data={getFaqPageJsonLd(items)} />
 

@@ -2,6 +2,7 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card/Card'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
+import { FaqSection } from '@/components/FaqSection/FaqSection'
 import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
@@ -9,7 +10,6 @@ import { Typography } from '@/components/Typography'
 import { type FaqItem, getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
-import { CaseStudyFaq } from '../CaseStudyFaq'
 import { getWorkDuration } from '../Cdn77/utils'
 
 const faqItems: FaqItem[] = [
@@ -157,7 +157,7 @@ export const DigitooCaseStudyPage = () => (
         />
       </article>
 
-      <CaseStudyFaq items={faqItems} />
+      <FaqSection items={faqItems} />
 
       <Cta className="my-4!" ctaText="See more work" ctaUrl={routes.work} />
     </div>

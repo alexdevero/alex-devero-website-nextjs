@@ -4,13 +4,28 @@ import type { FC, MouseEvent } from 'react'
 
 import { Button } from '@/components/Button'
 import { DefaultLayout } from '@/components/DefaultLayout'
+import { FaqSection } from '@/components/FaqSection/FaqSection'
 import { Typography } from '@/components/Typography'
+import type { FaqItem } from '@/constants/metadata'
 
 import { CalendlyCard } from './CalendlyCard'
 import { ContactForm } from './ContactForm'
 import { SummaryBox } from './SummaryBox'
 
 const formEnabled = true
+
+const faqItems: FaqItem[] = [
+  {
+    question: 'How can I contact Alex Devero?',
+    answer:
+      'You can book a 20-minute call or send a message from this page. Alex replies within 24 hours (CET), and is also reachable on LinkedIn and GitHub.',
+  },
+  {
+    question: 'Is Alex Devero available for hire?',
+    answer:
+      'Yes. Alex is open to senior frontend and Frontend Tech Lead roles — contract or permanent — working remotely or with teams across the EU.',
+  },
+]
 
 export const ContactPage: FC = () => {
   const handleAnchorClick = (event: MouseEvent<HTMLAnchorElement>) => {
@@ -34,7 +49,7 @@ export const ContactPage: FC = () => {
       <div className="flex flex-col items-center">
         <div className="flex max-w-3xl flex-col gap-3">
           <Typography>
-            Book a 20-minute discovery call — or send a message. I reply within{' '}
+            Book a 20-minute intro call — or send a message. I reply within{' '}
             <strong>24 hours CET</strong>.
           </Typography>
         </div>
@@ -56,6 +71,10 @@ export const ContactPage: FC = () => {
 
             <SummaryBox />
           </div>
+        </div>
+
+        <div className="mt-12 w-full max-w-3xl">
+          <FaqSection items={faqItems} />
         </div>
       </div>
     </DefaultLayout>
