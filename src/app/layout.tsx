@@ -7,43 +7,12 @@ import type { ReactNode } from 'react'
 
 import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { AppProviders } from '@/contexts/providers'
-import { socialMedia } from '@/constants/links'
+import { getPersonJsonLd } from '@/constants/metadata'
 import '@/styles/global.css'
 
 const gaId = process.env.GA_ID
 
-// Person entity for search + AI answer engines. A single, disambiguated entity
-// (name + role + sameAs profiles) is what lets ChatGPT/Perplexity/Claude attach
-// a stable description to "Alex Devero".
-const personJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Alex Devero',
-  url: 'https://alexdevero.com',
-  jobTitle: 'Senior Frontend Engineer (React/Next.js), Frontend Tech Lead',
-  description:
-    'Senior Frontend Engineer and Frontend Tech Lead with 10+ years building React, Next.js, and TypeScript applications.',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Prague',
-    addressCountry: 'CZ',
-  },
-  knowsAbout: [
-    'React',
-    'Next.js',
-    'TypeScript',
-    'Frontend architecture',
-    'Web performance',
-    'Design systems',
-  ],
-  sameAs: [
-    socialMedia.linkedIn,
-    socialMedia.github,
-    socialMedia.twitter,
-    socialMedia.stackoverflow,
-    socialMedia.codepen,
-  ],
-}
+const personJsonLd = getPersonJsonLd()
 
 const inter = Inter({
   display: 'swap',

@@ -1,12 +1,16 @@
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
+import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { Link } from '@/components/Link'
 import { List } from '@/components/List/List'
 import { Typography } from '@/components/Typography'
 import { personalLinks, socialMedia } from '@/constants/links'
+import { getProfilePageJsonLd } from '@/constants/metadata'
 
 export const AboutPage = () => (
   <DefaultLayout>
+    <JsonLd data={getProfilePageJsonLd()} />
+
     <Typography as="h1" variant="h1" centered>
       About Alex Devero
     </Typography>
