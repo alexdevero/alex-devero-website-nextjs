@@ -18,14 +18,15 @@ export const HomePage: FC = () => (
           Senior Frontend Engineer (React/Next.js)
         </Typography>
         <Typography as="h2" variant="body" centered>
-          I&rsquo;m Alex Devero &ndash; a frontend engineer and current Frontend Tech Lead with 10+
-          years building React &amp; Next.js applications. I design frontend architecture that holds
-          up under real product complexity: reusable components, stable UX behavior, and
-          well-defined domain boundaries.
+          I&rsquo;m Alex Devero &ndash; a Frontend Tech Lead who builds like a founder. I co-founded
+          an acquired startup and was an early engineer at the first Czech Y Combinator company, so
+          I lead React &amp; Next.js frontends with an owner&rsquo;s product judgment, not just an
+          implementer&rsquo;s &ndash; architecture that holds up as products grow. 10+ years, across
+          the EU and remote.
         </Typography>
 
         <Typography className="my-4 flex flex-col items-center justify-center gap-2 md:flex-row">
-          Trusted by teams at{' '}
+          From a startup I co-founded to established platforms{' '}
           {/* Names as real text for AI parsers and screen readers; the logos below are decorative. */}
           <span className="sr-only">CDN77, Digitoo, and Persoo.</span>
           <div

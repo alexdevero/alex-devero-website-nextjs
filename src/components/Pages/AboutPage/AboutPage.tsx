@@ -65,17 +65,18 @@ export const AboutPage = () => (
       <div className="flex max-w-3xl flex-col gap-3">
         <Typography>
           Alex Devero is a Senior Frontend Engineer specialising in React, Next.js, and TypeScript,
-          based in Prague and working across the EU. He has 10+ years of experience building fast,
-          reliable, and scalable web applications, and currently works as a Frontend Tech Lead.
+          based in Prague and working across the EU &mdash; currently a Frontend Tech Lead. He builds
+          like a founder: he co-founded Persoo (a Czech e-commerce personalisation startup acquired
+          by Luigi&rsquo;s Box in 2024) and was an early engineer at Supernova, the first Czech
+          startup accepted into Y Combinator (2019). That means he leads React and Next.js frontends
+          with an owner&rsquo;s product judgment, not just an implementer&rsquo;s.
         </Typography>
 
         <Typography>
-          He has built and scaled products for companies including CDN77 and Digitoo, was a
-          co-founder of Persoo &mdash; a Czech e-commerce personalisation startup acquired by
-          Luigi&rsquo;s Box in 2024 &mdash; and an early engineer at Supernova, the first Czech
-          startup accepted into Y Combinator (2019). He pairs deep frontend engineering with a
-          strong product-design background, so the work isn&rsquo;t just shipped features but
-          interfaces and architecture that hold up as a product grows.
+          Over 10+ years he has built and scaled products for teams at CDN77, Digitoo, and more,
+          pairing deep frontend engineering with a strong product-design background. The result
+          isn&rsquo;t just shipped features but interfaces and architecture that hold up as a product
+          grows: reusable components, stable UX, and well-defined domain boundaries.
         </Typography>
 
         <Typography as="h2" centered={false} className="mb-1" variant="h4">
@@ -94,9 +95,11 @@ export const AboutPage = () => (
         </Typography>
 
         <Typography>
-          Building things is what I do best. Whether it&rsquo;s an app, a business idea, or a new
-          product concept, I&rsquo;m wired to turn ideas into execution. That mix of curiosity and
-          delivery helps me spot problems early and build solutions that last.
+          I&rsquo;ve made the architecture calls that decide whether a product scales &mdash; and, as
+          a founder, the ones that decide whether a startup ships at all. I optimise for the
+          decisions that compound: clear domain boundaries, reusable components, and a codebase the
+          next engineer can move through quickly. Curiosity gets me to the problem early; judgment
+          gets it solved in a way that lasts.
         </Typography>
 
         <Typography>Outside of code, you&rsquo;ll usually find me:</Typography>
