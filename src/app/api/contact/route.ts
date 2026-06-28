@@ -1,5 +1,9 @@
 import type { ErrorResponse } from 'resend'
 import { Resend } from 'resend'
+import { z } from 'zod'
+
+import { formSchema } from '@/components/Pages/ContactPage/constants'
+import { escapeHtml } from '@/utils/sanitization'
 
 type RecaptchaResponse = {
   action: string // the action name for this request (important to verify)
@@ -10,24 +14,30 @@ type RecaptchaResponse = {
   success: boolean // whether this request was a valid reCAPTCHA token for your site
 }
 
-type ContactRequest = {
-  email: string
-  message: string
-  name: string
-  token: string
-}
+const contactSchema = formSchema.extend({
+  token: z.string(),
+})
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
-  const requestFormData = (await request.json()) as ContactRequest
+  const requestFormData = contactSchema.safeParse(await request.json())
+
+  if (!requestFormData.success) {
+    return Response.json(
+      { message: 'Invalid email data provided' },
+      {
+        status: 400,
+      }
+    )
+  }
 
   const recatpchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${requestFormData.token}`,
+    body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${requestFormData.data.token}`,
   })
   const recatpchaResponseJson = (await recatpchaResponse.json()) as RecaptchaResponse
 
@@ -68,16 +78,20 @@ export async function POST(request: Request) {
   }
 
   // Send email to yourself
+  const { email, message, name } = requestFormData.data
+
   try {
     await resend.emails.send({
       // This must be from verified domain, otherwise it will not work (can't verify gmail since it is not my domain)
       from: 'Alex Devero website <website@alexdevero.com>',
       to: process.env.CONTACT_EMAIL,
       subject: 'Contact from alexdevero.com',
+      // Plain-text part is never HTML-parsed, so it's inherently injection-proof.
+      text: `Name: ${name}\nE-mail: ${email}\nMessage: ${message}`,
       html: `
-<p>Name: ${requestFormData.name}</p>
-<p>E-mail: ${requestFormData.email}</p>
-<p>Message: ${requestFormData.message}</p>
+<p>Name: ${escapeHtml(name)}</p>
+<p>E-mail: ${escapeHtml(email)}</p>
+<p>Message: ${escapeHtml(message).replace(/\n/g, '<br>')}</p>
 `,
     })
 
