@@ -1,11 +1,6 @@
-'use client'
-
-import { track } from '@vercel/analytics'
-
 import classNames from 'classnames'
 import type { FC } from 'react'
 
-import { calendlyLink } from '@/constants/links'
 import { routes } from '@/constants/router'
 
 import { Button } from '../Button'
@@ -22,7 +17,7 @@ type Props = {
 export const Cta: FC<Props> = ({
   text,
   className,
-  ctaText = 'Send a message',
+  ctaText = 'Get in touch',
   centered = false,
   ctaUrl = routes.contact,
 }) => (
@@ -37,13 +32,8 @@ export const Cta: FC<Props> = ({
       </div>
     )}
 
-    <div className="flex flex-col gap-2 sm:flex-row">
-      <Button centered={false} href={calendlyLink} onClick={() => track('cta_schedule_call')}>
-        Schedule a 20-min call
-      </Button>
-      <Button href={ctaUrl} variant="outline">
-        {ctaText}
-      </Button>
-    </div>
+    <Button centered={false} href={ctaUrl}>
+      {ctaText}
+    </Button>
   </div>
 )
