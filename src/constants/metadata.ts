@@ -181,3 +181,23 @@ export const getCaseStudyJsonLd = ({
     ...(keywords && keywords.length > 0 ? { keywords } : {}),
   }
 }
+
+export type FaqItem = {
+  answer: string
+  question: string
+}
+
+// FAQPage structured data. Pass the same items rendered on the page so the
+// schema always matches the visible Q&A (required by Google).
+export const getFaqPageJsonLd = (items: FaqItem[]): Record<string, unknown> => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map(item => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+})

@@ -5,11 +5,57 @@ import { Link } from '@/components/Link'
 import { List } from '@/components/List/List'
 import { Typography } from '@/components/Typography'
 import { personalLinks, socialMedia } from '@/constants/links'
-import { getProfilePageJsonLd } from '@/constants/metadata'
+import { type FaqItem, getFaqPageJsonLd, getProfilePageJsonLd } from '@/constants/metadata'
+
+// Single source of truth: rendered as the visible FAQ and as FAQPage JSON-LD,
+// so the structured data always matches what's on the page.
+const faqItems: FaqItem[] = [
+  {
+    question: 'What does Alex Devero specialise in?',
+    answer:
+      'Frontend engineering with React, Next.js, and TypeScript — building scalable web applications, frontend architecture, design systems, and performance optimisation.',
+  },
+  {
+    question: 'What is Alex Devero’s current role?',
+    answer:
+      'He works as a Frontend Tech Lead, leading frontend architecture and quality on a React-based codebase.',
+  },
+  {
+    question: 'What is Alex Devero known for?',
+    answer:
+      'Alex was a co-founder of Persoo (acquired by Luigi’s Box in 2024) and an early engineer at Supernova, the first Czech startup accepted into Y Combinator (2019). He has 10+ years building React and Next.js applications, currently as a Frontend Tech Lead.',
+  },
+  {
+    question: 'How much experience does he have?',
+    answer:
+      '10+ years building web applications, including work for CDN77, Digitoo, and Persoo.',
+  },
+  {
+    question: 'What is Alex Devero’s tech stack?',
+    answer:
+      'React, Next.js, and TypeScript on the frontend, with Tailwind CSS, TanStack Query, and Zustand/Redux for UI and state. He also works with Node.js, REST and GraphQL APIs, and testing tools including Jest, Vitest, Playwright, and React Testing Library.',
+  },
+  {
+    question: 'Is Alex Devero available for hire?',
+    answer:
+      'Yes. Alex is open to senior frontend and Frontend Tech Lead roles — contract or permanent — working remotely or with teams across the EU. He specialises in React, Next.js, and TypeScript.',
+  },
+  {
+    question: 'Where is he based?',
+    answer:
+      'Prague, Czech Republic (CET), working with teams across the EU and remotely worldwide.',
+  },
+  {
+    question: 'What languages does Alex Devero speak?',
+    answer:
+      'English (fluent) and Czech (native), with basic Spanish and French. He works with teams across the EU and remotely worldwide.',
+  },
+]
 
 export const AboutPage = () => (
   <DefaultLayout>
     <JsonLd data={getProfilePageJsonLd()} />
+    <JsonLd data={getFaqPageJsonLd(faqItems)} />
 
     <Typography as="h1" variant="h1" centered>
       About Alex Devero
@@ -24,10 +70,12 @@ export const AboutPage = () => (
         </Typography>
 
         <Typography>
-          He has built and scaled products for companies including CDN77, Digitoo, and Persoo,
-          pairing deep frontend engineering with a strong product design background &mdash; so the
-          work isn&rsquo;t just shipped features, but interfaces and architecture that hold up as a
-          product grows.
+          He has built and scaled products for companies including CDN77 and Digitoo, was a
+          co-founder of Persoo &mdash; a Czech e-commerce personalisation startup acquired by
+          Luigi&rsquo;s Box in 2024 &mdash; and an early engineer at Supernova, the first Czech
+          startup accepted into Y Combinator (2019). He pairs deep frontend engineering with a
+          strong product-design background, so the work isn&rsquo;t just shipped features but
+          interfaces and architecture that hold up as a product grows.
         </Typography>
 
         <Typography as="h2" centered={false} className="mb-1" variant="h4">
@@ -78,35 +126,14 @@ export const AboutPage = () => (
           Frequently asked questions
         </Typography>
 
-        <Typography as="h3" centered={false} className="mb-1" variant="h6">
-          What does Alex Devero specialise in?
-        </Typography>
-        <Typography>
-          Frontend engineering with React, Next.js, and TypeScript &mdash; building scalable web
-          applications, frontend architecture, design systems, and performance optimisation.
-        </Typography>
-
-        <Typography as="h3" centered={false} className="mb-1" variant="h6">
-          What is Alex Devero&rsquo;s current role?
-        </Typography>
-        <Typography>
-          He works as a Frontend Tech Lead, leading frontend architecture and quality on a
-          React-based codebase.
-        </Typography>
-
-        <Typography as="h3" centered={false} className="mb-1" variant="h6">
-          How much experience does he have?
-        </Typography>
-        <Typography>
-          10+ years building web applications, including work for CDN77, Digitoo, and Persoo.
-        </Typography>
-
-        <Typography as="h3" centered={false} className="mb-1" variant="h6">
-          Where is he based?
-        </Typography>
-        <Typography>
-          Prague, Czech Republic (CET), working with teams across the EU and remotely worldwide.
-        </Typography>
+        {faqItems.map(item => (
+          <div key={item.question}>
+            <Typography as="h3" centered={false} className="mb-1" variant="h6">
+              {item.question}
+            </Typography>
+            <Typography>{item.answer}</Typography>
+          </div>
+        ))}
 
         <Cta
           text="Open to senior frontend and tech-lead opportunities. If you’re building something ambitious in React or Next.js, let’s talk."
