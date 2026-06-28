@@ -24,8 +24,7 @@
   },
   "packageManager": "yarn@1.22.22",
   "browserslist": [
-    "last 7 versions",
-    "ie >= 11"
+    "extends browserslist-config-baseline/with-downstream"
   ],
   "scripts": {
     "dev": "next dev --turbopack",
@@ -65,6 +64,7 @@
     "@types/react-dom": "19.1.9",
     "@typescript-eslint/eslint-plugin": "8.41.0",
     "@typescript-eslint/parser": "8.41.0",
+    "browserslist-config-baseline": "^0.5.0",
     "classnames": "2.5.1",
     "eslint": "9.34.0",
     "eslint-config-next": "15.5.2",
