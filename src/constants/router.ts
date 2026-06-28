@@ -1,10 +1,6 @@
 export const routes = {
   home: '/',
   work: '/work',
-  services: '/services',
-  servicesConsulting: '/services/consulting',
-  servicesProjectBasedDelivery: '/services/project-based-delivery',
-  servicesWebAppDevelopment: '/services/web-app-development',
   about: '/about',
   resume: '/resume',
   projects: '/projects',

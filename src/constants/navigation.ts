@@ -20,11 +20,6 @@ export const navigationLinks: NavigationLink[] = [
     visible: true,
   },
   {
-    title: pageTitles.services,
-    path: routes.services,
-    visible: true,
-  },
-  {
     title: pageTitles.about,
     path: routes.about,
     visible: true,

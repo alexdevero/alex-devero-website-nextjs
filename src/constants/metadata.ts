@@ -10,18 +10,14 @@ type MetaOpts = {
   twitterImage?: string // can mirror ogImage.url
 }
 
-export const baseMetaTitle = 'Frontend Systems Engineer - TypeScript, React & Next.js'
-
 export const siteName = 'Alex Devero'
 
-const defaultDescription =
-  'I build frontend architecture in React & Next.js that holds up under real product complexity - reusable components, stable UX behavior, and well-defined domain boundaries.'
+// One canonical identity, repeated across the site so search and AI answer
+// engines can attach a single stable description to the "Alex Devero" entity.
+export const roleTitle = 'Senior Frontend Engineer (React/Next.js)'
 
-export const baseMetadata = {
-  title: `Alex Devero | ${baseMetaTitle}`,
-  description:
-    'Offering expert full-stack TypeScript development, specializing in React and Next.js applications. Available for freelance projects and consulting. Limited availability—book your project today.',
-}
+const defaultDescription =
+  'Alex Devero is a Senior Frontend Engineer and Frontend Tech Lead with 10+ years building React and Next.js applications - frontend architecture that holds up under real product complexity.'
 
 export const getMetadata = ({
   title,
@@ -32,7 +28,7 @@ export const getMetadata = ({
   ogType = 'website',
   index = true,
 }: MetaOpts): Metadata => {
-  const fullTitle = `${title} | ${baseMetaTitle} | ${siteName}`
+  const fullTitle = `${title} | ${siteName}`
   const desc = description ?? defaultDescription
   const url = new URL(pathname, 'https://alexdevero.com').toString()
 
@@ -49,7 +45,7 @@ export const getMetadata = ({
       type: ogType,
       url,
       siteName,
-      locale: 'en_US',
+      locale: 'en_GB',
       images: ogImage
         ? [
             {
