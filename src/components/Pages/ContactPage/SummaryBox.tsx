@@ -12,7 +12,7 @@ export const SummaryBox: FC = () => (
 
     <List
       items={[
-        '20-minute discovery call to clarify scope and outcomes',
+        '20-minute intro call to talk through the role or project',
         'TypeScript / React / Next.js focus, performance and delivery first',
         'Follow-up summary with next steps within 24h',
       ]}

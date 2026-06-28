@@ -27,7 +27,7 @@ export const WorkPage: FC = () => (
       Selected Work
     </Typography>
 
-    <Typography as="p" className="mx-auto mb-10 max-w-2xl" centered variant="body">
+    <Typography as="p" className="mx-auto mb-10 max-w-2xl" variant="body" centered>
       A timeline of the companies Alex Devero has built and scaled products for as a frontend
       engineer and tech lead — from CDN77 and Digitoo to Persoo, Supernova, and StartMonday.
     </Typography>
