@@ -8,7 +8,7 @@ import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
-import { getCaseStudyJsonLd } from '@/constants/metadata'
+import { getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
 import { getWorkDuration } from '../Cdn77/utils'
@@ -33,6 +33,13 @@ export const SupernovaCaseStudyPage: FC = () => (
         ],
         pathname: routes.caseStudySupernova,
       })}
+    />
+    <JsonLd
+      data={getBreadcrumbJsonLd([
+        { name: 'Home', pathname: routes.home },
+        { name: 'Work', pathname: routes.work },
+        { name: 'Supernova', pathname: routes.caseStudySupernova },
+      ])}
     />
 
     <Button href={routes.work} variant="outline">

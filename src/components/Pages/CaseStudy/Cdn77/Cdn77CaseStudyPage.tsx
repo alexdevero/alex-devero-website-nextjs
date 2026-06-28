@@ -6,7 +6,7 @@ import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
-import { getCaseStudyJsonLd } from '@/constants/metadata'
+import { getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
 import { getWorkDuration } from './utils'
@@ -23,6 +23,13 @@ export const Cdn77CaseStudyPage = () => (
         keywords: ['React', 'Next.js', 'TypeScript', 'Design systems', 'Refactoring', 'Testing'],
         pathname: routes.caseStudyCdn77,
       })}
+    />
+    <JsonLd
+      data={getBreadcrumbJsonLd([
+        { name: 'Home', pathname: routes.home },
+        { name: 'Work', pathname: routes.work },
+        { name: 'CDN77', pathname: routes.caseStudyCdn77 },
+      ])}
     />
 
     <Button href={routes.work} variant="outline">

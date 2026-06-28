@@ -6,7 +6,7 @@ import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
-import { getCaseStudyJsonLd } from '@/constants/metadata'
+import { getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
 import { getWorkDuration } from '../Cdn77/utils'
@@ -23,6 +23,13 @@ export const DigitooCaseStudyPage = () => (
         keywords: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'SSR', 'Nx monorepo'],
         pathname: routes.caseStudyDigitoo,
       })}
+    />
+    <JsonLd
+      data={getBreadcrumbJsonLd([
+        { name: 'Home', pathname: routes.home },
+        { name: 'Work', pathname: routes.work },
+        { name: 'Digitoo', pathname: routes.caseStudyDigitoo },
+      ])}
     />
 
     <Button href={routes.work} variant="outline">
