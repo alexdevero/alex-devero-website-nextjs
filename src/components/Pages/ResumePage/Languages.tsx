@@ -8,9 +8,11 @@ export const Languages: FC = () => (
       Languages
     </Typography>
 
-    <div className="flex gap-4">
-      <div>English (advanced)</div>
+    <div className="flex flex-wrap gap-4">
+      <div>English (fluent)</div>
       <div>Czech (native)</div>
+      <div>Spanish (basic)</div>
+      <div>French (basic)</div>
     </div>
   </div>
 )

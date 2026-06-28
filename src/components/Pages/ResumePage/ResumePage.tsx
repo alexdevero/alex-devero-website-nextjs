@@ -1,7 +1,10 @@
 import type { FC } from 'react'
 
 import { DefaultLayout } from '@/components/DefaultLayout'
+import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { Typography } from '@/components/Typography'
+import { getProfilePageJsonLd } from '@/constants/metadata'
+import { routes } from '@/constants/router'
 
 import { Capabilities } from './Capabilities'
 import { CoreStack } from './CoreStack'
@@ -14,6 +17,10 @@ import { Tools } from './Tools'
 
 export const ResumePage: FC = () => (
   <DefaultLayout>
+    <JsonLd
+      data={getProfilePageJsonLd({ name: 'Alex Devero — Résumé', pathname: routes.resume })}
+    />
+
     <Typography as="h1" variant="h1" centered>
       Resume at a Glance
     </Typography>

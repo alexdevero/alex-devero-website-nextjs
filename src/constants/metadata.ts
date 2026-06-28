@@ -41,14 +41,22 @@ export const getPersonJsonLd = (): Record<string, unknown> => ({
     addressLocality: 'Prague',
     addressCountry: 'CZ',
   },
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: 'Frontend Tech Lead',
+  },
   knowsAbout: [
     'React',
     'Next.js',
     'TypeScript',
+    'Node.js',
     'Frontend architecture',
     'Web performance',
     'Design systems',
+    'Testing',
+    'CI/CD',
   ],
+  knowsLanguage: ['English', 'Czech', 'Spanish', 'French'],
   sameAs: [
     socialMedia.linkedIn,
     socialMedia.github,
@@ -58,13 +66,18 @@ export const getPersonJsonLd = (): Record<string, unknown> => ({
   ],
 })
 
-// ProfilePage structured data for /about, linked to the Person entity by @id.
-export const getProfilePageJsonLd = (): Record<string, unknown> => ({
+// ProfilePage structured data linked to the Person entity by @id.
+export const getProfilePageJsonLd = (
+  { name, pathname }: { name: string; pathname: string } = {
+    name: 'About Alex Devero',
+    pathname: '/about',
+  }
+): Record<string, unknown> => ({
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  '@id': `${siteUrl}/about#profilepage`,
-  url: `${siteUrl}/about`,
-  name: 'About Alex Devero',
+  '@id': `${siteUrl}${pathname}#profilepage`,
+  url: `${siteUrl}${pathname}`,
+  name,
   mainEntity: { '@id': personId },
 })
 
