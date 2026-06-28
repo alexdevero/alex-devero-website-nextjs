@@ -4,7 +4,7 @@ export const routes = {
   about: '/about',
   resume: '/resume',
   projects: '/projects',
-  blog: 'https://blog.alexdevero.com/',
+  blog: 'https://alexsdispatch.substack.com/',
   blogLocal: '/blog',
   devero: 'https://devero.io/',
   login: '/login',

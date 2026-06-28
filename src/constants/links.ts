@@ -9,11 +9,11 @@ export const socialMedia = {
   linkedIn: 'https://cz.linkedin.com/in/alexdevero',
   stackoverflow: 'https://stackoverflow.com/story/alexdevero',
   twitter: 'https://twitter.com/alexdevero',
-  substack: 'https://alexdevero.substack.com',
+  substack: 'https://alexsdispatch.substack.com',
 }
 
 export const personalLinks = {
-  blog: 'https://alexsdispatch.substack.com/', // 'https://blog.alexdevero.com/',
+  blog: 'https://alexsdispatch.substack.com/',
   company: 'https://devero.io',
   website: 'https://alexdevero.com',
 }
