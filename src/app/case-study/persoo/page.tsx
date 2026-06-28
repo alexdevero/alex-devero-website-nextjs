@@ -3,9 +3,9 @@ import { getMetadata } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
 export const metadata = getMetadata({
-  title: 'Persoo Case Study',
+  title: 'Evolving Persoo: From Frontend Developer to Co-Founder',
   description:
-    'Fast, scalable React/Next.js delivery: development, audits, and project-based execution.',
+    'Case study: rebuilding Persoo’s personalization widgets, modernizing the JavaScript stack, and leading the team — from frontend developer to co-founder of the e-commerce startup.',
   pathname: routes.caseStudyPersoo,
   ogType: 'article',
 })

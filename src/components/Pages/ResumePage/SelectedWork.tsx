@@ -13,7 +13,7 @@ export const SelectedWork: FC = () => (
       items={[
         'CDN77: performance and UI modernization (Next.js), tighter DX',
         'Digitoo: product delivery and architecture improvements',
-        'Persoo: front-end delivery, testing, deployment hygiene',
+        'Persoo: front-end delivery and team leadership — from developer to co-founder',
       ]}
     />
 

@@ -53,7 +53,7 @@ export const Cdn77CaseStudyPage = () => (
 
       <article className="space-y-6 lg:col-span-2">
         <Typography as="h2" variant="h3">
-          Client & Context
+          Company & Context
         </Typography>
         <Typography>
           CDN77 is a global content delivery network (CDN) provider. Combining full live streaming

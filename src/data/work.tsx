@@ -20,6 +20,8 @@ export type TechStack = Partial<Record<StackCategory, string>>
 type Work = {
   caseStudy?: string
   company: Company
+  // Short, scannable bullets shown on the /work timeline.
+  highlights: string[]
   logo: (props: LogoProps) => ReactNode
   position: string
   responsibilities: string[]
@@ -31,7 +33,7 @@ type Work = {
 export const work: Work[] = [
   {
     company: 'CDN77',
-    position: 'Fullstack developer',
+    position: 'Full-stack Developer',
     yearFrom: '2023',
     yearTo: 'present',
     logo: (props: LogoProps) => <Cdn77Logo {...props} />,
@@ -46,6 +48,10 @@ export const work: Work[] = [
       'Optimizing application performance and code quality.',
       'Refactoring legacy code to improve maintainability and performance.',
       'Establishing culture of React/Next.js testing practices.',
+    ],
+    highlights: [
+      'Custom design-system migration, modular refactor, testing culture',
+      'Future-ready codebase with improved velocity',
     ],
     caseStudy: routes.caseStudyCdn77,
   },
@@ -67,11 +73,15 @@ export const work: Work[] = [
       'Collaborated on setting direction for frontend architecture.',
       'Mentored junior developers and provided guidance.',
     ],
+    highlights: [
+      'Migrated MVP to Next.js (SSR), led UI migration to Tailwind',
+      'Delivered 7 major features and enabled 40+ client onboarding',
+    ],
     caseStudy: routes.caseStudyDigitoo,
   },
   {
     company: 'Persoo',
-    position: 'Front-end TypeScript Developer',
+    position: 'Frontend Developer → Co-Founder',
     yearFrom: '2019',
     yearTo: '2021',
     logo: (props: LogoProps) => <PersooLogo {...props} />,
@@ -82,6 +92,11 @@ export const work: Work[] = [
       'Developed web app using JavaScript and TypeScript.',
       'Worked directly with clients to provide solutions.',
       'Led frontend development team and mentored junior developers.',
+      'Became an official co-founder and helped shape product strategy.',
+    ],
+    highlights: [
+      'Rebuilt widgets (search, carousels), modernized JS stack',
+      'Mentored team, shaped product strategy as a co-founder',
     ],
     caseStudy: routes.caseStudyPersoo,
   },
@@ -101,7 +116,7 @@ export const work: Work[] = [
   // },
   {
     company: 'Supernova',
-    position: 'Front-end & React Developer',
+    position: 'Frontend & React Developer',
     yearFrom: '2017',
     yearTo: '2019',
     logo: (props: LogoProps) => <SupernovaLogo {...props} />,
@@ -113,11 +128,15 @@ export const work: Work[] = [
       'Worked alongside CEO to build a new product from scratch.',
       'Set direction for frontend architecture.',
     ],
+    highlights: [
+      'Built React/TS MVP, revamped frontend architecture',
+      'Partnered on product direction—foundation for YC pivot',
+    ],
     caseStudy: routes.caseStudySupernova,
   },
   {
     company: 'StartMonday',
-    position: 'Front-end TypeScript Developer',
+    position: 'Frontend Developer',
     yearFrom: '2016',
     yearTo: '2017',
     logo: (props: LogoProps) => <StartMondayLogo {...props} />,
@@ -125,5 +144,6 @@ export const work: Work[] = [
       frontend: 'TypeScript, CSS, HTML',
     },
     responsibilities: ['Developed web apps using TypeScript.'],
+    highlights: ['Developed web apps using TypeScript'],
   },
 ]

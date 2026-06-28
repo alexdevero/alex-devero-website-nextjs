@@ -5,7 +5,7 @@ import { routes } from '@/constants/router'
 export const metadata = getMetadata({
   title: 'Transforming Digitoo’s MVP into a Scalable Customer-Facing Platform',
   description:
-    'Fast, scalable React/Next.js delivery: development, audits, and project-based execution.',
+    'Case study: migrating Digitoo’s React MVP to a server-rendered Next.js platform with a reusable Tailwind component library, shipping 7 major features and onboarding 40+ clients.',
   pathname: routes.caseStudyDigitoo,
   ogType: 'article',
 })

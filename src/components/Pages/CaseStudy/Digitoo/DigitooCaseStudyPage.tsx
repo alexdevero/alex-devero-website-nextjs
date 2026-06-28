@@ -43,8 +43,8 @@ export const DigitooCaseStudyPage = () => (
             'Migrated React MVP → Next.js (SSR + scalability)',
             'Replaced Material-UI with Tailwind for speed & modern UI',
             'Built reusable component library → faster feature dev',
-            'Delivered 7 major features (~9,000 LOC each)',
-            'Onboarded 30+ new clients via platform',
+            'Delivered 7 major features',
+            'Onboarded 40+ new clients via platform',
             'Lifted frontend test coverage + reduced production bugs',
           ]}
         />
@@ -54,7 +54,7 @@ export const DigitooCaseStudyPage = () => (
 
       <article className="space-y-6 lg:col-span-2">
         <Typography as="h2" variant="h3">
-          Client & Context
+          Company & Context
         </Typography>
         <Typography>
           Digitoo needed to evolve its React MVP into a scalable, client-facing platform. I joined
@@ -98,7 +98,7 @@ export const DigitooCaseStudyPage = () => (
           className="list-disc pl-5"
           items={[
             'Upgraded architecture and performance — improved UX and long-term maintainability',
-            'Feature delivery ramped up — 7 major features shipped (~9k LOC each)',
+            'Feature delivery ramped up — 7 major features shipped',
             'Enabled onboarding of 40+ clients through the platform',
             'Reduced UI fragility, fewer production bugs thanks to tests',
             'Marketing landing pages delivered quickly, supporting growth initiatives',

@@ -55,7 +55,7 @@ export const SupernovaCaseStudyPage: FC = () => (
 
       <article className="space-y-6 lg:col-span-2">
         <Typography as="h2" variant="h3">
-          Client & Context
+          Company & Context
         </Typography>
         <Typography>
           Supernova was a Prague-based seed-stage startup (4–5 people) in 2017–18, focused on

@@ -56,7 +56,7 @@ export const PersooCaseStudyPage: FC = () => (
 
       <article className="space-y-6 lg:col-span-2">
         <Typography as="h2" variant="h3">
-          Client & Context
+          Company & Context
         </Typography>
         <Typography>
           Persoo, a Czech e-commerce startup offering behavior-based search, recommendations, and

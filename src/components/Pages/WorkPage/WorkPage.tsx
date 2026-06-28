@@ -17,7 +17,7 @@ export const WorkPage: FC = () => (
 
     <Cta
       className="mt-12!"
-      text="Whether you need a high-performance React/Next.js app or want to brainstorm your next big project, let’s connect."
+      text="Want the full picture? See my résumé, or get in touch about senior frontend and tech-lead roles."
     />
   </DefaultLayout>
 )
