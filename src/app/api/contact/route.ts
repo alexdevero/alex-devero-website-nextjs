@@ -3,6 +3,7 @@ import { Resend } from 'resend'
 import { z } from 'zod'
 
 import { formSchema } from '@/components/Pages/ContactPage/constants'
+import { recaptchaAction } from '@/constants/recaptcha'
 import { escapeHtml } from '@/utils/sanitization'
 
 type RecaptchaResponse = {
@@ -21,6 +22,33 @@ const contactSchema = formSchema.extend({
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
+  if (!process.env.RESEND_API_KEY) {
+    return Response.json(
+      { message: 'No ReSend API key provided' },
+      {
+        status: 400,
+      }
+    )
+  }
+
+  if (!process.env.RECAPTCHA_SECRET_KEY) {
+    return Response.json(
+      { message: 'No reCAPTCHA secret key provided' },
+      {
+        status: 400,
+      }
+    )
+  }
+
+  if (!process.env.CONTACT_EMAIL) {
+    return Response.json(
+      { message: 'No contact email provided' },
+      {
+        status: 400,
+      }
+    )
+  }
+
   const requestFormData = contactSchema.safeParse(await request.json())
 
   if (!requestFormData.success) {
@@ -50,27 +78,13 @@ export async function POST(request: Request) {
     )
   }
 
-  if (!process.env.RESEND_API_KEY) {
-    return Response.json(
-      { message: 'No ReSend API key provided' },
-      {
-        status: 400,
-      }
-    )
+  if (recatpchaResponseJson.action !== recaptchaAction) {
+    return Response.json({ message: 'Unexpected reCAPTCHA action' }, { status: 400 })
   }
 
   if (recatpchaResponseJson.score < 0.5) {
     return Response.json(
       { message: 'Failed reCAPTCHA score' },
-      {
-        status: 400,
-      }
-    )
-  }
-
-  if (!process.env.CONTACT_EMAIL) {
-    return Response.json(
-      { message: 'No contact email provided' },
       {
         status: 400,
       }

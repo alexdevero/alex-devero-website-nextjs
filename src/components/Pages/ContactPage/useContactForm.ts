@@ -6,6 +6,8 @@ import { useReCaptcha } from 'next-recaptcha-v3'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
+import { recaptchaAction } from '@/constants/recaptcha'
+
 import type { FormValues } from './constants'
 import { formSchema, initialValues } from './constants'
 
@@ -25,7 +27,7 @@ export const useContactForm = () => {
 
   const handleFormSubmit = async (values: FormValues) => {
     try {
-      const token = await executeRecaptcha('form_submit')
+      const token = await executeRecaptcha(recaptchaAction)
 
       const res = await fetch('/api/contact', {
         method: 'POST',
