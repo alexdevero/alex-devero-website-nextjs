@@ -6,10 +6,34 @@ import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
-import { getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
+import { type FaqItem, getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
+import { CaseStudyFaq } from '../CaseStudyFaq'
 import { getWorkDuration } from './utils'
+
+const faqItems: FaqItem[] = [
+  {
+    question: 'What did Alex Devero do at CDN77?',
+    answer:
+      'As a Full-Stack Developer, Alex modernised CDN77’s internal Next.js application — migrating from deprecated UI components to a custom design system, refactoring monolithic components into modular ones, and adding integration and unit tests with CI enforcement.',
+  },
+  {
+    question: 'What was the outcome of the CDN77 project?',
+    answer:
+      'A consistent custom design system across key flows, lower coupling and clearer boundaries, CI-backed tests that prevent regressions, faster and more confident pull-request reviews, and smoother onboarding — delivered without blocking feature work.',
+  },
+  {
+    question: 'What technologies were used on the CDN77 project?',
+    answer:
+      'Next.js, TypeScript, Node.js, REST and GraphQL APIs, Tailwind CSS, and Vitest for testing.',
+  },
+  {
+    question: 'What is CDN77?',
+    answer:
+      'CDN77 is a global content delivery network (CDN) provider offering live streaming and video-on-demand (VOD) services, from video delivery to infrastructure management.',
+  },
+]
 
 export const Cdn77CaseStudyPage = () => (
   <DefaultLayout>
@@ -142,6 +166,8 @@ export const Cdn77CaseStudyPage = () => (
           sustainable velocity.
         </Typography>
       </article>
+
+      <CaseStudyFaq items={faqItems} />
 
       <Cta className="my-4!" ctaText="See more work" ctaUrl={routes.work} />
     </div>

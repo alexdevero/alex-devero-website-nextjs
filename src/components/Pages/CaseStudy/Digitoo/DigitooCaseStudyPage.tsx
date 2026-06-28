@@ -6,10 +6,28 @@ import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
-import { getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
+import { type FaqItem, getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
+import { CaseStudyFaq } from '../CaseStudyFaq'
 import { getWorkDuration } from '../Cdn77/utils'
+
+const faqItems: FaqItem[] = [
+  {
+    question: 'What did Alex Devero do at Digitoo?',
+    answer:
+      'Alex migrated Digitoo’s React MVP to a server-rendered Next.js platform, replaced Material-UI with Tailwind CSS, built a reusable component library, and added frontend tests — turning an MVP into a scalable, customer-facing product.',
+  },
+  {
+    question: 'What was the outcome of the Digitoo project?',
+    answer:
+      'Improved performance and maintainability, 7 major features delivered, 40+ clients onboarded through the platform, and fewer production bugs thanks to test coverage.',
+  },
+  {
+    question: 'What technologies were used on the Digitoo project?',
+    answer: 'Next.js, TypeScript, Tailwind CSS, and an Nx monorepo.',
+  },
+]
 
 export const DigitooCaseStudyPage = () => (
   <DefaultLayout>
@@ -138,6 +156,8 @@ export const DigitooCaseStudyPage = () => (
           ]}
         />
       </article>
+
+      <CaseStudyFaq items={faqItems} />
 
       <Cta className="my-4!" ctaText="See more work" ctaUrl={routes.work} />
     </div>

@@ -8,10 +8,33 @@ import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
-import { getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
+import { type FaqItem, getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
+import { CaseStudyFaq } from '../CaseStudyFaq'
 import { getWorkDuration } from '../Cdn77/utils'
+
+const faqItems: FaqItem[] = [
+  {
+    question: 'What did Alex Devero do at Supernova?',
+    answer:
+      'As an early frontend & React developer, Alex built the React/TypeScript MVP from scratch, architected a scalable frontend structure, and delivered design-to-code features from Sketch files — working directly with the CEO on architecture and product direction.',
+  },
+  {
+    question: 'What was the outcome of the Supernova project?',
+    answer:
+      'A functional MVP that supported early users and investors and set the architecture for the product’s growth. Supernova became the first Czech startup accepted into Y Combinator (Winter 2019) and raised a $4.8M seed round in 2022.',
+  },
+  {
+    question: 'What technologies were used on the Supernova project?',
+    answer: 'React, TypeScript, and SCSS/Sass.',
+  },
+  {
+    question: 'What is Supernova?',
+    answer:
+      'Supernova is a Prague-founded design-to-code automation platform that converts design files into production-ready code. It was the first Czech startup accepted into Y Combinator (2019).',
+  },
+]
 
 export const SupernovaCaseStudyPage: FC = () => (
   <DefaultLayout>
@@ -152,6 +175,8 @@ export const SupernovaCaseStudyPage: FC = () => (
           do so. In 2022, Supernova raised $4.8M in its first seed round and grew to 30+ employees.
         </Typography>
       </article>
+
+      <CaseStudyFaq items={faqItems} />
 
       <Cta className="my-4!" ctaText="See more work" ctaUrl={routes.work} />
     </div>

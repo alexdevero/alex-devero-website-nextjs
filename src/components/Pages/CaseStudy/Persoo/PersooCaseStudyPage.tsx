@@ -8,10 +8,33 @@ import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
-import { getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
+import { type FaqItem, getBreadcrumbJsonLd, getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
+import { CaseStudyFaq } from '../CaseStudyFaq'
 import { getWorkDuration } from '../Cdn77/utils'
+
+const faqItems: FaqItem[] = [
+  {
+    question: 'What did Alex Devero do at Persoo?',
+    answer:
+      'Alex joined Persoo as a frontend developer and later became a co-founder. He rebuilt the search widget and recommendation carousels with modern JavaScript, removed jQuery, formalised implementation practices, mentored the team, and contributed to product strategy.',
+  },
+  {
+    question: 'Was Alex Devero a co-founder of Persoo?',
+    answer:
+      'Yes. Alex joined as a frontend developer and, after about two years, became an officially registered co-founder, helping shape product direction until he sold his share on leaving.',
+  },
+  {
+    question: 'What was the outcome of the Persoo project?',
+    answer:
+      'Faster, more reliable search and recommendation UIs, a modern jQuery-free codebase, reduced delivery time, and a stronger team. Persoo was later acquired by Luigi’s Box in a multi-million-euro deal in early 2024.',
+  },
+  {
+    question: 'What technologies were used on the Persoo project?',
+    answer: 'JavaScript (ES6+), HTML, and CSS — migrating away from a legacy jQuery stack.',
+  },
+]
 
 export const PersooCaseStudyPage: FC = () => (
   <DefaultLayout>
@@ -156,6 +179,8 @@ export const PersooCaseStudyPage: FC = () => (
           and Slovak markets.
         </Typography>
       </article>
+
+      <CaseStudyFaq items={faqItems} />
 
       <Cta className="my-4!" ctaText="See more work" ctaUrl={routes.work} />
     </div>
