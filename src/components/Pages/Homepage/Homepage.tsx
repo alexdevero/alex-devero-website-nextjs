@@ -26,19 +26,15 @@ export const HomePage: FC = () => (
 
         <Typography className="my-4 flex flex-col items-center justify-center gap-2 md:flex-row">
           Trusted by teams at{' '}
-          <div className="flex flex-col items-center justify-center gap-3 md:flex-row">
-            <Cdn77Logo
-              alt="CDN77 logo"
-              className={classNames('h-7 w-auto', getLogoColorClasses('CDN77'))}
-            />
-            <DigitooLogo
-              alt="Digitoo logo"
-              className={classNames('h-7 w-auto', getLogoColorClasses('Digitoo'))}
-            />
-            <PersooLogo
-              alt="Persoo logo"
-              className={classNames('h-10 w-auto', getLogoColorClasses('Persoo'))}
-            />
+          {/* Names as real text for AI parsers and screen readers; the logos below are decorative. */}
+          <span className="sr-only">CDN77, Digitoo, and Persoo.</span>
+          <div
+            aria-hidden="true"
+            className="flex flex-col items-center justify-center gap-3 md:flex-row"
+          >
+            <Cdn77Logo className={classNames('h-7 w-auto', getLogoColorClasses('CDN77'))} />
+            <DigitooLogo className={classNames('h-7 w-auto', getLogoColorClasses('Digitoo'))} />
+            <PersooLogo className={classNames('h-10 w-auto', getLogoColorClasses('Persoo'))} />
           </div>
         </Typography>
 
