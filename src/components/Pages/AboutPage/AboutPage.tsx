@@ -6,6 +6,7 @@ import { List } from '@/components/List/List'
 import { Typography } from '@/components/Typography'
 import { personalLinks, socialMedia } from '@/constants/links'
 import { type FaqItem, getFaqPageJsonLd, getProfilePageJsonLd } from '@/constants/metadata'
+import { routes } from '@/constants/router'
 
 // Single source of truth: rendered as the visible FAQ and as FAQPage JSON-LD,
 // so the structured data always matches what's on the page.
@@ -66,15 +67,19 @@ export const AboutPage = () => (
         <Typography>
           Alex Devero is a Senior Frontend Engineer specialising in React, Next.js, and TypeScript,
           based in Prague and working across the EU &mdash; currently a Frontend Tech Lead. He builds
-          like a founder: he co-founded Persoo (a Czech e-commerce personalisation startup acquired
-          by Luigi&rsquo;s Box in 2024) and was an early engineer at Supernova, the first Czech
+          like a founder: he co-founded <Link href={routes.caseStudyPersoo}>Persoo</Link> (a Czech
+          e-commerce personalisation startup acquired by Luigi&rsquo;s Box in 2024) and was an early
+          engineer at <Link href={routes.caseStudySupernova}>Supernova</Link>, the first Czech
           startup accepted into Y Combinator (2019). That means he leads React and Next.js frontends
           with an owner&rsquo;s product judgment, not just an implementer&rsquo;s.
         </Typography>
 
         <Typography>
-          Over 10+ years he has built and scaled products for teams at CDN77, Digitoo, and more,
-          pairing deep frontend engineering with a strong product-design background. The result
+          Over 10+ years he has built and scaled products for teams at{' '}
+          <Link href={routes.caseStudyCdn77}>CDN77</Link>,{' '}
+          <Link href={routes.caseStudyDigitoo}>Digitoo</Link>, and{' '}
+          <Link href={routes.work}>more</Link>, pairing deep frontend engineering with a strong
+          product-design background. The result
           isn&rsquo;t just shipped features but interfaces and architecture that hold up as a product
           grows: reusable components, stable UX, and well-defined domain boundaries.
         </Typography>
