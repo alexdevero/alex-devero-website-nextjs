@@ -4,8 +4,7 @@ import { routes } from '@/constants/router'
 
 export const metadata = getMetadata({
   title: 'Login',
-  description:
-    'Fast, scalable React/Next.js delivery: development, audits, and project-based execution.',
+  description: 'Private login.',
   pathname: routes.login,
   index: false,
 })

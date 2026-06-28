@@ -20,10 +20,6 @@ export const siteUrl = 'https://alexdevero.com'
 // case-study Articles) can reference one canonical node instead of redefining it.
 export const personId = `${siteUrl}/#person`
 
-// One canonical identity, repeated across the site so search and AI answer
-// engines can attach a single stable description to the "Alex Devero" entity.
-export const roleTitle = 'Senior Frontend Engineer (React/Next.js)'
-
 const defaultDescription =
   'Alex Devero is a Senior Frontend Engineer and Frontend Tech Lead with 10+ years building React and Next.js applications - frontend architecture that holds up under real product complexity.'
 
