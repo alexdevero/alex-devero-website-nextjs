@@ -1,0 +1,13 @@
+# Supply-chain hardening
+minimumReleaseAge: 1440 # minutes — wait 1 day before installing any newly published version
+minimumReleaseAgeExclude: [] # packages allowed to skip the cooldown (e.g. urgent security patches)
+
+blockExoticSubdeps: true # block transitive deps resolved from git/tarball/non-registry sources
+verifyDepsBeforeRun: error # fail if node_modules drifts from the lockfile before running scripts
+strictDepBuilds: true # fail install if a dependency wants to run a build script but isn't approved
+
+# Reviewed build-script allowlist (native binaries)
+allowBuilds:
+  '@tailwindcss/oxide': true
+  sharp: true
+  unrs-resolver: true
