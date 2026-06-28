@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
 
+import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { AppProviders } from '@/contexts/providers'
 import { socialMedia } from '@/constants/links'
 import '@/styles/global.css'
@@ -86,10 +87,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         /> */}
       </head>
       <body>
-        <script
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-          type="application/ld+json"
-        />
+        <JsonLd data={personJsonLd} />
         <AppProviders>{children}</AppProviders>
 
         <Analytics />

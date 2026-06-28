@@ -75,3 +75,53 @@ export const getMetadata = ({
     },
   }
 }
+
+const siteUrl = 'https://alexdevero.com'
+
+type CaseStudyJsonLdOpts = {
+  about: string // the company the case study is about
+  datePublished: string // ISO date, e.g. '2025-01-05'
+  description: string
+  headline: string
+  keywords?: string[]
+  pathname: string // e.g. '/case-study/cdn77'
+}
+
+// Article structured data for a case study, attributed to the Alex Devero
+// Person entity so AI answer engines can connect the write-up to its author.
+export const getCaseStudyJsonLd = ({
+  about,
+  datePublished,
+  description,
+  headline,
+  keywords,
+  pathname,
+}: CaseStudyJsonLdOpts): Record<string, unknown> => {
+  const url = new URL(pathname, siteUrl).toString()
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline,
+    description,
+    url,
+    mainEntityOfPage: url,
+    inLanguage: 'en',
+    datePublished,
+    author: {
+      '@type': 'Person',
+      name: siteName,
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Person',
+      name: siteName,
+      url: siteUrl,
+    },
+    about: {
+      '@type': 'Organization',
+      name: about,
+    },
+    ...(keywords && keywords.length > 0 ? { keywords } : {}),
+  }
+}

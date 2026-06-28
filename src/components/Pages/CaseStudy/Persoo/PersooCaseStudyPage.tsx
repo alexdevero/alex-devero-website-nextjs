@@ -4,15 +4,36 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card/Card'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
+import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
+import { getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
 import { getWorkDuration } from '../Cdn77/utils'
 
 export const PersooCaseStudyPage: FC = () => (
   <DefaultLayout>
+    <JsonLd
+      data={getCaseStudyJsonLd({
+        about: 'Persoo',
+        datePublished: '2025-01-09',
+        description:
+          'Rebuilding Persoo’s personalization widgets, modernizing the JavaScript stack, and leading the team — from frontend developer to co-founder of the e-commerce startup.',
+        headline: 'Evolving Persoo: From Integration to Leadership in Personalized E-Commerce',
+        keywords: [
+          'JavaScript',
+          'TypeScript',
+          'E-commerce',
+          'Personalization',
+          'Team leadership',
+          'Co-founder',
+        ],
+        pathname: routes.caseStudyPersoo,
+      })}
+    />
+
     <Button href={routes.work} variant="outline">
       {'<- Back'}
     </Button>

@@ -2,15 +2,29 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card/Card'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
+import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
+import { getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
 import { getWorkDuration } from './utils'
 
 export const Cdn77CaseStudyPage = () => (
   <DefaultLayout>
+    <JsonLd
+      data={getCaseStudyJsonLd({
+        about: 'CDN77',
+        datePublished: '2025-01-05',
+        description:
+          'Refactor and design-system migration of a three-year-old Next.js app to improve performance, maintainability, and developer velocity.',
+        headline: 'Modernizing CDN77’s Internal App',
+        keywords: ['React', 'Next.js', 'TypeScript', 'Design systems', 'Refactoring', 'Testing'],
+        pathname: routes.caseStudyCdn77,
+      })}
+    />
+
     <Button href={routes.work} variant="outline">
       {'<- Back'}
     </Button>

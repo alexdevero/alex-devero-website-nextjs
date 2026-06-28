@@ -4,15 +4,37 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card/Card'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
+import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
+import { getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
 import { getWorkDuration } from '../Cdn77/utils'
 
 export const SupernovaCaseStudyPage: FC = () => (
   <DefaultLayout>
+    <JsonLd
+      data={getCaseStudyJsonLd({
+        about: 'Supernova',
+        datePublished: '2025-08-31',
+        description:
+          'Building the React/TypeScript MVP and frontend architecture for Supernova — the first Czech startup accepted into Y Combinator (Winter 2019).',
+        headline:
+          'Building from Scratch at Supernova: Laying the Foundation for a Y Combinator Startup',
+        keywords: [
+          'React',
+          'TypeScript',
+          'MVP',
+          'Frontend architecture',
+          'Startup',
+          'Y Combinator',
+        ],
+        pathname: routes.caseStudySupernova,
+      })}
+    />
+
     <Button href={routes.work} variant="outline">
       {'<- Back'}
     </Button>

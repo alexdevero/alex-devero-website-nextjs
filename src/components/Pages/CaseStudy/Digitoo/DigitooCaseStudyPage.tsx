@@ -2,15 +2,29 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card/Card'
 import { Cta } from '@/components/Cta/Cta'
 import { DefaultLayout } from '@/components/DefaultLayout'
+import { JsonLd } from '@/components/JsonLd/JsonLd'
 import { List } from '@/components/List/List'
 import { Tag } from '@/components/Tag/Tag'
 import { Typography } from '@/components/Typography'
+import { getCaseStudyJsonLd } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
 import { getWorkDuration } from '../Cdn77/utils'
 
 export const DigitooCaseStudyPage = () => (
   <DefaultLayout>
+    <JsonLd
+      data={getCaseStudyJsonLd({
+        about: 'Digitoo',
+        datePublished: '2025-01-05',
+        description:
+          'Migrating Digitoo’s React MVP to a server-rendered Next.js platform with a reusable Tailwind component library, shipping 7 major features and onboarding 40+ clients.',
+        headline: 'Transforming Digitoo’s MVP into a Scalable Customer-Facing Platform',
+        keywords: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'SSR', 'Nx monorepo'],
+        pathname: routes.caseStudyDigitoo,
+      })}
+    />
+
     <Button href={routes.work} variant="outline">
       {'<- Back'}
     </Button>
