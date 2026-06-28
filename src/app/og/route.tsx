@@ -1,12 +1,12 @@
 import { ImageResponse } from 'next/og'
 
-// Default social-share image for the whole site. Pages can override with their
-// own ogImage; otherwise this 1200x630 card is used for link previews.
-export const alt = 'Alex Devero – Senior Frontend Engineer (React/Next.js)'
-export const size = { width: 1200, height: 630 }
-export const contentType = 'image/png'
+// Generates the default 1200x630 social-share card. Served at /og and
+// referenced by getMetadata so every page emits a deterministic og:image.
+export const dynamic = 'force-static'
 
-export default function Image() {
+const size = { width: 1200, height: 630 }
+
+export function GET() {
   return new ImageResponse(
     (
       <div

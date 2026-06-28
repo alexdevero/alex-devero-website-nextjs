@@ -20,6 +20,9 @@ export const siteUrl = 'https://alexdevero.com'
 // case-study Articles) can reference one canonical node instead of redefining it.
 export const personId = `${siteUrl}/#person`
 
+// Default social-share card, served by the /og route handler.
+const defaultOgImage = `${siteUrl}/og`
+
 const defaultDescription =
   'Alex Devero is a Senior Frontend Engineer and Frontend Tech Lead with 10+ years building React and Next.js applications - frontend architecture that holds up under real product complexity.'
 
@@ -109,16 +112,16 @@ export const getMetadata = ({
       url,
       siteName,
       locale: 'en_GB',
-      images: ogImage
-        ? [
-            {
+      images: [
+        ogImage
+          ? {
               url: ogImage.url,
               width: ogImage.width ?? 1200,
               height: ogImage.height ?? 630,
               alt: ogImage.alt ?? title,
-            },
-          ]
-        : undefined,
+            }
+          : { url: defaultOgImage, width: 1200, height: 630, alt: siteName },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -126,7 +129,7 @@ export const getMetadata = ({
       description: desc,
       site: '@alexdevero',
       creator: '@alexdevero',
-      images: twitterImage ? [twitterImage] : ogImage ? [ogImage.url] : undefined,
+      images: [twitterImage ?? ogImage?.url ?? defaultOgImage],
     },
     robots: {
       index,
