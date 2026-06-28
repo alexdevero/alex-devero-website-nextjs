@@ -8,7 +8,7 @@ Twitter: @alexdevero
 Location: Prague, Czech Republic
 
 # SITE
-Last update: 2025/08/17
-Standards: HTML5, CSS3, JavaScript (ES7)
-Components: React, Tailwind, TypeScript
-Software: Apache Server Configs, VS Studio Code, Babel, Webpack
+Last update: 2026/06/28
+Standards: HTML5, CSS3, TypeScript
+Components: React, Next.js, Tailwind CSS, TypeScript
+Software: Next.js, Vercel, VS Code
