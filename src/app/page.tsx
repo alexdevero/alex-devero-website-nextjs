@@ -3,9 +3,9 @@ import { getMetadata } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
 export const metadata = getMetadata({
-  title: 'Home',
+  title: 'Senior Frontend Engineer (React/Next.js) & Frontend Tech Lead',
   description:
-    'Fast, scalable React/Next.js delivery: development, audits, and project-based execution.',
+    'Alex Devero is a Senior Frontend Engineer and Frontend Tech Lead with 10+ years building React, Next.js, and TypeScript applications for companies including CDN77, Digitoo, and Persoo.',
   pathname: routes.home,
 })
 

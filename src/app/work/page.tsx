@@ -3,9 +3,9 @@ import { getMetadata } from '@/constants/metadata'
 import { routes } from '@/constants/router'
 
 export const metadata = getMetadata({
-  title: 'Work',
+  title: 'Selected Work & Case Studies',
   description:
-    'Fast, scalable React/Next.js delivery: development, audits, and project-based execution.',
+    'Selected work and case studies from Alex Devero – React and Next.js products built and scaled for companies including CDN77, Digitoo, Persoo, and Supernova.',
   pathname: routes.work,
 })
 
