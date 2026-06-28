@@ -13,7 +13,5 @@ export const routes = {
   caseStudyCdn77: '/case-study/cdn77',
   caseStudyDigitoo: '/case-study/digitoo',
   caseStudyPersoo: '/case-study/persoo',
-  caseStudyRetino: '/case-study/retino',
-  caseStudyStartMonday: '/case-study/start-monday',
   caseStudySupernova: '/case-study/supernova',
 } as const
